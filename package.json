@@ -13,16 +13,16 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "eslint": "^5.6.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint": ">=5",
+    "eslint-config-airbnb": "^17",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-jsx-a11y": "^6",
+    "eslint-plugin-react": "^7"
   },
   "peerDependencies": {
-    "eslint": "^5.0.0 || ^4.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint": ">=5",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-jsx-a11y": "^6",
+    "eslint-plugin-react": "^7"
   }
 }
