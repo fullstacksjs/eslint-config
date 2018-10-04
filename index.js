@@ -13,18 +13,19 @@ module.exports = {
     "no-unused-vars": [1, { "args": "none" }],
     "no-use-before-define": [2, { "functions": false, "classes": false }],
     "no-var": 0,
-    "prefer-const": 0,
     "object-curly-newline": [1, {"ImportDeclaration": {"multiline": true }, "ObjectPattern": { "multiline": true }}],
+    "prefer-const": 0,
+    "prefer-destructuring": [1, { "array": false, "object": true }],
 
     "import/extensions": 0,
-    "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
+    "import/prefer-default-export": 0,
 
     "jsx-a11y/href-no-hash": 0,
     "jsx-a11y/label-has-for": 0,
 
-    "react/jsx-filename-extension": 0,
     "react/destructuring-assignment": 0,
+    "react/jsx-filename-extension": 0,
     "react/jsx-one-expression-per-line": 0,
     "react/sort-comp": 0
   },
