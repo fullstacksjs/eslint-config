@@ -12,15 +12,13 @@
     "index.js"
   ],
   "main": "index.js",
-  "devDependencies": {
+  "dependencies": {
+    "eslint-config-airbnb": "*",
     "eslint-plugin-import": "*",
     "eslint-plugin-jsx-a11y": "*",
     "eslint-plugin-react": "*"
   },
   "peerDependencies": {
-    "eslint": "*",
-    "eslint-plugin-import": "*",
-    "eslint-plugin-jsx-a11y": "*",
-    "eslint-plugin-react": "*"
+    "eslint": "*"
   }
 }
