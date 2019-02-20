@@ -12,12 +12,15 @@
     "index.js"
   ],
   "main": "index.js",
-  "dependencies": {
+  "devDependencies": {
     "eslint-plugin-import": "*",
     "eslint-plugin-jsx-a11y": "*",
     "eslint-plugin-react": "*"
   },
   "peerDependencies": {
-    "eslint": "*"
+    "eslint": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jsx-a11y": "*",
+    "eslint-plugin-react": "*"
   }
 }
