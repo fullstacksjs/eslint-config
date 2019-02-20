@@ -1,6 +1,6 @@
 {
   "name": "@frontendmonster/eslint-config",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "frontendmonster eslint config",
@@ -12,10 +12,12 @@
     "index.js"
   ],
   "main": "index.js",
-  "peerDependencies": {
-    "eslint": "*",
+  "dependencies": {
     "eslint-plugin-import": "*",
     "eslint-plugin-jsx-a11y": "*",
     "eslint-plugin-react": "*"
+  },
+  "peerDependencies": {
+    "eslint": "*"
   }
 }
