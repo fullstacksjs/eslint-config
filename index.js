@@ -18,6 +18,7 @@ module.exports = {
     "prefer-destructuring": [1, { "array": false, "object": true }],
 
     "import/extensions": 0,
+    "import/no-dynamic-require": 0,
     "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
     "import/prefer-default-export": 0,
 
