@@ -10,6 +10,7 @@ module.exports = {
     "no-param-reassign": 0,
     "no-plusplus": 0,
     "no-underscore-dangle": 0,
+    "no-unused-expressions": [2, { "allowShortCircuit": true, "allowTernary": true }],
     "no-unused-vars": [1, { "args": "none" }],
     "no-use-before-define": [2, { "functions": false, "classes": false }],
     "no-var": 0,
