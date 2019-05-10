@@ -33,8 +33,8 @@ module.exports = {
     "react/prop-types": [1, { "ignore": ["children", "className"] }],
     "react/sort-comp": 0,
 
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1
   },
   "overrides": [
     {
