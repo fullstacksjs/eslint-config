@@ -1,5 +1,6 @@
 module.exports = {
   extends: ['airbnb'],
+  plugins: ['react-hooks'],
   rules: {
     "arrow-parens": [1, "as-needed", { "requireForBlockBody": true }],
     "consistent-return": 0,
@@ -30,7 +31,10 @@ module.exports = {
     "react/jsx-filename-extension": 0,
     "react/jsx-one-expression-per-line": 0,
     "react/prop-types": [1, { "ignore": ["children", "className"] }],
-    "react/sort-comp": 0
+    "react/sort-comp": 0,
+
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "overrides": [
     {
