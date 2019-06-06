@@ -28,6 +28,7 @@ module.exports = {
     "jsx-a11y/label-has-for": 0,
 
     "react/destructuring-assignment": 0,
+    "react/forbid-prop-types": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-one-expression-per-line": 0,
     "react/prop-types": [1, { "ignore": ["children", "className"] }],
