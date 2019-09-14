@@ -1,6 +1,6 @@
 {
   "name": "@frontendmonster/eslint-config",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "frontendmonster eslint config",
@@ -18,7 +18,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "eslint-plugin-prettier": "^9.0.0"
+    "eslint-plugin-prettier": "^3.1.0"
   },
   "peerDependencies": {
     "eslint": "^6.1.0"
