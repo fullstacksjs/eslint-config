@@ -2,7 +2,10 @@ module.exports = {
   extends: ['airbnb', 'prettier'],
   plugins: ['react-hooks', 'prettier'],
   rules: {
-    "arrow-parens": [1, "as-needed", { "requireForBlockBody": true }],
+    // confilict with prettier
+    // "arrow-parens": [1, "as-needed", { "requireForBlockBody": true }],
+    // "object-curly-newline": [1, { "ImportDeclaration": { "multiline": true }, "ObjectPattern": { "multiline": true } }],
+
     "consistent-return": 0,
     "func-names": 0,
     "global-require": 0,
@@ -15,7 +18,6 @@ module.exports = {
     "no-unused-vars": [1, { "args": "none" }],
     "no-use-before-define": [2, { "functions": false, "classes": false }],
     "no-var": 0,
-    "object-curly-newline": [1, { "ImportDeclaration": { "multiline": true }, "ObjectPattern": { "multiline": true } }],
     "prefer-const": 0,
     "prefer-destructuring": [1, { "array": false, "object": true }],
 
