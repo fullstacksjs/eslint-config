@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ['airbnb'],
-  plugins: ['prettier', 'react-hooks'],
+  extends: ['airbnb', 'prettier'],
+  plugins: ['react-hooks', 'prettier'],
   rules: {
     "arrow-parens": [1, "as-needed", { "requireForBlockBody": true }],
     "consistent-return": 0,
@@ -38,7 +38,7 @@ module.exports = {
     "react-hooks/rules-of-hooks": 2,
     "react-hooks/exhaustive-deps": 1,
 
-    "prettier/prettier": "error"
+    "prettier/prettier": 2
   },
   "overrides": [
     {
