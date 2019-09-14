@@ -36,7 +36,9 @@ module.exports = {
     "react/sort-comp": 0,
 
     "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 1
+    "react-hooks/exhaustive-deps": 1,
+
+    "prettier/prettier": "error"
   },
   "overrides": [
     {
