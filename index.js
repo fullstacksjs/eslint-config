@@ -36,6 +36,7 @@ module.exports = {
     "react/jsx-props-no-spreading": 0,
     "react/prop-types": [1, { "ignore": ["children", "className"] }],
     "react/sort-comp": 0,
+    "react/state-in-constructor": 0,
 
     "react-hooks/rules-of-hooks": 2,
     "react-hooks/exhaustive-deps": 1,
