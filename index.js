@@ -15,7 +15,11 @@ module.exports = {
     "no-plusplus": 0,
     "no-underscore-dangle": 0,
     "no-unused-expressions": [2, { "allowShortCircuit": true, "allowTernary": true }],
-    "no-unused-vars": [1, { "args": "none" }],
+    "no-unused-vars": [1, {
+      "args": "none",
+      "argsIgnorePattern": "^_.+|^ignore.+",
+      "varsIgnorePattern": "^_.+|^ignore.+"
+    }],
     "no-use-before-define": [2, { "functions": false, "classes": false }],
     "no-var": 0,
     "prefer-const": 0,
