@@ -11,18 +11,46 @@
   "files": [
     "index.js"
   ],
+  "scripts": {
+    "lint": "eslint .",
+    "check-rules": "npm-run-all --parallel check-rules:*",
+    "check-rules:base": "eslint-find-rules --unused ./configs/base.js",
+    "check-rules:jest": "eslint-find-rules --unused ./configs/tests/jest.js",
+    "check-rules:react": "eslint-find-rules --unused ./configs/tests/react.js",
+    "check-rules:typescript": "eslint-find-rules --unused ./configs/tests/typescript.js"
+  },
   "main": "index.js",
   "dependencies": {
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.7.0"
+    "@frontendmonster/utils": "0.2.1",
+    "@typescript-eslint/eslint-plugin": "2.15.0",
+    "@typescript-eslint/parser": "^2.15.0",
+    "babel-eslint": "10.0.3",
+    "eslint-config-prettier": "6.9.0",
+    "eslint-plugin-babel": "5.3.0",
+    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-jest": "23.3.0",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-react": "7.17.0",
+    "eslint-plugin-react-hooks": "2.3.0",
+    "lodash.has": "4.5.2",
+    "read-pkg-up": "7.0.1"
   },
   "peerDependencies": {
-    "eslint": "^6.1.0"
+    "eslint": ">=5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "6.7.2",
+    "eslint-find-rules": "3.4.0",
+    "husky": "4.0.3",
+    "lint-staged": "9.5.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "1.19.1",
+    "typescript": "3.7.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
