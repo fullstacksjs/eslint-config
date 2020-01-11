@@ -4,4 +4,3 @@ node_modules
 .travis.yml
 CONTRIBUTING.md
 playground
-configs/tests

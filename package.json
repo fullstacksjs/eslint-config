@@ -1,6 +1,6 @@
 {
   "name": "@frontendmonster/eslint-config",
-  "version": "2.1.7",
+  "version": "3.0.0",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "frontendmonster eslint config",
@@ -9,7 +9,12 @@
     "url": "git+https://github.com/frontendmonster/eslint-config.git"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "configs/rules",
+    "configs/base.js",
+    "configs/jest.js",
+    "configs/react.js",
+    "configs/typescript.js"
   ],
   "scripts": {
     "lint": "eslint .",
