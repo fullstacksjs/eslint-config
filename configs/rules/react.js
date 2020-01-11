@@ -58,7 +58,7 @@ module.exports = {
     'react/prefer-es6-class': 'off',
     'react/prefer-stateless-function': 'off',
     'react/prefer-read-only-props': 'off',
-    'react/prop-types': ['error', { ignore: ['children', 'className'] }],
+    'react/prop-types': ['warn', { ignore: ['children', 'className'] }],
     'react/react-in-jsx-scope': 'error',
     'react/require-default-props': 'off',
     'react/require-optimization': 'off',

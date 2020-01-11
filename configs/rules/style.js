@@ -42,7 +42,7 @@ module.exports = {
     'no-inline-comments': 'off',
     'no-lonely-if': 'error',
     'no-multi-assign': 'error',
-    'no-negated-condition': 'error',
+    'no-negated-condition': 'off',
     'no-nested-ternary': 'off',
     'no-new-object': 'error',
     'no-plusplus': 'off',
