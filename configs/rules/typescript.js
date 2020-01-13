@@ -79,6 +79,8 @@ module.exports = {
         '@typescript-eslint/space-before-function-paren': 'off',
         '@typescript-eslint/no-type-alias': 'off',
         '@typescript-eslint/no-extra-parens': 'off',
+
+        'import/no-cycle': 'off', // PENDING: remove this on https://github.com/benmosher/eslint-plugin-import/issues/1453
       },
     },
   ],

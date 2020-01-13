@@ -19,7 +19,7 @@ module.exports = {
     'import/no-amd': 'error',
     'import/no-anonymous-default-export': 'off',
     'import/no-commonjs': 'off',
-    'import/no-cycle': 'error',
+    'import/no-cycle': ['error', { maxDepth: Infinity }],
     'import/no-default-export': 'off',
     'import/no-deprecated': 'warn',
     'import/no-duplicates': 'error',
