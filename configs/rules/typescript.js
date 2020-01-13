@@ -1,5 +1,10 @@
 module.exports = {
   plugins: ['@typescript-eslint/eslint-plugin'],
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+  },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
