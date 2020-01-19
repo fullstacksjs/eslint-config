@@ -1,7 +1,7 @@
 module.exports = {
   rules: {
     'callback-return': 'off',
-    'global-require': 'warn',
+    'global-require': 'off',
     'handle-callback-err': 'error',
     'no-mixed-requires': ['error', { grouping: true, allowCall: false }],
     'no-new-require': 'error',
