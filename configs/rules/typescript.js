@@ -24,7 +24,7 @@ module.exports = {
         '@typescript-eslint/member-delimiter-style': 'error',
         '@typescript-eslint/no-array-constructor': 'error',
         '@typescript-eslint/no-empty-function': 'error',
-        '@typescript-eslint/no-empty-interface': 'error',
+        '@typescript-eslint/no-empty-interface': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-inferrable-types': 'error',
         '@typescript-eslint/no-misused-new': 'error',
@@ -80,6 +80,7 @@ module.exports = {
         '@typescript-eslint/no-type-alias': 'off',
         '@typescript-eslint/no-extra-parens': 'off',
 
+        'spaced-comment': 'off',
         'import/no-cycle': 'off', // PENDING: remove this on https://github.com/benmosher/eslint-plugin-import/issues/1453
       },
     },

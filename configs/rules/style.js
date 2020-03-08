@@ -38,7 +38,7 @@ module.exports = {
     'newline-before-return': 'off',
     'no-array-constructor': 'error',
     'no-bitwise': 'error',
-    'no-continue': 'error',
+    'no-continue': 'off',
     'no-inline-comments': 'off',
     'no-lonely-if': 'error',
     'no-multi-assign': 'error',
