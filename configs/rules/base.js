@@ -60,7 +60,7 @@ module.exports = {
     'no-useless-concat': 'error',
     'no-useless-escape': 'error',
     'no-useless-return': 'error',
-    'no-void': 'error',
+    'no-void': 'off',
     'no-warning-comments': ['warn', { terms: ['fixme'], location: 'anywhere' }],
     'no-with': 'off',
     'prefer-promise-reject-errors': 'off',
