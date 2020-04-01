@@ -10,6 +10,7 @@
   },
   "files": [
     "index.js",
+    "utils.js",
     "configs/rules",
     "configs/base.js",
     "configs/jest.js",
