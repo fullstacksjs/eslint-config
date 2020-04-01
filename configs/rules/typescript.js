@@ -109,9 +109,8 @@ module.exports = {
         '@typescript-eslint/prefer-readonly-parameter-types': 'off', // I'm not sure...
         '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with autofix on save.
         '@typescript-eslint/prefer-regexp-exec': 'warn',
-        '@typescript-eslint/prefer-string-starts-ends-withprefer-regexp-exec':
-          'warn',
-        '@typescript-eslint/promise-function-asyncprefer-regexp-exec': 'off',
+        '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
+        '@typescript-eslint/promise-function-async': 'off',
         '@typescript-eslint/quotes': 'off', // prettier
         '@typescript-eslint/require-array-sort-compare': 'error',
         '@typescript-eslint/require-await': 'error',
