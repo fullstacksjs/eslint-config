@@ -23,7 +23,7 @@ module.exports = {
     'no-prototype-builtins': 'off',
     'no-regex-spaces': 'error',
     'no-sparse-arrays': 'error',
-    'no-template-curly-in-string': 'error',
+    'no-template-curly-in-string': 'off', // Some libs need curly in string for internal templates.
     'no-unexpected-multiline': 'error',
     'no-unreachable': 'error',
     'no-unsafe-finally': 'error',

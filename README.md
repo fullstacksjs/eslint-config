@@ -14,6 +14,9 @@ Add the extends to your `.eslintrc`:
 
 ```javascript
 {
+  "parserOptions": {
+    "project": "<PATH_TO_TSCONFIG>"
+  },
   "extends": ["@frontendmonster"],
 }
 ```

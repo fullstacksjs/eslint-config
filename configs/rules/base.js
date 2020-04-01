@@ -61,10 +61,7 @@ module.exports = {
     'no-useless-escape': 'error',
     'no-useless-return': 'error',
     'no-void': 'error',
-    'no-warning-comments': [
-      'warn',
-      { terms: ['fixme', 'todo'], location: 'anywhere' },
-    ],
+    'no-warning-comments': ['warn', { terms: ['fixme'], location: 'anywhere' }],
     'no-with': 'off',
     'prefer-promise-reject-errors': 'off',
     'prefer-named-capture-group': 'off',
