@@ -37,7 +37,7 @@ module.exports = {
         '@typescript-eslint/indent': 'off', // prettier
         '@typescript-eslint/interface-name-prefix': 'error',
         '@typescript-eslint/member-delimiter-style': 'error',
-        '@typescript-eslint/member-naming': ['warn', { private: '^_' }],
+        '@typescript-eslint/member-naming': 'off',
         '@typescript-eslint/member-ordering': 'off',
         '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/no-array-constructor': 'error',
