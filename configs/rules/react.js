@@ -23,7 +23,7 @@ module.exports = {
     'react/forbid-elements': 'off',
     'react/forbid-foreign-prop-types': 'error',
     'react/forbid-prop-types': 'off',
-    'react/function-component-definition': 'warn',
+    'react/function-component-definition': 'off',
     'react/jsx-boolean-value': 'off',
     'react/jsx-child-element-spacing': 'warn',
     'react/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'ignore' }],
