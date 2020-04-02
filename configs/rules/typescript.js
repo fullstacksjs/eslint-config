@@ -35,7 +35,7 @@ module.exports = {
         '@typescript-eslint/member-ordering': 'off',
         '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/no-array-constructor': 'error',
-        '@typescript-eslint/no-base-to-string': 'error',
+        '@typescript-eslint/no-base-to-string': 'off', // false negative
         '@typescript-eslint/no-dupe-class-members': 'error',
         '@typescript-eslint/no-dynamic-delete': 'error',
         '@typescript-eslint/no-empty-function': 'error',
@@ -45,7 +45,7 @@ module.exports = {
         '@typescript-eslint/no-extra-parens': 'off', // prettier
         '@typescript-eslint/no-extra-semi': 'off', // prettier
         '@typescript-eslint/no-extraneous-class': 'error',
-        '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }],
+        '@typescript-eslint/no-floating-promises': 'off', // due to bad api
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-implied-eval': 'error',
         '@typescript-eslint/no-inferrable-types': 'off',
@@ -70,7 +70,7 @@ module.exports = {
         '@typescript-eslint/no-unsafe-return': 'off',
         '@typescript-eslint/no-untyped-public-signature': 'off',
         '@typescript-eslint/no-unused-expressions': 'error',
-        '@typescript-eslint/no-unused-vars-experimental': 'error',
+        '@typescript-eslint/no-unused-vars-experimental': ['error', { ignoreArgsIfArgsAfterAreUsed: true }],
         '@typescript-eslint/no-unused-vars': [
           'error',
           {
@@ -103,7 +103,7 @@ module.exports = {
         '@typescript-eslint/return-await': 'error',
         '@typescript-eslint/semi': 'error',
         '@typescript-eslint/space-before-function-paren': 'off', // prettier
-        '@typescript-eslint/strict-boolean-expressions': ['error', { allowNullable: true, allowSafe: true }],
+        '@typescript-eslint/strict-boolean-expressions': 'off', // Anoyying
         '@typescript-eslint/switch-exhaustiveness-check': 'error',
         '@typescript-eslint/triple-slash-reference': 'error',
         '@typescript-eslint/type-annotation-spacing': 'error',
