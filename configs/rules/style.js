@@ -2,7 +2,7 @@ module.exports = {
   extends: ['prettier'],
   plugins: ['prettier'],
   rules: {
-    'brace-style': ['warn', 'stroustrup'],
+    'brace-style': 'off', // prettier
     'camelcase': ['off', { properties: 'always' }], // Handled by babel/camelcase
     'capitalized-comments': 'off',
     'comma-spacing': ['warn', { after: true, before: false }],
