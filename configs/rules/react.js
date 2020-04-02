@@ -23,13 +23,7 @@ module.exports = {
     'react/forbid-elements': 'off',
     'react/forbid-foreign-prop-types': 'error',
     'react/forbid-prop-types': 'off',
-    'react/function-component-definition': [
-      'warn',
-      {
-        namedComponents: 'arrow-function',
-        unnamedComponents: 'arrow-function',
-      },
-    ],
+    'react/function-component-definition': 'warn',
     'react/jsx-boolean-value': 'off',
     'react/jsx-child-element-spacing': 'warn',
     'react/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'ignore' }],

@@ -98,7 +98,7 @@ module.exports = {
         '@typescript-eslint/quotes': 'off', // prettier
         '@typescript-eslint/require-array-sort-compare': 'error',
         '@typescript-eslint/require-await': 'error',
-        '@typescript-eslint/restrict-plus-operands': ['error', { checkCompoundAssignments: true }],
+        '@typescript-eslint/restrict-plus-operands': 'off',
         '@typescript-eslint/restrict-template-expressions': 'off',
         '@typescript-eslint/return-await': 'error',
         '@typescript-eslint/semi': 'error',
