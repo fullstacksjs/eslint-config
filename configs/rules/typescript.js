@@ -70,7 +70,7 @@ module.exports = {
         '@typescript-eslint/no-unsafe-return': 'off',
         '@typescript-eslint/no-untyped-public-signature': 'off',
         '@typescript-eslint/no-unused-expressions': 'error',
-        '@typescript-eslint/no-unused-vars-experimental': ['error', { ignoreArgsIfArgsAfterAreUsed: true }],
+        '@typescript-eslint/no-unused-vars-experimental': 'off',
         '@typescript-eslint/no-unused-vars': [
           'error',
           {
