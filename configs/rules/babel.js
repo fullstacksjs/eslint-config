@@ -1,11 +1,9 @@
 module.exports = {
   plugins: ['babel'],
   rules: {
-    'babel/new-cap': 'off',
     'babel/camelcase': ['error', { properties: 'always' }],
+    'babel/new-cap': 'off',
     'babel/no-invalid-this': 'error',
-    'babel/object-curly-spacing': ['error', 'always'],
-    'babel/semi': ['warn', 'always'],
     'babel/no-unused-expressions': [
       'error',
       {
@@ -14,11 +12,9 @@ module.exports = {
         allowTaggedTemplates: true,
       },
     ],
-    'babel/quotes': [
-      'error',
-      'single',
-      { avoidEscape: true, allowTemplateLiterals: true },
-    ],
+    'babel/object-curly-spacing': ['error', 'always'],
+    'babel/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+    'babel/semi': ['warn', 'always'],
     'babel/valid-typeof': 'error',
   },
 };

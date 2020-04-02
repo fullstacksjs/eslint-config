@@ -19,15 +19,9 @@ module.exports = {
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/class-literal-property-style': ['error', 'getters'],
         '@typescript-eslint/class-name-casing': 'error',
-        '@typescript-eslint/comma-spacing': [
-          'warn',
-          { after: true, before: false },
-        ],
+        '@typescript-eslint/comma-spacing': ['warn', { after: true, before: false }],
         '@typescript-eslint/consistent-type-assertions': 'error',
-        '@typescript-eslint/consistent-type-definitions': [
-          'error',
-          'interface',
-        ],
+        '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
         '@typescript-eslint/default-param-last': ['error'],
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-member-accessibility': 'off',
@@ -51,10 +45,7 @@ module.exports = {
         '@typescript-eslint/no-extra-parens': 'off', // prettier
         '@typescript-eslint/no-extra-semi': 'off', // prettier
         '@typescript-eslint/no-extraneous-class': 'error',
-        '@typescript-eslint/no-floating-promises': [
-          'error',
-          { ignoreVoid: true },
-        ],
+        '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }],
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-implied-eval': 'error',
         '@typescript-eslint/no-inferrable-types': 'off',
@@ -89,10 +80,7 @@ module.exports = {
             ignoreRestSiblings: true,
           },
         ],
-        '@typescript-eslint/no-use-before-define': [
-          'error',
-          { functions: false, classes: true },
-        ],
+        '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: true }],
         '@typescript-eslint/no-useless-constructor': 'error',
         '@typescript-eslint/no-var-requires': 'error',
         '@typescript-eslint/prefer-as-const': 'warn',
@@ -110,18 +98,12 @@ module.exports = {
         '@typescript-eslint/quotes': 'off', // prettier
         '@typescript-eslint/require-array-sort-compare': 'error',
         '@typescript-eslint/require-await': 'error',
-        '@typescript-eslint/restrict-plus-operands': [
-          'error',
-          { checkCompoundAssignments: true },
-        ],
+        '@typescript-eslint/restrict-plus-operands': ['error', { checkCompoundAssignments: true }],
         '@typescript-eslint/restrict-template-expressions': 'off',
         '@typescript-eslint/return-await': 'error',
         '@typescript-eslint/semi': 'error',
         '@typescript-eslint/space-before-function-paren': 'off', // prettier
-        '@typescript-eslint/strict-boolean-expressions': [
-          'error',
-          { allowNullable: true, allowSafe: true },
-        ],
+        '@typescript-eslint/strict-boolean-expressions': ['error', { allowNullable: true, allowSafe: true }],
         '@typescript-eslint/switch-exhaustiveness-check': 'error',
         '@typescript-eslint/triple-slash-reference': 'error',
         '@typescript-eslint/type-annotation-spacing': 'error',

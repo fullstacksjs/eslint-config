@@ -25,10 +25,7 @@ module.exports = {
     'lines-between-class-members': 'off',
     'max-classes-per-file': 'off',
     'max-depth': ['error', 4],
-    'max-lines': [
-      'error',
-      { max: 2500, skipBlankLines: false, skipComments: false },
-    ],
+    'max-lines': ['error', { max: 2500, skipBlankLines: false, skipComments: false }],
     'max-lines-per-function': ['error', 150],
     'max-nested-callbacks': ['error', 7],
     'max-params': ['error', 7],
