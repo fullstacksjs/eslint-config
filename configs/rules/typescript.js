@@ -45,7 +45,7 @@ module.exports = {
         '@typescript-eslint/no-extra-parens': 'off', // prettier
         '@typescript-eslint/no-extra-semi': 'off', // prettier
         '@typescript-eslint/no-extraneous-class': 'error',
-        '@typescript-eslint/no-floating-promises': 'off', // due to bad api
+        '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }],
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-implied-eval': 'error',
         '@typescript-eslint/no-inferrable-types': 'off',
