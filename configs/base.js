@@ -12,10 +12,7 @@ module.exports = {
     },
     'import/extensions': ['.js', '.mjs', '.jsx'],
     'import/core-modules': [],
-    'import/ignore': [
-      'node_modules',
-      '\\.(coffee|scss|css|less|hbs|svg|json)$',
-    ],
+    'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
   },
   env: {
     es6: true,
