@@ -1,10 +1,4 @@
 module.exports = {
-  plugins: ['@typescript-eslint/eslint-plugin'],
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
-  },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
@@ -33,6 +27,7 @@ module.exports = {
         '@typescript-eslint/member-delimiter-style': 'error',
         '@typescript-eslint/member-naming': 'off',
         '@typescript-eslint/member-ordering': 'off',
+        '@typescript-eslint/method-signature-style': ['warn', 'property'],
         '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/no-array-constructor': 'error',
         '@typescript-eslint/no-base-to-string': 'off', // false negative
@@ -65,6 +60,7 @@ module.exports = {
         '@typescript-eslint/no-unnecessary-qualifier': 'error',
         '@typescript-eslint/no-unnecessary-type-arguments': 'error',
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-unsafe-call': 'off',
         '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
@@ -92,8 +88,10 @@ module.exports = {
         '@typescript-eslint/prefer-optional-chain': 'warn',
         '@typescript-eslint/prefer-readonly-parameter-types': 'off', // I'm not sure...
         '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with autofix on save.
+        '@typescript/eslint/prefer-reduce-type-parameter': 'warn',
         '@typescript-eslint/prefer-regexp-exec': 'warn',
         '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
+        '@typescript-eslint/prefer-ts-expect-error': 'off',
         '@typescript-eslint/promise-function-async': 'off',
         '@typescript-eslint/quotes': 'off', // prettier
         '@typescript-eslint/require-array-sort-compare': 'error',

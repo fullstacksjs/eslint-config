@@ -1,6 +1,4 @@
 module.exports = {
-  extends: ['prettier'],
-  plugins: ['prettier'],
   rules: {
     'brace-style': 'off', // prettier
     'camelcase': ['off', { properties: 'always' }], // Handled by babel/camelcase

@@ -1,5 +1,6 @@
 module.exports = {
   parser: 'babel-eslint',
+  plugins: ['prettier', 'babel', 'import', 'jsx-a11y'],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -27,5 +28,8 @@ module.exports = {
     './rules/node',
     './rules/style',
     './rules/variables',
+    'prettier',
+    'prettier/babel',
+    'prettier/react',
   ],
 };

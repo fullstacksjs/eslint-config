@@ -1,5 +1,4 @@
 module.exports = {
-  plugins: ['import'],
   rules: {
     'global-require': 'off',
     'sort-imports': 'off',

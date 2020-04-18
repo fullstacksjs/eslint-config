@@ -1,5 +1,4 @@
 module.exports = {
-  plugins: ['babel'],
   rules: {
     'babel/camelcase': ['error', { properties: 'always' }],
     'babel/new-cap': 'off',
