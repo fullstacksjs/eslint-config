@@ -30,6 +30,7 @@
   },
   "main": "index.js",
   "dependencies": {
+    "@babel/core": "7.9.0",
     "@frontendmonster/utils": "0.2.10",
     "@typescript-eslint/eslint-plugin": "2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
