@@ -30,6 +30,5 @@ module.exports = {
     './rules/variables',
     'prettier',
     'prettier/babel',
-    'prettier/react',
   ],
 };
