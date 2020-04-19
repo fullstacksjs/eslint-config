@@ -88,7 +88,7 @@ module.exports = {
         '@typescript-eslint/prefer-optional-chain': 'warn',
         '@typescript-eslint/prefer-readonly-parameter-types': 'off', // I'm not sure...
         '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with autofix on save.
-        '@typescript/eslint/prefer-reduce-type-parameter': 'warn',
+        '@typescript-eslint/prefer-reduce-type-parameter': 'warn',
         '@typescript-eslint/prefer-regexp-exec': 'warn',
         '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
         '@typescript-eslint/prefer-ts-expect-error': 'off',
