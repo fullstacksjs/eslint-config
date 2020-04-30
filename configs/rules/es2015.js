@@ -2,7 +2,7 @@ module.exports = {
   rules: {
     'class-methods-use-this': 'off',
     'no-class-assign': 'error',
-    'no-duplicate-imports': 'error',
+    'no-duplicate-imports': 'off', // Handled by import plugin
     'no-restricted-imports': 'off',
     'no-return-await': 'error',
     'no-useless-computed-key': 'error',
