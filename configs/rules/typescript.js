@@ -125,10 +125,11 @@ module.exports = {
         'no-throw-literal': 'off',
         'no-unused-vars': 'off',
         'no-use-before-define': 'off',
-        'require-await': 'off',
-        'spaced-comment': 'off',
-        'semi': 'off',
+        'no-useless-constructor': 'off',
         'react/prop-types': ['off', { ignore: ['children', 'className'] }],
+        'require-await': 'off',
+        'semi': 'off',
+        'spaced-comment': 'off',
 
         // open issues
         'import/no-cycle': 'off', // PENDING: remove this on https://github.com/benmosher/eslint-plugin-import/issues/1453
