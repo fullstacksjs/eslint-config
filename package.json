@@ -1,6 +1,6 @@
 {
   "name": "@frontendmonster/eslint-config",
-  "version": "3.2.14",
+  "version": "3.2.15",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "frontendmonster eslint config",
@@ -58,10 +58,10 @@
   },
   "peerDependencies": {
     "@babel/core": ">=7",
-    "typescript": ">=3",
+    "eslint": ">=5",
     "prettier": ">=1",
     "react": ">=16",
-    "eslint": ">=5"
+    "typescript": ">=3"
   },
   "peerDependenciesMeta": {
     "typescript": {
