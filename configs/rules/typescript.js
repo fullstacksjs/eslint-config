@@ -9,22 +9,17 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/ban-ts-ignore': 'warn',
         '@typescript-eslint/ban-types': 'error',
-        '@typescript-eslint/brace-style': 'off', // prettier
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/class-literal-property-style': ['error', 'getters'],
         '@typescript-eslint/class-name-casing': 'error',
-        '@typescript-eslint/comma-spacing': ['warn', { after: true, before: false }],
         '@typescript-eslint/consistent-type-assertions': 'error',
         '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
         '@typescript-eslint/default-param-last': ['error'],
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-member-accessibility': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/func-call-spacing': 'off', // prettier
         '@typescript-eslint/generic-type-naming': 'off',
-        '@typescript-eslint/indent': 'off', // prettier
         '@typescript-eslint/interface-name-prefix': 'error',
-        '@typescript-eslint/member-delimiter-style': 'error',
         '@typescript-eslint/member-naming': 'off',
         '@typescript-eslint/member-ordering': 'off',
         '@typescript-eslint/method-signature-style': ['warn', 'property'],
@@ -37,8 +32,6 @@ module.exports = {
         '@typescript-eslint/no-empty-interface': 'off', // Annoying with autofix on save.
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-extra-non-null-assertion': 'error',
-        '@typescript-eslint/no-extra-parens': 'off', // prettier
-        '@typescript-eslint/no-extra-semi': 'off', // prettier
         '@typescript-eslint/no-extraneous-class': 'error',
         '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }],
         '@typescript-eslint/no-for-in-array': 'error',
@@ -93,18 +86,14 @@ module.exports = {
         '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
         '@typescript-eslint/prefer-ts-expect-error': 'off',
         '@typescript-eslint/promise-function-async': 'off',
-        '@typescript-eslint/quotes': 'off', // prettier
         '@typescript-eslint/require-array-sort-compare': 'error',
         '@typescript-eslint/require-await': 'error',
         '@typescript-eslint/restrict-plus-operands': 'off',
         '@typescript-eslint/restrict-template-expressions': 'off',
         '@typescript-eslint/return-await': 'error',
-        '@typescript-eslint/semi': 'error',
-        '@typescript-eslint/space-before-function-paren': 'off', // prettier
         '@typescript-eslint/strict-boolean-expressions': 'off', // Anoyying
         '@typescript-eslint/switch-exhaustiveness-check': 'error',
         '@typescript-eslint/triple-slash-reference': 'error',
-        '@typescript-eslint/type-annotation-spacing': 'error',
         '@typescript-eslint/typedef': [
           'error',
           {
@@ -115,21 +104,6 @@ module.exports = {
         ],
         '@typescript-eslint/unbound-method': 'off',
         '@typescript-eslint/unified-signatures': 'error',
-
-        // disable eslint rules which typescript extends
-        'brace-style': 'off',
-        'comma-spacing': 'off',
-        'func-call-spacing': 'off',
-        'no-dupe-class-members': 'off',
-        'no-implied-eval': 'off',
-        'no-throw-literal': 'off',
-        'no-unused-vars': 'off',
-        'no-use-before-define': 'off',
-        'no-useless-constructor': 'off',
-        'react/prop-types': ['off', { ignore: ['children', 'className'] }],
-        'require-await': 'off',
-        'semi': 'off',
-        'spaced-comment': 'off',
 
         // open issues
         'import/no-cycle': 'off', // PENDING: remove this on https://github.com/benmosher/eslint-plugin-import/issues/1453
