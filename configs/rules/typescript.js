@@ -6,8 +6,18 @@ module.exports = {
         '@typescript-eslint/adjacent-overload-signatures': 'error',
         '@typescript-eslint/array-type': 'error',
         '@typescript-eslint/await-thenable': 'error',
-        '@typescript-eslint/ban-ts-comment': 'off',
+        '@typescript-eslint/ban-ts-comment': [
+          'error',
+          {
+            'ts-expect-error': 'allow-with-description',
+            'ts-ignore': 'allow-with-description',
+            'ts-nocheck': 'allow-with-description',
+            'ts-check': 'allow-with-description',
+            'minimumDescriptionLength': 3,
+          },
+        ],
         '@typescript-eslint/ban-ts-ignore': 'warn',
+        '@typescript-eslint/ban-tslint-comment': 'off',
         '@typescript-eslint/ban-types': 'error',
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/class-literal-property-style': ['error', 'getters'],
@@ -26,6 +36,7 @@ module.exports = {
         '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/no-array-constructor': 'error',
         '@typescript-eslint/no-base-to-string': 'off', // false negative
+        '@typescript-eslint/no-confusing-non-null-assertion': 'error',
         '@typescript-eslint/no-dupe-class-members': 'error',
         '@typescript-eslint/no-dynamic-delete': 'error',
         '@typescript-eslint/no-empty-function': 'error',
