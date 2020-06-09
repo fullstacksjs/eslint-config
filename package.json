@@ -1,6 +1,6 @@
 {
   "name": "@frontendmonster/eslint-config",
-  "version": "3.2.16",
+  "version": "3.2.17",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "frontendmonster eslint config",
