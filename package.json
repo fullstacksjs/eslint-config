@@ -58,7 +58,7 @@
   },
   "peerDependencies": {
     "@babel/core": ">=7",
-    "eslint": ">=5",
+    "eslint": ">=6",
     "prettier": ">=1",
     "react": ">=16",
     "typescript": ">=3"
