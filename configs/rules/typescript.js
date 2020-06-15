@@ -13,12 +13,10 @@ module.exports = {
         'minimumDescriptionLength': 3,
       },
     ],
-    '@typescript-eslint/ban-ts-ignore': 'warn',
     '@typescript-eslint/ban-tslint-comment': 'off',
     '@typescript-eslint/ban-types': 'error',
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/class-literal-property-style': ['error', 'getters'],
-    '@typescript-eslint/class-name-casing': 'error',
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/default-param-last': ['error'],
@@ -26,11 +24,51 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/generic-type-naming': 'off',
-    '@typescript-eslint/interface-name-prefix': 'error',
     '@typescript-eslint/member-naming': 'off',
     '@typescript-eslint/member-ordering': 'off',
     '@typescript-eslint/method-signature-style': ['warn', 'property'],
-    '@typescript-eslint/naming-convention': 'off',
+    '@typescript-eslint/naming-convention': [
+      'warn',
+      {
+        selector: 'default',
+        format: ['camelCase'],
+      },
+      {
+        selector: 'variable',
+        format: ['camelCase', 'UPPER_CASE'],
+      },
+      {
+        selector: 'parameter',
+        format: ['camelCase'],
+        leadingUnderscore: 'allow',
+      },
+      {
+        selector: 'memberLike',
+        modifiers: ['private'],
+        format: ['camelCase'],
+        leadingUnderscore: 'allow',
+      },
+      {
+        selector: 'typeLike',
+        format: ['PascalCase'],
+      },
+      // disallow I prefix for interfaces
+      {
+        selector: 'interface',
+        format: ['PascalCase'],
+        custom: {
+          regex: '^I[A-Z]',
+          match: false,
+        },
+      },
+      // force use is/should/has ... for boolean variables
+      {
+        selector: 'variable',
+        types: ['boolean'],
+        format: ['camelCase'],
+        prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
+      },
+    ],
     '@typescript-eslint/no-array-constructor': 'error',
     '@typescript-eslint/no-base-to-string': 'off', // false negative
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
