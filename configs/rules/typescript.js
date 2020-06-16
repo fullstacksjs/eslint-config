@@ -33,9 +33,10 @@ module.exports = {
         selector: 'default',
         format: ['camelCase'],
       },
+      // variables, CONSTANTS, ReactComponents
       {
         selector: 'variable',
-        format: ['camelCase', 'UPPER_CASE'],
+        format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
       },
       {
         selector: 'parameter',
