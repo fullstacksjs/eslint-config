@@ -66,7 +66,7 @@ module.exports = {
         selector: 'variable',
         types: ['boolean'],
         format: ['camelCase'],
-        prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
+        prefix: ['is', 'should', 'has', 'can', 'did', 'will', 'enable'],
       },
     ],
     '@typescript-eslint/no-array-constructor': 'error',
