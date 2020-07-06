@@ -65,7 +65,7 @@ module.exports = {
     '@typescript-eslint/no-array-constructor': 'error',
     '@typescript-eslint/no-base-to-string': 'off', // false negative
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
-    '@typescript-eslint no-loss-of-precision': 'error',
+    '@typescript-eslint/no-loss-of-precision': 'error',
     '@typescript-eslint/no-dupe-class-members': 'error',
     '@typescript-eslint/no-dynamic-delete': 'error',
     '@typescript-eslint/no-empty-function': 'error',
