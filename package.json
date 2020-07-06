@@ -12,13 +12,13 @@
     "registry": "https://registry.npmjs.org"
   },
   "files": [
+    "rules",
+    "base.js",
     "index.js",
-    "utils.js",
-    "configs/rules",
-    "configs/base.js",
-    "configs/jest.js",
-    "configs/react.js",
-    "configs/typescript.js"
+    "jest.js",
+    "react.js",
+    "requiring-type-cheking.js",
+    "typescript.js"
   ],
   "scripts": {
     "lint": "eslint .",
