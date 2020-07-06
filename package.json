@@ -17,8 +17,8 @@
     "index.js",
     "jest.js",
     "react.js",
-    "requiring-type-cheking.js",
-    "typescript.js"
+    "typescript.js",
+    "typecheck.js"
   ],
   "scripts": {
     "lint": "eslint .",

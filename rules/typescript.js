@@ -61,13 +61,6 @@ module.exports = {
           match: false,
         },
       },
-      // force use is/should/has ... for boolean variables
-      {
-        selector: 'variable',
-        types: ['boolean'],
-        format: ['camelCase'],
-        prefix: ['is', 'should', 'has', 'can', 'did', 'will', 'enable'],
-      },
     ],
     '@typescript-eslint/no-array-constructor': 'error',
     '@typescript-eslint/no-base-to-string': 'off', // false negative
