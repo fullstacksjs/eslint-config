@@ -45,6 +45,7 @@ module.exports = {
     'no-proto': 'error',
     'no-redeclare': 'error',
     'no-restricted-properties': 'off',
+    'no-restricted-exports': 'off',
     'no-restricted-syntax': ['error', 'WithStatement'],
     'no-return-assign': 'error',
     'no-script-url': 'error',

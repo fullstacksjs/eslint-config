@@ -10,9 +10,9 @@ const packages = Packages(pkg);
 
 module.exports = {
   extends: [
-    require.resolve('./configs/base'),
-    packages.ifAnyDep('jest', () => require.resolve('./configs/jest')),
-    packages.ifAnyDep('react', () => require.resolve('./configs/react')),
-    packages.ifAnyDep('typescript', () => require.resolve('./configs/typescript')),
+    require.resolve('./base'),
+    packages.ifAnyDep('jest', () => require.resolve('./jest')),
+    packages.ifAnyDep('react', () => require.resolve('./react')),
+    packages.ifAnyDep('typescript', () => require.resolve('./typescript')),
   ].filter(Boolean),
 };

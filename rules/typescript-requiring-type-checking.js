@@ -1,0 +1,21 @@
+module.exports = {
+  rules: {
+    '@typescript-eslint/await-thenable': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-implied-eval': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/no-throw-literal': 'off',
+    '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
+    '@typescript-eslint/no-unnecessary-qualifier': 'off',
+    '@typescript-eslint/no-unnecessary-type-arguments': 'off',
+    '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+    '@typescript-eslint/prefer-includes': 'off',
+    '@typescript-eslint/prefer-reduce-type-parameter': 'off',
+    '@typescript-eslint/prefer-regexp-exec': 'off',
+    '@typescript-eslint/prefer-string-starts-ends-with': 'off',
+    '@typescript-eslint/require-array-sort-compare': 'off',
+    '@typescript-eslint/require-await': 'off',
+    '@typescript-eslint/return-await': 'off',
+    '@typescript-eslint/switch-exhaustiveness-check': 'off',
+  },
+};

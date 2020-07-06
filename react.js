@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['react', 'react-hooks'],
+  plugins: ['react', 'react-hooks', 'jsx-a11y'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -15,5 +15,4 @@ module.exports = {
     browser: true,
   },
   extends: ['./rules/react', './rules/react-hooks', './rules/jsx-a11y', 'prettier/react'],
-  rules: {},
 };
