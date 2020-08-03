@@ -130,6 +130,9 @@ module.exports = {
     '@typescript-eslint/unbound-method': 'off',
     '@typescript-eslint/unified-signatures': 'error',
 
+    // collisions
+    'no-useless-constructor': 'off',
+
     // open issues
     'import/no-cycle': 'off', // PENDING: remove this on https://github.com/benmosher/eslint-plugin-import/issues/1453
   },
