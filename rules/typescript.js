@@ -18,6 +18,7 @@ module.exports = {
     '@typescript-eslint/class-literal-property-style': ['error', 'getters'],
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+    '@typescript-eslint/consistent-type-imports': 'off',
     '@typescript-eslint/default-param-last': ['error'],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
@@ -52,6 +53,10 @@ module.exports = {
         selector: 'typeLike',
         format: ['PascalCase'],
       },
+      {
+        selector: 'enumMember',
+        format: ['PascalCase'],
+      },
       // disallow I prefix for interfaces
       {
         selector: 'interface',
@@ -65,7 +70,6 @@ module.exports = {
     '@typescript-eslint/no-array-constructor': 'error',
     '@typescript-eslint/no-base-to-string': 'off', // false negative
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
-    '@typescript-eslint/no-loss-of-precision': 'error',
     '@typescript-eslint/no-dupe-class-members': 'error',
     '@typescript-eslint/no-dynamic-delete': 'error',
     '@typescript-eslint/no-empty-function': 'error',
@@ -74,7 +78,10 @@ module.exports = {
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
     '@typescript-eslint/no-extraneous-class': 'error',
     '@typescript-eslint/no-for-in-array': 'error',
+    '@typescript-eslint/no-implicit-any-catch': 'off',
     '@typescript-eslint/no-inferrable-types': 'off',
+    '@typescript-eslint/no-loss-of-precision': 'error',
+    '@typescript-eslint/no-loop-func': 'error',
     '@typescript-eslint/no-magic-numbers': ['off', { ignoreEnums: true }], // Not good enough yet
     '@typescript-eslint/no-misused-new': 'error',
     '@typescript-eslint/no-namespace': 'error',
@@ -105,6 +112,7 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/no-var-requires': 'error',
     '@typescript-eslint/prefer-as-const': 'warn',
+    '@typescript-eslint/prefer-enum-initializers': 'off',
     '@typescript-eslint/prefer-for-of': 'warn',
     '@typescript-eslint/prefer-function-type': 'warn',
     '@typescript-eslint/prefer-literal-enum-member': 'error',
@@ -132,8 +140,10 @@ module.exports = {
 
     // collisions
     'no-useless-constructor': 'off',
+    'no-loop-func': 'off',
 
     // open issues
     'import/no-cycle': 'off', // PENDING: remove this on https://github.com/benmosher/eslint-plugin-import/issues/1453
+    'react/jsx-no-useless-fragment': 'off', // Need use-less-fragment for JSX return type
   },
 };
