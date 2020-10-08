@@ -141,6 +141,8 @@ module.exports = {
     // collisions
     'no-useless-constructor': 'off',
     'no-loop-func': 'off',
+    'babel/camelcase': 'off',
+    'no-use-before-define': 'off',
 
     // open issues
     'import/no-cycle': 'off', // PENDING: remove this on https://github.com/benmosher/eslint-plugin-import/issues/1453
