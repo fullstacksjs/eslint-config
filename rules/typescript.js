@@ -143,6 +143,7 @@ module.exports = {
     'no-loop-func': 'off',
     'babel/camelcase': 'off',
     'no-use-before-define': 'off',
+    'no-unused-vars': 'off',
 
     // open issues
     'import/no-cycle': 'off', // PENDING: remove this on https://github.com/benmosher/eslint-plugin-import/issues/1453

@@ -56,7 +56,7 @@ module.exports = {
     'require-jsdoc': 'off',
     'sort-keys': 'off',
     'sort-vars': 'off',
-    'spaced-comment': 'warn',
+    'spaced-comment': ['warn', 'always', { markers: ['/'] }], // ignore typescript triple-slash
     'prettier/prettier': 'error',
   },
 };
