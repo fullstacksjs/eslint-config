@@ -19,7 +19,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/consistent-type-imports': 'off',
-    '@typescript-eslint/default-param-last': ['error'],
+    '@typescript-eslint/default-param-last': 'warn',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -144,6 +144,7 @@ module.exports = {
     'babel/camelcase': 'off',
     'no-use-before-define': 'off',
     'no-unused-vars': 'off',
+    'default-param-last': 'off',
 
     // open issues
     'import/no-cycle': 'off', // PENDING: remove this on https://github.com/benmosher/eslint-plugin-import/issues/1453
