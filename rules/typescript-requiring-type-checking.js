@@ -1,6 +1,7 @@
 module.exports = {
   rules: {
     '@typescript-eslint/await-thenable': 'error',
+    '@typescript-eslint/dot-notation': 'warn',
     '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }],
     '@typescript-eslint/no-implied-eval': 'error',
     '@typescript-eslint/no-misused-promises': 'error',
@@ -60,5 +61,8 @@ module.exports = {
         prefix: ['is', 'should', 'has', 'can', 'did', 'will', 'enable'],
       },
     ],
+
+    // collisions
+    'dot-notation': 'off',
   },
 };

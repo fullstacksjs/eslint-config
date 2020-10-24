@@ -21,7 +21,6 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/consistent-type-imports': 'off',
     '@typescript-eslint/default-param-last': 'warn',
-    '@typescript-eslint/dot-notation': 'warn',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -151,7 +150,6 @@ module.exports = {
     // collisions
     '@babel/camelcase': 'off',
     'default-param-last': 'off',
-    'dot-notation': 'off',
     'init-declarations': 'off',
     'lines-between-class-members': 'off',
     'no-duplicate-imports': 'off',
