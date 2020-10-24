@@ -20,7 +20,7 @@ module.exports = {
     'line-comment-position': 'off',
     'lines-around-comment': 'off',
     'lines-around-directive': 'off',
-    'lines-between-class-members': 'off',
+    'lines-between-class-members': ['warn', 'always', { exceptAfterSingleLine: false }],
     'max-classes-per-file': 'off',
     'max-depth': ['error', 4],
     'max-lines': ['error', { max: 2500, skipBlankLines: false, skipComments: false }],

@@ -16,14 +16,18 @@ module.exports = {
     '@typescript-eslint/ban-types': 'error',
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/class-literal-property-style': ['error', 'getters'],
+    '@typescript-eslint/consistent-indexed-object-style': 'off',
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/consistent-type-imports': 'off',
     '@typescript-eslint/default-param-last': 'warn',
+    '@typescript-eslint/dot-notation': 'warn',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/generic-type-naming': 'off',
+    '@typescript-eslint/init-declarations': ['off'],
+    '@typescript-eslint/lines-between-class-members': ['warn', 'always', { exceptAfterSingleLine: false }],
     '@typescript-eslint/member-naming': 'off',
     '@typescript-eslint/member-ordering': 'off',
     '@typescript-eslint/method-signature-style': ['warn', 'property'],
@@ -71,6 +75,7 @@ module.exports = {
     '@typescript-eslint/no-base-to-string': 'off', // false negative
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
     '@typescript-eslint/no-dupe-class-members': 'error',
+    '@typescript-eslint/no-duplicate-imports': ['error'],
     '@typescript-eslint/no-dynamic-delete': 'error',
     '@typescript-eslint/no-empty-function': 'error',
     '@typescript-eslint/no-empty-interface': 'off', // Annoying with autofix on save.
@@ -80,15 +85,19 @@ module.exports = {
     '@typescript-eslint/no-for-in-array': 'error',
     '@typescript-eslint/no-implicit-any-catch': 'off',
     '@typescript-eslint/no-inferrable-types': 'off',
-    '@typescript-eslint/no-loss-of-precision': 'error',
+    '@typescript-eslint/no-invalid-this': ['error', { capIsConstructor: false }],
+    '@typescript-eslint/no-invalid-void-type': 'error',
     '@typescript-eslint/no-loop-func': 'error',
+    '@typescript-eslint/no-loss-of-precision': 'error',
     '@typescript-eslint/no-magic-numbers': ['off', { ignoreEnums: true }], // Not good enough yet
     '@typescript-eslint/no-misused-new': 'error',
     '@typescript-eslint/no-namespace': 'error',
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
     '@typescript-eslint/no-non-null-assertion': 'warn',
     '@typescript-eslint/no-parameter-properties': 'off',
+    '@typescript-eslint/no-redeclare': ['error', { ignoreDeclarationMerge: true }],
     '@typescript-eslint/no-require-imports': 'error',
+    '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/no-this-alias': 'error',
     '@typescript-eslint/no-type-alias': 'off', // prettier
     '@typescript-eslint/no-unnecessary-condition': 'off',
@@ -121,6 +130,7 @@ module.exports = {
     '@typescript-eslint/prefer-optional-chain': 'warn',
     '@typescript-eslint/prefer-readonly-parameter-types': 'off', // I'm not sure...
     '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with autofix on save.
+    '@typescript-eslint/prefer-readonly': 'off',
     '@typescript-eslint/prefer-ts-expect-error': 'off',
     '@typescript-eslint/promise-function-async': 'off',
     '@typescript-eslint/restrict-plus-operands': 'off',
@@ -139,12 +149,19 @@ module.exports = {
     '@typescript-eslint/unified-signatures': 'error',
 
     // collisions
-    'no-useless-constructor': 'off',
-    'no-loop-func': 'off',
-    'babel/camelcase': 'off',
-    'no-use-before-define': 'off',
-    'no-unused-vars': 'off',
+    '@babel/camelcase': 'off',
     'default-param-last': 'off',
+    'dot-notation': 'off',
+    'init-declarations': 'off',
+    'lines-between-class-members': 'off',
+    'no-duplicate-imports': 'off',
+    'no-invalid-this': 'off',
+    'no-loop-func': 'off',
+    'no-redeclare': 'off',
+    'no-shadow': 'off',
+    'no-unused-vars': 'off',
+    'no-use-before-define': 'off',
+    'no-useless-constructor': 'off',
 
     // open issues
     'import/no-cycle': 'off', // PENDING: remove this on https://github.com/benmosher/eslint-plugin-import/issues/1453

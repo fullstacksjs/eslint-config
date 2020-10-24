@@ -1,8 +1,8 @@
 module.exports = {
-  parser: 'babel-eslint',
-  plugins: ['prettier', 'babel', 'import'],
+  parser: '@babel/eslint-parser',
+  plugins: ['prettier', '@babel', 'import'],
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 12,
     sourceType: 'module',
   },
   settings: {
@@ -15,7 +15,6 @@ module.exports = {
     'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
   },
   env: {
-    es6: true,
     browser: true,
     node: true,
   },
