@@ -26,7 +26,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/generic-type-naming': 'off',
     '@typescript-eslint/init-declarations': ['off'],
-    '@typescript-eslint/lines-between-class-members': ['warn', 'always', { exceptAfterSingleLine: false }],
+    '@typescript-eslint/lines-between-class-members': ['warn', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/member-naming': 'off',
     '@typescript-eslint/member-ordering': 'off',
     '@typescript-eslint/method-signature-style': ['warn', 'property'],
