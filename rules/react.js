@@ -2,7 +2,7 @@ module.exports = {
   rules: {
     'react/boolean-prop-naming': 'off',
     'react/button-has-type': 'off',
-    'react/default-props-match-prop-types': 'error',
+    'react/default-props-match-prop-types': 'off',
     'react/destructuring-assignment': 'off',
     'react/display-name': ['off', { ignoreTranspilerName: false }],
     'react/forbid-component-props': 'off',
