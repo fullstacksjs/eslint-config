@@ -117,7 +117,6 @@ module.exports = {
         ignoreRestSiblings: true,
       },
     ],
-    '@typescript-eslint/no-confusing-void-expression': ['warn', { ignoreArrowShorthand: true, ignoreVoidOperator: true }],
     '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: true }],
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/no-var-requires': 'error',
