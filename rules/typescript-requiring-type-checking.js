@@ -2,6 +2,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/await-thenable': 'error',
     '@typescript-eslint/dot-notation': 'warn',
+    '@typescript-eslint/no-confusing-void-expression': ['warn', { ignoreArrowShorthand: true, ignoreVoidOperator: true }],
     '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }],
     '@typescript-eslint/no-implied-eval': 'error',
     '@typescript-eslint/no-misused-promises': 'error',
