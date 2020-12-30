@@ -1,5 +1,6 @@
 module.exports = {
   rules: {
+    'arrow-body-style': ['error', 'as-needed'],
     'brace-style': 'off', // prettier
     'camelcase': ['off', { properties: 'always' }], // Handled by babel/camelcase
     'capitalized-comments': 'off',
@@ -51,6 +52,7 @@ module.exports = {
     'one-var': ['error', { uninitialized: 'never', initialized: 'never' }],
     'operator-assignment': 'off',
     'padding-line-between-statements': 'off',
+    'prefer-arrow-callback': ['warn', { allowNamedFunctions: true, allowUnboundThis: true }],
     'prefer-destructuring': 'off',
     'prefer-object-spread': 'warn',
     'require-jsdoc': 'off',
