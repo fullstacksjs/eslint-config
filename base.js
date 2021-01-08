@@ -1,6 +1,6 @@
 module.exports = {
   parser: '@babel/eslint-parser',
-  plugins: ['prettier', '@babel', 'import'],
+  plugins: ['prettier', '@babel', 'import', 'simple-import-sort'],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',

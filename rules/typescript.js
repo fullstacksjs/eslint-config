@@ -48,6 +48,12 @@ module.exports = {
       },
       {
         selector: 'memberLike',
+        modifiers: ['static'],
+        format: ['camelCase', 'PascalCase'],
+        leadingUnderscore: 'allow',
+      },
+      {
+        selector: 'memberLike',
         modifiers: ['private'],
         format: ['camelCase'],
         leadingUnderscore: 'allow',
@@ -64,10 +70,7 @@ module.exports = {
       {
         selector: 'interface',
         format: ['PascalCase'],
-        custom: {
-          regex: '^I[A-Z]',
-          match: false,
-        },
+        custom: { regex: '^I[A-Z]', match: false },
       },
     ],
     '@typescript-eslint/no-array-constructor': 'error',
@@ -120,6 +123,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: true }],
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/no-var-requires': 'error',
+    '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
     '@typescript-eslint/prefer-as-const': 'warn',
     '@typescript-eslint/prefer-enum-initializers': 'off',
     '@typescript-eslint/prefer-for-of': 'warn',
@@ -129,12 +133,13 @@ module.exports = {
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/prefer-optional-chain': 'warn',
     '@typescript-eslint/prefer-readonly-parameter-types': 'off', // I'm not sure...
-    '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with autofix on save.
     '@typescript-eslint/prefer-readonly': 'off',
+    '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with autofix on save.
     '@typescript-eslint/prefer-ts-expect-error': 'off',
     '@typescript-eslint/promise-function-async': 'off',
     '@typescript-eslint/restrict-plus-operands': 'off',
     '@typescript-eslint/restrict-template-expressions': 'off',
+    '@typescript-eslint/sort-type-union-intersection-members': 'warn',
     '@typescript-eslint/strict-boolean-expressions': 'off', // Anoyying
     '@typescript-eslint/triple-slash-reference': 'error',
     '@typescript-eslint/typedef': [

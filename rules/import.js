@@ -1,21 +1,11 @@
 module.exports = {
   rules: {
     'global-require': 'off',
-    'sort-imports': 'off',
     'import/default': 'error',
     'import/dynamic-import-chunkname': 'off',
     'import/export': 'error',
     'import/exports-last': 'off',
-    'import/extensions': [
-      'error',
-      'always',
-      {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
+    'import/extensions': ['error', 'always', { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' }],
     'import/first': 'error',
     'import/group-exports': 'off',
     'import/imports-first': 'error',
@@ -49,13 +39,11 @@ module.exports = {
     'import/no-unused-modules': 'off',
     'import/no-useless-path-segments': 'off',
     'import/no-webpack-loader-syntax': 'error',
-    'import/order': [
-      'warn',
-      {
-        groups: ['builtin', ['external', 'internal'], 'parent', ['sibling', 'index']],
-      },
-    ],
+    'import/order': ['off', { groups: ['builtin', ['external', 'internal'], 'parent', ['sibling', 'index']] }], // collision
     'import/prefer-default-export': 'off',
     'import/unambiguous': 'off',
+    'simple-import-sort/exports': 'warn',
+    'simple-import-sort/imports': 'warn',
+    'sort-imports': 'off',
   },
 };
