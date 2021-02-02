@@ -101,7 +101,7 @@ module.exports = {
     '@typescript-eslint/no-require-imports': 'error',
     '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/no-this-alias': 'error',
-    '@typescript-eslint/no-type-alias': 'off', // prettier
+    '@typescript-eslint/no-type-alias': 'off',
     '@typescript-eslint/no-unnecessary-condition': 'off',
     '@typescript-eslint/no-unnecessary-type-constraint': 'warn',
     '@typescript-eslint/no-unsafe-assignment': 'off',
@@ -113,16 +113,12 @@ module.exports = {
     '@typescript-eslint/no-unused-vars-experimental': 'off', // Why two rules?
     '@typescript-eslint/no-unused-vars': [
       'error',
-      {
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^[iI]gnore(d)?',
-        args: 'after-used',
-        ignoreRestSiblings: true,
-      },
+      { argsIgnorePattern: '^_', varsIgnorePattern: '^[iI]gnore(d)?', args: 'after-used', ignoreRestSiblings: true },
     ],
     '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: true }],
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/no-var-requires': 'error',
+    '@typescript-eslint/object-curly-spacing': 'warn',
     '@typescript-eslint/prefer-as-const': 'warn',
     '@typescript-eslint/prefer-enum-initializers': 'off',
     '@typescript-eslint/prefer-for-of': 'warn',
@@ -138,17 +134,30 @@ module.exports = {
     '@typescript-eslint/promise-function-async': 'off',
     '@typescript-eslint/restrict-plus-operands': 'off',
     '@typescript-eslint/restrict-template-expressions': 'off',
-    '@typescript-eslint/sort-type-union-intersection-members': 'warn',
-    '@typescript-eslint/strict-boolean-expressions': 'off', // Anoyying
-    '@typescript-eslint/triple-slash-reference': 'error',
-    '@typescript-eslint/typedef': [
-      'error',
+    '@typescript-eslint/sort-type-union-intersection-members': [
+      'warn',
       {
-        parameter: false,
-        arrowParameter: false,
-        variableDeclaration: false,
+        checkIntersections: true,
+        checkUnions: true,
+        groupOrder: [
+          'named',
+          'keyword',
+          'operator',
+          'literal',
+          'function',
+          'import',
+          'conditional',
+          'object',
+          'tuple',
+          'intersection',
+          'union',
+          'nullish',
+        ],
       },
     ],
+    '@typescript-eslint/strict-boolean-expressions': 'off', // Anoyying
+    '@typescript-eslint/triple-slash-reference': 'error',
+    '@typescript-eslint/typedef': ['error', { parameter: false, arrowParameter: false, variableDeclaration: false }],
     '@typescript-eslint/unbound-method': 'off',
     '@typescript-eslint/unified-signatures': 'error',
 
@@ -165,9 +174,9 @@ module.exports = {
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
     'no-useless-constructor': 'off',
+    'object-curly-spacing': 'off',
 
     // open issues
-    'import/no-cycle': 'off', // PENDING: remove this on https://github.com/benmosher/eslint-plugin-import/issues/1453
-    'react/jsx-no-useless-fragment': 'off', // Need use-less-fragment for JSX return type
+    'react/jsx-no-useless-fragment': 'off', // Need useless-fragment for JSX return type
   },
 };
