@@ -82,7 +82,7 @@ If you need more advanced `typescript-eslint` rules, then you can extend from `"
 
 That's all. Feel free to use 💛
 
-[logo]: assets/logo.png
+[logo]: https://raw.githubusercontent.com/fullstacksjs/eslint-config/master/assets/logo.png
 [download-badge]: https://img.shields.io/npm/dm/@fullstacksjs/eslint-config?color=6464E2&label=DOWNLOADS&style=flat-square
 [version-badge]: https://img.shields.io/npm/v/@fullstacksjs/eslint-config?color=6464E2&label=VERSION&style=flat-square
 [license-badge]: https://img.shields.io/npm/l/@fullstacksjs/eslint-config?color=6464E2&label=LICENSE&style=flat-square

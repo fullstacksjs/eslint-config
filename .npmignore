@@ -1,6 +1,6 @@
-node_modules
+assets/
+node_modules/
 .editorconfig
 .gitignore
 .travis.yml
 CONTRIBUTING.md
-playground
