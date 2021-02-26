@@ -6,6 +6,6 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     '../rules/typescript',
     '../rules/typescript-requiring-type-checking',
-    'prettier/@typescript-eslint',
+    'prettier',
   ],
 };

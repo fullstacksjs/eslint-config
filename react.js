@@ -14,5 +14,5 @@ module.exports = {
   env: {
     browser: true,
   },
-  extends: ['./rules/react', './rules/react-hooks', './rules/jsx-a11y', 'prettier/react'],
+  extends: ['./rules/react', './rules/react-hooks', './rules/jsx-a11y', 'prettier'],
 };

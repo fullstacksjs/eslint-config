@@ -1,6 +1,5 @@
 module.exports = {
   rules: {
-    'global-require': 'off',
     'import/default': 'error',
     'import/dynamic-import-chunkname': 'off',
     'import/export': 'error',
@@ -8,7 +7,6 @@ module.exports = {
     'import/extensions': ['error', 'always', { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' }],
     'import/first': 'error',
     'import/group-exports': 'off',
-    'import/imports-first': 'error',
     'import/max-dependencies': 'off',
     'import/named': 'error',
     'import/namespace': 'error',

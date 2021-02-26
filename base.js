@@ -26,10 +26,8 @@ module.exports = {
     './rules/es2015',
     './rules/forbidden',
     './rules/import',
-    './rules/node',
     './rules/style',
     './rules/variables',
     'prettier',
-    'prettier/babel',
   ],
 };
