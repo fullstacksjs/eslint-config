@@ -48,6 +48,11 @@ module.exports = {
       },
       {
         selector: 'memberLike',
+        format: ['camelCase', 'PascalCase'],
+        leadingUnderscore: 'allow',
+      },
+      {
+        selector: 'memberLike',
         modifiers: ['static'],
         format: ['camelCase', 'PascalCase'],
         leadingUnderscore: 'allow',
