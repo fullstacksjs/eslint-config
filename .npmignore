@@ -4,3 +4,4 @@ node_modules/
 .gitignore
 .travis.yml
 CONTRIBUTING.md
+.husky/
