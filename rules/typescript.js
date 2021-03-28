@@ -30,54 +30,6 @@ module.exports = {
     '@typescript-eslint/member-naming': 'off',
     '@typescript-eslint/member-ordering': 'off',
     '@typescript-eslint/method-signature-style': ['warn', 'property'],
-    '@typescript-eslint/naming-convention': [
-      'warn',
-      {
-        selector: 'default',
-        format: ['camelCase'],
-      },
-      // variables, CONSTANTS, ReactComponents
-      {
-        selector: 'variable',
-        format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
-      },
-      {
-        selector: 'parameter',
-        format: ['camelCase'],
-        leadingUnderscore: 'allow',
-      },
-      {
-        selector: 'memberLike',
-        format: ['camelCase', 'PascalCase'],
-        leadingUnderscore: 'allow',
-      },
-      {
-        selector: 'memberLike',
-        modifiers: ['static'],
-        format: ['camelCase', 'PascalCase'],
-        leadingUnderscore: 'allow',
-      },
-      {
-        selector: 'memberLike',
-        modifiers: ['private'],
-        format: ['camelCase'],
-        leadingUnderscore: 'allow',
-      },
-      {
-        selector: 'typeLike',
-        format: ['PascalCase'],
-      },
-      {
-        selector: 'enumMember',
-        format: ['PascalCase'],
-      },
-      // disallow I prefix for interfaces
-      {
-        selector: 'interface',
-        format: ['PascalCase'],
-        custom: { regex: '^I[A-Z]', match: false },
-      },
-    ],
     '@typescript-eslint/no-array-constructor': 'error',
     '@typescript-eslint/no-base-to-string': 'off', // false negative
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
@@ -163,7 +115,7 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': 'off', // Anoyying
     '@typescript-eslint/triple-slash-reference': 'error',
     '@typescript-eslint/typedef': ['error', { parameter: false, arrowParameter: false, variableDeclaration: false }],
-    '@typescript-eslint/unbound-method': 'off',
+    '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
     '@typescript-eslint/unified-signatures': 'error',
 
     // collisions
