@@ -20,6 +20,7 @@ module.exports = {
     '@typescript-eslint/require-await': 'error',
     '@typescript-eslint/return-await': 'error',
     '@typescript-eslint/switch-exhaustiveness-check': 'error',
+    '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
     '@typescript-eslint/naming-convention': [
       'warn',
       {

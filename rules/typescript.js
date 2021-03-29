@@ -115,7 +115,6 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': 'off', // Anoyying
     '@typescript-eslint/triple-slash-reference': 'error',
     '@typescript-eslint/typedef': ['error', { parameter: false, arrowParameter: false, variableDeclaration: false }],
-    '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
     '@typescript-eslint/unified-signatures': 'error',
 
     // collisions
