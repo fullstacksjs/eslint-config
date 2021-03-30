@@ -59,7 +59,7 @@ module.exports = {
     'react/no-unescaped-entities': 'warn',
     'react/no-unknown-property': 'error',
     'react/no-unsafe': 'warn',
-    'react/no-unstable-nested-components': 'error',
+    'react/no-unstable-nested-components': ['error', { allowAsProps: true }],
     'react/no-unused-prop-types': 'error',
     'react/no-unused-state': 'error',
     'react/no-will-update-set-state': 'error',
