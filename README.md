@@ -13,7 +13,13 @@
 ## Installation
 
 ```sh
-npm install --save-dev @fullstacksjs/eslint-config
+$ npm install --save-dev @fullstacksjs/eslint-config
+```
+
+or
+
+```sh
+$ yarn add --dev @fullstacksjs/eslint-config
 ```
 
 required peer-dependencies:
@@ -46,6 +52,7 @@ It reads your root `package.json` dependencies and includes necessary rules.
     "@fullstacksjs/eslint-config/jest",
     "@fullstacksjs/eslint-config/react",
     "@fullstacksjs/eslint-config/typescript",
+    "@fullstacksjs/eslint-config/strict",
     "@fullstacksjs/eslint-config/typecheck" // ⚠️ Needs configurations (not included in default config)
   ]
 }
@@ -79,6 +86,7 @@ If you need more advanced `typescript-eslint` rules, then you can extend from `"
 * eslint-plugin-react
 * eslint-plugin-react-hooks
 * eslint-plugin-simple-import-sort
+* eslint-plugin-fp
 
 That's all. Feel free to use 💛
 
