@@ -1,6 +1,12 @@
 module.exports = {
   rules: {
     'no-console': 'warn',
+    'fp/no-delete': 'error',
+    'fp/no-get-set': 'error',
+    'fp/no-nil': 'error',
+    'fp/no-this': 'error',
+    'fp/no-throw': 'error',
+    'fp/no-unused-expression': ['error', { allowUseStrict: true }],
     '@typescript-eslint/naming-convention': [
       'warn',
       {
