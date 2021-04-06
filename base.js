@@ -1,6 +1,5 @@
 module.exports = {
-  parser: '@babel/eslint-parser',
-  plugins: ['prettier', '@babel', 'import', 'simple-import-sort', 'fp'],
+  plugins: ['prettier', 'import', 'simple-import-sort', 'fp'],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
@@ -21,7 +20,6 @@ module.exports = {
     node: true,
   },
   extends: [
-    './rules/babel',
     './rules/base',
     './rules/es2015',
     './rules/forbidden',

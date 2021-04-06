@@ -118,7 +118,7 @@ module.exports = {
     '@typescript-eslint/unified-signatures': 'error',
 
     // collisions
-    '@babel/camelcase': 'off',
+    'camelcase': 'off',
     'default-param-last': 'off',
     'init-declarations': 'off',
     'lines-between-class-members': 'off',

@@ -21,7 +21,7 @@ $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier typescript
 for JavaScript development
 
 ```sh
-$ npm install --save-dev @fullstacksjs/eslint-config eslint prettier @babel/core
+$ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 ```
 
 optional dependencies (if you need):
@@ -73,9 +73,7 @@ If you need more advanced `typescript-eslint` rules, then you can extend from `"
 
 ## What's included?
 
-* @babel/eslint-plugin
 * @typescript-eslint/eslint-plugin
-* eslint-plugin-babel
 * eslint-plugin-import
 * eslint-plugin-jest
 * slint-plugin-jsx-a11y

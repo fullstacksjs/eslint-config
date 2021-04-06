@@ -2,7 +2,7 @@ module.exports = {
   rules: {
     'arrow-body-style': ['error', 'as-needed'],
     'brace-style': 'off', // prettier
-    'camelcase': ['off', { properties: 'always' }], // Handled by babel/camelcase
+    'camelcase': ['warn', { properties: 'always' }],
     'capitalized-comments': 'off',
     'comma-spacing': ['warn', { after: true, before: false }],
     'consistent-this': 'off',

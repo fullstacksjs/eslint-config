@@ -27,7 +27,7 @@ module.exports = {
     'no-implicit-coercion': 'off',
     'no-implicit-globals': 'error',
     'no-implied-eval': 'error',
-    'no-invalid-this': 'off', // in favor of @babel/no-invalid-this
+    'no-invalid-this': 'warn',
     'no-iterator': 'error',
     'no-labels': 'error',
     'no-lone-blocks': 'error',
