@@ -13,17 +13,23 @@
 ## Installation
 
 If you use [ESLint](https://eslint.org/) alongside [TypeScript](https://typescriptlang.org/)
-
+### npm :
 ```sh
 $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier typescript
 ```
-
+### yarn :
+```sh
+$ yarn add --dev @fullstacksjs/eslint-config eslint prettier typescript
+```
 for JavaScript development
-
+### npm :
 ```sh
 $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 ```
-
+### yarn :
+```sh
+$ yarn add --dev @fullstacksjs/eslint-config eslint prettier
+```
 optional dependencies (if you need):
 * react
 * jest
