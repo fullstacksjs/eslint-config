@@ -1,6 +1,6 @@
 module.exports = {
   rules: {
-    'arrow-body-style': ['error', 'as-needed'],
+    'arrow-body-style': ['off', 'as-needed'], // Annoying
     'brace-style': 'off', // prettier
     'camelcase': ['warn', { properties: 'always' }],
     'capitalized-comments': 'off',
