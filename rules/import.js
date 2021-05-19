@@ -16,6 +16,8 @@ module.exports = {
     'import/no-anonymous-default-export': 'off',
     'import/no-commonjs': 'off',
     'import/no-cycle': ['error', { maxDepth: Infinity }],
+    'import/no-relative-packages': 'error',
+    'import/no-import-module-exports': 'off',
     'import/no-default-export': 'off',
     'import/no-deprecated': 'warn',
     'import/no-duplicates': 'error',
