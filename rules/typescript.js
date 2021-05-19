@@ -37,7 +37,7 @@ module.exports = {
     '@typescript-eslint/no-duplicate-imports': ['error'],
     '@typescript-eslint/no-dynamic-delete': 'error',
     '@typescript-eslint/no-empty-function': 'error',
-    '@typescript-eslint/no-empty-interface': 'off', // Annoying with autofix on save.
+    '@typescript-eslint/no-empty-interface': 'off', // Annoying with auto-fix on save.
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
     '@typescript-eslint/no-extraneous-class': 'error',
@@ -54,7 +54,7 @@ module.exports = {
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
     '@typescript-eslint/no-non-null-assertion': 'warn',
     '@typescript-eslint/no-parameter-properties': 'off',
-    '@typescript-eslint/no-redeclare': ['off', { ignoreDeclarationMerge: true }], // usefull in FP.
+    '@typescript-eslint/no-redeclare': ['off', { ignoreDeclarationMerge: true }], // useful in FP.
     '@typescript-eslint/no-require-imports': 'error',
     '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/no-this-alias': 'error',
@@ -62,6 +62,7 @@ module.exports = {
     '@typescript-eslint/no-unnecessary-condition': 'off',
     '@typescript-eslint/no-unnecessary-type-constraint': 'warn',
     '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-argument': 'off',
     '@typescript-eslint/no-unsafe-call': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
     '@typescript-eslint/no-unsafe-return': 'off',
@@ -86,7 +87,7 @@ module.exports = {
     '@typescript-eslint/prefer-optional-chain': 'warn',
     '@typescript-eslint/prefer-readonly-parameter-types': 'off', // I'm not sure...
     '@typescript-eslint/prefer-readonly': 'off',
-    '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with autofix on save.
+    '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with auto-fix on save.
     '@typescript-eslint/prefer-ts-expect-error': 'off',
     '@typescript-eslint/promise-function-async': 'off',
     '@typescript-eslint/restrict-plus-operands': 'off',
@@ -112,7 +113,7 @@ module.exports = {
         ],
       },
     ],
-    '@typescript-eslint/strict-boolean-expressions': 'off', // Anoyying
+    '@typescript-eslint/strict-boolean-expressions': 'off', // Annoying
     '@typescript-eslint/triple-slash-reference': 'error',
     '@typescript-eslint/typedef': ['error', { parameter: false, arrowParameter: false, variableDeclaration: false }],
     '@typescript-eslint/unified-signatures': 'error',

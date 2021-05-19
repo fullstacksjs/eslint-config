@@ -82,7 +82,7 @@ If you need more advanced `typescript-eslint` rules, then you can extend from `"
 * @typescript-eslint/eslint-plugin
 * eslint-plugin-import
 * eslint-plugin-jest
-* slint-plugin-jsx-a11y
+* eslint-plugin-jsx-a11y
 * eslint-plugin-prettier
 * eslint-plugin-react
 * eslint-plugin-react-hooks
