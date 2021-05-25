@@ -1,7 +1,7 @@
 module.exports = {
   plugins: ['prettier', 'import', 'simple-import-sort', 'fp'],
   parserOptions: {
-    ecmaVersion: 12,
+    ecmaVersion: 2020,
     sourceType: 'module',
     requireConfigFile: false,
   },
