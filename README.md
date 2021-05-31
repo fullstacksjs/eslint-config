@@ -88,6 +88,8 @@ If you need more advanced `typescript-eslint` rules, then you can extend from `"
 * eslint-plugin-react-hooks
 * eslint-plugin-simple-import-sort
 * eslint-plugin-fp
+* eslint-plugin-node
+* eslint-plugin-promise
 
 That's all. Feel free to use 💛
 

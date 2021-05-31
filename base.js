@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['prettier', 'import', 'simple-import-sort', 'fp'],
+  plugins: ['prettier', 'import', 'simple-import-sort', 'promise', 'node', 'fp'],
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
@@ -27,6 +27,8 @@ module.exports = {
     './rules/style',
     './rules/variables',
     './rules/fp',
+    './rules/promise',
+    './rules/node',
     'prettier',
   ],
 };
