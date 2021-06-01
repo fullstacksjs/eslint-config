@@ -1,8 +1,8 @@
 module.exports = {
   rules: {
-    'node/no-unsupported-features/es-builtins': 'error',
-    'node/no-unsupported-features/es-syntax': 'error',
-    'node/no-unsupported-features/node-builtins': 'error',
+    'node/no-unsupported-features/es-builtins': 'off', // Nice but not a general rule
+    'node/no-unsupported-features/es-syntax': 'off', // Nice but not a general rule
+    'node/no-unsupported-features/node-builtins': 'off', // Nice but not a general rule
     'node/prefer-global/buffer': 'warn',
     'node/prefer-global/console': 'warn',
     'node/prefer-global/process': 'warn',
@@ -22,7 +22,6 @@ module.exports = {
     'node/no-exports-assign': 'error',
     'node/no-extraneous-import': 'off', // import plugin
     'node/no-extraneous-require': 'off', // import plugin
-    'node/no-hide-core-modules': 'error',
     'node/no-missing-import': 'off', // import plugin
     'node/no-missing-require': 'off', // import plugin
     'node/no-mixed-requires': 'warn',
@@ -36,7 +35,6 @@ module.exports = {
     'node/no-unpublished-bin': 'off',
     'node/no-unpublished-import': 'off',
     'node/no-unpublished-require': 'off',
-    'node/no-unsupported-features': 'off',
     'node/process-exit-as-throw': 'off',
     'node/shebang': 'off',
   },
