@@ -1,6 +1,6 @@
 module.exports = {
   rules: {
-    'promise/always-return': 'error',
+    'promise/always-return': 'off',
     'promise/avoid-new': 'off',
     'promise/catch-or-return': 'off',
     'promise/no-callback-in-promise': 'off',
