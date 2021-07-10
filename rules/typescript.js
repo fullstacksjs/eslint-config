@@ -81,7 +81,7 @@ module.exports = {
     '@typescript-eslint/prefer-enum-initializers': 'off',
     '@typescript-eslint/prefer-for-of': 'warn',
     '@typescript-eslint/prefer-function-type': 'warn',
-    '@typescript-eslint/prefer-literal-enum-member': 'error',
+    '@typescript-eslint/prefer-literal-enum-member': ['error', { allowBitwiseExpressions: true }],
     '@typescript-eslint/prefer-namespace-keyword': 'error',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/prefer-optional-chain': 'warn',
