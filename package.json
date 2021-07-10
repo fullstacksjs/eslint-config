@@ -35,8 +35,8 @@
   "main": "index.js",
   "dependencies": {
     "@frontendmonster/utils": "0.3.11",
-    "@typescript-eslint/eslint-plugin": "4.26.0",
-    "@typescript-eslint/parser": "4.26.0",
+    "@typescript-eslint/eslint-plugin": "4.28.2",
+    "@typescript-eslint/parser": "4.28.2",
     "eslint-config-prettier": "8.3.0",
     "eslint-import-resolver-typescript": "2.4.0",
     "eslint-plugin-fp": "2.3.0",
