@@ -3,6 +3,7 @@ module.exports = {
     'jest/consistent-test-it': 'off',
     'jest/expect-expect': 'off',
     'jest/lowercase-name': 'off',
+    'jest/max-nested-describe': ['error', { max: 2 }],
     'jest/no-alias-methods': 'off',
     'jest/no-commented-out-tests': 'warn',
     'jest/no-conditional-expect': 'error',
