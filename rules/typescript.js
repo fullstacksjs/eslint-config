@@ -86,7 +86,6 @@ module.exports = {
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/prefer-optional-chain': 'warn',
     '@typescript-eslint/prefer-readonly-parameter-types': 'off', // I'm not sure...
-    '@typescript-eslint/prefer-return-this-type': 'warn',
     '@typescript-eslint/prefer-readonly': 'off',
     '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with auto-fix on save.
     '@typescript-eslint/prefer-ts-expect-error': 'off',
