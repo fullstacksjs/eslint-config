@@ -35,8 +35,8 @@
   "main": "index.js",
   "dependencies": {
     "@frontendmonster/utils": "0.3.11",
-    "@typescript-eslint/eslint-plugin": "4.28.4",
-    "@typescript-eslint/parser": "4.28.4",
+    "@typescript-eslint/eslint-plugin": "4.29.0",
+    "@typescript-eslint/parser": "4.29.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-import-resolver-typescript": "2.4.0",
     "eslint-plugin-fp": "2.3.0",
@@ -53,7 +53,7 @@
     "read-pkg-up": "7.0.1"
   },
   "devDependencies": {
-    "eslint": "7.31.0",
+    "eslint": "7.32.0",
     "eslint-find-rules": "3.6.1",
     "husky": "7.0.1",
     "lint-staged": "11.1.0",
