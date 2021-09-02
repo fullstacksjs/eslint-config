@@ -7,7 +7,7 @@ module.exports = {
     'import/extensions': ['error', 'always', { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' }],
     'import/first': 'error',
     'import/group-exports': 'off',
-    'import/max-dependencies': 'off',
+    'import/max-dependencies': ['off', { ignoreTypeImports: true }],
     'import/named': 'error',
     'import/namespace': 'error',
     'import/newline-after-import': 'warn',
