@@ -77,6 +77,7 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/no-var-requires': 'error',
     '@typescript-eslint/object-curly-spacing': 'warn',
+    '@typescript-eslint/padding-line-between-statements': ['off', { blankLine: 'always', prev: 'var', next: 'return' }],
     '@typescript-eslint/prefer-as-const': 'warn',
     '@typescript-eslint/prefer-enum-initializers': 'off',
     '@typescript-eslint/prefer-for-of': 'warn',
@@ -85,13 +86,19 @@ module.exports = {
     '@typescript-eslint/prefer-namespace-keyword': 'error',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/prefer-optional-chain': 'warn',
-    '@typescript-eslint/prefer-readonly-parameter-types': 'off', // I'm not sure...
+    '@typescript-eslint/prefer-readonly-parameter-types': [
+      'off',
+      { checkParameterProperties: true, ignoreInferredTypes: false, treatMethodsAsReadonly: true },
+    ], // I'm not sure...
     '@typescript-eslint/prefer-readonly': 'off',
     '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with auto-fix on save.
     '@typescript-eslint/prefer-ts-expect-error': 'off',
     '@typescript-eslint/promise-function-async': 'off',
     '@typescript-eslint/restrict-plus-operands': 'off',
-    '@typescript-eslint/restrict-template-expressions': 'off',
+    '@typescript-eslint/restrict-template-expressions': [
+      'off',
+      { allowNumber: true, allowBoolean: false, allowAny: false, allowNullish: false, allowRegExp: false },
+    ],
     '@typescript-eslint/sort-type-union-intersection-members': [
       'warn',
       {
@@ -132,6 +139,7 @@ module.exports = {
     'no-use-before-define': 'off',
     'no-useless-constructor': 'off',
     'object-curly-spacing': 'off',
+    'padding-line-between-statements': 'off',
 
     // open issues
     'react/jsx-no-useless-fragment': 'off', // Need useless-fragment for JSX return type
