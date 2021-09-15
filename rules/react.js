@@ -67,6 +67,7 @@ module.exports = {
     'react/prefer-read-only-props': 'off',
     'react/prefer-stateless-function': 'off',
     'react/prop-types': 'off',
+    'react/prefer-exact-props': 'off',
     'react/react-in-jsx-scope': 'off', // jsx automatic runtime
     'react/require-default-props': 'off',
     'react/require-optimization': 'off',
