@@ -35,8 +35,8 @@
   "main": "index.js",
   "dependencies": {
     "@frontendmonster/utils": "0.3.11",
-    "@typescript-eslint/eslint-plugin": "4.31.1",
-    "@typescript-eslint/parser": "4.31.1",
+    "@typescript-eslint/eslint-plugin": "4.31.2",
+    "@typescript-eslint/parser": "4.31.2",
     "eslint-config-prettier": "8.3.0",
     "eslint-import-resolver-typescript": "2.5.0",
     "eslint-plugin-fp": "2.3.0",
@@ -60,7 +60,7 @@
     "np": "7.5.0",
     "npm-run-all": "4.1.5",
     "pinst": "2.1.6",
-    "prettier": "2.4.0",
+    "prettier": "2.4.1",
     "typescript": "4.4.3"
   },
   "peerDependencies": {
