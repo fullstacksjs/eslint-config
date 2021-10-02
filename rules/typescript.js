@@ -51,18 +51,20 @@ module.exports = {
     '@typescript-eslint/no-magic-numbers': ['off', { ignoreEnums: true }], // Not good enough yet
     '@typescript-eslint/no-misused-new': 'error',
     '@typescript-eslint/no-namespace': 'error',
+    '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'error',
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
     '@typescript-eslint/no-non-null-assertion': 'warn',
     '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/no-redeclare': ['off', { ignoreDeclarationMerge: true }], // useful in FP.
     '@typescript-eslint/no-require-imports': 'error',
+    '@typescript-eslint/no-restricted-imports': 'off',
     '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/no-this-alias': 'error',
     '@typescript-eslint/no-type-alias': 'off',
     '@typescript-eslint/no-unnecessary-condition': 'off',
     '@typescript-eslint/no-unnecessary-type-constraint': 'warn',
-    '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-unsafe-argument': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-unsafe-call': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
     '@typescript-eslint/no-unsafe-return': 'off',
@@ -121,6 +123,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/strict-boolean-expressions': 'off', // Annoying
+
     '@typescript-eslint/triple-slash-reference': 'error',
     '@typescript-eslint/typedef': ['error', { parameter: false, arrowParameter: false, variableDeclaration: false }],
     '@typescript-eslint/unified-signatures': 'error',
@@ -134,6 +137,7 @@ module.exports = {
     'no-invalid-this': 'off',
     'no-loop-func': 'off',
     'no-redeclare': 'off',
+    'no-restricted-imports': 'off',
     'no-shadow': 'off',
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
