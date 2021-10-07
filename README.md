@@ -13,26 +13,38 @@
 ## Installation
 
 If you use [ESLint](https://eslint.org/) alongside [TypeScript](https://typescriptlang.org/)
+
 ### npm :
+
 ```sh
 $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier typescript
 ```
+
 ### yarn :
+
 ```sh
 $ yarn add --dev @fullstacksjs/eslint-config eslint prettier typescript
 ```
+
 for JavaScript development
+
 ### npm :
+
 ```sh
 $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 ```
+
 ### yarn :
+
 ```sh
 $ yarn add --dev @fullstacksjs/eslint-config eslint prettier
 ```
+
 optional dependencies (if you need):
+
 * react
 * jest
+* cypress
 
 ## Usage
 
@@ -56,6 +68,7 @@ It reads your root `package.json` dependencies and includes necessary rules.
     "@fullstacksjs/eslint-config/react",
     "@fullstacksjs/eslint-config/typescript",
     "@fullstacksjs/eslint-config/strict",
+    "@fullstacksjs/eslint-config/cypress",
     "@fullstacksjs/eslint-config/typecheck" // ⚠️ Needs configurations (not included in default config)
   ]
 }
@@ -82,6 +95,7 @@ If you need more advanced `typescript-eslint` rules, then you can extend from `"
 * @typescript-eslint/eslint-plugin
 * eslint-plugin-import
 * eslint-plugin-jest
+* eslint-plugin-cypress
 * eslint-plugin-jsx-a11y
 * eslint-plugin-prettier
 * eslint-plugin-react

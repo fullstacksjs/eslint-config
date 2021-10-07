@@ -69,13 +69,20 @@
     "eslint": ">=7",
     "prettier": ">=1",
     "react": ">=16",
-    "typescript": ">=4"
+    "typescript": ">=4",
+    "cypress": ">=8"
   },
   "peerDependenciesMeta": {
     "typescript": {
       "optional": true
     },
     "react": {
+      "optional": true
+    },
+    "cypress": {
+      "optional": true
+    },
+    "jest": {
       "optional": true
     }
   }
