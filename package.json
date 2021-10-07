@@ -16,6 +16,7 @@
     "base.js",
     "index.js",
     "jest.js",
+    "cypress.js",
     "react.js",
     "typescript.js",
     "typecheck.js"
