@@ -67,11 +67,11 @@
     "typescript": "4.4.3"
   },
   "peerDependencies": {
-    "eslint": ">=7",
-    "prettier": ">=1",
+    "eslint": "1",
+    "prettier": "2",
     "react": ">=16",
-    "typescript": ">=4",
-    "cypress": ">=8"
+    "typescript": "4",
+    "cypress": "8"
   },
   "peerDependenciesMeta": {
     "typescript": {
