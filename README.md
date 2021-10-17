@@ -69,6 +69,7 @@ It reads your root `package.json` dependencies and includes necessary rules.
     "@fullstacksjs/eslint-config/typescript",
     "@fullstacksjs/eslint-config/strict",
     "@fullstacksjs/eslint-config/cypress",
+    "@fullstacksjs/eslint-config/esm", // for native ESM modules
     "@fullstacksjs/eslint-config/typecheck" // ⚠️ Needs configurations (not included in default config)
   ]
 }

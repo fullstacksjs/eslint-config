@@ -19,7 +19,8 @@
     "cypress.js",
     "react.js",
     "typescript.js",
-    "typecheck.js"
+    "typecheck.js",
+    "esm.js"
   ],
   "scripts": {
     "lint": "eslint .",
@@ -43,7 +44,7 @@
     "eslint-import-resolver-typescript": "2.5.0",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-fp": "2.3.0",
-    "eslint-plugin-import": "2.24.2",
+    "eslint-plugin-import": "2.25.2",
     "eslint-plugin-jest": "24.4.0",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-node": "11.1.0",
