@@ -9,6 +9,7 @@ module.exports = {
     'fp/no-this': 'error',
     'fp/no-throw': 'error',
     'fp/no-unused-expression': ['error', { allowUseStrict: true }],
+    '@typescript-eslint/no-non-null-assertion': 'warn',
     '@typescript-eslint/naming-convention': [
       'warn',
       {
