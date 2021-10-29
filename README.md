@@ -96,6 +96,7 @@ If you need more advanced `typescript-eslint` rules, then you can extend from `"
 * @typescript-eslint/eslint-plugin
 * eslint-plugin-import
 * eslint-plugin-jest
+* eslint-plugin-jest-formatting
 * eslint-plugin-cypress
 * eslint-plugin-jsx-a11y
 * eslint-plugin-prettier

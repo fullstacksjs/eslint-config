@@ -46,6 +46,14 @@ module.exports = {
     'jest/valid-expect-in-promise': 'error',
     'jest/valid-expect': 'error',
     'jest/valid-title': 'warn',
+    'jest-formatting/padding-around-after-all-blocks': 'warn',
+    'jest-formatting/padding-around-after-each-blocks': 'warn',
+    'jest-formatting/padding-around-before-all-blocks': 'warn',
+    'jest-formatting/padding-around-before-each-blocks': 'warn',
+    'jest-formatting/padding-around-expect-groups': 'warn',
+    'jest-formatting/padding-around-describe-blocks': 'warn',
+    'jest-formatting/padding-around-test-blocks': 'warn',
+    'jest-formatting/padding-around-all': 'warn',
 
     // conflicts
     '@typescript-eslint/unbound-method': 'off',
