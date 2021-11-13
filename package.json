@@ -17,6 +17,7 @@
     "index.js",
     "jest.js",
     "cypress.js",
+    "nextjs.js",
     "react.js",
     "typescript.js",
     "typecheck.js",
