@@ -31,7 +31,6 @@
     "check-rules:typescript": "eslint-find-rules --no-core --unused ./tests/typescript.js",
     "check-rules:cypress": "eslint-find-rules --no-core --unused ./tests/cypress.js",
     "test": "npm-run-all --parallel check-rules:*",
-    "prepare": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
     "pre-commit": "npm run test && lint-staged"
@@ -39,42 +38,42 @@
   "main": "index.js",
   "dependencies": {
     "@frontendmonster/utils": "0.3.11",
-    "@typescript-eslint/eslint-plugin": "4.33.0",
-    "@typescript-eslint/parser": "4.33.0",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-import-resolver-typescript": "2.5.0",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-fp": "2.3.0",
-    "eslint-plugin-import": "2.25.2",
-    "eslint-plugin-jest-formatting": "3.0.0",
-    "eslint-plugin-jest": "24.4.0",
-    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-jest-formatting": "3.1.0",
+    "eslint-plugin-jest": "25.2.4",
+    "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-promise": "5.1.1",
-    "eslint-plugin-react-hooks": "4.2.0",
-    "eslint-plugin-react": "7.25.1",
+    "eslint-plugin-react-hooks": "4.3.0",
+    "eslint-plugin-react": "7.27.1",
     "eslint-plugin-simple-import-sort": "7.0.0",
     "lodash.has": "4.5.2",
     "read-pkg-up": "7.0.1"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-find-rules": "3.6.1",
+    "eslint": "8.3.0",
+    "eslint-find-rules": "4.0.0",
     "husky": "7.0.4",
-    "lint-staged": "11.2.6",
-    "np": "7.5.0",
+    "lint-staged": "12.0.3",
+    "np": "7.6.0",
     "npm-run-all": "4.1.5",
     "pinst": "2.1.6",
     "prettier": "2.4.1",
-    "typescript": "4.4.4"
+    "typescript": "4.5.2"
   },
   "peerDependencies": {
-    "eslint": "7",
+    "eslint": ">=7",
     "prettier": "2",
     "react": ">=16",
     "typescript": "4",
-    "cypress": "8"
+    "cypress": ">=8"
   },
   "peerDependenciesMeta": {
     "typescript": {
