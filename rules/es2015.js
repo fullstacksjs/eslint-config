@@ -1,10 +1,18 @@
 module.exports = {
   rules: {
     'class-methods-use-this': 'off',
+    'constructor-super': 'error',
+    'no-await-in-loop': 'error',
     'no-class-assign': 'error',
+    'no-const-assign': 'error',
+    'no-dupe-class-members': 'error',
     'no-duplicate-imports': 'off', // Handled by import plugin
+    'no-new-symbol': 'error',
     'no-restricted-imports': 'off',
     'no-return-await': 'error',
+    'no-this-before-super': 'error',
+    'no-unused-expressions': 'off',
+    'no-unused-private-class-members': 'warn',
     'no-useless-computed-key': 'error',
     'no-useless-constructor': 'error',
     'no-useless-rename': 'error',
@@ -17,12 +25,5 @@ module.exports = {
     'prefer-template': 'error',
     'require-yield': 'error',
     'symbol-description': 'error',
-    'constructor-super': 'error',
-    'no-await-in-loop': 'error',
-    'no-const-assign': 'error',
-    'no-dupe-class-members': 'error',
-    'no-new-symbol': 'error',
-    'no-this-before-super': 'error',
-    'no-unused-expressions': 'off',
   },
 };
