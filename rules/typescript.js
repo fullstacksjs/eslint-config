@@ -19,7 +19,6 @@ module.exports = {
     '@typescript-eslint/consistent-indexed-object-style': 'off',
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-    '@typescript-eslint/consistent-type-imports': 'off',
     '@typescript-eslint/default-param-last': 'warn',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
@@ -58,6 +57,8 @@ module.exports = {
     '@typescript-eslint/no-redeclare': ['off', { ignoreDeclarationMerge: true }], // useful in FP.
     '@typescript-eslint/no-require-imports': 'error',
     '@typescript-eslint/no-restricted-imports': 'off',
+    '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports', disallowTypeAnnotations: true }],
+    '@typescript-eslint/consistent-type-exports': 'warn',
     '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/no-this-alias': 'error',
     '@typescript-eslint/no-type-alias': 'off',
