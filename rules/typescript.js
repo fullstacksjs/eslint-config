@@ -148,5 +148,6 @@ module.exports = {
 
     // open issues
     'react/jsx-no-useless-fragment': 'off', // Need useless-fragment for JSX return type
+    'dot-notation': 'off', // Need to have IndexSignaturePropertyAccess Typescript compiler option
   },
 };
