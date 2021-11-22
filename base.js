@@ -1,5 +1,12 @@
 module.exports = {
-  plugins: ['prettier', 'import', 'simple-import-sort', 'promise', 'node', 'fp'],
+  plugins: [
+    'prettier',
+    'import',
+    'simple-import-sort',
+    // 'promise' PENDING: https://github.com/xjamundx/eslint-plugin-promise/issues/218
+    'node',
+    'fp',
+  ],
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
@@ -27,7 +34,7 @@ module.exports = {
     './rules/style',
     './rules/variables',
     './rules/fp',
-    './rules/promise',
+    // './rules/promise', PENDING: https://github.com/xjamundx/eslint-plugin-promise/issues/218
     './rules/node',
     'prettier',
   ],
