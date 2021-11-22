@@ -1,7 +1,10 @@
 module.exports = {
   rules: {
     '@typescript-eslint/await-thenable': 'error',
-    '@typescript-eslint/dot-notation': 'warn',
+    '@typescript-eslint/dot-notation': [
+      'warn',
+      { allowPrivateClassPropertyAccess: false, allowProtectedClassPropertyAccess: false, allowIndexSignaturePropertyAccess: true },
+    ],
     '@typescript-eslint/no-meaningless-void-operator': ['warn', { checkNever: false }],
     '@typescript-eslint/no-confusing-void-expression': ['warn', { ignoreArrowShorthand: true, ignoreVoidOperator: true }],
     '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }],
