@@ -1,6 +1,7 @@
 module.exports = {
   rules: {
     '@typescript-eslint/await-thenable': 'error',
+    '@typescript-eslint/consistent-type-exports': 'warn',
     '@typescript-eslint/dot-notation': [
       'warn',
       { allowPrivateClassPropertyAccess: false, allowProtectedClassPropertyAccess: false, allowIndexSignaturePropertyAccess: true },
