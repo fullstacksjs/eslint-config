@@ -47,12 +47,11 @@ module.exports = {
     'jest/require-top-level-describe': 'off',
     'jest/unbound-method': 'error',
     'jest/valid-describe-callback': 'error',
-    'jest/valid-describe': 'error',
     'jest/valid-expect-in-promise': 'error',
     'jest/valid-expect': 'error',
     'jest/valid-title': 'warn',
 
-    // jest-formatiing
+    // jest-formatting
     'jest-formatting/padding-around-after-all-blocks': 'warn',
     'jest-formatting/padding-around-after-each-blocks': 'warn',
     'jest-formatting/padding-around-all': 'warn',
