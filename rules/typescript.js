@@ -79,7 +79,7 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/no-var-requires': 'error',
     '@typescript-eslint/object-curly-spacing': 'warn',
-    '@typescript-eslint/padding-line-between-statements': ['warn', { blankLine: 'always', prev: ['return', 'export'], next: 'export' }],
+    '@typescript-eslint/padding-line-between-statements': ['warn', { blankLine: 'always', prev: ['return'], next: ['export'] }],
     '@typescript-eslint/prefer-as-const': 'warn',
     '@typescript-eslint/prefer-enum-initializers': 'off',
     '@typescript-eslint/prefer-for-of': 'warn',
