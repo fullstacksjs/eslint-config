@@ -38,8 +38,8 @@
   "main": "index.js",
   "dependencies": {
     "@frontendmonster/utils": "0.3.11",
-    "@typescript-eslint/eslint-plugin": "5.4.0",
-    "@typescript-eslint/parser": "5.4.0",
+    "@typescript-eslint/eslint-plugin": "5.6.0",
+    "@typescript-eslint/parser": "5.6.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-import-resolver-typescript": "2.5.0",
     "eslint-plugin-cypress": "2.12.1",
@@ -57,14 +57,14 @@
     "read-pkg-up": "7.0.1"
   },
   "devDependencies": {
-    "eslint": "8.3.0",
+    "eslint": "8.4.1",
     "eslint-find-rules": "4.0.0",
     "husky": "7.0.4",
     "lint-staged": "12.1.2",
     "np": "7.6.0",
     "npm-run-all": "4.1.5",
     "pinst": "2.1.6",
-    "prettier": "2.5.0",
+    "prettier": "2.5.1",
     "typescript": "4.5.2"
   },
   "peerDependencies": {
