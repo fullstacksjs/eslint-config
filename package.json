@@ -88,5 +88,8 @@
     "jest": {
       "optional": true
     }
+  },
+  "bin": {
+    "@fullstacksjs/eslint-config": "./bin/index.js"
   }
 }
