@@ -115,7 +115,7 @@ If you need more advanced `typescript-eslint` rules, then you can extend from `"
 * eslint-plugin-simple-import-sort
 * eslint-plugin-fp
 * eslint-plugin-node
-* ~~eslint-plugin-promise~~ ⚠️ Disabled in v7-beta, because it's not currently supports eslint@8 ([Issue](https://github.com/xjamundx/eslint-plugin-promise/issues/218))
+* eslint-plugin-promise
 
 That's all. Feel free to use 💛
 

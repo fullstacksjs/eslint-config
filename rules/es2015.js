@@ -25,5 +25,6 @@ module.exports = {
     'prefer-template': 'error',
     'require-yield': 'error',
     'symbol-description': 'error',
+    'prefer-object-has-own': 'warn',
   },
 };
