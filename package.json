@@ -63,11 +63,13 @@
     "husky": "7.0.4",
     "inquirer": "8.2.0",
     "lint-staged": "12.1.2",
+    "listr": "0.14.3",
     "np": "7.6.0",
     "npm-run-all": "4.1.5",
     "pinst": "2.1.6",
     "prettier": "2.5.1",
-    "typescript": "4.5.4"
+    "typescript": "4.5.4",
+    "yargs": "17.3.1"
   },
   "peerDependencies": {
     "cypress": ">=8",
