@@ -1,14 +1,15 @@
-const { writeFileSync } = require('fs');
+const { writeFile } = require('fs/promises');
 
-const generateFile = (eslintconfig, ctx, task) => {
-  try {
-    writeFileSync('.eslintrc', JSON.stringify(eslintconfig, null, 2));
-    task.title = `.eslintrc - Successfully Generated.`;
-    return Promise.resolve('ok');
-  } catch (err) {
-    ctx.isEslintrc = false;
-    task.title = `Generating .eslintrc file`;
-    return new Error("Couldn't create file");
-  }
-};
-module.exports = generateFile;
+function createFileTask(eslintrc, ctx, task) {
+  return writeFile('.eslintrc', JSON.stringify(eslintrc, null, 2))
+    .then(() => {
+      task.title = `.eslintrc - Successfully Generated.`;
+    })
+    .catch(() => {
+      ctx.isEslintrc = false;
+      task.title = `Generating .eslintrc file`;
+      throw Error("Couldn't create file");
+    });
+}
+
+module.exports = createFileTask;

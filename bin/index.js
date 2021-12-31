@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-const createConfig = require('./lib/createConfig');
-const runTasks = require('./lib/tasks');
 
-(async () => {
-  const { eslintrc, packages } = await createConfig();
-  runTasks(packages, eslintrc);
-})();
+const createOptions = require('./lib/createOptions');
+const createTasks = require('./lib/tasks');
+
+createOptions()
+  .then(createTasks)
+  .then(tasks => tasks.run())
+  .catch(() => {});

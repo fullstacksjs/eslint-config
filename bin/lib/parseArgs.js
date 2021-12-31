@@ -9,11 +9,4 @@ const args = yargs(process.argv.slice(2))
   .help('h')
   .alias('h', 'help').argv;
 
-const createAnswers = () => {
-  const answers = {
-    technology: args.t || 'js',
-  };
-  return answers;
-};
-
-module.exports = { args, createAnswers };
+module.exports = args;
