@@ -16,6 +16,10 @@ module.exports = {
         selector: 'default',
         format: ['camelCase'],
       },
+      {
+        selector: 'function',
+        format: ['camelCase', 'PascalCase'],
+      },
       // variables, CONSTANTS, ReactComponents
       {
         selector: 'variable',
@@ -23,7 +27,7 @@ module.exports = {
       },
       {
         selector: 'parameter',
-        format: ['camelCase'],
+        format: ['camelCase', 'PascalCase'],
         leadingUnderscore: 'allow',
       },
       {
