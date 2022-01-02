@@ -15,6 +15,7 @@
     "fullstacksjs-eslint": "./bin/index.js"
   },
   "files": [
+    "bin",
     "rules",
     "base.js",
     "index.js",
