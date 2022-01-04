@@ -12,7 +12,7 @@ async function createOptions() {
   const optionsFromArgs = { technology: args.t };
   const userInput = isTechnologyInArgv ? optionsFromArgs : await getUserInput();
 
-  if (userInput.language === 'ts') {
+  if (userInput.technology === 'ts') {
     requiredPackages.push('typescript');
   }
 
