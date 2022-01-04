@@ -4,7 +4,7 @@ function getUserInput() {
   return inquirer.prompt([
     {
       type: 'list',
-      name: 'language',
+      name: 'technology',
       message: 'which technology are you using?',
       choices: [
         {
