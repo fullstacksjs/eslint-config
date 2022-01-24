@@ -79,6 +79,7 @@ It reads your root `package.json` dependencies and includes necessary rules.
     "@fullstacksjs/eslint-config/typescript",
     "@fullstacksjs/eslint-config/strict",
     "@fullstacksjs/eslint-config/cypress",
+    "@fullstacksjs/eslint-config/storybook",
     "@fullstacksjs/eslint-config/esm", // for native ESM modules
     "@fullstacksjs/eslint-config/typecheck" // ⚠️ Needs configurations (not included in default config)
   ]
@@ -116,6 +117,7 @@ If you need more advanced `typescript-eslint` rules, then you can extend from `"
 * eslint-plugin-fp
 * eslint-plugin-node
 * eslint-plugin-promise
+* eslint-plugin-storybook
 
 That's all. Feel free to use 💛
 
