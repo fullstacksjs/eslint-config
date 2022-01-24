@@ -21,7 +21,6 @@
     "index.js",
     "jest.js",
     "cypress.js",
-    "nextjs.js",
     "storybook.js",
     "react.js",
     "typescript.js",

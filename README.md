@@ -58,16 +58,6 @@ Just extend from `@fullstacksjs`:
 
 It reads your root `package.json` dependencies and includes necessary rules.
 
-## NextJS
-
-[NextJS](https://nextjs.org/) config is subset of base config which is compatible with builtin NextJS eslint config.
-
-```json
-{
-  "extends": ["@fullstacksjs/eslint-config/nextjs"]
-}
-```
-
 ## Advanced Usage
 
 ```jsonc
