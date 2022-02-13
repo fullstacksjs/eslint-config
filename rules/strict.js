@@ -28,7 +28,7 @@ module.exports = {
       {
         selector: 'parameter',
         format: ['camelCase', 'PascalCase'],
-        leadingUnderscore: 'allow',
+        leadingUnderscore: 'allowSingleOrDouble',
       },
       {
         selector: 'memberLike',
