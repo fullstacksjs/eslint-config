@@ -13,5 +13,6 @@ module.exports = {
     'storybook/csf-component': 'warn',
     'storybook/no-stories-of': 'warn',
     'storybook/no-title-property-in-meta': 'warn',
+    'storybook/meta-inline-properties': 'off',
   },
 };

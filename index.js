@@ -8,9 +8,11 @@ const { packageJson: pkg } = readPkgUp.sync({
 
 const packages = Packages(pkg);
 
+/** @type { import('eslint').Linter.Config } */
 module.exports = {
   extends: [
     require.resolve('./base'),
+    require.resolve('./storybook'),
     packages.ifAnyDep('jest', () => require.resolve('./jest')),
     packages.ifAnyDep('react', () => require.resolve('./react')),
     packages.ifAnyDep('typescript', () => require.resolve('./typescript')),

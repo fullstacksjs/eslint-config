@@ -1,3 +1,4 @@
+/** @type { import('eslint').Linter.Config } */
 module.exports = {
   plugins: ['prettier', 'import', 'simple-import-sort', 'promise', 'node', 'fp'],
   parserOptions: {

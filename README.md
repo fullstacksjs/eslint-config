@@ -70,6 +70,7 @@ It reads your root `package.json` dependencies and includes necessary rules.
     "@fullstacksjs/eslint-config/strict",
     "@fullstacksjs/eslint-config/cypress",
     "@fullstacksjs/eslint-config/storybook",
+    "@fullstacksjs/eslint-config/graphql", // Need extra config
     "@fullstacksjs/eslint-config/esm", // for native ESM modules
     "@fullstacksjs/eslint-config/typecheck" // ⚠️ Needs configurations (not included in default config)
   ]
@@ -92,6 +93,30 @@ If you need more advanced `typescript-eslint` rules, then you can extend from `"
 }
 ```
 
+## Graphql
+
+To enable graphql module you need to extends from `@fullstacksjs/eslint-config/graphql` and configure schema and operations in you eslint config or graphql config. for more information checkout [here](https://github.com/B2o5T/graphql-eslint#configuration).
+
+Here is an example:
+
+```jsonc
+// eslintrc
+
+{
+  "extends": [
+    ...
+    "@fullstacksjs/eslint-config/eslint"
+  ],
+}
+```
+
+```yaml
+# .graphqlrc.yml
+
+schema: 'path/to/schema'
+```
+
+
 ## What's included?
 
 * @typescript-eslint/eslint-plugin
@@ -108,6 +133,7 @@ If you need more advanced `typescript-eslint` rules, then you can extend from `"
 * eslint-plugin-node
 * eslint-plugin-promise
 * eslint-plugin-storybook
+* eslint-plugin-graphql
 
 That's all. Feel free to use 💛
 
