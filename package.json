@@ -45,10 +45,10 @@
   "main": "index.js",
   "dependencies": {
     "@frontendmonster/utils": "0.3.11",
-    "@graphql-eslint/eslint-plugin": "3.8.0",
+    "@graphql-eslint/eslint-plugin": "3.10.1",
     "@typescript-eslint/eslint-plugin": "5.17.0",
     "@typescript-eslint/parser": "5.17.0",
-    "eslint-config-prettier": "8.3.0",
+    "eslint-config-prettier": "8.5.0",
     "eslint-import-resolver-typescript": "2.7.0",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-fp": "2.3.0",
