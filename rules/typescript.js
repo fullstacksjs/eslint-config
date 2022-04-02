@@ -129,6 +129,7 @@ module.exports = {
     ],
     '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: true }],
     '@typescript-eslint/no-useless-constructor': 'error',
+    '@typescript-eslint/no-useless-empty-export': 'warn',
     '@typescript-eslint/no-var-requires': 'error',
     '@typescript-eslint/object-curly-spacing': 'warn',
     '@typescript-eslint/padding-line-between-statements': ['warn', { blankLine: 'always', prev: ['return'], next: ['export'] }],
@@ -175,6 +176,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/strict-boolean-expressions': 'off', // Annoying
+    '@typescript-eslint/space-before-blocks': 'off',
 
     '@typescript-eslint/triple-slash-reference': 'error',
     '@typescript-eslint/typedef': ['error', { parameter: false, arrowParameter: false, variableDeclaration: false }],
@@ -196,6 +198,7 @@ module.exports = {
     'no-useless-constructor': 'off',
     'object-curly-spacing': 'off',
     'padding-line-between-statements': 'off',
+    'space-before-blocks': 'off',
 
     // open issues
     'react/jsx-no-useless-fragment': 'off', // Need useless-fragment for JSX return type
