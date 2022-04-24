@@ -37,7 +37,8 @@
     "check-rules:cypress": "eslint-find-rules --no-core --unused ./tests/cypress.js",
     "check-rules:graphql": "eslint-find-rules --no-core --unused ./tests/graphql.js",
     "check-rules:storybook": "eslint-find-rules --no-core --unused ./tests/storybook.js",
-    "test": "npm-run-all --parallel check-rules:*",
+    "spell": "cspell ./* --no-progress",
+    "test": "npm-run-all --parallel check-rules:* && npm run spell",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
     "pre-commit": "npm run test && lint-staged"
@@ -66,6 +67,7 @@
     "read-pkg-up": "7.0.1"
   },
   "devDependencies": {
+    "cspell": "5.19.7",
     "eslint": "8.12.0",
     "eslint-find-rules": "4.1.0",
     "husky": "7.0.4",
@@ -79,9 +81,9 @@
   "peerDependencies": {
     "cypress": ">=8",
     "eslint": ">=7",
+    "graphql": ">=15",
     "prettier": "2",
     "react": ">=16",
-    "graphql": ">=15",
     "typescript": "4"
   },
   "peerDependenciesMeta": {

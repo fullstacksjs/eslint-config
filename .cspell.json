@@ -1,0 +1,18 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/package.json"
+  ],
+  "dictionaries": [
+    "node"
+  ],
+  "words": [
+    "frontendmonster",
+    "fullstacksjs",
+    "graphqlrc",
+    "nextjs",
+    "typecheck"
+  ]
+}
