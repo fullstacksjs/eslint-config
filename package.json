@@ -20,6 +20,7 @@
     "base.js",
     "index.js",
     "jest.js",
+    "nextjs.js",
     "cypress.js",
     "storybook.js",
     "graphql.js",
