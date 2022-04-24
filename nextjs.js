@@ -32,7 +32,6 @@ module.exports = {
     './rules/node',
     require.resolve('./storybook'),
     packages.ifAnyDep('jest', () => require.resolve('./jest')),
-    packages.ifAnyDep('react', () => require.resolve('./react')),
     packages.ifAnyDep('typescript', () => require.resolve('./typescript')),
     packages.ifAnyDep('cypress', () => require.resolve('./cypress')),
     'prettier',
