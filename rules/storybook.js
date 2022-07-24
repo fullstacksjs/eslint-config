@@ -5,6 +5,7 @@ module.exports = {
     'storybook/default-exports': 'error',
     'storybook/hierarchy-separator': 'warn',
     'storybook/no-redundant-story-name': 'warn',
+    'storybook/no-uninstalled-addons': 'error',
     'storybook/prefer-pascal-case': 'warn',
     'storybook/story-exports': 'error',
     'storybook/use-storybook-expect': 'error',

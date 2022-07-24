@@ -64,7 +64,7 @@
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.4.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
-    "eslint-plugin-storybook": "0.5.11",
+    "eslint-plugin-storybook": "0.6.1",
     "read-pkg-up": "7.0.1"
   },
   "devDependencies": {
