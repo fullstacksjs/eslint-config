@@ -13,7 +13,7 @@ module.exports = {
     'react/function-component-definition': ['warn', { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' }],
     'react/hook-use-state': 'warn',
     'react/iframe-missing-sandbox': 'error',
-    'react/jsx-boolean-value': 'off',
+    'react/jsx-boolean-value': 'warn',
     'react/jsx-child-element-spacing': 'warn',
     'react/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'ignore' }],
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
