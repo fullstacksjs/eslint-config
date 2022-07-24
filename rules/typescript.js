@@ -16,6 +16,7 @@ module.exports = {
     '@typescript-eslint/ban-types': 'error',
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/class-literal-property-style': ['error', 'getters'],
+    '@typescript-eslint/consistent-generic-constructors': ['warn', 'constructor'],
     '@typescript-eslint/consistent-indexed-object-style': 'off',
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
@@ -84,7 +85,7 @@ module.exports = {
     '@typescript-eslint/no-base-to-string': 'off', // false negative
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
     '@typescript-eslint/no-dupe-class-members': 'error',
-    '@typescript-eslint/no-duplicate-imports': ['error'],
+    '@typescript-eslint/no-duplicate-enum-values': 'error',
     '@typescript-eslint/no-dynamic-delete': 'error',
     '@typescript-eslint/no-empty-function': 'error',
     '@typescript-eslint/no-empty-interface': 'off', // Annoying with auto-fix on save.
@@ -92,7 +93,6 @@ module.exports = {
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
     '@typescript-eslint/no-extraneous-class': 'error',
     '@typescript-eslint/no-for-in-array': 'error',
-    '@typescript-eslint/no-implicit-any-catch': 'off',
     '@typescript-eslint/no-inferrable-types': 'off',
     '@typescript-eslint/no-invalid-this': ['error', { capIsConstructor: false }],
     '@typescript-eslint/no-invalid-void-type': 'error',
@@ -104,7 +104,6 @@ module.exports = {
     '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'error',
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
     '@typescript-eslint/no-non-null-assertion': 'off',
-    '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/no-redeclare': ['off', { ignoreDeclarationMerge: true }], // useful in FP.
     '@typescript-eslint/no-require-imports': 'error',
     '@typescript-eslint/no-restricted-imports': 'off',
@@ -137,6 +136,7 @@ module.exports = {
     '@typescript-eslint/no-useless-empty-export': 'warn',
     '@typescript-eslint/no-var-requires': 'error',
     '@typescript-eslint/object-curly-spacing': 'warn',
+    '@typescript-eslint/parameter-properties': 'off',
     '@typescript-eslint/padding-line-between-statements': ['warn', { blankLine: 'always', prev: ['return'], next: ['export'] }],
     '@typescript-eslint/prefer-as-const': 'warn',
     '@typescript-eslint/prefer-enum-initializers': 'off',
@@ -192,7 +192,6 @@ module.exports = {
     'default-param-last': 'off',
     'init-declarations': 'off',
     'lines-between-class-members': 'off',
-    'no-duplicate-imports': 'off',
     'no-invalid-this': 'off',
     'no-loop-func': 'off',
     'no-redeclare': 'off',
