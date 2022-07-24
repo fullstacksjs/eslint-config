@@ -37,7 +37,7 @@ module.exports = {
     'import/no-unassigned-import': 'off',
     'import/no-unresolved': ['error', { caseSensitiveStrict: true }],
     'import/no-unused-modules': 'off',
-    'import/no-useless-path-segments': 'off',
+    'import/no-useless-path-segments': 'warn',
     'import/no-webpack-loader-syntax': 'error',
     'import/order': ['off', { groups: ['builtin', ['external', 'internal'], 'parent', ['sibling', 'index']] }], // collision
     'import/prefer-default-export': 'off',
