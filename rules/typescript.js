@@ -111,13 +111,6 @@ module.exports = {
     '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/no-this-alias': 'error',
     '@typescript-eslint/no-type-alias': 'off',
-    '@typescript-eslint/no-unnecessary-condition': [
-      'warn',
-      {
-        allowConstantLoopConditions: false,
-        allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
-      },
-    ],
     '@typescript-eslint/no-unnecessary-type-constraint': 'warn',
     '@typescript-eslint/no-unsafe-argument': 'off',
     '@typescript-eslint/no-unsafe-assignment': 'off',
