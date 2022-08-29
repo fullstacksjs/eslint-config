@@ -8,6 +8,7 @@ module.exports = {
     ],
     '@typescript-eslint/no-confusing-void-expression': ['warn', { ignoreArrowShorthand: true, ignoreVoidOperator: true }],
     '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }],
+    '@typescript-eslint/no-for-in-array': 'error',
     '@typescript-eslint/no-implied-eval': 'error',
     '@typescript-eslint/no-meaningless-void-operator': ['warn', { checkNever: false }],
     '@typescript-eslint/no-misused-promises': 'error',

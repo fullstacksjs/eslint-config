@@ -92,7 +92,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
     '@typescript-eslint/no-extraneous-class': 'error',
-    '@typescript-eslint/no-for-in-array': 'error',
     '@typescript-eslint/no-inferrable-types': 'off',
     '@typescript-eslint/no-invalid-this': ['error', { capIsConstructor: false }],
     '@typescript-eslint/no-invalid-void-type': 'error',
