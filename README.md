@@ -115,7 +115,7 @@ Here is an example:
 {
   "extends": [
     ...
-    "@fullstacksjs/eslint-config/eslint"
+    "@fullstacksjs/eslint-config/graphql"
   ],
 }
 ```
