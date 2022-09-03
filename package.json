@@ -48,8 +48,8 @@
   "dependencies": {
     "@frontendmonster/utils": "0.3.11",
     "@graphql-eslint/eslint-plugin": "3.10.6",
-    "@typescript-eslint/eslint-plugin": "5.30.7",
-    "@typescript-eslint/parser": "5.30.7",
+    "@typescript-eslint/eslint-plugin": "5.36.1",
+    "@typescript-eslint/parser": "5.36.1",
     "eslint-config-prettier": "8.5.0",
     "eslint-import-resolver-typescript": "3.3.0",
     "eslint-plugin-cypress": "2.12.1",

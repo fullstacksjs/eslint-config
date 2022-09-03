@@ -28,6 +28,10 @@ module.exports = {
     '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
     '@typescript-eslint/prefer-includes': 'warn',
     '@typescript-eslint/prefer-reduce-type-parameter': 'warn',
+    '@typescript-eslint/prefer-nullish-coalescing': [
+      'warn',
+      { ignoreConditionalTests: false, ignoreTernaryTests: false, ignoreMixedLogicalExpressions: false, forceSuggestionFixer: false },
+    ],
     '@typescript-eslint/prefer-regexp-exec': 'warn',
     '@typescript-eslint/prefer-return-this-type': 'warn',
     '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
