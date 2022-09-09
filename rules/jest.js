@@ -65,5 +65,6 @@ module.exports = {
 
     // conflicts
     '@typescript-eslint/unbound-method': 'off',
+    'fp/no-let': 'off',
   },
 };
