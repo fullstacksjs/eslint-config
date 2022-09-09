@@ -2,7 +2,7 @@
 module.exports = {
   overrides: [
     {
-      files: ['**/cypress/**/*.js', '**/cypress/**/*.ts'],
+      files: ['**/cypress/**/*.+(js|jsx)', '**/cypress/**/*.+(ts|tsx)'],
       plugins: ['cypress'],
       env: {
         'cypress/globals': true,
