@@ -5,7 +5,7 @@ const dirs = '+(test|tests|__test__|__tests__|spec|specs)';
 module.exports = {
   overrides: [
     {
-      files: [`**/${dirs}/**/*.${exts}`, `**/**/*.+(spec|test).${exts}`],
+      files: [`**/${dirs}/**/*.${exts}`, `**/**/*.+(spec|test|e2e-spec|e2e-test).${exts}`],
       plugins: ['jest', 'jest-formatting'],
       env: {
         'jest/globals': true,
