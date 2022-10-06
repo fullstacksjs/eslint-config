@@ -11,7 +11,7 @@ module.exports = {
     'react/forbid-foreign-prop-types': 'error',
     'react/forbid-prop-types': 'off',
     'react/function-component-definition': ['warn', { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' }],
-    'react/hook-use-state': 'warn',
+    'react/hook-use-state': 'off',
     'react/iframe-missing-sandbox': 'error',
     'react/jsx-boolean-value': 'warn',
     'react/jsx-child-element-spacing': 'warn',
