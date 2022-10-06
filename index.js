@@ -1,21 +1,14 @@
-const fs = require('fs');
-const { Packages } = require('@frontendmonster/utils');
-const readPkgUp = require('read-pkg-up');
-
-const { packageJson: pkg } = readPkgUp.sync({
-  cwd: fs.realpathSync(process.cwd()),
-});
-
-const packages = Packages(pkg);
+const packages = require('./packages');
+const { compact } = require('@fullstacksjs/toolbox');
 
 /** @type { import('eslint').Linter.Config } */
 module.exports = {
-  extends: [
+  extends: compact([
     require.resolve('./base'),
     require.resolve('./storybook'),
     require.resolve('./jest'),
     packages.ifAnyDep('react', () => require.resolve('./react')),
     packages.ifAnyDep('typescript', () => require.resolve('./typescript')),
     packages.ifAnyDep('cypress', () => require.resolve('./cypress')),
-  ].filter(Boolean),
+  ]),
 };

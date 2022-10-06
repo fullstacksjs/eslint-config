@@ -1,3 +1,5 @@
+const packages = require('../packages');
+
 module.exports = {
   rules: {
     'jest/consistent-test-it': 'off',
@@ -44,27 +46,23 @@ module.exports = {
     'jest/prefer-to-contain': 'warn',
     'jest/prefer-to-have-length': 'warn',
     'jest/prefer-todo': 'warn',
-    'jest/require-hook': 'error',
+    'jest/require-hook': 'off',
     'jest/require-to-throw-message': 'off',
     'jest/require-top-level-describe': 'off',
-    'jest/unbound-method': 'error',
     'jest/valid-describe-callback': 'error',
     'jest/valid-expect-in-promise': 'error',
     'jest/valid-expect': 'error',
     'jest/valid-title': 'warn',
 
-    // jest-formatting
-    'jest-formatting/padding-around-after-all-blocks': 'warn',
-    'jest-formatting/padding-around-after-each-blocks': 'warn',
-    'jest-formatting/padding-around-all': 'warn',
-    'jest-formatting/padding-around-before-all-blocks': 'warn',
-    'jest-formatting/padding-around-before-each-blocks': 'warn',
-    'jest-formatting/padding-around-describe-blocks': 'warn',
-    'jest-formatting/padding-around-expect-groups': 'warn',
-    'jest-formatting/padding-around-test-blocks': 'warn',
+    'jest/no-restricted-jest-methods': 'off',
+    ...packages.ifAnyDep('jest', () => ({ 'jest/no-restricted-jest-methods': 'warn' })),
+
+    ...packages.ifAnyDep('typescript', () => ({
+      '@typescript-eslint/unbound-method': 'off',
+      'jest/unbound-method': 'error',
+    })),
 
     // conflicts
-    '@typescript-eslint/unbound-method': 'off',
     'fp/no-let': 'off',
   },
 };

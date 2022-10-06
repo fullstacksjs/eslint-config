@@ -10,7 +10,7 @@ module.exports = {
       env: {
         'jest/globals': true,
       },
-      extends: ['./rules/jest'],
+      extends: ['./rules/jest', './rules/jest-format'],
     },
   ],
 };
