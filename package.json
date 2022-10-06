@@ -23,6 +23,7 @@
     "nextjs.js",
     "cypress.js",
     "storybook.js",
+    "packages.js",
     "graphql.js",
     "react.js",
     "typescript.js",
