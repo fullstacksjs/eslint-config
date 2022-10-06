@@ -10,7 +10,6 @@ module.exports = {
     'jest/no-commented-out-tests': 'warn',
     'jest/no-conditional-expect': 'error',
     'jest/no-conditional-in-test': 'error',
-    'jest/no-deprecated-functions': 'error',
     'jest/no-disabled-tests': 'warn',
     'jest/no-done-callback': 'warn',
     'jest/no-duplicate-hooks': 'off',
@@ -23,6 +22,7 @@ module.exports = {
     'jest/no-jasmine-globals': 'off',
     'jest/no-large-snapshots': ['warn', { maxSize: 300 }],
     'jest/no-mocks-import': 'error',
+    'jest/no-restricted-jest-methods': 'off',
     'jest/no-restricted-matchers': 'error',
     'jest/no-standalone-expect': 'off',
     'jest/no-test-callback': 'off',
@@ -54,8 +54,10 @@ module.exports = {
     'jest/valid-expect': 'error',
     'jest/valid-title': 'warn',
 
-    'jest/no-restricted-jest-methods': 'off',
-    ...packages.ifAnyDep('jest', () => ({ 'jest/no-restricted-jest-methods': 'warn' })),
+    'jest/no-deprecated-functions': 'off',
+    ...packages.ifAnyDep('jest', () => ({
+      'jest/no-deprecated-functions': 'error',
+    })),
 
     ...packages.ifAnyDep('typescript', () => ({
       '@typescript-eslint/unbound-method': 'off',
