@@ -1,12 +1,4 @@
-const fs = require('fs');
-const { Packages } = require('@frontendmonster/utils');
-const readPkgUp = require('read-pkg-up');
-
-const { packageJson: pkg } = readPkgUp.sync({
-  cwd: fs.realpathSync(process.cwd()),
-});
-
-const packages = Packages(pkg);
+const packages = require('./packages');
 
 /** @type { import('eslint').Linter.Config } */
 module.exports = {
