@@ -20,6 +20,7 @@ module.exports = {
     'no-inner-declarations': 'error',
     'no-invalid-regexp': 'error',
     'no-irregular-whitespace': 'error',
+    'no-new-native-nonconstructor': 'error',
     'no-nonoctal-decimal-escape': 'error',
     'no-obj-calls': 'error',
     'no-prototype-builtins': 'off',
