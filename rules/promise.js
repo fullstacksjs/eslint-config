@@ -14,5 +14,6 @@ module.exports = {
     'promise/prefer-await-to-callbacks': 'off',
     'promise/prefer-await-to-then': 'off',
     'promise/valid-params': 'warn',
+    'promise/no-multiple-resolved': 'warn',
   },
 };
