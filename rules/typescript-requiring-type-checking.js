@@ -30,7 +30,12 @@ module.exports = {
     '@typescript-eslint/prefer-reduce-type-parameter': 'warn',
     '@typescript-eslint/prefer-nullish-coalescing': [
       'warn',
-      { ignoreConditionalTests: false, ignoreTernaryTests: false, ignoreMixedLogicalExpressions: false, forceSuggestionFixer: false },
+      {
+        ignoreConditionalTests: false,
+        ignoreTernaryTests: false,
+        ignoreMixedLogicalExpressions: false,
+        allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
+      },
     ],
     '@typescript-eslint/prefer-regexp-exec': 'warn',
     '@typescript-eslint/prefer-return-this-type': 'warn',
