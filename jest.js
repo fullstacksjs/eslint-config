@@ -1,4 +1,5 @@
-const exts = '+(js|jsx|ts|tsx)';
+const { exts } = require('./utils');
+
 const dirs = '+(test|tests|__test__|__tests__|spec|specs)';
 
 /** @type { import('eslint').Linter.Config } */
@@ -10,7 +11,7 @@ module.exports = {
       env: {
         'jest/globals': true,
       },
-      extends: ['./rules/jest', './rules/jest-format'],
+      extends: ['./rules/test', './rules/jest'],
     },
   ],
 };

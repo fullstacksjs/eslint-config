@@ -1,13 +1,15 @@
+const { exts } = require('./utils');
+
 /** @type { import('eslint').Linter.Config } */
 module.exports = {
   overrides: [
     {
-      files: ['**/cypress/**/*.+(js|jsx)', '**/cypress/**/*.+(ts|tsx)'],
-      plugins: ['cypress'],
+      files: [`**/cypress/**/*.${exts}`, `**/*.cy.+${exts}`],
+      plugins: ['jest', 'jest-formatting', 'cypress'],
       env: {
         'cypress/globals': true,
       },
-      extends: ['./rules/cypress'],
+      extends: ['./rules/test', './rules/cypress'],
     },
   ],
 };
