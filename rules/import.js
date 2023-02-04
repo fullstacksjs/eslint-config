@@ -1,5 +1,6 @@
 module.exports = {
   rules: {
+    'import/consistent-type-specifier-style': ['warn', 'prefer-inline'],
     'import/default': 'error',
     'import/dynamic-import-chunkname': 'off',
     'import/export': 'error',
@@ -20,6 +21,7 @@ module.exports = {
     'import/no-deprecated': 'warn',
     'import/no-duplicates': 'error',
     'import/no-dynamic-require': 'off',
+    'import/no-empty-named-blocks': 'error',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/no-import-module-exports': 'off',
     'import/no-internal-modules': 'off',

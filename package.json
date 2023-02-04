@@ -53,7 +53,7 @@
     "eslint-import-resolver-typescript": "3.5.3",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-fp": "2.3.0",
-    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jest": "27.1.7",
     "eslint-plugin-jest-formatting": "3.1.0",
     "eslint-plugin-jsx-a11y": "6.6.1",
@@ -62,7 +62,7 @@
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-react": "7.31.11",
     "eslint-plugin-react-hooks": "4.6.0",
-    "eslint-plugin-simple-import-sort": "8.0.0",
+    "eslint-plugin-simple-import-sort": "10.0.0",
     "eslint-plugin-storybook": "0.6.8",
     "read-pkg-up": "7.0.1"
   },
