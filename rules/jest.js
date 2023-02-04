@@ -57,7 +57,6 @@ module.exports = {
 
     ...packages.ifAnyDep('typescript', () => ({
       '@typescript-eslint/unbound-method': 'off',
-      'jest/unbound-method': 'error',
     })),
 
     // conflicts

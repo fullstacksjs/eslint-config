@@ -11,9 +11,6 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "bin": {
-    "fullstacksjs-eslint": "./bin/index.js"
-  },
   "files": [
     "base.js",
     "bin",
