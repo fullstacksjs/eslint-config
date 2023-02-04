@@ -15,7 +15,7 @@ module.exports = [
   {
     selector: 'parameter',
     format: ['camelCase', 'PascalCase'],
-    leadingUnderscore: 'allowSingleOrDouble',
+    leadingUnderscore: 'allow',
   },
   {
     selector: 'memberLike',
@@ -46,5 +46,11 @@ module.exports = [
     selector: 'interface',
     format: ['PascalCase'],
     custom: { regex: '^I[A-Z]', match: false },
+  },
+  {
+    selector: 'variable',
+    types: ['boolean'],
+    format: ['PascalCase'],
+    prefix: ['is', 'should', 'has', 'can', 'did', 'will', 'enable', 'loading'],
   },
 ];
