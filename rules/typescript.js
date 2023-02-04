@@ -30,57 +30,7 @@ module.exports = {
     '@typescript-eslint/member-naming': 'off',
     '@typescript-eslint/member-ordering': 'off',
     '@typescript-eslint/method-signature-style': ['warn', 'property'],
-    '@typescript-eslint/naming-convention': [
-      'warn',
-      {
-        selector: 'default',
-        format: ['camelCase'],
-      },
-      {
-        selector: 'function',
-        format: ['camelCase', 'PascalCase'],
-      },
-      // variables, CONSTANTS, ReactComponents
-      {
-        selector: 'variable',
-        format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
-      },
-      {
-        selector: 'parameter',
-        format: ['camelCase', 'PascalCase'],
-        leadingUnderscore: 'allowSingleOrDouble',
-      },
-      {
-        selector: 'memberLike',
-        format: null,
-      },
-      {
-        selector: 'memberLike',
-        modifiers: ['static'],
-        format: ['camelCase', 'PascalCase'],
-        leadingUnderscore: 'allow',
-      },
-      {
-        selector: 'memberLike',
-        modifiers: ['private'],
-        format: ['camelCase'],
-        leadingUnderscore: 'allow',
-      },
-      {
-        selector: 'typeLike',
-        format: ['PascalCase'],
-      },
-      {
-        selector: 'enumMember',
-        format: ['PascalCase'],
-      },
-      // disallow I prefix for interfaces
-      {
-        selector: 'interface',
-        format: ['PascalCase'],
-        custom: { regex: '^I[A-Z]', match: false },
-      },
-    ],
+    '@typescript-eslint/naming-convention': ['warn', ...require('./naming-convention')], // eslint-disable-line node/global-require
     '@typescript-eslint/no-array-constructor': 'error',
     '@typescript-eslint/no-base-to-string': 'off', // false negative
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
