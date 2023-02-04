@@ -1,3 +1,5 @@
+const packages = require('../packages');
+
 module.exports = {
   rules: {
     'cypress/no-assigning-return-values': 'error',
@@ -6,5 +8,9 @@ module.exports = {
     'cypress/no-force': 'warn',
     'cypress/no-async-tests': 'error',
     'cypress/no-pause': 'error',
+
+    ...packages.ifAnyDep('typescript', () => ({
+      '@typescript-eslint/no-namespace': 0,
+    })),
   },
 };
