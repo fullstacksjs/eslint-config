@@ -135,8 +135,10 @@ module.exports = {
     '@typescript-eslint/triple-slash-reference': 'error',
     '@typescript-eslint/typedef': ['error', { parameter: false, arrowParameter: false, variableDeclaration: false }],
     '@typescript-eslint/unified-signatures': 'error',
+    '@typescript-eslint/key-spacing': 'off',
 
     // collisions
+    'key-spacing': 'off',
     'camelcase': 'off',
     'default-param-last': 'off',
     'init-declarations': 'off',
