@@ -72,7 +72,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars-experimental': 'off', // Why two rules?
     '@typescript-eslint/no-unused-vars': [
       'warn',
-      { argsIgnorePattern: '^_', varsIgnorePattern: '^[iI]gnore(d)?', args: 'after-used', ignoreRestSiblings: true },
+      { argsIgnorePattern: '^_', varsIgnorePattern: '^([iI]gnore(d)?)|(_+)', args: 'after-used', ignoreRestSiblings: true },
     ],
     '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: true }],
     '@typescript-eslint/no-useless-constructor': 'error',
