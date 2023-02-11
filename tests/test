@@ -1,0 +1,22 @@
+#!/bin/env bash
+
+test-rules() {
+  npx eslint-find-rules --no-core --unused "$1"
+}
+
+if [[ -n $1 ]]; then
+  test-rules "./tests/${1}.spec.js"
+  exit $?
+fi
+
+FILES=("base" "promise" "graphql" "import" "storybook" "fp" "node" "cypress" "typescript" "esm" "jest" "react")
+
+for f in "${FILES[@]}"; do
+  echo
+  echo "🧪 Testing ${f}.js"
+  echo
+  test-rules "./tests/${f}.spec.js"
+  RES=$?
+  [[ ! $RES -eq 0 ]] && exit $RES
+  echo "---------------"
+done

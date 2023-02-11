@@ -1,3 +1,3 @@
 module.exports = {
-  extends: './index.js',
+  extends: ['./base', './fp', './import', './node', './promise', './prettier'],
 };
