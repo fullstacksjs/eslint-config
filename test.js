@@ -1,11 +1,15 @@
-const packages = require('../packages');
+const packages = require('./packages');
 
 module.exports = {
   rules: {
-    'jest/no-duplicate-hooks': 'error',
+    'jest/prefer-hooks-in-order': 'warn',
     'jest/no-disabled-tests': 'error',
+    'jest/no-duplicate-hooks': 'error',
     'jest/no-focused-tests': 'error',
     'jest/no-identical-title': 'error',
+    'jest/prefer-comparison-matcher': 'error',
+    'jest/prefer-equality-matcher': 'error',
+    'jest/max-expects': ['off', { max: 5 }],
 
     // formatting
     'jest-formatting/padding-around-after-all-blocks': 'warn',

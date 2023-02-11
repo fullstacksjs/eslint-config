@@ -1,4 +1,6 @@
+/** @type { import('eslint').Linter.Config } */
 module.exports = {
+  plugins: ['promise'],
   rules: {
     'promise/always-return': 'off',
     'promise/avoid-new': 'off',

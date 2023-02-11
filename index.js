@@ -4,11 +4,16 @@ const { compact } = require('@fullstacksjs/toolbox');
 /** @type { import('eslint').Linter.Config } */
 module.exports = {
   extends: compact([
-    require.resolve('./base'),
-    require.resolve('./storybook'),
-    require.resolve('./jest'),
-    packages.ifAnyDep('react', () => require.resolve('./react')),
-    packages.ifAnyDep('typescript', () => require.resolve('./typescript')),
-    packages.ifAnyDep('cypress', () => require.resolve('./cypress')),
+    './base',
+    './fp',
+    './import',
+    './node',
+    './promise',
+    './storybook',
+    './jest',
+    packages.ifAnyDep('react', () => './react'),
+    packages.ifAnyDep('typescript', () => './typescript'),
+    packages.ifAnyDep('cypress', () => './cypress'),
+    './prettier',
   ]),
 };
