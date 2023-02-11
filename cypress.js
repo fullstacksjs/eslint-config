@@ -1,3 +1,4 @@
+const Packages = require('./packages');
 const { exts } = require('./utils');
 
 /** @type { import('eslint').Linter.Config } */
@@ -9,7 +10,20 @@ module.exports = {
       env: {
         'cypress/globals': true,
       },
-      extends: ['./rules/test', './rules/cypress'],
+      extends: [require.resolve('./test')],
+      rules: {
+        'cypress/assertion-before-screenshot': 'warn',
+        'cypress/no-assigning-return-values': 'error',
+        'cypress/no-async-tests': 'error',
+        'cypress/no-force': 'warn',
+        'cypress/no-pause': 'error',
+        'cypress/no-unnecessary-waiting': 'error',
+        'cypress/require-data-selectors': 'off',
+
+        ...Packages.ifAnyDep('typescript', () => ({
+          '@typescript-eslint/no-namespace': 0,
+        })),
+      },
     },
   ],
 };
