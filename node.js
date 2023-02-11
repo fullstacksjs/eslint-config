@@ -1,4 +1,6 @@
+/** @type { import('eslint').Linter.Config } */
 module.exports = {
+  plugins: ['node'],
   rules: {
     'node/no-unsupported-features/es-builtins': 'off', // Nice but not a general rule
     'node/no-unsupported-features/es-syntax': 'off', // Nice but not a general rule

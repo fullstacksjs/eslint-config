@@ -1,4 +1,15 @@
+/** @type { import('eslint').Linter.Config } */
 module.exports = {
+  plugins: ['import', 'simple-import-sort'],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.mjs', '.js', '.json', '.jsx'],
+      },
+    },
+    'import/core-modules': [],
+    'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
+  },
   rules: {
     'import/consistent-type-specifier-style': ['warn', 'prefer-inline'],
     'import/default': 'error',
