@@ -23,7 +23,7 @@ function init(opts = {}) {
       opts.esm && require.resolve('./esm'),
       opts.strict && require.resolve('./strict'),
       require.resolve('./prettier'),
-      ...extendsOverrides,
+      ...(extendsOverrides ?? []),
     ]),
     ...overrides,
   };
@@ -31,24 +31,20 @@ function init(opts = {}) {
   if (opts.react === 'raw') config.extends.push(require.resolve('./react.js'));
 
   if (opts.typescript?.parserProject) {
-    config.parserOptions = {
-      ...config.parserOptions,
+    config.parserOptions = merge({
       project: opts.typescript.parserProject,
-    };
+    });
   }
 
   if (opts.typescript?.resolverProject) {
     config.extends.push(require.resolve('./typecheck.js'));
-    config.settings = {
-      ...config.settings,
+    config.settings = merge(config.settings, {
       'import/resolver': {
-        ...config.settings['import/resolver'],
         typescript: {
-          ...config.settings['import/resolver'].typescript,
-          project: opts.typescript.parserProject,
+          project: opts.typescript.resolverProject,
         },
       },
-    };
+    });
   }
 
   return config;
