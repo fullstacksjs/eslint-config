@@ -1,6 +1,6 @@
 const { hasDep, isEsm } = require('./utils');
 
-/** @param { import('./index.d').Options } opts */
+/** @param { import('./init').Options } opts */
 const defaultOptions = {
   esm: isEsm(),
   cypress: hasDep('cypress'),
