@@ -1,9 +1,9 @@
 const { compact } = require('@fullstacksjs/toolbox');
-require('./registerOpts');
-const merge = require('deepmerge');
 
 /** @param { import('./index.d').Options } opts */
 function init(opts = {}) {
+  const merge = require('deepmerge');
+
   const { extends: extendsOverrides, ...overrides } = opts.overrides;
   global.fullstacksjs = merge(global.fullstacksjs, opts);
 
