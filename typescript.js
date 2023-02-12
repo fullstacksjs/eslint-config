@@ -158,27 +158,8 @@ module.exports = {
         '@typescript-eslint/unified-signatures': 'error',
         '@typescript-eslint/key-spacing': 'off',
 
-        // collisions
-        'key-spacing': 'off',
-        'camelcase': 'off',
-        'default-param-last': 'off',
-        'init-declarations': 'off',
-        'lines-between-class-members': 'off',
-        'no-invalid-this': 'off',
-        'no-loop-func': 'off',
-        'no-redeclare': 'off',
-        'no-restricted-imports': 'off',
-        'no-shadow': 'off',
-        'no-unused-vars': 'off',
-        'no-use-before-define': 'off',
-        'no-useless-constructor': 'off',
-        'object-curly-spacing': 'off',
-        'padding-line-between-statements': 'off',
-        'space-before-blocks': 'off',
-
         // open issues
         'react/jsx-no-useless-fragment': 'off', // Need useless-fragment for JSX return type
-        'dot-notation': 'off', // Need to have IndexSignaturePropertyAccess Typescript compiler option
       },
     },
   ],
