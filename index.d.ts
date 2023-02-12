@@ -11,3 +11,5 @@ export interface Options {
   storybook: boolean;
   overrides: import('eslint').Linter.Config;
 }
+
+export declare init: (opts: Options) => import('eslint').Linter.Config
