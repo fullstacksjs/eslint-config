@@ -7,8 +7,10 @@ on:
       - main
       - next
 
+
 jobs:
   release:
+    concurrency: ci-${{ github.ref }}
     name: Release
     runs-on: ubuntu-latest
     steps:
