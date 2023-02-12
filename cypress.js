@@ -1,7 +1,8 @@
-const Packages = require('./packages');
 const { exts } = require('./utils');
 
-/** @type { import('eslint').Linter.Config } */
+/**
+ * @type { import('eslint').Linter.Config }
+ */
 module.exports = {
   overrides: [
     {
@@ -20,9 +21,9 @@ module.exports = {
         'cypress/no-unnecessary-waiting': 'error',
         'cypress/require-data-selectors': 'off',
 
-        ...Packages.ifAnyDep('typescript', () => ({
+        ...(global.fullstacksjs?.typescript && {
           '@typescript-eslint/no-namespace': 0,
-        })),
+        }),
       },
     },
   ],

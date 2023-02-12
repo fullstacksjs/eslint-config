@@ -1,3 +1,4 @@
+require('../registerOpts');
 const config = require('../graphql');
 const { getOverrides } = require('./test-utils');
 
