@@ -3,6 +3,7 @@ const { compact } = require('@fullstacksjs/toolbox');
 const merge = require('deepmerge');
 
 /** @param { import('./init.d').Options } opts */
+// eslint-disable-next-line complexity
 function init(opts = {}) {
   const { extends: extendsOverrides, ...overrides } = opts.overrides;
   global.fullstacksjs = merge(global.fullstacksjs, opts);
@@ -25,13 +26,15 @@ function init(opts = {}) {
       require.resolve('./prettier'),
       ...(extendsOverrides ?? []),
     ]),
+    parserOptions: {},
+    settings: {},
     ...overrides,
   };
 
   if (opts.react === 'raw') config.extends.push(require.resolve('./react.js'));
 
   if (opts.typescript?.parserProject) {
-    config.parserOptions = merge({
+    config.parserOptions = merge(config.parserOptions, {
       project: opts.typescript.parserProject,
     });
   }
