@@ -11,6 +11,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
+  "typings": "./index.d.ts",
   "files": [
     "base.js",
     "cypress.js",
