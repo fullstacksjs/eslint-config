@@ -1,9 +1,8 @@
 require('./registerOpts');
-const { compact } = require('@fullstacksjs/toolbox');
 
 /** @type { import('eslint').Linter.Config } */
 module.exports = {
-  extends: compact([
+  extends: [
     require.resolve('./base'),
     require.resolve('./fp'),
     require.resolve('./import'),
@@ -15,5 +14,5 @@ module.exports = {
     global.fullstacksjs?.typescript && require.resolve('./typescript'),
     global.fullstacksjs?.cypress && require.resolve('./cypress'),
     require.resolve('./prettier'),
-  ]),
+  ].filter(Boolean),
 };
