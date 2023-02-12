@@ -20,7 +20,7 @@
     "graphql.js",
     "import.js",
     "index.js",
-    "index.d.js",
+    "index.d.ts",
     "init.js",
     "jest.js",
     "naming-convention.js",
