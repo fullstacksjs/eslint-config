@@ -6,7 +6,7 @@ const { exts } = require('./utils');
 module.exports = {
   overrides: [
     {
-      files: [`**/cypress/**/*.${exts}`, `**/*.cy.+${exts}`],
+      files: [`**/cypress/**/*.${exts}`, `**/*.cy.${exts}`],
       plugins: ['jest', 'jest-formatting', 'cypress'],
       env: {
         'cypress/globals': true,

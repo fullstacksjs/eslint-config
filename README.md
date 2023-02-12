@@ -40,15 +40,27 @@ $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 $ yarn add --dev @fullstacksjs/eslint-config eslint prettier
 ```
 
-optional dependencies (if you need):
-
-* react
-* jest
-* cypress
-
 ## Usage
 
-Just extend from `@fullstacksjs`:
+## Method 1 (recommended)
+
+Create `.eslintrc.js` file and init the configuration.
+
+```js
+const { init } = require('@fullstacksjs/eslint-config/init');
+
+module.exports = init({
+  modules: {
+    auto: true, // If you need auto module detection.
+    // Modules configuration. (optional)
+  },
+  // Your configurations
+});
+
+```
+
+## Method 2
+extend from `@fullstacksjs`:
 
 ```json
 {
@@ -56,76 +68,52 @@ Just extend from `@fullstacksjs`:
 }
 ```
 
-It reads your root `package.json` dependencies and includes necessary rules.
+## Auto Module Detection
+When you extend from `@fullstakcjs` or use `modules.auto: true`, it reads your root `package.json` dependencies and includes necessary rules and plugins.
 
-## NextJS
+## Modules API
 
-Our index setup conflicts with the built-in ESLint [NextJS](https://nextjs.org/) configuration. To utilize it in a NextJS project, configure your eslintrc file as follows.
-
-```json
-{
-  "extends": ["next/core-web-vitals", "@fullstacksjs/eslint-config/nextjs"]
+```typescript
+interface Modules {
+    auto?: boolean; // Auto module detection
+    react?: 'next' | 'raw'; // controls react, react-hooks, jsx/a11y plugins
+    typescript?: { parserProject: string[] | string; resolverProject: string[] | string }; // controls typescript plugin
+    node?: boolean; // controls node plugin
+    strict?: boolean; // controls strict plugin
+    import?: boolean; // controls import plugin
+    esm?: boolean; // controls esm plugin
+    graphql?: boolean; // controls graphql plugin
+    test?: boolean; // controls jest/vitest plugin
+    cypress?: boolean; // controls cypress plugin
+    storybook?: boolean; // controls storybook plugin
 }
 ```
 
-## Advanced Usage
+## Typescript configuration
 
-```jsonc
-{
-  "extends": [
-    "@fullstacksjs/eslint-config/base",
-    "@fullstacksjs/eslint-config/jest",
-    "@fullstacksjs/eslint-config/react",
-    "@fullstacksjs/eslint-config/typescript",
-    "@fullstacksjs/eslint-config/strict",
-    "@fullstacksjs/eslint-config/cypress",
-    "@fullstacksjs/eslint-config/storybook",
-    "@fullstacksjs/eslint-config/graphql", // Need extra config
-    "@fullstacksjs/eslint-config/esm", // for native ESM modules
-    "@fullstacksjs/eslint-config/typecheck" // ⚠️ Needs configurations (not included in default config)
-  ]
-}
-```
-
-## Need more typescript rules?
-
-If you need more advanced `typescript-eslint` rules, then you can extend from `"@fullstacksjs/eslint-config/typecheck"` and set `parserOptions.project` option:
+If you need more advanced typescript-eslint rule you need to specify `modules.typescript.resolverProject`.
 
 ```json
-{
-  "extends": [
-    "@fullstacksjs",
-    "@fullstacksjs/eslint-config/typecheck"
-  ],
-  "parserOptions": {
-    "project": "<PATH_TO_TSCONFIG>"
-  }
-}
+module.exports = init({
+  modules: {
+    typescript: { resolverProject: "<PATH_TO_TSCONFIG>" }
+  },
+});
 ```
 
 ## Graphql
 
-To enable graphql module you need to extends from `@fullstacksjs/eslint-config/graphql` and configure schema and operations in you eslint config or graphql config. for more information checkout [here](https://github.com/B2o5T/graphql-eslint#configuration).
+To enable graphql module you need to set either have `graphql` dependency installed with auto module detection option, or manually enable it yourself by `modules.graphql` option. for more information checkout [here](https://github.com/B2o5T/graphql-eslint#configuration).
 
 Here is an example:
 
-```jsonc
-// eslintrc
-
-{
-  "extends": [
-    ...
-    "@fullstacksjs/eslint-config/graphql"
-  ],
-}
+```js
+module.exports = init({
+  modules: {
+    graphql: true
+  },
+});
 ```
-
-```yaml
-# .graphqlrc.yml
-
-schema: 'path/to/schema'
-```
-
 
 ## What's included?
 

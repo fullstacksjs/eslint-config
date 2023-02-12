@@ -2,8 +2,8 @@
 module.exports = {
   overrides: [
     {
+      files: ['**/*.stories.+(ts|tsx|js|jsx|mjs|cjs|mdx)', '**/*.story.+(ts|tsx|js|jsx|mjs|cjs|mdx)'],
       plugins: ['storybook'],
-      files: ['*.stories.+(ts|tsx|js|jsx|mjs|cjs|mdx)', '*.story.+(ts|tsx|js|jsx|mjs|cjs|mdx)'],
       rules: {
         'storybook/await-interactions': 'error',
         'storybook/context-in-play-function': 'error',
