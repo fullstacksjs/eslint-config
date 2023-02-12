@@ -12,4 +12,4 @@ export interface Options {
   overrides: import('eslint').Linter.Config;
 }
 
-export declare init: (opts: Options) => import('eslint').Linter.Config
+export declare const init: (opts: Options) => import('eslint').Linter.Config
