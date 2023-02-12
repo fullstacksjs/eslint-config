@@ -1,13 +1,13 @@
-import { type Linter } from 'eslint';
-
 export interface Options {
   react: 'next' | 'raw';
-  typescript: boolean | { project: string[] | string };
+  typescript: { parserProject: string[] | string; resolverProject: string[] | string };
+  node: boolean;
+  strict: boolean;
   import: boolean;
   esm: boolean;
   graphql: boolean;
   test: boolean;
   cypress: boolean;
   storybook: boolean;
-  overrides: Linter.Config;
+  overrides: import('eslint').Linter.Config;
 }

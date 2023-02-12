@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['./base', './fp', './import', './node', './promise', './prettier'],
+  extends: ['./base', './import', './promise', './prettier'],
 };

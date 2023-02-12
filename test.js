@@ -1,5 +1,6 @@
-const packages = require('./packages');
-
+/**
+ * @type { import('eslint').Linter.Config }
+ */
 module.exports = {
   rules: {
     'jest/prefer-hooks-in-order': 'warn',
@@ -23,13 +24,13 @@ module.exports = {
 
     // other modules
     'max-lines-per-function': 'off',
-    ...packages.ifAnyDep('react', () => ({
+    ...(global.fullstacksjs?.react && {
       'react/jsx-no-constructed-context-values': 'off',
-    })),
-    ...packages.ifAnyDep('typescript', () => ({
+    }),
+    ...(global.fullstacksjs?.typescript && {
       '@typescript-eslint/method-signature-style': 'off',
       '@typescript-eslint/no-namespace ': 'off',
       '@typescript-eslint/unbound-method': 'off',
-    })),
+    }),
   },
 };

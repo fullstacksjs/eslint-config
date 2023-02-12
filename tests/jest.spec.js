@@ -1,3 +1,4 @@
+require('../registerOpts');
 const config = require('../jest');
 const { getOverrides } = require('./test-utils');
 

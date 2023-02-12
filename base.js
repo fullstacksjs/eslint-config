@@ -1,3 +1,4 @@
+/** @type { import('eslint').Linter.Config } */
 module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
@@ -6,6 +7,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    es6: true,
   },
   rules: {
     'accessor-pairs': 'error',

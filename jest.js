@@ -1,9 +1,10 @@
 const { exts } = require('./utils');
-const packages = require('./packages');
 
 const dirs = '+(test|tests|__test__|__tests__|spec|specs)';
 
-/** @type { import('eslint').Linter.Config } */
+/**
+ * @type { import('eslint').Linter.Config }
+ */
 module.exports = {
   overrides: [
     {
@@ -63,15 +64,15 @@ module.exports = {
         'jest/valid-title': 'warn',
 
         'jest/no-deprecated-functions': 'off',
-        ...packages.ifAnyDep('jest', () => ({
+        ...(global.fullstacksjs?.jest && {
           'jest/no-deprecated-functions': 'error',
-        })),
+        }),
 
-        ...packages.ifAnyDep('typescript', () => ({
+        ...(global.fullstacksjs?.typescript && {
           '@typescript-eslint/unbound-method': 'off',
           'jest/unbound-method': 'error',
           'jest/no-untyped-mock-factory': 'warn',
-        })),
+        }),
 
         // conflicts
         'fp/no-let': 'off',

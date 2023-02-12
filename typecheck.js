@@ -1,3 +1,4 @@
+/** @type { import('eslint').Linter.Config } */
 module.exports = {
   overrides: [
     {
@@ -54,7 +55,7 @@ module.exports = {
         '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
         '@typescript-eslint/naming-convention': [
           'warn',
-          ...require('./naming-convention'), // eslint-disable-line node/global-require
+          ...require('./naming-convention'),
           // force use is/should/has for boolean variables
           {
             selector: 'variable',

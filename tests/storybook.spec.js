@@ -1,3 +1,4 @@
+require('../registerOpts');
 const config = require('../storybook');
 const { getOverrides } = require('./test-utils');
 

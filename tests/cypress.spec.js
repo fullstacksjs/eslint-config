@@ -1,3 +1,4 @@
+require('../registerOpts');
 const config = require('../cypress');
 const { getOverrides } = require('./test-utils');
 
