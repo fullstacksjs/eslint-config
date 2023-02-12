@@ -1,8 +1,4 @@
 {
   "branches": [{ "name": "main" }, { "name": "next", "channel": "next" }],
-  "plugins": [
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/npm",
-    "@semantic-release/github"
-  ]
+  "plugins": ["@semantic-release/release-notes-generator", "@semantic-release/npm", "@semantic-release/github"]
 }
