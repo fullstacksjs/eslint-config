@@ -24,6 +24,7 @@
     "naming-convention.js",
     "node.js",
     "packages.js",
+    "prettier.js",
     "promise.js",
     "react.js",
     "registerOpts.js",
