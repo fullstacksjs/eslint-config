@@ -5,7 +5,7 @@ const defaultOptions = {
   esm: isEsm(),
   cypress: hasDep('cypress'),
   graphql: hasDep('graphql'),
-  react: hasDep('react'),
+  react: hasDep('react') && !hasDep('next'),
   storybook: hasDep('storybook'),
   test: hasDep('jest') || hasDep('vitest'),
   typescript: hasDep('typescript'),

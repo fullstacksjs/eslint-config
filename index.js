@@ -1,6 +1,5 @@
 require('./registerOpts');
 const { compact } = require('@fullstacksjs/toolbox');
-const { hasDep } = require('./utils');
 
 /** @type { import('eslint').Linter.Config } */
 module.exports = {
@@ -12,9 +11,9 @@ module.exports = {
     require.resolve('./promise'),
     require.resolve('./storybook'),
     require.resolve('./jest'),
-    hasDep('react') && !hasDep('next') && require.resolve('./react'),
-    hasDep('typescript') && require.resolve('./typescript'),
-    hasDep('cypress') && require.resolve('./cypress'),
+    global.fullstacksjs?.react && require.resolve('./react'),
+    global.fullstacksjs?.typescript && require.resolve('./typescript'),
+    global.fullstacksjs?.cypress && require.resolve('./cypress'),
     require.resolve('./prettier'),
   ]),
 };
