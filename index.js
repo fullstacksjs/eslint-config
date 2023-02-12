@@ -1,6 +1,5 @@
 require('./registerOpts');
 const { compact } = require('@fullstacksjs/toolbox');
-const init = require('./init');
 
 /** @type { import('eslint').Linter.Config } */
 module.exports = {
@@ -18,5 +17,3 @@ module.exports = {
     require.resolve('./prettier'),
   ]),
 };
-
-module.exports.init = init;
