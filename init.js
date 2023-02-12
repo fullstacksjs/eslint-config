@@ -1,9 +1,9 @@
+require('./registerOpts');
 const { compact } = require('@fullstacksjs/toolbox');
+const merge = require('deepmerge');
 
-/** @param { import('./index.d').Options } opts */
+/** @param { import('./init.d').Options } opts */
 function init(opts = {}) {
-  const merge = require('deepmerge');
-
   const { extends: extendsOverrides, ...overrides } = opts.overrides;
   global.fullstacksjs = merge(global.fullstacksjs, opts);
 
@@ -30,14 +30,14 @@ function init(opts = {}) {
 
   if (opts.react === 'raw') config.extends.push(require.resolve('./react.js'));
 
-  if (opts.typescript.parserProject) {
+  if (opts.typescript?.parserProject) {
     config.parserOptions = {
       ...config.parserOptions,
       project: opts.typescript.parserProject,
     };
   }
 
-  if (opts.typescript.resolverProject) {
+  if (opts.typescript?.resolverProject) {
     config.extends.push(require.resolve('./typecheck.js'));
     config.settings = {
       ...config.settings,
