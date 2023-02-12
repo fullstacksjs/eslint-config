@@ -1,34 +1,38 @@
-require('./registerOpts');
-const { compact } = require('@fullstacksjs/toolbox');
 const merge = require('deepmerge');
 
 /** @param { import('./init.d').Options } opts */
 // eslint-disable-next-line complexity
 function init(opts = {}) {
-  const { extends: extendsOverrides, ...overrides } = opts.overrides;
-  global.fullstacksjs = merge(global.fullstacksjs, opts);
+  const { modules = {}, extends: extraExtends = [], ...eslintConfig } = opts;
+  if (modules.auto) {
+    require('./registerOpts');
+    global.fullstacksjs = merge(global.fullstacksjs, modules);
+  } else {
+    global.fullstacksjs = modules;
+  }
+  opts = global.fullstacksjs;
 
   /** @type { import('eslint').Linter.Config } */
   const config = {
-    extends: compact([
+    extends: [
       require.resolve('./base'),
       require.resolve('./promise'),
       require.resolve('./fp'),
       opts.node && require.resolve('./node'),
+      opts.graphql && require.resolve('./graphql'),
+      opts.import && require.resolve('./import'),
+      opts.typescript && require.resolve('./typescript'),
+      opts.storybook && require.resolve('./storybook'),
       opts.cypress && require.resolve('./cypress'),
       opts.test && require.resolve('./jest'),
-      opts.graphql && require.resolve('./graphql'),
-      opts.storybook && require.resolve('./storybook'),
-      opts.importModule && require.resolve('./import'),
-      opts.typescript && require.resolve('./typescript'),
       opts.esm && require.resolve('./esm'),
       opts.strict && require.resolve('./strict'),
       require.resolve('./prettier'),
-      ...(extendsOverrides ?? []),
-    ]),
+      ...extraExtends,
+    ].filter(Boolean),
     parserOptions: {},
     settings: {},
-    ...overrides,
+    ...eslintConfig,
   };
 
   if (opts.react === 'raw') config.extends.push(require.resolve('./react.js'));

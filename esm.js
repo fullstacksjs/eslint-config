@@ -1,13 +1,13 @@
 /** @type { import('eslint').Linter.Config } */
 module.exports = {
   rules: {
-    'import/extensions': ['error', { mjs: 'ignorePackages' }],
+    ...(global.fullstacksjs?.import && { 'import/extensions': ['error', { mjs: 'ignorePackages' }] }),
   },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
       rules: {
-        'import/no-unresolved': ['error', { ignore: ['.js$'], caseSensitiveStrict: true }],
+        ...(global.fullstacksjs?.import && { 'import/no-unresolved': ['error', { ignore: ['.js$'], caseSensitiveStrict: true }] }),
       },
     },
   ],

@@ -68,7 +68,7 @@ module.exports = {
           'jest/no-deprecated-functions': 'error',
         }),
 
-        ...(global.fullstacksjs?.typescript && {
+        ...(global.fullstacksjs?.typescript?.resolverProject && {
           '@typescript-eslint/unbound-method': 'off',
           'jest/unbound-method': 'error',
           'jest/no-untyped-mock-factory': 'warn',
