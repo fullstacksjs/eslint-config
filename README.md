@@ -12,37 +12,13 @@
 
 ## Installation
 
-If you use [ESLint](https://eslint.org/) alongside [TypeScript](https://typescriptlang.org/)
-
-### npm :
-
-```sh
-$ npm install --save-dev @fullstacksjs/eslint-config eslint prettier typescript
-```
-
-### yarn :
-
-```sh
-$ yarn add --dev @fullstacksjs/eslint-config eslint prettier typescript
-```
-
-for JavaScript development
-
-### npm :
-
 ```sh
 $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 ```
 
-### yarn :
-
-```sh
-$ yarn add --dev @fullstacksjs/eslint-config eslint prettier
-```
-
 ## Usage
 
-## Method 1 (recommended)
+### Method 1 (recommended)
 
 Create `.eslintrc.js` file and init the configuration.
 
@@ -51,16 +27,16 @@ const { init } = require('@fullstacksjs/eslint-config/init');
 
 module.exports = init({
   modules: {
-    auto: true, // If you need auto module detection.
-    // Modules configuration. (optional)
+    auto: true, // If you need auto module detection (refer to Auto Module Detection).
+    // Modules configuration check (optional). (refer to Module API)
   },
   // Your configurations
 });
 
 ```
 
-## Method 2
-extend from `@fullstacksjs`:
+### Method 2
+You can also use the configuration within a `json` or `yaml` files by extending from `@fullstacksjs`, the Auto Module Detection is enabled on this method
 
 ```json
 {
@@ -69,7 +45,7 @@ extend from `@fullstacksjs`:
 ```
 
 ## Auto Module Detection
-When you extend from `@fullstakcjs` or use `modules.auto: true`, it reads your root `package.json` dependencies and includes necessary rules and plugins.
+When auto module detection is turned on the configuration reads your root `package.json` metadata and includes necessary rules and plugins automatically.
 
 ## Modules API
 
@@ -77,7 +53,10 @@ When you extend from `@fullstakcjs` or use `modules.auto: true`, it reads your r
 interface Modules {
     auto?: boolean; // Auto module detection
     react?: 'next' | 'raw'; // controls react, react-hooks, jsx/a11y plugins
-    typescript?: { parserProject: string[] | string; resolverProject: string[] | string }; // controls typescript plugin
+    typescript?: { // controls typescript plugin
+      parserProject?: string[] | string; // controls parserOptions.project
+      resolverProject?: string[] | string // controls settings['import/resolver'].typescript.project
+    };
     node?: boolean; // controls node plugin
     strict?: boolean; // controls strict plugin
     import?: boolean; // controls import plugin
@@ -101,37 +80,89 @@ module.exports = init({
 });
 ```
 
-## Graphql
+## React/NextJS configuration
 
-To enable graphql module you need to set either have `graphql` dependency installed with auto module detection option, or manually enable it yourself by `modules.graphql` option. for more information checkout [here](https://github.com/B2o5T/graphql-eslint#configuration).
+React/NextJS configuration should automatically work with Auto Module Detection, but if you need to have more control over the rules you can configure it through `modules.react`.
 
-Here is an example:
-
-```js
+```json
 module.exports = init({
   modules: {
-    graphql: true
+    react: 'raw' // for React/CRA/Vite
   },
 });
 ```
 
+and
+
+```json
+module.exports = init({
+  modules: {
+    react: 'next' // for NextJS
+  },
+});
+```
+
+## Migration Guid
+
+### to v9
+
+v9 does not have any breaking change, which means the current configuration you have should work without any problem, but in order to migrate to new Module API:
+
+1. Move your configs to `.eslintrc.js` file.
+2. Use init API.
+    ```diff
+    -module.exports = {
+    -  extends: [
+    -    "@fullstacksjs",
+    -    "@fullstacksjs/eslint-config/esm",
+    -    "@fullstacksjs/eslint-config/typecheck",
+    -    "@fullstacksjs/eslint-config/graphql"
+    -  ],
+    -  "parserOptions": {
+    -    "project": ["./tsconfig.eslint.json"]
+    -  },
+    -  "settings": {
+    -    "import/resolver": {
+    -      "typescript": {
+    -        "project": ["./tsconfig.json"]
+    -      },
+    -    },
+    -  },
+    -  // your configuration
+    -};
+    +const { init } = require('@fullstacksjs/eslint-config/init');
+    +
+    +module.exports = init({
+    +  modules: {
+    +    auto: true,
+    +    esm: true,
+    +    graphql: true,
+    +    typescript: {
+    +      parserProject: ['./tsconfig.eslint.json'],
+    +      resolverProject: ['./tsconfig.json'],
+    +    },
+    +  },
+    +  // your configuration
+    +});
+    ```
+
 ## What's included?
 
-* @typescript-eslint/eslint-plugin
-* eslint-plugin-import
-* eslint-plugin-jest
-* eslint-plugin-jest-formatting
-* eslint-plugin-cypress
-* eslint-plugin-jsx-a11y
-* eslint-plugin-prettier
-* eslint-plugin-react
-* eslint-plugin-react-hooks
-* eslint-plugin-simple-import-sort
-* eslint-plugin-fp
-* eslint-plugin-node
-* eslint-plugin-promise
-* eslint-plugin-storybook
-* eslint-plugin-graphql
+* [@typescript-eslint/eslint-plugin](https://typescript-eslint.io/)
+* [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)
+* [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
+* [eslint-plugin-jest-formatting](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
+* [eslint-plugin-cypress](https://github.com/cypress-io/eslint-plugin-cypress)
+* [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
+* [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
+* [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
+* [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
+* [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort)
+* [eslint-plugin-fp](https://github.com/jfmengels/eslint-plugin-fp)
+* [eslint-plugin-node](https://github.com/mysticatea/eslint-plugin-node)
+* [eslint-plugin-promise](https://github.com/eslint-community/eslint-plugin-promise)
+* [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme)
+* [eslint-plugin-graphql](https://github.com/apollographql/eslint-plugin-graphql)
 
 That's all. Feel free to use 💛
 
