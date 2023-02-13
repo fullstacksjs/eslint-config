@@ -22,6 +22,7 @@ function init(opts = {}) {
       opts.graphql && require.resolve('./graphql'),
       opts.import && require.resolve('./import'),
       opts.typescript && require.resolve('./typescript'),
+      opts.react && require.resolve('./react.js'),
       opts.storybook && require.resolve('./storybook'),
       opts.cypress && require.resolve('./cypress'),
       opts.test && require.resolve('./jest'),
@@ -34,8 +35,6 @@ function init(opts = {}) {
     settings: {},
     ...eslintConfig,
   };
-
-  if (opts.react === 'raw') config.extends.push(require.resolve('./react.js'));
 
   if (opts.typescript?.parserProject) {
     config.parserOptions = merge(config.parserOptions, {
