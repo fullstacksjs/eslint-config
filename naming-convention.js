@@ -2,6 +2,10 @@ module.exports = [
   {
     selector: 'default',
     format: ['camelCase'],
+    filter: {
+      regex: '^_+$',
+      match: false,
+    },
   },
   {
     selector: 'function',
@@ -11,11 +15,19 @@ module.exports = [
   {
     selector: 'variable',
     format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+    filter: {
+      regex: '^_+$',
+      match: false,
+    },
   },
   {
     selector: 'parameter',
     format: ['camelCase', 'PascalCase'],
-    leadingUnderscore: 'allowSingleOrDouble',
+    leadingUnderscore: 'allow',
+    filter: {
+      regex: '^_+$',
+      match: false,
+    },
   },
   {
     selector: 'memberLike',
