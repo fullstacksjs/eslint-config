@@ -18,7 +18,7 @@ $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 
 ## Usage
 
-### Method 1 (recommended)
+### Method 1: Init API
 
 Create `.eslintrc.js` file and init the configuration.
 
@@ -35,7 +35,7 @@ module.exports = init({
 
 ```
 
-### Method 2
+### Method 2: Extends API
 You can also use the configuration within a `json` or `yaml` files by extending from `@fullstacksjs`, the Auto Module Detection is enabled on this method
 
 ```json
@@ -45,7 +45,8 @@ You can also use the configuration within a `json` or `yaml` files by extending 
 ```
 
 ## Auto Module Detection
-When auto module detection is turned on the configuration reads your root `package.json` metadata and includes necessary rules and plugins automatically.
+
+When auto module detection is turned on, the configuration reads the metadata from your root "package.json" file and automatically adds the rules and plugins that are needed. It's enabled for the `extends` API, and you should set `modules.auto` to `true` when you use the `init` API.
 
 ## Modules API
 
@@ -72,7 +73,7 @@ interface Modules {
 
 If you need more advanced typescript-eslint rule you need to specify `modules.typescript.resolverProject`.
 
-```json
+```js
 module.exports = init({
   modules: {
     typescript: { resolverProject: "<PATH_TO_TSCONFIG>" }
@@ -84,7 +85,7 @@ module.exports = init({
 
 React/NextJS configuration should automatically work with Auto Module Detection, but if you need to have more control over the rules you can configure it through `modules.react`.
 
-```json
+```js
 module.exports = init({
   modules: {
     react: 'raw' // for React/CRA/Vite
@@ -94,7 +95,7 @@ module.exports = init({
 
 and
 
-```json
+```js
 module.exports = init({
   modules: {
     react: 'next' // for NextJS
