@@ -126,7 +126,7 @@ module.exports = {
         '@typescript-eslint/promise-function-async': 'off',
         '@typescript-eslint/restrict-plus-operands': 'off',
         '@typescript-eslint/restrict-template-expressions': [
-          'off',
+          'warn',
           { allowNumber: true, allowBoolean: false, allowAny: false, allowNullish: false, allowRegExp: false },
         ],
         '@typescript-eslint/sort-type-constituents': [

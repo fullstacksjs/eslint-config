@@ -238,6 +238,8 @@ module.exports = {
       'padding-line-between-statements': 'off',
       'space-before-blocks': 'off',
       'dot-notation': 'off',
+      'no-throw-literal': 'off',
+      'require-await': 'off',
     }),
   },
 };
