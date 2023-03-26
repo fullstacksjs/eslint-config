@@ -39,7 +39,7 @@ module.exports = {
         '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
         '@typescript-eslint/consistent-type-imports': [
           'warn',
-          { prefer: 'type-imports', disallowTypeAnnotations: false, fixStyle: 'inline-type-imports' },
+          { prefer: 'type-imports', disallowTypeAnnotations: false, fixStyle: 'separate-type-imports' },
         ],
         '@typescript-eslint/default-param-last': 'warn',
         '@typescript-eslint/explicit-function-return-type': 'off',

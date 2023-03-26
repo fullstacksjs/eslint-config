@@ -11,7 +11,7 @@ module.exports = {
     'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
   },
   rules: {
-    'import/consistent-type-specifier-style': ['warn', 'prefer-inline'],
+    'import/consistent-type-specifier-style': ['warn', 'prefer-top-level'],
     'import/default': 'error',
     'import/dynamic-import-chunkname': 'off',
     'import/export': 'error',
