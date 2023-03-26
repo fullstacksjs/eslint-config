@@ -20,6 +20,7 @@ module.exports = {
         '@typescript-eslint/no-implied-eval': 'error',
         '@typescript-eslint/no-meaningless-void-operator': ['warn', { checkNever: false }],
         '@typescript-eslint/no-misused-promises': ['warn', { checksVoidReturn: { attributes: false } }],
+        '@typescript-eslint/no-mixed-enums': 'error',
         '@typescript-eslint/no-redundant-type-constituents': 'warn',
         '@typescript-eslint/no-throw-literal': ['warn', { allowThrowingUnknown: false }],
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',

@@ -37,7 +37,10 @@ module.exports = {
         '@typescript-eslint/consistent-indexed-object-style': 'off',
         '@typescript-eslint/consistent-type-assertions': 'error',
         '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-        '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports', disallowTypeAnnotations: false }],
+        '@typescript-eslint/consistent-type-imports': [
+          'warn',
+          { prefer: 'type-imports', disallowTypeAnnotations: false, fixStyle: 'inline-type-imports' },
+        ],
         '@typescript-eslint/default-param-last': 'warn',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-member-accessibility': 'off',
@@ -60,6 +63,7 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-extra-non-null-assertion': 'error',
         '@typescript-eslint/no-extraneous-class': ['warn', { allowWithDecorator: true }],
+        '@typescript-eslint/no-import-type-side-effects': 'warn',
         '@typescript-eslint/no-inferrable-types': 'off',
         '@typescript-eslint/no-invalid-this': ['error', { capIsConstructor: false }],
         '@typescript-eslint/no-invalid-void-type': 'error',
@@ -127,7 +131,7 @@ module.exports = {
         '@typescript-eslint/restrict-plus-operands': 'off',
         '@typescript-eslint/restrict-template-expressions': [
           'warn',
-          { allowNumber: true, allowBoolean: false, allowAny: false, allowNullish: false, allowRegExp: false },
+          { allowNumber: true, allowBoolean: false, allowAny: false, allowNullish: false, allowRegExp: false, allowNever: false },
         ],
         '@typescript-eslint/sort-type-constituents': [
           'warn',
