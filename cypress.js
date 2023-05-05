@@ -20,6 +20,7 @@ module.exports = {
         'cypress/no-pause': 'error',
         'cypress/no-unnecessary-waiting': 'error',
         'cypress/require-data-selectors': 'off',
+        'cypress/unsafe-to-chain-command': 'error',
 
         ...(global.fullstacksjs?.typescript && {
           '@typescript-eslint/no-namespace': 0,
