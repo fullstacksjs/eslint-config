@@ -15,6 +15,8 @@ module.exports = {
           },
         ],
         '@typescript-eslint/no-confusing-void-expression': ['off', { ignoreArrowShorthand: true, ignoreVoidOperator: true }], // Annoying and conflict with @typescript-eslint/no-meaningless-void-operator
+        '@typescript-eslint/no-duplicate-type-constituents': 'warn',
+        '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
         '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }],
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-implied-eval': 'error',
