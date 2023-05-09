@@ -90,7 +90,7 @@
     "graphql": ">=15",
     "prettier": "2",
     "react": ">=16",
-    "typescript": "4"
+    "typescript": ">=4"
   },
   "peerDependenciesMeta": {
     "typescript": {
