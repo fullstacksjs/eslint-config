@@ -52,6 +52,7 @@ module.exports = {
         '@graphql-eslint/require-id-when-available': 'warn',
         '@graphql-eslint/require-import-fragment': 'off',
         '@graphql-eslint/require-nullable-fields-with-oneof': 'warn',
+        '@graphql-eslint/require-nullable-result-in-root': 'off',
         '@graphql-eslint/require-type-pattern-with-oneof': 'warn',
         '@graphql-eslint/scalar-leafs': 'warn',
         '@graphql-eslint/selection-set-depth': 'off',
