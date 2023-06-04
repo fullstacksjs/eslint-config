@@ -4,6 +4,7 @@ export interface Options extends Config {
     auto?: boolean;
     react?: 'next' | 'raw';
     typescript?: { parserProject: string[] | string; resolverProject: string[] | string };
+    tailwind?: boolean;
     node?: boolean;
     strict?: boolean;
     import?: boolean;

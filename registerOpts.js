@@ -9,6 +9,7 @@ const defaultOptions = {
   storybook: hasDep('@storybook/react'),
   test: hasDep('jest') || hasDep('vitest'),
   typescript: hasDep('typescript'),
+  tailwind: hasDep('tailwindcss'),
   import: true,
   node: true,
 };

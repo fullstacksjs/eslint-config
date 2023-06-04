@@ -13,28 +13,32 @@ function init(opts = {}) {
   opts = global.fullstacksjs;
 
   /** @type { import('eslint').Linter.Config } */
-  const config = {
-    extends: [
-      require.resolve('./base'),
-      require.resolve('./promise'),
-      require.resolve('./fp'),
-      opts.node && require.resolve('./node'),
-      opts.graphql && require.resolve('./graphql'),
-      opts.import && require.resolve('./import'),
-      opts.typescript && require.resolve('./typescript'),
-      opts.react && require.resolve('./react.js'),
-      opts.storybook && require.resolve('./storybook'),
-      opts.cypress && require.resolve('./cypress'),
-      opts.test && require.resolve('./jest'),
-      opts.esm && require.resolve('./esm'),
-      opts.strict && require.resolve('./strict'),
-      require.resolve('./prettier'),
-      ...extraExtends,
-    ].filter(Boolean),
-    parserOptions: {},
-    settings: {},
-    ...eslintConfig,
-  };
+  const config = Object.assign(
+    {
+      extends: [
+        require.resolve('./base'),
+        require.resolve('./promise'),
+        require.resolve('./fp'),
+        opts.tailwind && require.resolve('./tailwind'),
+        opts.node && require.resolve('./node'),
+        opts.graphql && require.resolve('./graphql'),
+        opts.import && require.resolve('./import'),
+        opts.typescript && require.resolve('./typescript'),
+        opts.react && require.resolve('./react.js'),
+        opts.storybook && require.resolve('./storybook'),
+        opts.cypress && require.resolve('./cypress'),
+        opts.test && require.resolve('./jest'),
+        opts.esm && require.resolve('./esm'),
+        opts.strict && require.resolve('./strict'),
+        require.resolve('./prettier'),
+      ]
+        .concat(extraExtends)
+        .filter(Boolean),
+      parserOptions: {},
+      settings: {},
+    },
+    eslintConfig,
+  );
 
   if (opts.typescript?.parserProject) {
     config.parserOptions = merge(config.parserOptions, {

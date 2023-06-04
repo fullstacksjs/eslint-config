@@ -9,7 +9,7 @@ if [[ -n $1 ]]; then
   exit $?
 fi
 
-FILES=("base" "promise" "graphql" "import" "storybook" "fp" "node" "cypress" "typescript" "esm" "jest" "react")
+FILES=("base" "promise" "graphql" "import" "storybook" "fp" "node" "cypress" "typescript" "esm" "jest" "react" "tailwind")
 
 for f in "${FILES[@]}"; do
   echo

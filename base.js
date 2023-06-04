@@ -199,7 +199,7 @@ module.exports = {
     'prefer-named-capture-group': 'off',
     'prefer-numeric-literals': 'error',
     'prefer-object-has-own': 'warn',
-    'prefer-object-spread': 'warn',
+    'prefer-object-spread': 'off',
     'prefer-promise-reject-errors': 'off',
     'prefer-regex-literals': 'off',
     'prefer-rest-params': 'error',

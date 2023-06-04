@@ -28,6 +28,7 @@
     "prettier.js",
     "promise.js",
     "react.js",
+    "tailwind.js",
     "registerOpts.js",
     "storybook.js",
     "strict.js",
@@ -66,6 +67,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-simple-import-sort": "10.0.0",
     "eslint-plugin-storybook": "0.6.12",
+    "eslint-plugin-tailwindcss": "3.12.1",
     "read-pkg-up": "7.0.1"
   },
   "devDependencies": {
