@@ -12,6 +12,7 @@ module.exports = {
     require.resolve('./jest'),
     global.fullstacksjs?.tailwind && require.resolve('./tailwind'),
     global.fullstacksjs?.react && require.resolve('./react'),
+    global.fullstacksjs?.next && require.resolve('./next'),
     global.fullstacksjs?.typescript && require.resolve('./typescript'),
     global.fullstacksjs?.cypress && require.resolve('./cypress'),
     require.resolve('./prettier'),

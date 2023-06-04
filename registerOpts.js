@@ -6,6 +6,7 @@ const defaultOptions = {
   cypress: hasDep('cypress'),
   graphql: hasDep('graphql'),
   react: hasDep('react'),
+  next: hasDep('next'),
   storybook: hasDep('@storybook/react'),
   test: hasDep('jest') || hasDep('vitest'),
   typescript: hasDep('typescript'),

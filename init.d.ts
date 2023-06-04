@@ -2,7 +2,8 @@ type Config = import('eslint').Linter.Config;
 export interface Options extends Config {
   modules: {
     auto?: boolean;
-    react?: 'next' | 'raw';
+    react?: boolean;
+    next?: boolean;
     typescript?: { parserProject: string[] | string; resolverProject: string[] | string };
     tailwind?: boolean;
     node?: boolean;

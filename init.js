@@ -25,6 +25,7 @@ function init(opts = {}) {
         opts.import && require.resolve('./import'),
         opts.typescript && require.resolve('./typescript'),
         opts.react && require.resolve('./react.js'),
+        opts.next && require.resolve('./next.js'),
         opts.storybook && require.resolve('./storybook'),
         opts.cypress && require.resolve('./cypress'),
         opts.test && require.resolve('./jest'),
