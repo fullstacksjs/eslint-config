@@ -30,7 +30,7 @@ module.exports = init({
     auto: true, // If you need auto module detection (refer to Auto Module Detection).
     // Modules configuration check (optional). (refer to Module API)
   },
-  // Your configurations
+  // Other ESLint configurations
 });
 
 ```
@@ -66,6 +66,8 @@ interface Modules {
     test?: boolean; // controls jest/vitest plugin
     cypress?: boolean; // controls cypress plugin
     storybook?: boolean; // controls storybook plugin
+    tailwind?: boolean; // controls tailwindcss plugin
+    next?: boolean; // controls next plugin
 }
 ```
 
@@ -88,7 +90,7 @@ React/NextJS configuration should automatically work with Auto Module Detection,
 ```js
 module.exports = init({
   modules: {
-    react: 'raw' // for React/CRA/Vite
+    react: true // for React/CRA/Vite
   },
 });
 ```
@@ -98,7 +100,8 @@ and
 ```js
 module.exports = init({
   modules: {
-    react: 'next' // for NextJS
+    react: true,
+    next: true // for NextJS
   },
 });
 ```
@@ -164,6 +167,8 @@ v9 does not have any breaking change, which means the current configuration you 
 * [eslint-plugin-promise](https://github.com/eslint-community/eslint-plugin-promise)
 * [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme)
 * [eslint-plugin-graphql](https://github.com/apollographql/eslint-plugin-graphql)
+* [eslint-config-next](https://github.com/vercel/next.js/tree/canary/packages/eslint-config-next)
+* [eslint-plugin-tailwindcss](https://github.com/francoismassart/eslint-plugin-tailwindcss)
 
 That's all. Feel free to use 💛
 
