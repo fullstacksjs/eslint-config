@@ -50,8 +50,8 @@
   "dependencies": {
     "@fullstacksjs/toolbox": "3.3.0",
     "@graphql-eslint/eslint-plugin": "3.19.1",
-    "@typescript-eslint/eslint-plugin": "5.59.11",
-    "@typescript-eslint/parser": "5.59.11",
+    "@typescript-eslint/eslint-plugin": "5.60.0",
+    "@typescript-eslint/parser": "5.60.0",
     "deepmerge": "4.3.1",
     "eslint-config-next": "13.4.6",
     "eslint-config-prettier": "8.8.0",
