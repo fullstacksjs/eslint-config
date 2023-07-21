@@ -1,6 +1,6 @@
 {
   "name": "@fullstacksjs/eslint-config",
-  "version": "9.1.0",
+  "version": "9.9.0",
   "license": "MIT",
   "author": "fullstacks <fullstacksjs@gmail.com>",
   "description": "fullstacks eslint config",
@@ -63,7 +63,7 @@
     "eslint-plugin-jest-formatting": "3.1.0",
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
@@ -84,7 +84,7 @@
     "np": "8.0.4",
     "npm-run-all": "4.1.5",
     "pinst": "3.0.0",
-    "prettier": "2.8.8",
+    "prettier": "3.0.0",
     "semantic-release": "21.0.6",
     "typescript": "5.1.6"
   },
@@ -92,7 +92,7 @@
     "cypress": ">=8",
     "eslint": ">=7",
     "graphql": ">=15",
-    "prettier": "2",
+    "prettier": "3",
     "react": ">=16",
     "typescript": ">=4"
   },
