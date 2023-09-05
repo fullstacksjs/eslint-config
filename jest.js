@@ -73,9 +73,6 @@ module.exports = {
           'jest/unbound-method': 'error',
           'jest/no-untyped-mock-factory': 'warn',
         }),
-
-        // conflicts
-        'fp/no-let': 'off',
       },
     },
   ],

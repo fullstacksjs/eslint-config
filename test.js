@@ -22,8 +22,11 @@ module.exports = {
     'jest-formatting/padding-around-expect-groups': 'warn',
     'jest-formatting/padding-around-test-blocks': 'warn',
 
-    // other modules
     'max-lines-per-function': 'off',
+    'fp/no-let': 'off',
+    'fp/no-loops': 'off',
+    'no-sparse-arrays': 'off',
+
     ...(global.fullstacksjs?.react && {
       'react/jsx-no-constructed-context-values': 'off',
     }),
@@ -31,6 +34,7 @@ module.exports = {
       '@typescript-eslint/method-signature-style': 'off',
       '@typescript-eslint/no-namespace ': 'off',
       '@typescript-eslint/unbound-method': 'off',
+      '@typescript-eslint/no-empty-function': 'off',
     }),
   },
 };
