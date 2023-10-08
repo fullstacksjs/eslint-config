@@ -51,7 +51,8 @@ module.exports = {
         '@typescript-eslint/member-naming': 'off',
         '@typescript-eslint/member-ordering': 'off',
         '@typescript-eslint/method-signature-style': ['warn', 'property'],
-        '@typescript-eslint/naming-convention': ['warn', ...require('./naming-convention')],
+        // FIXME: Needs typechecking !!!
+        // '@typescript-eslint/naming-convention': ['warn', ...require('./naming-convention')],
         '@typescript-eslint/no-array-constructor': 'error',
         '@typescript-eslint/no-base-to-string': 'off', // false negative
         '@typescript-eslint/no-confusing-non-null-assertion': 'error',
