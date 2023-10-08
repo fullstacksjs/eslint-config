@@ -38,6 +38,7 @@ module.exports = {
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
         '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
         '@typescript-eslint/prefer-includes': 'warn',
+        '@typescript-eslint/prefer-optional-chain': 'warn',
         '@typescript-eslint/prefer-reduce-type-parameter': 'warn',
         '@typescript-eslint/prefer-nullish-coalescing': [
           'warn',
@@ -51,6 +52,10 @@ module.exports = {
         '@typescript-eslint/prefer-regexp-exec': 'warn',
         '@typescript-eslint/prefer-return-this-type': 'warn',
         '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
+        '@typescript-eslint/restrict-template-expressions': [
+          'warn',
+          { allowNumber: true, allowBoolean: false, allowAny: false, allowNullish: false, allowRegExp: false, allowNever: false },
+        ],
         '@typescript-eslint/require-array-sort-compare': ['error', { ignoreStringArrays: true }],
         '@typescript-eslint/require-await': 'error',
         '@typescript-eslint/return-await': 'error',

@@ -120,7 +120,6 @@ module.exports = {
         '@typescript-eslint/prefer-function-type': 'warn',
         '@typescript-eslint/prefer-literal-enum-member': ['error', { allowBitwiseExpressions: true }],
         '@typescript-eslint/prefer-namespace-keyword': 'error',
-        '@typescript-eslint/prefer-optional-chain': 'warn',
         '@typescript-eslint/prefer-readonly-parameter-types': [
           'off',
           { checkParameterProperties: true, ignoreInferredTypes: false, treatMethodsAsReadonly: true },
@@ -130,10 +129,6 @@ module.exports = {
         '@typescript-eslint/prefer-ts-expect-error': 'off',
         '@typescript-eslint/promise-function-async': 'off',
         '@typescript-eslint/restrict-plus-operands': 'off',
-        '@typescript-eslint/restrict-template-expressions': [
-          'warn',
-          { allowNumber: true, allowBoolean: false, allowAny: false, allowNullish: false, allowRegExp: false, allowNever: false },
-        ],
         '@typescript-eslint/sort-type-constituents': [
           'warn',
           {
