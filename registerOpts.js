@@ -11,6 +11,7 @@ const defaultOptions = {
   test: hasDep('jest') || hasDep('vitest'),
   typescript: hasDep('typescript'),
   tailwind: hasDep('tailwindcss'),
+  cspell: hasDep('cspell'),
   import: true,
   node: true,
 };

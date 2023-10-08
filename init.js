@@ -19,6 +19,7 @@ function init(opts = {}) {
         require.resolve('./base'),
         require.resolve('./promise'),
         require.resolve('./fp'),
+        opts.cspell && require.resolve('./cspell'),
         opts.tailwind && require.resolve('./tailwind'),
         opts.node && require.resolve('./node'),
         opts.graphql && require.resolve('./graphql'),
