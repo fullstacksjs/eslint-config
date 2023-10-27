@@ -43,13 +43,13 @@ function init(opts = {}) {
   );
 
   if (opts.typescript?.parserProject) {
+    config.extends.push(require.resolve('./typecheck.js'));
     config.parserOptions = merge(config.parserOptions, {
       project: opts.typescript.parserProject,
     });
   }
 
   if (opts.typescript?.resolverProject) {
-    config.extends.push(require.resolve('./typecheck.js'));
     config.settings = merge(config.settings, {
       'import/resolver': {
         typescript: {
