@@ -36,6 +36,7 @@ module.exports = init({
 ```
 
 ### Method 2: Extends API
+
 You can also use the configuration within a `json` or `yaml` files by extending from `@fullstacksjs`, the Auto Module Detection is enabled on this method
 
 ```json
@@ -53,7 +54,8 @@ When auto module detection is turned on, the configuration reads the metadata fr
 ```typescript
 interface Modules {
     auto?: boolean; // Auto module detection
-    react?: 'next' | 'raw'; // controls react, react-hooks, jsx/a11y plugins
+    react?: boolean; // controls react, react-hooks, jsx/a11y plugins
+    cspell?: boolean; // controls cspell plugin
     typescript?: { // controls typescript plugin
       parserProject?: string[] | string; // controls parserOptions.project
       resolverProject?: string[] | string // controls settings['import/resolver'].typescript.project
@@ -78,7 +80,10 @@ If you need more advanced typescript-eslint rule you need to specify `modules.ty
 ```js
 module.exports = init({
   modules: {
-    typescript: { resolverProject: "<PATH_TO_TSCONFIG>" }
+    typescript: {
+      parserProject: "<PATH_TO_TSCONFIG>", // parserOptions.project
+      resolverProject: "<PATH_TO_TSCONFIG>", // settings['import/resolver']
+    },
   },
 });
 ```
