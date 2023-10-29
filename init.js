@@ -19,7 +19,6 @@ function init(opts = {}) {
         require.resolve('./base'),
         require.resolve('./promise'),
         require.resolve('./fp'),
-        opts.cspell && require.resolve('./cspell'),
         opts.tailwind && require.resolve('./tailwind'),
         opts.node && require.resolve('./node'),
         opts.graphql && require.resolve('./graphql'),
@@ -32,8 +31,8 @@ function init(opts = {}) {
         opts.test && require.resolve('./jest'),
         opts.esm && require.resolve('./esm'),
         opts.strict && require.resolve('./strict'),
-        opts.prettier && require.resolve('./prettier'),
-        opts.disableExpensiveRules && require.resolve('./expensive-rules'),
+        !opts.disableExpensiveRules && opts.prettier && require.resolve('./prettier'),
+        !opts.disableExpensiveRules && opts.cspell && require.resolve('./cspell'),
       ]
         .concat(extraExtends)
         .filter(Boolean),

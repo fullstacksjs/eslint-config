@@ -28,7 +28,6 @@
     "node.js",
     "packages.js",
     "prettier.js",
-    "expensive-rules.js",
     "promise.js",
     "react.js",
     "registerOpts.js",

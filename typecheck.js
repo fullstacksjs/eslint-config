@@ -1,3 +1,5 @@
+const expensiveRules = require('./expensive-rules');
+
 /** @type { import('eslint').Linter.Config } */
 module.exports = {
   overrides: [
@@ -17,11 +19,11 @@ module.exports = {
         '@typescript-eslint/no-confusing-void-expression': ['off', { ignoreArrowShorthand: true, ignoreVoidOperator: true }], // Annoying and conflict with @typescript-eslint/no-meaningless-void-operator
         '@typescript-eslint/no-duplicate-type-constituents': 'warn',
         '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
-        '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }],
+        '@typescript-eslint/no-floating-promises': expensiveRules(['error', { ignoreVoid: true }]),
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-implied-eval': 'error',
         '@typescript-eslint/no-meaningless-void-operator': ['warn', { checkNever: false }],
-        '@typescript-eslint/no-misused-promises': ['warn', { checksVoidReturn: { attributes: false } }],
+        '@typescript-eslint/no-misused-promises': expensiveRules(['warn', { checksVoidReturn: { attributes: false } }]),
         '@typescript-eslint/no-mixed-enums': 'error',
         '@typescript-eslint/no-redundant-type-constituents': 'warn',
         '@typescript-eslint/no-throw-literal': ['warn', { allowThrowingUnknown: false }],

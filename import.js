@@ -1,3 +1,5 @@
+const expensiveRules = require('./expensive-rules');
+
 /** @type { import('eslint').Linter.Config } */
 module.exports = {
   plugins: ['import', 'simple-import-sort'],
@@ -14,22 +16,22 @@ module.exports = {
     'import/consistent-type-specifier-style': ['warn', 'prefer-top-level'],
     'import/default': 'error',
     'import/dynamic-import-chunkname': 'off',
-    'import/export': 'error',
+    'import/export': expensiveRules('error'),
     'import/exports-last': 'off',
     'import/extensions': ['error', 'always', { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' }],
     'import/first': 'error',
     'import/group-exports': 'off',
     'import/max-dependencies': ['off', { ignoreTypeImports: true }],
-    'import/named': 'error',
-    'import/namespace': 'error',
+    'import/named': expensiveRules('error'),
+    'import/namespace': expensiveRules('error'),
     'import/newline-after-import': 'warn',
     'import/no-absolute-path': 'error',
     'import/no-amd': 'error',
     'import/no-anonymous-default-export': 'off',
     'import/no-commonjs': 'off',
-    'import/no-cycle': ['error', { maxDepth: Infinity }],
+    'import/no-cycle': expensiveRules(['error', { maxDepth: Infinity }]),
     'import/no-default-export': 'off',
-    'import/no-deprecated': 'warn',
+    'import/no-deprecated': expensiveRules('warn'),
     'import/no-duplicates': 'error',
     'import/no-dynamic-require': 'off',
     'import/no-empty-named-blocks': 'error',
