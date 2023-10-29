@@ -94,22 +94,32 @@ module.exports = init({
 
 It's crucial to balance the benefits of linting rules against their performance impact. Below is a table highlighting the most resource-intensive linting rules encountered in a real-world React project:
 
-| Rule                                    | Time (ms) | Relative |
-| --------------------------------------- | --------- | -------- |
-| @cspell/spellchecker                    | 4298.302  | 25.0%    |
-| prettier/prettier                       | 3299.631  | 19.2%    |
-| @typescript-eslint/no-misused-promises  | 2473.767  | 14.4%    |
-| import/no-cycle                         | 1177.111  | 6.8%     |
-| import/namespace                        | 1148.731  | 6.7%     |
+| Rule                                   | Time (ms) | Relative |
+| -------------------------------------- | --------- | -------- |
+| @cspell/spellchecker                   | 4298.302  | 25.0%    |
+| prettier/prettier                      | 3299.631  | 19.2%    |
+| @typescript-eslint/no-misused-promises | 2473.767  | 14.4%    |
+| import/no-cycle                        | 1177.111  | 6.8%     |
+| import/namespace                       | 1148.731  | 6.7%     |
 
 As illustrated, certain rules significantly increase linting time, potentially hindering the developer experience by slowing down the feedback loop. To mitigate this, you may consider disabling these resource-intensive rules in the development environment. However, they can remain active in environments where performance is less critical, such as Continuous Integration (CI) systems or during pre-commit checks (git hooks).
 
 To conditionally disable expensive linting rules, you can modify your configuration as follows:
 
+list of expensiveRules to be effected:
+
+```js
+'@cspell/spellchecker'
+'@typescript-eslint/no-misused-promises'
+'import/no-cycle'
+'import/namespace'
+```
+
 ```js
 module.exports = init({
   modules: {
     disableExpensiveRules: !process.env.CI || !process.env.HUSKY // Or anywhere you want
+    prettier: false // So you should run the formatter explicitly.
   },
 });
 ```

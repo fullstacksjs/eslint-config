@@ -31,7 +31,7 @@ function init(opts = {}) {
         opts.test && require.resolve('./jest'),
         opts.esm && require.resolve('./esm'),
         opts.strict && require.resolve('./strict'),
-        !opts.disableExpensiveRules && opts.prettier && require.resolve('./prettier'),
+        opts.prettier && require.resolve('./prettier'),
         !opts.disableExpensiveRules && opts.cspell && require.resolve('./cspell'),
       ]
         .concat(extraExtends)
