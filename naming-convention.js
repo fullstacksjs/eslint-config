@@ -2,11 +2,9 @@ module.exports = [
   {
     selector: 'default',
     format: ['camelCase'],
-    filter: {
-      regex: '^_+$',
-      match: false,
-    },
+    filter: { regex: '^_+$', match: false },
   },
+  { selector: 'import', format: null },
   {
     selector: 'function',
     format: ['camelCase', 'PascalCase'],
@@ -15,24 +13,15 @@ module.exports = [
   {
     selector: 'variable',
     format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
-    filter: {
-      regex: '^_+$',
-      match: false,
-    },
+    filter: { regex: '^_+$', match: false },
   },
   {
     selector: 'parameter',
     format: ['camelCase', 'PascalCase'],
     leadingUnderscore: 'allow',
-    filter: {
-      regex: '^_+$',
-      match: false,
-    },
+    filter: { regex: '^_+$', match: false },
   },
-  {
-    selector: 'memberLike',
-    format: null,
-  },
+  { selector: 'memberLike', format: null },
   {
     selector: 'memberLike',
     modifiers: ['static'],
@@ -53,7 +42,6 @@ module.exports = [
     selector: 'enumMember',
     format: ['PascalCase'],
   },
-  // disallow I prefix for interfaces
   {
     selector: 'interface',
     format: ['PascalCase'],

@@ -32,7 +32,8 @@ function init(opts = {}) {
         opts.test && require.resolve('./jest'),
         opts.esm && require.resolve('./esm'),
         opts.strict && require.resolve('./strict'),
-        require.resolve('./prettier'),
+        opts.prettier && require.resolve('./prettier'),
+        opts.disableExpensiveRules && require.resolve('./expensive-rules'),
       ]
         .concat(extraExtends)
         .filter(Boolean),

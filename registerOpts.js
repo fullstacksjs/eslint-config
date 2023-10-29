@@ -12,6 +12,8 @@ const defaultOptions = {
   typescript: hasDep('typescript'),
   tailwind: hasDep('tailwindcss'),
   cspell: hasDep('cspell'),
+  prettier: hasDep('prettier'),
+  disableExpensiveRules: false,
   import: true,
   node: true,
 };

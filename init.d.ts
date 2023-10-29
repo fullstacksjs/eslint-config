@@ -15,6 +15,8 @@ export interface Options extends Config {
     test?: boolean;
     cypress?: boolean;
     storybook?: boolean;
+    prettier?: boolean;
+    disableExpensiveRules?: boolean;
   };
 }
 
