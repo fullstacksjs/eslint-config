@@ -18,7 +18,6 @@ module.exports = {
         ],
         '@typescript-eslint/no-confusing-void-expression': ['off', { ignoreArrowShorthand: true, ignoreVoidOperator: true }], // Annoying and conflict with @typescript-eslint/no-meaningless-void-operator
         '@typescript-eslint/no-duplicate-type-constituents': 'warn',
-        '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
         '@typescript-eslint/no-floating-promises': expensiveRules(['error', { ignoreVoid: true }]),
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-implied-eval': 'error',
@@ -28,6 +27,7 @@ module.exports = {
         '@typescript-eslint/no-redundant-type-constituents': 'warn',
         '@typescript-eslint/no-throw-literal': ['warn', { allowThrowingUnknown: false }],
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
+        '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
         '@typescript-eslint/no-unnecessary-condition': [
           'warn',
           {
@@ -38,6 +38,7 @@ module.exports = {
         '@typescript-eslint/no-unnecessary-qualifier': 'error',
         '@typescript-eslint/no-unnecessary-type-arguments': 'error',
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+        '@typescript-eslint/no-unsafe-unary-minus': 'error',
         '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
         '@typescript-eslint/prefer-includes': 'warn',
         '@typescript-eslint/prefer-optional-chain': 'warn',
