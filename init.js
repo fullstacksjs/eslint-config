@@ -32,7 +32,6 @@ function init(opts = {}) {
         opts.esm && require.resolve('./esm'),
         opts.strict && require.resolve('./strict'),
         opts.prettier && require.resolve('./prettier'),
-        !opts.disableExpensiveRules && opts.cspell && require.resolve('./cspell'),
       ]
         .concat(extraExtends)
         .filter(Boolean),

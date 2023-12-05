@@ -55,7 +55,6 @@ When auto module detection is turned on, the configuration reads the metadata fr
 interface Modules {
     auto?: boolean; // Auto module detection
     react?: boolean; // controls react, react-hooks, jsx/a11y plugins
-    cspell?: boolean; // controls cspell plugin
     typescript?: { // controls typescript plugin
       parserProject?: string[] | string; // controls parserOptions.project
       resolverProject?: string[] | string // controls settings['import/resolver'].typescript.project
@@ -96,7 +95,6 @@ It's crucial to balance the benefits of linting rules against their performance 
 
 | Rule                                   | Time (ms) | Relative |
 | -------------------------------------- | --------- | -------- |
-| @cspell/spellchecker                   | 4298.302  | 25.0%    |
 | prettier/prettier                      | 3299.631  | 19.2%    |
 | @typescript-eslint/no-misused-promises | 2473.767  | 14.4%    |
 | import/no-cycle                        | 1177.111  | 6.8%     |
@@ -109,7 +107,6 @@ To conditionally disable expensive linting rules, you can modify your configurat
 list of expensiveRules to be effected:
 
 ```js
-'@cspell/spellchecker'
 '@typescript-eslint/no-misused-promises'
 'import/no-cycle'
 'import/namespace'
