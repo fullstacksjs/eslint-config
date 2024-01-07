@@ -4,6 +4,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
+  reportUnusedDisableDirectives: true,
   env: {
     browser: true,
     node: true,
