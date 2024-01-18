@@ -106,11 +106,16 @@ To conditionally disable expensive linting rules, you can modify your configurat
 
 list of expensiveRules to be effected:
 
-```js
-'@typescript-eslint/no-misused-promises'
-'import/no-cycle'
-'import/namespace'
 ```
+@typescript-eslint/no-misused-promises
+import/no-cycle
+import/named *
+import/namespace *
+import/default *
+import/no-named-as-default-member *
+```
+
+> *: If you are using Typescript these rules are not needed and disabled by default.
 
 ```js
 module.exports = init({

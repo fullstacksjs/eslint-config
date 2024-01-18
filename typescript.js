@@ -159,6 +159,10 @@ module.exports = {
 
         // open issues
         'react/jsx-no-useless-fragment': 'off', // Need useless-fragment for JSX return type
+        'import/named': 'off',
+        'import/namespace': 'off',
+        'import/default': 'off',
+        'import/no-named-as-default-member': 'off',
       },
     },
   ],

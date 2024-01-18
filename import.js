@@ -14,7 +14,7 @@ module.exports = {
   },
   rules: {
     'import/consistent-type-specifier-style': ['warn', 'prefer-top-level'],
-    'import/default': 'error',
+    'import/default': expensiveRules('error'),
     'import/dynamic-import-chunkname': 'off',
     'import/export': expensiveRules('error'),
     'import/exports-last': 'off',
@@ -40,7 +40,7 @@ module.exports = {
     'import/no-internal-modules': 'off',
     'import/no-mutable-exports': 'error',
     'import/no-named-as-default': 'error',
-    'import/no-named-as-default-member': 'error',
+    'import/no-named-as-default-member': expensiveRules('error'),
     'import/no-named-default': 'error',
     'import/no-named-export': 'off',
     'import/no-namespace': 'off',

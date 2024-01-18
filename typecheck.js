@@ -54,6 +54,7 @@ module.exports = {
           },
         ],
         '@typescript-eslint/prefer-regexp-exec': 'warn',
+        '@typescript-eslint/prefer-promise-reject-errors': 'warn',
         '@typescript-eslint/prefer-return-this-type': 'warn',
         '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
         '@typescript-eslint/restrict-template-expressions': [
@@ -79,6 +80,7 @@ module.exports = {
 
         // collisions
         'dot-notation': 'off',
+        'prefer-promise-reject-errors': 'off',
       },
     },
   ],
