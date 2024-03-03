@@ -56,7 +56,7 @@ interface Modules {
     auto?: boolean; // Auto module detection
     react?: boolean; // controls react, react-hooks, jsx/a11y plugins
     typescript?: { // controls typescript plugin
-      parserProject?: string[] | string; // controls parserOptions.project
+      parserProject?: boolean | string[] | string; // controls parserOptions.project
       resolverProject?: string[] | string // controls settings['import/resolver'].typescript.project
     };
     node?: boolean; // controls node plugin
@@ -82,7 +82,7 @@ If you need more advanced typescript-eslint rule you need to specify `modules.ty
 module.exports = init({
   modules: {
     typescript: {
-      parserProject: "<PATH_TO_TSCONFIG>", // parserOptions.project
+      parserProject: true, // parserOptions.project
       resolverProject: "<PATH_TO_TSCONFIG>", // settings['import/resolver']
     },
   },
