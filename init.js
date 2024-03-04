@@ -32,6 +32,7 @@ function init(opts = {}) {
         opts.esm && require.resolve('./esm'),
         opts.strict && require.resolve('./strict'),
         opts.prettier && require.resolve('./prettier'),
+        opts.typescript && require.resolve('./typecheck.js'),
       ]
         .concat(extraExtends)
         .filter(Boolean),
@@ -41,10 +42,9 @@ function init(opts = {}) {
     eslintConfig,
   );
 
-  if (opts.typescript?.parserProject) {
-    config.extends.push(require.resolve('./typecheck.js'));
+  if (opts.typescript) {
     config.parserOptions = merge(config.parserOptions, {
-      project: opts.typescript.parserProject,
+      project: opts.typescript.parserProject ?? true,
     });
   }
 
