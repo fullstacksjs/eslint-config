@@ -7,6 +7,7 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
       rules: {
         '@typescript-eslint/await-thenable': 'error',
+        '@typescript-eslint/consistent-return': 'off',
         '@typescript-eslint/consistent-type-exports': 'warn',
         '@typescript-eslint/dot-notation': [
           'warn',
@@ -81,6 +82,7 @@ module.exports = {
         // collisions
         'dot-notation': 'off',
         'prefer-promise-reject-errors': 'off',
+        'consistent-return': 'off',
       },
     },
   ],
