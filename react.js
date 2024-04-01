@@ -35,7 +35,7 @@ module.exports = {
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
     'react/jsx-fragments': 'off',
     'react/jsx-handler-names': 'off',
-    'react/jsx-key': 'error',
+    'react/jsx-key': ['error', { "checkFragmentShorthand": true }],
     'react/jsx-max-depth': 'off',
     'react/jsx-newline': 'off',
     'react/jsx-no-bind': 'off',
