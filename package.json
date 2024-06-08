@@ -68,7 +68,7 @@
   },
   "peerDependencies": {
     "cypress": ">=8",
-    "eslint": ">=9",
+    "eslint": "9",
     "graphql": ">=15",
     "prettier": "3",
     "react": ">=16",
