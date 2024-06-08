@@ -199,7 +199,7 @@ function typescript(options = {}) {
         '@typescript-eslint/no-unnecessary-type-arguments': 'error',
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
         '@typescript-eslint/no-unsafe-unary-minus': 'error',
-        'no-unnecessary-template-expression': 'warn',
+        '@typescript-eslint/no-unnecessary-template-expression': 'warn',
         '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
         '@typescript-eslint/prefer-includes': 'warn',
         '@typescript-eslint/prefer-optional-chain': 'warn',
