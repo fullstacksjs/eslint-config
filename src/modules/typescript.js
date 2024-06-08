@@ -11,7 +11,17 @@ function typescript(options = {}) {
   return {
     files: [globs.ts, globs.tsx],
     plugins: { '@typescript-eslint': plugin },
-    languageOptions: { parser },
+    languageOptions: {
+      parser,
+      parserOptions: {
+        ...predicate(options.typescript && options.typescript.projects, {
+          project: options.typescript.projects,
+        }),
+        ...predicate(options.typescript && options.typescript.tsconfigRootDir, {
+          tsconfigRootDir: options.typescript.tsconfigRootDir,
+        }),
+      },
+    },
     rules: {
       '@typescript-eslint/adjacent-overload-signatures': 'error',
       '@typescript-eslint/array-type': 'error',
@@ -175,7 +185,7 @@ function typescript(options = {}) {
         }),
         '@typescript-eslint/no-mixed-enums': 'error',
         '@typescript-eslint/no-redundant-type-constituents': 'warn',
-        '@typescript-eslint/no-throw-literal': ['warn', { allowThrowingUnknown: false }],
+        // '@typescript-eslint/no-throw-literal': ['warn', { allowThrowingUnknown: false }],
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
         '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
         '@typescript-eslint/no-unnecessary-condition': [
