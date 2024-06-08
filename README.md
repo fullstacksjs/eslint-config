@@ -53,15 +53,17 @@ When auto module detection is turned on, the configuration reads the metadata fr
 
 ```typescript
 interface Modules {
-    auto?: boolean; // Auto module detection
     react?: boolean; // controls react, react-hooks, jsx/a11y plugins
     typescript?: { // controls typescript plugin
-      parserProject?: boolean | string[] | string; // controls parserOptions.project
-      resolverProject?: string[] | string // controls settings['import/resolver'].typescript.project
+      projects?: boolean | string[] | string; // controls parserOptions.project
     };
     node?: boolean; // controls node plugin
     strict?: boolean; // controls strict plugin
-    import?: boolean; // controls import plugin
+    import?: {
+      projects?: string[] | string // controls settings['import/resolver'].typescript.project
+      internalRegExp?: string;
+      lifetime?: number;
+    }; // controls import plugin
     esm?: boolean; // controls esm plugin
     graphql?: boolean; // controls graphql plugin
     test?: boolean; // controls jest/vitest plugin

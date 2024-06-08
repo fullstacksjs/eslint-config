@@ -1,18 +1,31 @@
 {
   "version": "0.2",
   "language": "en",
-  "ignorePaths": [
-    "**/node_modules/**",
-    "**/package.json"
-  ],
-  "dictionaries": [
-    "node"
-  ],
+  "ignorePaths": ["**/node_modules/**", "**/package.json"],
+  "dictionaries": ["node"],
   "words": [
+    "activedescendant",
+    "astro",
+    "backreference",
+    "camelcase",
+    "chunkname",
     "frontendmonster",
     "fullstacksjs",
     "graphqlrc",
+    "linebreak",
+    "multilines",
     "nextjs",
-    "typecheck"
+    "nocheck",
+    "nofunc",
+    "nonconstructor",
+    "nonoctal",
+    "oneof",
+    "proptypes",
+    "readonlysemi",
+    "setstate",
+    "tailwindcss",
+    "textnodes",
+    "typecheck",
+    "unocss"
   ]
 }
