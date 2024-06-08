@@ -199,7 +199,7 @@ function typescript(options = {}) {
         '@typescript-eslint/no-unnecessary-type-arguments': 'error',
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
         '@typescript-eslint/no-unsafe-unary-minus': 'error',
-        '@typescript-eslint/no-useless-template-literals': 'warn',
+        'no-unnecessary-template-expression': 'warn',
         '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
         '@typescript-eslint/prefer-includes': 'warn',
         '@typescript-eslint/prefer-optional-chain': 'warn',
@@ -226,6 +226,10 @@ function typescript(options = {}) {
         '@typescript-eslint/return-await': 'error',
         '@typescript-eslint/switch-exhaustiveness-check': 'error',
         '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
+
+        ...predicate(options.fp, {
+          'functional/immutable-data': ['error', { ignoreClasses: true, ignoreImmediateMutation: true, ignoreNonConstDeclarations: true }],
+        }),
 
         // collisions
         'prefer-promise-reject-errors': 'off',

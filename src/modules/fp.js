@@ -8,7 +8,6 @@ function fp() {
       'functional/functional-parameters': 'off',
       'functional/no-let': ['error', { allowInForLoopInit: true }],
       'functional/no-loop-statements': 'error',
-      'functional/immutable-data': ['error', { ignoreClasses: true, ignoreImmediateMutation: true, ignoreNonConstDeclarations: true }],
     },
   };
 }
