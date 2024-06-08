@@ -14,6 +14,7 @@ export interface Options {
   cypress?: boolean;
   storybook?: boolean;
   prettier?: boolean;
+  playwright?: boolean;
   typescript?: { projects: string[] | string };
   disableExpensiveRules?: boolean;
 }

@@ -17,6 +17,7 @@ const strict = require('./modules/strict');
 const react = require('./modules/react');
 const storybook = require('./modules/storybook');
 const typescript = require('./modules/typescript');
+const playwright = require('./modules/playwright');
 
 const testPackages = ['jest', 'vitest', 'cypress', 'playwright'];
 
@@ -40,6 +41,7 @@ const defaultOptions = {
   prettier: isPackageExists('prettier'),
   typescript: isPackageExists('typescript') ? { projects: true } : false,
   unocss: isPackageExists('unocss'),
+  playwright: isPackageExists('playwright'),
 };
 
 /**
@@ -71,6 +73,7 @@ function init(initOptions, ...extend) {
   if (options.react) rules.push(react(options));
   if (options.storybook) rules.push(storybook(options));
   if (options.typescript) rules.push(typescript(options));
+  if (options.playwright) rules.push(playwright(options));
 
   // ISSUE: Waiting for FlatConfig support https://github.com/dimaMachina/graphql-eslint/issues/2178
   // if (false && options.graphql) rules.push(graphql(options));
