@@ -7,7 +7,7 @@ const { ignoreGlobs } = require('./globs');
  */
 function compose(module, options) {
   const config = module(options);
-  config.ignores = [config.ignores, ...options.ignores, ...ignoreGlobs];
+  config.ignores = [...(config.ignores ?? []), ...(options.ignores ?? []), ...(ignoreGlobs ?? [])];
   return config;
 }
 
