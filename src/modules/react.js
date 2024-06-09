@@ -73,7 +73,7 @@ function react() {
 
       '@eslint-react/naming-convention/component-name': 'warn',
       '@eslint-react/naming-convention/filename': 'off',
-      '@eslint-react/naming-convention/filename-extension': { extensions: ['.jsx', '.tsx'] },
+      '@eslint-react/naming-convention/filename-extension': ['warn', { extensions: ['.jsx', '.tsx'] }],
       '@eslint-react/naming-convention/use-state': 'off',
 
       'react-hooks/exhaustive-deps': 'warn',
