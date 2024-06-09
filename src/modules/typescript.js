@@ -263,6 +263,7 @@ function typescript(options = {}) {
       'dot-notation': 'off',
       'no-throw-literal': 'off',
       'require-await': 'off',
+      'no-undef': 'off',
     },
   };
 }

@@ -10,11 +10,6 @@ function react() {
       'react-hooks': hooksPlugin,
       'jsx-a11y': a11yPlugin,
     },
-    languageOptions: {
-      globals: {
-        React: 'readonly',
-      },
-    },
     settings: {
       react: {
         pragma: 'React',
@@ -77,9 +72,9 @@ function react() {
       '@eslint-react/hooks-extra/prefer-use-state-lazy-initialization': 'warn',
 
       '@eslint-react/naming-convention/component-name': 'warn',
-      '@eslint-react/naming-convention/filename': 'warn',
-      '@eslint-react/naming-convention/filename-extension': 'warn',
-      '@eslint-react/naming-convention/use-state': 'warn',
+      '@eslint-react/naming-convention/filename': 'off',
+      '@eslint-react/naming-convention/filename-extension': { extensions: ['.jsx', '.tsx'] },
+      '@eslint-react/naming-convention/use-state': 'off',
 
       'react-hooks/exhaustive-deps': 'warn',
       'react-hooks/rules-of-hooks': 'error',
