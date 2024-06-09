@@ -2,7 +2,6 @@ const merge = require('deepmerge');
 const { isPackageExists } = require('local-pkg');
 const base = require('./modules/base');
 const cypress = require('./modules/cypress');
-const ignores = require('./modules/ignores');
 const imports = require('./modules/imports');
 const prettier = require('./modules/prettier');
 const tailwind = require('./modules/tailwind');
@@ -18,6 +17,7 @@ const react = require('./modules/react');
 const storybook = require('./modules/storybook');
 const typescript = require('./modules/typescript');
 const playwright = require('./modules/playwright');
+const compose = require('./utils/compose');
 
 const testPackages = ['jest', 'vitest', 'cypress', 'playwright'];
 
@@ -42,6 +42,7 @@ const defaultOptions = {
   typescript: isPackageExists('typescript') ? { projects: true } : false,
   unocss: isPackageExists('unocss'),
   playwright: isPackageExists('playwright'),
+  ignores: [],
 };
 
 /**
@@ -60,28 +61,28 @@ function init(initOptions, ...extend) {
     options.import = {};
   }
 
-  const rules = [ignores(), base()];
+  const rules = [compose(base, options)];
 
-  if (options.fp) rules.push(fp(options));
-  if (options.import) rules.push(imports(options));
-  if (options.tailwind) rules.push(tailwind(options));
-  if (options.test) rules.push(tests(options));
-  if (options.node) rules.push(node(options));
-  if (options.jest) rules.push(jest(options));
-  if (options.vitest) rules.push(vitest(options));
-  if (options.cypress) rules.push(cypress(options));
-  if (options.react) rules.push(react(options));
-  if (options.storybook) rules.push(storybook(options));
-  if (options.typescript) rules.push(typescript(options));
-  if (options.playwright) rules.push(playwright(options));
+  if (options.fp) rules.push(compose(fp, options));
+  if (options.import) rules.push(compose(imports, options));
+  if (options.tailwind) rules.push(compose(tailwind, options));
+  if (options.test) rules.push(compose(tests, options));
+  if (options.node) rules.push(compose(node, options));
+  if (options.jest) rules.push(compose(jest, options));
+  if (options.vitest) rules.push(compose(vitest, options));
+  if (options.cypress) rules.push(compose(cypress, options));
+  if (options.react) rules.push(compose(react, options));
+  if (options.storybook) rules.push(compose(storybook, options));
+  if (options.typescript) rules.push(compose(typescript, options));
+  if (options.playwright) rules.push(compose(playwright, options));
 
   // ISSUE: Waiting for FlatConfig support https://github.com/dimaMachina/graphql-eslint/issues/2178
-  // if (false && options.graphql) rules.push(graphql(options));
+  // if (false && options.graphql) rules.push(compose(graphql,options));
   // ISSUE: Waiting for FlatConfig support https://github.com/vercel/next/issues/64409#issuecomment-2057325722
-  // if (false && options.next) rules.push(next(options));
+  // if (false && options.next) rules.push(compose(next,options));
 
-  if (options.strict) rules.push(strict(options));
-  if (options.prettier) rules.push(prettier(options));
+  if (options.strict) rules.push(compose(strict, options));
+  if (options.prettier) rules.push(compose(prettier, options));
 
   return rules.concat(extend);
 }
