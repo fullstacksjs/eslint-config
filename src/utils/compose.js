@@ -1,4 +1,4 @@
-import { ignoreGlobs } from './globs';
+const { ignoreGlobs } = require('./globs');
 
 /**
  * @param { (options: import('eslint').Linter.FlatConfig) => import('eslint').Linter.FlatConfig } module
