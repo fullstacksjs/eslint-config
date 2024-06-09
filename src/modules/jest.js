@@ -1,16 +1,13 @@
-const globals = require('globals');
 const plugin = require('eslint-plugin-jest');
-const { predicate } = require('../utils/conditions');
 const { globs } = require('../utils/globs');
 
 /**
  * @param { import('./init.d.ts').Options } options
  * @return { import('eslint').Linter.FlatConfig } */
-function jest(options = {}) {
+function jest() {
   return {
     files: globs.test,
     plugins: { jest: plugin },
-    languageOptions: { globals: globals.jest },
     rules: {
       'jest/consistent-test-it': 'off',
       'jest/expect-expect': 'off',

@@ -1,7 +1,7 @@
 const plugin = require('eslint-plugin-jest-formatting');
+const globals = require('globals');
 const { globs } = require('../utils/globs');
 const { predicate } = require('../utils/conditions');
-const globals = require('globals');
 
 /**
  * @param {import('../init').Options} options
@@ -12,7 +12,7 @@ function tests(options = {}) {
     plugins: { 'jest-formatting': plugin },
     files: [...globs.test, ...globs.e2e],
     languageOptions: {
-      globals: globals['shared-node-browser'],
+      globals: { ...globals['shared-node-browser'], ...globals.jest },
     },
     rules: {
       'jest-formatting/padding-around-after-all-blocks': 'warn',

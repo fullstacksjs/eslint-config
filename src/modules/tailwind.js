@@ -1,7 +1,7 @@
-const plugin = require('eslint-plugin-tailwindcss');
-
 /** @return { Promise<import('eslint').Linter.FlatConfig> } */
 function tailwind() {
+  const plugin = require('eslint-plugin-tailwindcss');
+
   return {
     plugins: { tailwindcss: plugin },
     rules: {
