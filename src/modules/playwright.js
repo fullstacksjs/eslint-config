@@ -1,4 +1,3 @@
-const globals = require('globals');
 const plugin = require('eslint-plugin-playwright');
 const { globs } = require('../utils/globs');
 

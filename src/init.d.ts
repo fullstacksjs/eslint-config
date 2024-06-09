@@ -15,7 +15,7 @@ export interface Options {
   storybook?: boolean;
   prettier?: boolean;
   playwright?: boolean;
-  typescript?: { projects: string[] | string | boolean; tsconfigRootDir?: string };
+  typescript?: { projects: string[] | boolean | string; tsconfigRootDir?: string };
   disableExpensiveRules?: boolean;
   ignores?: string[];
 }

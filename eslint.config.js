@@ -15,6 +15,7 @@ module.exports = init(
     react: true,
     storybook: true,
     typescript: true,
+    tailwind: false,
   },
   {
     rules: {
