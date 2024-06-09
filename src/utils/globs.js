@@ -35,6 +35,38 @@ const globs = {
 };
 
 const allSrc = [globs.src, globs.style, globs.allJson, globs.md, globs.svelte, globs.vue, globs.yaml, globs.xml, globs.html];
+const ignoreGlobs = [
+  '**/node_modules',
+  '**/dist',
+  '**/package-lock.json',
+  '**/yarn.lock',
+  '**/pnpm-lock.yaml',
+  '**/bun.lockb',
+
+  '**/output',
+  '**/coverage',
+  '**/temp',
+  '**/.temp',
+  '**/tmp',
+  '**/.tmp',
+  '**/.nx',
+  '**/.history',
+  '**/.vitepress/cache',
+  '**/.nuxt',
+  '**/.next',
+  '**/.vercel',
+  '**/.changeset',
+  '**/.idea',
+  '**/.cache',
+  '**/.output',
+  '**/.vite-inspect',
+  '**/.yarn',
+  '**/LICENSE*',
+  '**/*.min.*',
+
+  '**/__snapshots__',
+];
 
 module.exports.globs = globs;
 module.exports.allSrc = allSrc;
+module.exports.ignoreGlobs = ignoreGlobs;

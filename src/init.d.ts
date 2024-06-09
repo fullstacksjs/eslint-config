@@ -17,6 +17,7 @@ export interface Options {
   playwright?: boolean;
   typescript?: { projects: string[] | string | boolean; tsconfigRootDir?: string };
   disableExpensiveRules?: boolean;
+  ignores?: string[];
 }
 
 export declare const init: (opts: Options) => import('eslint').Linter.FlatConfig[];
