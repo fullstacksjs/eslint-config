@@ -1,6 +1,7 @@
-const { init } = require('./src');
+/* eslint-disable-next-line import/extensions */
+import { init } from './src/index.js';
 
-module.exports = init(
+export default init(
   {
     fp: false,
     test: true,
@@ -10,7 +11,7 @@ module.exports = init(
     import: true,
     jest: true,
     vitest: true,
-    next: true,
+    next: false,
     cypress: true,
     react: true,
     storybook: true,
@@ -21,7 +22,6 @@ module.exports = init(
     rules: {
       'max-lines-per-function': 'off',
       'complexity': 'off',
-      'n/global-require': 'off',
     },
   },
   {

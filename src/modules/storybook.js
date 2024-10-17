@@ -1,7 +1,8 @@
-const plugin = require('eslint-plugin-storybook');
-const { globs } = require('../utils/globs');
+import plugin from 'eslint-plugin-storybook';
 
-/** @return { import('eslint').Linter.FlatConfig } */
+import { globs } from '../utils/globs.js';
+
+/** @return { import('eslint').Linter.Config } */
 function storybook() {
   return {
     files: globs.storybook,
@@ -31,4 +32,4 @@ function storybook() {
   };
 }
 
-module.exports = storybook;
+export default storybook;

@@ -1,20 +1,13 @@
 describe('title', () => {
-  beforeAll(() => {});
+  beforeAll(() => {
+    console.log('Before');
+  });
 
   afterAll(() => {
     jest.resetAllMocks();
   });
 
   it('should', () => {
-    const { init } = require('../eslint.config');
-    const result = init();
-    expect(result).toStrictEqual([
-      {
-        rules: {
-          'no-constant-condition': 'off',
-          'no-constant-binary-expression': 'off',
-        },
-      },
-    ]);
+    console.log('Spec example');
   });
 });

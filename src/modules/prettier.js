@@ -1,6 +1,6 @@
-const plugin = require('eslint-plugin-prettier');
+import plugin from 'eslint-plugin-prettier';
 
-/** @return { Promise<import('eslint').Linter.FlatConfig> } */
+/** @return { Promise<import('eslint').Linter.Config> } */
 function prettier() {
   return {
     plugins: { prettier: plugin },
@@ -90,4 +90,4 @@ function prettier() {
   };
 }
 
-module.exports = prettier;
+export default prettier;

@@ -1,13 +1,13 @@
 export interface Options {
   react?: boolean;
+  sort?: boolean;
   next?: boolean;
   tailwind?: boolean;
   node?: boolean;
   strict?: boolean;
-  import?: boolean | { internalRegExp?: string; lifetime?: number; projects?: string[] | string };
+  import?: { internalRegExp?: string; lifetime?: number; projects?: string | string[] } | boolean;
   esm?: boolean;
   fp?: boolean;
-  graphql?: boolean;
   test?: boolean;
   jest?: boolean;
   vitest?: boolean;
@@ -15,9 +15,9 @@ export interface Options {
   storybook?: boolean;
   prettier?: boolean;
   playwright?: boolean;
-  typescript?: { projects: string[] | boolean | string; tsconfigRootDir?: string };
+  typescript?: { projects: boolean | string | string[]; tsconfigRootDir?: string };
   disableExpensiveRules?: boolean;
   ignores?: string[];
 }
 
-export declare const init: (opts: Options) => import('eslint').Linter.FlatConfig[];
+export declare const init: (opts: Options) => import('eslint').Linter.Config[];

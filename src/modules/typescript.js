@@ -1,11 +1,12 @@
-const { parser, plugin } = require('typescript-eslint');
-const { globs } = require('../utils/globs');
-const namingConvention = require('../utils/naming-convention');
-const { predicate } = require('../utils/conditions');
+import { parser, plugin } from 'typescript-eslint';
+
+import { predicate } from '../utils/conditions.js';
+import { globs } from '../utils/globs.js';
+import { namingConvention } from '../utils/naming-convention.js';
 
 /**
- * @param {import('../init').Options} options
- * @return { import('eslint').Linter.FlatConfig }
+ * @param {import('../index.js').Options} options
+ * @return { import('eslint').Linter.Config }
  */
 function typescript(options = {}) {
   return {
@@ -36,7 +37,6 @@ function typescript(options = {}) {
         },
       ],
       '@typescript-eslint/ban-tslint-comment': 'off',
-      '@typescript-eslint/ban-types': 'error',
       '@typescript-eslint/camelcase': 'off',
       '@typescript-eslint/class-literal-property-style': ['error', 'getters'],
       '@typescript-eslint/consistent-generic-constructors': ['warn', 'constructor'],
@@ -86,7 +86,6 @@ function typescript(options = {}) {
       '@typescript-eslint/no-invalid-this': ['error', { capIsConstructor: false }],
       '@typescript-eslint/no-invalid-void-type': 'error',
       '@typescript-eslint/no-loop-func': 'error',
-      '@typescript-eslint/no-loss-of-precision': 'error',
       '@typescript-eslint/no-magic-numbers': ['off', { ignoreEnums: true }], // Not good enough yet
       '@typescript-eslint/no-misused-new': 'error',
       '@typescript-eslint/no-namespace': 'error',
@@ -116,7 +115,6 @@ function typescript(options = {}) {
       '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: true }],
       '@typescript-eslint/no-useless-constructor': 'error',
       '@typescript-eslint/no-useless-empty-export': 'warn',
-      '@typescript-eslint/no-var-requires': 'error',
       '@typescript-eslint/object-curly-spacing': 'warn',
       '@typescript-eslint/parameter-properties': 'off',
       '@typescript-eslint/prefer-as-const': 'warn',
@@ -134,27 +132,6 @@ function typescript(options = {}) {
       '@typescript-eslint/prefer-ts-expect-error': 'off',
       '@typescript-eslint/promise-function-async': 'off',
       '@typescript-eslint/restrict-plus-operands': 'off',
-      '@typescript-eslint/sort-type-constituents': [
-        'warn',
-        {
-          checkIntersections: true,
-          checkUnions: true,
-          groupOrder: [
-            'named',
-            'keyword',
-            'operator',
-            'literal',
-            'function',
-            'import',
-            'conditional',
-            'object',
-            'tuple',
-            'intersection',
-            'union',
-            'nullish',
-          ],
-        },
-      ],
       '@typescript-eslint/strict-boolean-expressions': 'off', // Annoying
       '@typescript-eslint/space-before-blocks': 'off',
 
@@ -268,4 +245,4 @@ function typescript(options = {}) {
   };
 }
 
-module.exports = typescript;
+export default typescript;

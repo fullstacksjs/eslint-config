@@ -1,6 +1,6 @@
 const srcExt = '?([cm])[jt]s?(x)';
 
-const globs = {
+export const globs = {
   src: `**/*.${srcExt}`,
   js: '**/*.?([cm])js',
   jsx: '**/*.?([cm])jsx',
@@ -34,8 +34,8 @@ const globs = {
   e2e: [`**/e2e/*.${srcExt}`],
 };
 
-const allSrc = [globs.src, globs.style, globs.allJson, globs.md, globs.svelte, globs.vue, globs.yaml, globs.xml, globs.html];
-const ignoreGlobs = [
+export const allSrc = [globs.src, globs.style, globs.allJson, globs.md, globs.svelte, globs.vue, globs.yaml, globs.xml, globs.html];
+export const ignoreGlobs = [
   '**/node_modules',
   '**/dist',
   '**/package-lock.json',
@@ -66,7 +66,3 @@ const ignoreGlobs = [
 
   '**/__snapshots__',
 ];
-
-module.exports.globs = globs;
-module.exports.allSrc = allSrc;
-module.exports.ignoreGlobs = ignoreGlobs;

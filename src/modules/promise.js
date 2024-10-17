@@ -1,6 +1,6 @@
-const plugin = require('eslint-plugin-promise');
+import plugin from 'eslint-plugin-promise';
 
-/** @return { import('eslint').Linter.FlatConfig } */
+/** @return { import('eslint').Linter.Config } */
 function promise() {
   return {
     plugins: { promise: plugin },
@@ -24,4 +24,4 @@ function promise() {
   };
 }
 
-module.exports = promise;
+export default promise;

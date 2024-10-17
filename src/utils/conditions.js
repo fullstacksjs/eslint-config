@@ -3,7 +3,7 @@
  * @param {import('eslint').Linter.RuleEntry} config
  * @returns {import('eslint').Linter.RuleEntry}
  */
-const strictRule = (options, config) => {
+export const strict = (options, config) => {
   return options.strict ? config : 'off';
 };
 
@@ -12,9 +12,6 @@ const strictRule = (options, config) => {
  * @param {import('eslint').Linter.RulesRecord} config
  * @returns {import('eslint').Linter.RulesRecord | undefined}
  */
-const predicate = (condition, config) => {
+export const predicate = (condition, config) => {
   return condition ? config : undefined;
 };
-
-module.exports.strict = strictRule;
-module.exports.predicate = predicate;

@@ -1,4 +1,4 @@
-/** @type { import('eslint').Linter.FlatConfig } */
+/** @type { import('eslint').Linter.Config } */
 module.exports = {
   rules: {
     ...(global.fullstacksjs?.import && { 'import/extensions': ['error', { mjs: 'ignorePackages' }] }),

@@ -1,4 +1,4 @@
-module.exports = [
+export const namingConvention = [
   {
     selector: 'default',
     format: ['camelCase'],

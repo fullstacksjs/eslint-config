@@ -18,56 +18,40 @@ $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 
 ## Usage
 
-### Method 1: Init API
-
-Create `.eslintrc.js` file and init the configuration.
+To use the configuration all you need is exporting generated config by `init` function. The configuration reads the metadata from your root `package.json` file and automatically adds the rules and plugins that are needed.
 
 ```js
-const { init } = require('@fullstacksjs/eslint-config/init');
+import { init } from '@fullstacksjs/eslint-config';
 
-module.exports = init({
-  modules: {
-    auto: true, // If you need auto module detection (refer to Auto Module Detection).
-    // Modules configuration check (optional). (refer to Module API)
-  },
-  // Other ESLint configurations
-});
-
+export default init();
 ```
-
-### Method 2: Extends API
-
-You can also use the configuration within a `json` or `yaml` files by extending from `@fullstacksjs`, the Auto Module Detection is enabled on this method
-
-```json
-{
-  "extends": ["@fullstacksjs"]
-}
-```
-
-## Auto Module Detection
-
-When auto module detection is turned on, the configuration reads the metadata from your root "package.json" file and automatically adds the rules and plugins that are needed. It's enabled for the `extends` API, and you should set `modules.auto` to `true` when you use the `init` API.
 
 ## Modules API
 
+You can fine tune module detection by overriding it, `init` function accepts options as its first argument to control enabled modules.
+
 ```typescript
-interface Modules {
+interface Options {
     react?: boolean; // controls react, react-hooks, jsx/a11y plugins
     typescript?: { // controls typescript plugin
-      projects?: boolean | string[] | string; // controls parserOptions.project
+      project?: boolean | string[] | string; // https://typescript-eslint.io/packages/parser/#project
+      tsconfigRootDir?: string // https://typescript-eslint.io/packages/parser/#tsconfigrootdir
     };
     node?: boolean; // controls node plugin
-    strict?: boolean; // controls strict plugin
+    fp?: boolean; // controls functional plugin
+    sort?: boolean; // controls perfectionist plugin
+    strict?: boolean; // controls strict rules
     import?: {
       projects?: string[] | string // controls settings['import/resolver'].typescript.project
       internalRegExp?: string;
       lifetime?: number;
     }; // controls import plugin
     esm?: boolean; // controls esm plugin
-    graphql?: boolean; // controls graphql plugin
-    test?: boolean; // controls jest/vitest plugin
+    test?: boolean; // controls test formatting plugin
+    jest?: boolean; // controls jest plugin
+    vitest?: boolean; // controls vitest plugin
     cypress?: boolean; // controls cypress plugin
+    playwright?: boolean // controls playwright plugin
     storybook?: boolean; // controls storybook plugin
     tailwind?: boolean; // controls tailwindcss plugin
     next?: boolean; // controls next plugin
@@ -76,19 +60,22 @@ interface Modules {
 }
 ```
 
-## Typescript configuration
+## Extra configuration
 
-If you need more advanced typescript-eslint rule you need to specify `modules.typescript.resolverProject`.
+You can pass any number of arbitrary custom config overrides to `init` function:
 
 ```js
-module.exports = init({
-  modules: {
-    typescript: {
-      parserProject: true, // parserOptions.project
-      resolverProject: "<PATH_TO_TSCONFIG>", // settings['import/resolver']
-    },
-  },
-});
+import { init } from '@fullstacksjs/eslint-config';
+
+export default init(
+  {
+    typescript: true,
+  }, {
+    files: ['**/*.ts'],
+    rules: {},
+  }, {
+    rules: {},
+  })
 ```
 
 ## Speed Optimization!
@@ -109,113 +96,78 @@ To conditionally disable expensive linting rules, you can modify your configurat
 list of expensiveRules to be effected:
 
 ```
+@typescript-eslint/no-floating-promises
 @typescript-eslint/no-misused-promises
+import/default
+import/export
+import/named
+import/namespace
 import/no-cycle
-import/named *
-import/namespace *
-import/default *
-import/no-named-as-default-member *
+import/no-deprecated
+import/no-named-as-default-member
 ```
 
-> *: If you are using Typescript these rules are not needed and disabled by default.
-
 ```js
-module.exports = init({
-  modules: {
-    disableExpensiveRules: !process.env.CI || !process.env.HUSKY // Or anywhere you want
-    prettier: false // So you should run the formatter explicitly.
-  },
+export default init({
+  disableExpensiveRules: !process.env.CI || !process.env.HUSKY // Or anywhere you want
+  prettier: false // So you should run the formatter explicitly.
 });
 ```
 
 This approach ensures a smoother development experience while still enforcing rigorous code quality checks in environments where performance is less of a concern.
 
-## React/NextJS configuration
-
-React/NextJS configuration should automatically work with Auto Module Detection, but if you need to have more control over the rules you can configure it through `modules.react`.
-
-```js
-module.exports = init({
-  modules: {
-    react: true // for React/CRA/Vite
-  },
-});
-```
-
-and
-
-```js
-module.exports = init({
-  modules: {
-    react: true,
-    next: true // for NextJS
-  },
-});
-```
-
 ## Migration Guid
 
-### to v9
+### to v10
 
-v9 does not have any breaking change, which means the current configuration you have should work without any problem, but in order to migrate to new Module API:
+v10 drops support for ESLint v8 configuration and only ESLint v9 is supported, which means you should migrate to [ESlint Flat Config](https://eslint.org/docs/latest/extend/plugin-migration-flat-config):
 
-1. Move your configs to `.eslintrc.js` file.
+1. Move your configs to `eslint.config.js` file.
 2. Use init API.
     ```diff
-    -module.exports = {
-    -  extends: [
-    -    "@fullstacksjs",
-    -    "@fullstacksjs/eslint-config/esm",
-    -    "@fullstacksjs/eslint-config/typecheck",
-    -    "@fullstacksjs/eslint-config/graphql"
-    -  ],
-    -  "parserOptions": {
-    -    "project": ["./tsconfig.eslint.json"]
-    -  },
-    -  "settings": {
-    -    "import/resolver": {
-    -      "typescript": {
-    -        "project": ["./tsconfig.json"]
-    -      },
+    -const { init } = require('@fullstacksjs/eslint-config/init');
+    +import { init } from '@fullstacksjs/eslint-config/init'
+
+    -module.exports = init({
+    -  modules: {
+    -    auto: true,
+    -    esm: true,
+    -    typescript: {
+    -      parserProject: ['./tsconfig.eslint.json'],
+    -      resolverProject: ['./tsconfig.json'],
     -    },
     -  },
     -  // your configuration
-    -};
-    +const { init } = require('@fullstacksjs/eslint-config/init');
-    +
-    +module.exports = init({
-    +  modules: {
-    +    auto: true,
-    +    esm: true,
-    +    graphql: true,
-    +    typescript: {
-    +      parserProject: ['./tsconfig.eslint.json'],
-    +      resolverProject: ['./tsconfig.json'],
-    +    },
+    -});
+    +export default init({
+    +  esm: true,
+    +  typescript true,
     +  },
     +  // your configuration
-    +});
+    +);
     ```
 
 ## What's included?
 
-* [@typescript-eslint/eslint-plugin](https://typescript-eslint.io/)
-* [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)
+* [@eslint-react/eslint-plugin](https://eslint-react.xyz/)
+* [@next/eslint-config-next](https://nextjs.org/docs/basic-features/eslint#eslint-plugin)
+* [eslint-plugin-cypress](https://github.com/cypress-io/eslint-plugin-cypress)
+* [eslint-plugin-functional](https://github.com/eslint-functional/eslint-plugin-functional)
+* [eslint-plugin-import-x](https://github.com/un-ts/eslint-plugin-import-x)
 * [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
 * [eslint-plugin-jest-formatting](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
-* [eslint-plugin-cypress](https://github.com/cypress-io/eslint-plugin-cypress)
 * [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
+* [eslint-plugin-perfectionist](https://perfectionist.dev/)
+* [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n)
+* [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
 * [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
-* [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
-* [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
-* [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort)
-* [eslint-plugin-fp](https://github.com/jfmengels/eslint-plugin-fp)
-* [eslint-plugin-node](https://github.com/mysticatea/eslint-plugin-node)
+* [eslint-plugin-perfectionist](https://perfectionist.dev/)
 * [eslint-plugin-promise](https://github.com/eslint-community/eslint-plugin-promise)
+* [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
 * [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme)
-* [eslint-plugin-graphql](https://github.com/apollographql/eslint-plugin-graphql)
-* [eslint-config-next](https://github.com/vercel/next.js/tree/canary/packages/eslint-config-next)
 * [eslint-plugin-tailwindcss](https://github.com/francoismassart/eslint-plugin-tailwindcss)
+* [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
+* [typescript-eslint](https://typescript-eslint.io/)
 
 That's all. Feel free to use 💛
 

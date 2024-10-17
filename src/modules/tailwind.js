@@ -1,7 +1,6 @@
-/** @return { Promise<import('eslint').Linter.FlatConfig> } */
-function tailwind() {
-  const plugin = require('eslint-plugin-tailwindcss');
-
+/** @return { Promise<import('eslint').Linter.Config> } */
+async function tailwind() {
+  const plugin = await import('eslint-plugin-tailwindcss');
   return {
     plugins: { tailwindcss: plugin },
     rules: {
@@ -16,4 +15,4 @@ function tailwind() {
   };
 }
 
-module.exports = tailwind;
+export default tailwind;

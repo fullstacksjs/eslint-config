@@ -1,3 +1,5 @@
 describe('What the fuck', () => {
-  it('Should works', () => {});
+  it('Should works', () => {
+    console.log('Hello');
+  });
 });

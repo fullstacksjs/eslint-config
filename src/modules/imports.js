@@ -1,31 +1,40 @@
-const plugin = require('eslint-plugin-import-x');
-const { predicate } = require('../utils/conditions');
+import plugin from 'eslint-plugin-import-x';
+
+import { predicate } from '../utils/conditions.js';
 
 const tsExtensions = ['.ts', '.tsx', '.cts', '.mts', '.ctsx', '.mtsx'];
 const jsExtensions = ['.mjs', '.js', '.jsx', '.cjs'];
 const allExtensions = [...jsExtensions, ...tsExtensions];
 
 /**
- * @param { import('../init').Options } options
- * @return { import('eslint').Linter.FlatConfig }
+ * @param { import('../index.js').Options } options
+ * @return { import('eslint').Linter.Config }
  */
 function imports(options = {}) {
   const isObject = typeof options.import === 'object';
+  const ignoreExtensions = {};
+  if (!options.esm) {
+    ignoreExtensions.js = 'never';
+    ignoreExtensions.jsx = 'never';
+
+    if (options.typescript) {
+      ignoreExtensions.ts = 'never';
+      ignoreExtensions.tsx = 'never';
+    }
+  }
 
   const config = {
     plugins: { import: plugin },
 
     settings: {
-      'import-x/extensions': allExtensions,
-      'import-x/resolver': {
-        node: { extensions: allExtensions },
-        ...predicate(isObject && 'projects' in options.import, {
-          typescript: { project: options.import.projects },
-        }),
-      },
-      'import-x/parsers': { '@typescript-eslint/parser': tsExtensions },
+      'import-x/extensions': jsExtensions,
       'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
       'import-x/ignore': ['node_modules', '\\.(scss|css|svg|json)$'],
+      ...predicate(options.typescript, {
+        'import-x/resolver': { typescript: true },
+        'import-x/parsers': { '@typescript-eslint/parser': tsExtensions },
+        'import-x/extensions': allExtensions,
+      }),
       ...predicate(isObject && 'internalRegExp' in options.import, {
         'import-x/internal-regex': options.import.internalRegExp,
       }),
@@ -33,18 +42,10 @@ function imports(options = {}) {
         'import-x/cache': { lifetime: options.import.lifetime },
       }),
     },
+
     rules: {
       'import/consistent-type-specifier-style': ['warn', 'prefer-top-level'],
-      'import/extensions': [
-        'error',
-        'always',
-        {
-          js: 'never',
-          jsx: 'never',
-          ts: 'never',
-          tsx: 'never',
-        },
-      ],
+      'import/extensions': ['error', 'ignorePackages', ignoreExtensions],
       'import/first': 'error',
       'import/newline-after-import': 'warn',
       'import/no-absolute-path': 'error',
@@ -97,4 +98,4 @@ function imports(options = {}) {
   return config;
 }
 
-module.exports = imports;
+export default imports;
