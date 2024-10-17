@@ -61,7 +61,7 @@ function imports(options = {}) {
       'import/no-unresolved': ['error', { caseSensitiveStrict: true }],
       'import/no-useless-path-segments': 'warn',
       'import/no-webpack-loader-syntax': 'error',
-      'import/order': ['warn', { groups: ['builtin', ['external', 'internal'], 'parent', ['sibling', 'index']] }], // collision
+      'import/order': 'off',
 
       ...predicate(!options.disableExpensiveRules, {
         'import/default': 'error',
