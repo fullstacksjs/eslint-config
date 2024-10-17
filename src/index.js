@@ -21,7 +21,7 @@ import { compose } from './utils/compose.js';
 
 const testPackages = ['jest', 'vitest', 'cypress', 'playwright'];
 
-/** @type {import('./option.js').Options} */
+/** @type {import('./option.d.ts').Options} */
 const defaultOptions = {
   cypress: isPackageExists('cypress'),
   disableExpensiveRules: false,

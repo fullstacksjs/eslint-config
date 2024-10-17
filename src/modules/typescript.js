@@ -5,7 +5,7 @@ import { globs } from '../utils/globs.js';
 import { namingConvention } from '../utils/naming-convention.js';
 
 /**
- * @param { import('../option').Options } options
+ * @param { import('../option.d.ts').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function typescript(options = {}) {
