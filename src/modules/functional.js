@@ -1,7 +1,7 @@
 import plugin from 'eslint-plugin-functional';
 
 /**
- * @param { import('..').Options } options
+ * @param { import('../option').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function fp() {

@@ -1,4 +1,3 @@
-/* eslint-disable-next-line import/extensions */
 import { init } from './src/index.js';
 
 export default init(

@@ -7,7 +7,7 @@ const jsExtensions = ['.mjs', '.js', '.jsx', '.cjs'];
 const allExtensions = [...jsExtensions, ...tsExtensions];
 
 /**
- * @param { import('../index.js').Options } options
+ * @param { import('../option').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function imports(options = {}) {
