@@ -48,7 +48,7 @@ const defaultOptions = {
 /**
  * Initialize eslint config
  *
- * @param {import('./index.js').Options} initOptions
+ * @param {import('./option.d.ts').Options} initOptions
  * @param {...(import('eslint').Linter.Config)} extend
  * @returns {import('eslint').Linter.Config[]}
  */
