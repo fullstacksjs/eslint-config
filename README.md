@@ -140,8 +140,8 @@ v10 drops support for ESLint v8 configuration and only ESLint v9 is supported, w
     -  // your configuration
     -});
     +export default init({
-    +  esm: true,
-    +  typescript true,
+    +    esm: true,
+    +    typescript: true,
     +  },
     +  // your configuration
     +);
