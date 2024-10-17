@@ -2,7 +2,7 @@ import { ignoreGlobs } from './globs.js';
 
 /**
  * @param { (options: import('eslint').Linter.Config) => import('eslint').Linter.Config } module
- * @param { import('../index.js').Options } options
+ * @param { import('../option').Options } options
  * @return { import('eslint').Linter.Config }
  */
 export function compose(module, options) {

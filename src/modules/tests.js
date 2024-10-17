@@ -5,7 +5,7 @@ import { predicate } from '../utils/conditions.js';
 import { globs } from '../utils/globs.js';
 
 /**
- * @param {import('../index.js').Options} options
+ * @param { import('../option').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function tests(options = {}) {

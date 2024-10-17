@@ -3,7 +3,7 @@ import plugin from 'eslint-plugin-jest';
 import { globs } from '../utils/globs.js';
 
 /**
- * @param { import('../index.d.ts').Options } options
+ * @param { import('../option').Options } options
  * @return { import('eslint').Linter.Config } */
 function jest() {
   return {
