@@ -1,8 +1,8 @@
-const reactPlugin = require('@eslint-react/eslint-plugin');
-const hooksPlugin = require('eslint-plugin-react-hooks');
-const a11yPlugin = require('eslint-plugin-jsx-a11y');
+import reactPlugin from '@eslint-react/eslint-plugin';
+import a11yPlugin from 'eslint-plugin-jsx-a11y';
+import hooksPlugin from 'eslint-plugin-react-hooks';
 
-/** @return { import('eslint').Linter.FlatConfig } */
+/** @return { import('eslint').Linter.Config } */
 function react() {
   return {
     plugins: {
@@ -67,7 +67,6 @@ function react() {
       '@eslint-react/prefer-shorthand-fragment': 'warn',
 
       '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks': 'warn',
-      '@eslint-react/hooks-extra/ensure-use-callback-has-non-empty-deps': 'warn',
       '@eslint-react/hooks-extra/ensure-use-memo-has-non-empty-deps': 'warn',
       '@eslint-react/hooks-extra/prefer-use-state-lazy-initialization': 'warn',
 
@@ -119,4 +118,4 @@ function react() {
   };
 }
 
-module.exports = react;
+export default react;

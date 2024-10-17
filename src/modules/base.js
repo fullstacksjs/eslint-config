@@ -1,9 +1,10 @@
-const globals = require('globals');
-const { strict } = require('../utils/conditions');
+import globals from 'globals';
+
+import { strict } from '../utils/conditions.js';
 
 /**
  * @param {{strict?: boolean}} options
- * @return { import('eslint').Linter.FlatConfig }
+ * @return { import('eslint').Linter.Config }
  */
 function base(options = {}) {
   return {
@@ -16,6 +17,7 @@ function base(options = {}) {
         ...globals.es2024,
       },
       parserOptions: {
+        ecmaVersion: 'latest',
         ecmaFeatures: {
           jsx: true,
         },
@@ -68,6 +70,7 @@ function base(options = {}) {
       'no-dupe-keys': 'error',
       'no-duplicate-case': 'error',
       'no-empty-character-class': 'error',
+      'no-empty-function': 'warn',
       'no-empty-pattern': 'error',
       'no-empty-static-block': 'warn',
       'no-empty': 'error',
@@ -77,7 +80,6 @@ function base(options = {}) {
       'no-extra-bind': 'error',
       'no-extra-label': 'error',
       'no-fallthrough': 'error',
-      'no-floating-decimal': 'error',
       'no-func-assign': 'error',
       'no-global-assign': 'error',
       'no-implicit-globals': 'error',
@@ -112,7 +114,7 @@ function base(options = {}) {
       'no-restricted-globals': ['error', { name: 'event', message: 'Use local parameter instead.' }],
       'no-restricted-syntax': ['error', 'WithStatement'],
       'no-return-assign': 'error',
-      'no-return-await': 'error',
+      'no-return-await': 'warn',
       'no-script-url': 'error',
       'no-self-assign': 'error',
       'no-self-compare': 'error',
@@ -178,10 +180,9 @@ function base(options = {}) {
       'no-param-reassign': 'warn',
       'prefer-regex-literals': ['warn', { disallowRedundantWrapping: true }],
 
-      'no-console': strict(options, 'off'),
-      'no-empty-function': strict(options, 'off'),
+      'no-console': strict(options, 'warn'),
     },
   };
 }
 
-module.exports = base;
+export default base;

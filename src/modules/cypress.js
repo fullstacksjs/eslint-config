@@ -1,7 +1,8 @@
-const plugin = require('eslint-plugin-cypress/flat');
-const { globs } = require('../utils/globs');
+import plugin from 'eslint-plugin-cypress/flat';
 
-/** @return { import('eslint').Linter.FlatConfig } */
+import { globs } from '../utils/globs.js';
+
+/** @return { import('eslint').Linter.Config } */
 function cypress() {
   return {
     files: globs.e2e,
@@ -20,4 +21,4 @@ function cypress() {
   };
 }
 
-module.exports = cypress;
+export default cypress;

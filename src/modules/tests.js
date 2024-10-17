@@ -1,11 +1,12 @@
-const plugin = require('eslint-plugin-jest-formatting');
-const globals = require('globals');
-const { globs } = require('../utils/globs');
-const { predicate } = require('../utils/conditions');
+import plugin from 'eslint-plugin-jest-formatting';
+import globals from 'globals';
+
+import { predicate } from '../utils/conditions.js';
+import { globs } from '../utils/globs.js';
 
 /**
- * @param {import('../init').Options} options
- * @return { import('eslint').Linter.FlatConfig }
+ * @param {import('../index.js').Options} options
+ * @return { import('eslint').Linter.Config }
  */
 function tests(options = {}) {
   return {
@@ -45,4 +46,4 @@ function tests(options = {}) {
   };
 }
 
-module.exports = tests;
+export default tests;

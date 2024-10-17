@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 
-type X = {};
+interface X {}
 console.log(path.sep);

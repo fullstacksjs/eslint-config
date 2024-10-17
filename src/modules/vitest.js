@@ -1,8 +1,9 @@
-const plugin = require('eslint-plugin-vitest');
-const { globs } = require('../utils/globs');
+import plugin from 'eslint-plugin-vitest';
+
+import { globs } from '../utils/globs.js';
 
 /**
- * @return { import('eslint').Linter.FlatConfig }
+ * @return { import('eslint').Linter.Config }
  */
 function vitest() {
   return {
@@ -81,4 +82,4 @@ function vitest() {
   };
 }
 
-module.exports = vitest;
+export default vitest;

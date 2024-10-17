@@ -1,7 +1,8 @@
-const plugin = require('eslint-plugin-playwright');
-const { globs } = require('../utils/globs');
+import plugin from 'eslint-plugin-playwright';
 
-/** @return { import('eslint').Linter.FlatConfig } */
+import { globs } from '../utils/globs.js';
+
+/** @return { import('eslint').Linter.Config } */
 function playwright() {
   return {
     plugins: { playwright: plugin },
@@ -26,4 +27,4 @@ function playwright() {
   };
 }
 
-module.exports = playwright;
+export default playwright;

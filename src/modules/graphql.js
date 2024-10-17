@@ -1,15 +1,16 @@
-const plugin = require('@graphql-eslint/eslint-plugin');
-const globs = require('../utils/globs');
+import plugin, { configs } from '@graphql-eslint/eslint-plugin';
 
-plugin.configs['schema-recommended'].parser;
+import { globs } from '../utils/globs.js';
 
-/** @return { import('eslint').Linter.FlatConfig } */
+configs['schema-recommended'].parser;
+
+/** @return { import('eslint').Linter.Config } */
 function graphql() {
   return {
-    files: globs.globs.graphql,
+    files: globs.graphql,
     plugins: { graphql: plugin },
     languageOptions: {
-      parser: plugin.configs['schema-recommended'].parser,
+      parser: configs['schema-recommended'].parser,
     },
     rules: {
       '@graphql-eslint/alphabetize': ['warn', { fields: ['ObjectTypeDefinition'] }],
@@ -81,4 +82,4 @@ function graphql() {
   };
 }
 
-module.exports = graphql;
+export default graphql;

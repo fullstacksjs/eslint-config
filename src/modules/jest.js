@@ -1,9 +1,10 @@
-const plugin = require('eslint-plugin-jest');
-const { globs } = require('../utils/globs');
+import plugin from 'eslint-plugin-jest';
+
+import { globs } from '../utils/globs.js';
 
 /**
- * @param { import('./init.d.ts').Options } options
- * @return { import('eslint').Linter.FlatConfig } */
+ * @param { import('../index.d.ts').Options } options
+ * @return { import('eslint').Linter.Config } */
 function jest() {
   return {
     files: globs.test,
@@ -68,4 +69,4 @@ function jest() {
   };
 }
 
-module.exports = jest;
+export default jest;

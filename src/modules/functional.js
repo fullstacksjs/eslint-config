@@ -1,6 +1,9 @@
-const plugin = require('eslint-plugin-functional/flat');
+import plugin from 'eslint-plugin-functional';
 
-/** @return { import('eslint').Linter.FlatConfig } */
+/**
+ * @param { import('..').Options } options
+ * @return { import('eslint').Linter.Config }
+ */
 function fp() {
   return {
     plugins: { functional: plugin },
@@ -12,4 +15,4 @@ function fp() {
   };
 }
 
-module.exports = fp;
+export default fp;
