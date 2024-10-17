@@ -52,7 +52,7 @@ const defaultOptions = {
  * @param {...(import('eslint').Linter.Config)} extend
  * @returns {import('eslint').Linter.Config[]}
  */
-function init(initOptions, ...extend) {
+export function init(initOptions, ...extend) {
   const options = merge(defaultOptions, initOptions);
   if (options.typescript === true) {
     options.typescript = {};
@@ -82,6 +82,3 @@ function init(initOptions, ...extend) {
 
   return rules.concat(extend);
 }
-
-const _init = init;
-export { _init as init };
