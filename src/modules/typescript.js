@@ -205,10 +205,6 @@ function typescript(options = {}) {
         '@typescript-eslint/switch-exhaustiveness-check': 'error',
         '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
-        ...predicate(options.fp, {
-          'functional/immutable-data': ['error', { ignoreClasses: true, ignoreImmediateMutation: true, ignoreNonConstDeclarations: true }],
-        }),
-
         // collisions
         'prefer-promise-reject-errors': 'off',
         'consistent-return': 'off',
