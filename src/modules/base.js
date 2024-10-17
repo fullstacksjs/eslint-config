@@ -3,7 +3,7 @@ import globals from 'globals';
 import { strict } from '../utils/conditions.js';
 
 /**
- * @param {{strict?: boolean}} options
+ * @param { import('../option.d.ts').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function base(options = {}) {

@@ -1,6 +1,6 @@
 import plugin from 'eslint-plugin-prettier';
 
-/** @return { Promise<import('eslint').Linter.Config> } */
+/** @return { import('eslint').Linter.Config } */
 function prettier() {
   return {
     plugins: { prettier: plugin },
