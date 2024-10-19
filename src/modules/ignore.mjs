@@ -1,4 +1,4 @@
-import { ignoreGlobs } from '../utils/globs.js';
+import { ignoreGlobs } from '../utils/globs.mjs';
 /**
  * @param { import('../option').Options } options
  * @return { import('eslint').Linter.Config }

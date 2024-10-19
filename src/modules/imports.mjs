@@ -1,13 +1,13 @@
 import plugin from 'eslint-plugin-import-x';
 
-import { predicate } from '../utils/conditions.js';
+import { predicate } from '../utils/conditions.mjs';
 
 const tsExtensions = ['.ts', '.tsx', '.cts', '.mts', '.ctsx', '.mtsx'];
 const jsExtensions = ['.mjs', '.js', '.jsx', '.cjs'];
 const allExtensions = [...jsExtensions, ...tsExtensions];
 
 /**
- * @param { import('../option.d.ts').Options } options
+ * @param { import('../option').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function imports(options = {}) {
