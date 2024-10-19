@@ -3,7 +3,6 @@ import { isPackageExists } from 'local-pkg';
 
 import base from './modules/base.mjs';
 import cypress from './modules/cypress.mjs';
-import fp from './modules/functional.mjs';
 import ignores from './modules/ignore.mjs';
 import imports from './modules/imports.mjs';
 import jest from './modules/jest.mjs';
@@ -31,7 +30,6 @@ const defaultOptions = {
   cypress: isPackageExists('cypress'),
   disableExpensiveRules: false,
   esm: false,
-  fp: true,
   ignores: [],
   import: {},
   jest: isPackageExists('jest'),
@@ -69,7 +67,6 @@ export function init(initOptions = {}, ...extend) {
     cypress: enableCypress,
     disableExpensiveRules,
     esm: enableEsm,
-    fp: enableFp,
     ignores: enableIgnores,
     import: enableImport,
     jest: enableJest,
@@ -89,7 +86,6 @@ export function init(initOptions = {}, ...extend) {
 
   const rules = [ignores(options), base(options)];
 
-  if (enableFp) rules.push(fp(options));
   if (enableSort) rules.push(perfectionist(options));
   if (enableImport) rules.push(imports(options));
   if (enableTailwind) rules.push(tailwind(options));

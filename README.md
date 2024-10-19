@@ -48,7 +48,6 @@ interface Options {
       tsconfigRootDir?: string // https://typescript-eslint.io/packages/parser/#tsconfigrootdir
     };
     node?: boolean; // controls node plugin
-    fp?: boolean; // controls functional plugin
     sort?: boolean; // controls perfectionist plugin
     strict?: boolean; // controls strict rules
     import?: {
@@ -168,7 +167,6 @@ v10 drops support for ESLint v8 configuration and only ESLint v9 is supported, w
 * [@eslint-react/eslint-plugin](https://eslint-react.xyz/)
 * [@next/eslint-config-next](https://nextjs.org/docs/basic-features/eslint#eslint-plugin)
 * [eslint-plugin-cypress](https://github.com/cypress-io/eslint-plugin-cypress)
-* [eslint-plugin-functional](https://github.com/eslint-functional/eslint-plugin-functional)
 * [eslint-plugin-import-x](https://github.com/un-ts/eslint-plugin-import-x)
 * [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
 * [eslint-plugin-jest-formatting](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
