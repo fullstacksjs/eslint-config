@@ -1,11 +1,11 @@
 import plugin from 'eslint-plugin-jest-formatting';
 import globals from 'globals';
 
-import { predicate } from '../utils/conditions.js';
-import { globs } from '../utils/globs.js';
+import { predicate } from '../utils/conditions.mjs';
+import { globs } from '../utils/globs.mjs';
 
 /**
- * @param { import('../option.d.ts').Options } options
+ * @param { import('../option').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function tests(options = {}) {

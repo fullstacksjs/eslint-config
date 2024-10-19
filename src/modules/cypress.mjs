@@ -1,6 +1,6 @@
 import plugin from 'eslint-plugin-cypress/flat';
 
-import { globs } from '../utils/globs.js';
+import { globs } from '../utils/globs.mjs';
 
 /** @return { import('eslint').Linter.Config } */
 function cypress() {

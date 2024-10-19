@@ -1,29 +1,29 @@
 import merge from 'deepmerge';
 import { isPackageExists } from 'local-pkg';
 
-import base from './modules/base.js';
-import cypress from './modules/cypress.js';
-import fp from './modules/functional.js';
-import ignores from './modules/ignore.js';
-import imports from './modules/imports.js';
-import jest from './modules/jest.js';
-import next from './modules/next.js';
-import node from './modules/node.js';
-import perfectionist from './modules/perfectionist.js';
-import playwright from './modules/playwright.js';
-import prettier from './modules/prettier.js';
-import react from './modules/react.js';
-import storybook from './modules/storybook.js';
-import tailwind from './modules/tailwind.js';
-import tests from './modules/tests.js';
-import typescript from './modules/typescript.js';
-import vitest from './modules/vitest.js';
+import base from './modules/base.mjs';
+import cypress from './modules/cypress.mjs';
+import fp from './modules/functional.mjs';
+import ignores from './modules/ignore.mjs';
+import imports from './modules/imports.mjs';
+import jest from './modules/jest.mjs';
+import next from './modules/next.mjs';
+import node from './modules/node.mjs';
+import perfectionist from './modules/perfectionist.mjs';
+import playwright from './modules/playwright.mjs';
+import prettier from './modules/prettier.mjs';
+import react from './modules/react.mjs';
+import storybook from './modules/storybook.mjs';
+import tailwind from './modules/tailwind.mjs';
+import tests from './modules/tests.mjs';
+import typescript from './modules/typescript.mjs';
+import vitest from './modules/vitest.mjs';
 
 const testPackages = ['jest', 'vitest', 'cypress', 'playwright'];
 
 /**
  * @typedef {import('eslint').Linter.Config} Config
- * @typedef {import('./option.d.ts').Options} Options
+ * @typedef {import('./option').Options} Options
  * /
 
 /** @type {Options} */

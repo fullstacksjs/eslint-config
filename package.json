@@ -25,14 +25,13 @@
     "pre-commit": "npm run test && lint-staged"
   },
   "main": "./cjs/index.js",
-  "module": "./src/index.js",
+  "module": "./src/index.mjs",
   "exports": {
     ".": {
-      "import": "./src/index.js",
+      "import": "./src/index.mjs",
       "require": "./cjs/index.js"
     }
   },
-  "type": "module",
   "dependencies": {
     "@eslint-react/eslint-plugin": "1.15.0",
     "@next/eslint-plugin-next": "14.2.15",

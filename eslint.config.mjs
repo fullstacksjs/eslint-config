@@ -1,4 +1,4 @@
-import { init } from './src/index.js';
+import { init } from './src/index.mjs';
 
 export default init(
   {

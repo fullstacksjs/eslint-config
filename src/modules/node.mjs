@@ -1,9 +1,9 @@
 import plugin from 'eslint-plugin-n';
 
-import { strict } from '../utils/conditions.js';
+import { strict } from '../utils/conditions.mjs';
 
 /**
- * @param { import('../option.d.ts').Options } options
+ * @param { import('../option').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function node(options = {}) {

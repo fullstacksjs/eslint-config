@@ -1,11 +1,11 @@
 import { parser, plugin } from 'typescript-eslint';
 
-import { predicate } from '../utils/conditions.js';
-import { globs } from '../utils/globs.js';
-import { namingConvention } from '../utils/naming-convention.js';
+import { predicate } from '../utils/conditions.mjs';
+import { globs } from '../utils/globs.mjs';
+import { namingConvention } from '../utils/naming-convention.mjs';
 
 /**
- * @param { import('../option.d.ts').Options } options
+ * @param { import('../option').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function typescript(options = {}) {

@@ -1,6 +1,6 @@
 import plugin from 'eslint-plugin-vitest';
 
-import { globs } from '../utils/globs.js';
+import { globs } from '../utils/globs.mjs';
 
 /**
  * @return { import('eslint').Linter.Config }
