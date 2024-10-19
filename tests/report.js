@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { join } from 'node:path';
 import { ESLint } from 'eslint';
+import { join } from 'node:path';
 
 const dirname = import.meta.dirname;
 
