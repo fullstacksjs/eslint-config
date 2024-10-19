@@ -20,6 +20,7 @@
     "spell": "cspell ./* --no-progress",
     "test": "echo 0",
     "build": "unbuild",
+    "postbuild": "./postbuild",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
     "pre-commit": "npm run test && lint-staged"
