@@ -18,7 +18,7 @@ function react() {
     },
     rules: {
       '@eslint-react/dom/no-children-in-void-dom-elements': 'warn',
-      '@eslint-react/dom/no-dangerously-set-innerhtml': 'warn',
+      '@eslint-react/dom/no-dangerously-set-innerhtml': 'off',
       '@eslint-react/dom/no-dangerously-set-innerhtml-with-children': 'error',
       '@eslint-react/dom/no-find-dom-node': 'error',
       '@eslint-react/dom/no-missing-button-type': 'warn',
