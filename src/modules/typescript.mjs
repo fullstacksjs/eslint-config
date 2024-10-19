@@ -110,7 +110,15 @@ function typescript(options = {}) {
       '@typescript-eslint/no-unused-expressions': 'error',
       '@typescript-eslint/no-unused-vars': [
         'warn',
-        { argsIgnorePattern: '^_', varsIgnorePattern: '^([iI]gnore(d)?)|(_+)', args: 'after-used', ignoreRestSiblings: true },
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^([iI]gnore(d)?)|(_+)',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          args: 'after-used',
+          caughtErrors: 'all',
+          ignoreRestSiblings: true,
+        },
       ],
       '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: true }],
       '@typescript-eslint/no-useless-constructor': 'error',
