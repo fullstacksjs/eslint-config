@@ -1,11 +1,8 @@
 /** @return { Promise<import('eslint').Linter.Config> } */
-function tailwind() {
+async function tailwind() {
+  const { default: tailwindcss } = await import('eslint-plugin-tailwindcss');
   return {
-    plugins: {
-      get tailwindcss() {
-        return import('eslint-plugin-tailwindcss');
-      },
-    },
+    plugins: { tailwindcss },
     rules: {
       'tailwindcss/classnames-order': 'warn',
       'tailwindcss/enforces-negative-arbitrary-values': 'warn',

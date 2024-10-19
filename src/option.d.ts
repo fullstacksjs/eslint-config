@@ -9,7 +9,6 @@ export interface Options extends Linter.Config {
   strict?: boolean;
   import?: { internalRegExp?: string; lifetime?: number; projects?: string | string[] } | boolean;
   esm?: boolean;
-  fp?: boolean;
   test?: boolean;
   jest?: boolean;
   vitest?: boolean;

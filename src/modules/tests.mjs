@@ -26,11 +26,6 @@ function tests(options = {}) {
       'max-lines-per-function': 'off',
       'no-sparse-arrays': 'off',
 
-      ...predicate(options.fp, {
-        'functional/no-let': 'off',
-        'functional/no-loop-statements': 'off',
-      }),
-
       ...predicate(options.react, {
         'react/jsx-no-constructed-context-values': 'off',
       }),
