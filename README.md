@@ -20,10 +20,20 @@ $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 
 To use the configuration all you need is exporting generated config by `init` function. The configuration reads the metadata from your root `package.json` file and automatically adds the rules and plugins that are needed.
 
+### ESM
+
 ```js
 import { init } from '@fullstacksjs/eslint-config';
 
 export default init();
+```
+
+### CJS
+
+```js
+const { init } = require('@fullstacksjs/eslint-config');
+
+module.exports = init();
 ```
 
 ## Modules API
@@ -70,7 +80,13 @@ import { init } from '@fullstacksjs/eslint-config';
 export default init(
   {
     typescript: true,
-  }, {
+    // You can pass extends here
+    rules {
+      'no-console': 'error'
+    }
+  },
+  // And any number of extra configurations
+  {
     files: ['**/*.ts'],
     rules: {},
   }, {

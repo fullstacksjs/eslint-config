@@ -28,8 +28,8 @@
   "module": "./src/index.js",
   "exports": {
     ".": {
-      "import": "./cjs/index.js",
-      "require": "./src/index.js"
+      "import": "./src/index.js",
+      "require": "./cjs/index.js"
     }
   },
   "type": "module",
