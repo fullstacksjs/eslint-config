@@ -4,6 +4,7 @@ import { isPackageExists } from 'local-pkg';
 import base from './modules/base.js';
 import cypress from './modules/cypress.js';
 import fp from './modules/functional.js';
+import ignores from './modules/ignore.js';
 import imports from './modules/imports.js';
 import jest from './modules/jest.js';
 import next from './modules/next.js';
@@ -17,11 +18,15 @@ import tailwind from './modules/tailwind.js';
 import tests from './modules/tests.js';
 import typescript from './modules/typescript.js';
 import vitest from './modules/vitest.js';
-import { compose } from './utils/compose.js';
 
 const testPackages = ['jest', 'vitest', 'cypress', 'playwright'];
 
-/** @type {import('./option.d.ts').Options} */
+/**
+ * @typedef {import('eslint').Linter.Config} Config
+ * @typedef {import('./option.d.ts').Options} Options
+ * /
+
+/** @type {Options} */
 const defaultOptions = {
   cypress: isPackageExists('cypress'),
   disableExpensiveRules: false,
@@ -41,18 +46,16 @@ const defaultOptions = {
   tailwind: isPackageExists('tailwindcss'),
   test: testPackages.some(p => isPackageExists(p)),
   typescript: isPackageExists('typescript') ? { projects: true } : false,
-  unocss: isPackageExists('unocss'),
   vitest: isPackageExists('vitest'),
 };
 
 /**
  * Initialize eslint config
- *
- * @param {import('./option.d.ts').Options} initOptions
- * @param {...(import('eslint').Linter.Config)} extend
- * @returns {import('eslint').Linter.Config[]}
+ * @param {Options} initOptions
+ * @param {...Config} extend
+ * @returns {Config[]}
  */
-export function init(initOptions, ...extend) {
+export function init(initOptions = {}, ...extend) {
   const options = merge(defaultOptions, initOptions);
   if (options.typescript === true) {
     options.typescript = {};
@@ -61,24 +64,49 @@ export function init(initOptions, ...extend) {
     options.import = {};
   }
 
-  const rules = [compose(base, options)];
+  const {
+    sort: enableSort,
+    cypress: enableCypress,
+    disableExpensiveRules,
+    esm: enableEsm,
+    fp: enableFp,
+    ignores: enableIgnores,
+    import: enableImport,
+    jest: enableJest,
+    next: enableNext,
+    node: enableNode,
+    playwright: enablePlaywright,
+    prettier: enablePrettier,
+    react: enableReact,
+    storybook: enableStorybook,
+    strict: enableStrict,
+    tailwind: enableTailwind,
+    test: enableTest,
+    typescript: enableTypescript,
+    vitest: enableVitest,
+    ...eslintOptions
+  } = options;
 
-  if (options.fp) rules.push(compose(fp, options));
-  if (options.sort) rules.push(compose(perfectionist, options));
-  if (options.import) rules.push(compose(imports, options));
-  if (options.tailwind) rules.push(compose(tailwind, options));
-  if (options.test) rules.push(compose(tests, options));
-  if (options.node) rules.push(compose(node, options));
-  if (options.jest) rules.push(compose(jest, options));
-  if (options.vitest) rules.push(compose(vitest, options));
-  if (options.cypress) rules.push(compose(cypress, options));
-  if (options.react) rules.push(compose(react, options));
-  if (options.storybook) rules.push(compose(storybook, options));
-  if (options.typescript) rules.push(compose(typescript, options));
-  if (options.playwright) rules.push(compose(playwright, options));
-  if (options.next && options.next) rules.push(compose(next, options));
+  const rules = [ignores(options), base(options)];
 
-  if (options.prettier) rules.push(compose(prettier, options));
+  if (enableFp) rules.push(fp(options));
+  if (enableSort) rules.push(perfectionist(options));
+  if (enableImport) rules.push(imports(options));
+  if (enableTailwind) rules.push(tailwind(options));
+  if (enableTest) rules.push(tests(options));
+  if (enableNode) rules.push(node(options));
+  if (enableJest) rules.push(jest(options));
+  if (enableVitest) rules.push(vitest(options));
+  if (enableCypress) rules.push(cypress(options));
+  if (enableReact) rules.push(react(options));
+  if (enableStorybook) rules.push(storybook(options));
+  if (enableTypescript) rules.push(typescript(options));
+  if (enablePlaywright) rules.push(playwright(options));
+  if (enableNext && enableNext) rules.push(next(options));
+  if (enablePrettier) rules.push(prettier(options));
 
-  return rules.concat(extend);
+  if (Object.keys(eslintOptions).length > 0) rules.push(eslintOptions);
+  if (extend) Array.prototype.push.apply(rules, extend);
+
+  return rules;
 }

@@ -2,6 +2,7 @@ import { init } from './src/index.js';
 
 export default init(
   {
+    ignores: ['cjs/'],
     fp: false,
     test: true,
     esm: true,
@@ -16,8 +17,6 @@ export default init(
     storybook: true,
     typescript: true,
     tailwind: false,
-  },
-  {
     rules: {
       'max-lines-per-function': 'off',
       'complexity': 'off',

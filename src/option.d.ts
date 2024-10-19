@@ -1,4 +1,6 @@
-export interface Options {
+import type { Linter } from 'eslint';
+
+export interface Options extends Linter.Config {
   react?: boolean;
   sort?: boolean;
   next?: boolean;
