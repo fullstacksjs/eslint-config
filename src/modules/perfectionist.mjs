@@ -36,8 +36,8 @@ function perfectionist() {
       'perfectionist/sort-jsx-props': [
         'warn',
         {
-          groups: ['shorthand', 'unknown', 'callback', 'multiline'],
-          customGroups: { callback: 'on*' },
+          groups: ['attr', 'shorthand', 'size', 'unknown', 'callback', 'multiline'],
+          customGroups: { callback: 'on*', size: ['width', 'size', 'height'], attr: ['dir', 'lang'] },
         },
       ],
       'perfectionist/sort-maps': 'off',
