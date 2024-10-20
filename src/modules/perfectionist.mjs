@@ -8,9 +8,8 @@ function perfectionist() {
     plugins: { perfectionist: plugin },
     rules: {
       'perfectionist/sort-array-includes': 'warn',
-      'perfectionist/sort-astro-attributes': 'warn',
       'perfectionist/sort-classes': 'warn',
-      'perfectionist/sort-enums': 'warn',
+      'perfectionist/sort-enums': 'off',
       'perfectionist/sort-exports': 'warn',
       'perfectionist/sort-imports': ['warn', {}],
       'perfectionist/sort-interfaces': 'off',
