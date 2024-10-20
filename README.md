@@ -18,7 +18,7 @@ $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 
 ## Usage
 
-To use the configuration all you need is exporting generated config by `init` function. The configuration reads the metadata from your root `package.json` file and automatically adds the rules and plugins that are needed.
+To use the configuration, all you need is exporting the generated config by `init` function. The configuration reads the metadata from your root `package.json` file and automatically adds the rules and plugins that are needed.
 
 ### ESM
 
@@ -108,7 +108,7 @@ As illustrated, certain rules significantly increase linting time, potentially h
 
 To conditionally disable expensive linting rules, you can modify your configuration as follows:
 
-list of expensiveRules to be effected:
+List of expensiveRules to be effected:
 
 ```
 @typescript-eslint/no-floating-promises
@@ -131,9 +131,9 @@ export default init({
 
 This approach ensures a smoother development experience while still enforcing rigorous code quality checks in environments where performance is less of a concern.
 
-## Migration Guid
+## Migration Guide
 
-### to v10
+### To v10
 
 v10 drops support for ESLint v8 configuration and only ESLint v9 is supported, which means you should migrate to [ESlint Flat Config](https://eslint.org/docs/latest/extend/plugin-migration-flat-config):
 
