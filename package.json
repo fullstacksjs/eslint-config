@@ -1,6 +1,6 @@
 {
   "name": "@fullstacksjs/eslint-config",
-  "version": "10.0.0",
+  "version": "11.3.1",
   "license": "MIT",
   "author": "fullstacks <fullstacksjs@gmail.com>",
   "description": "fullstacks eslint config",
