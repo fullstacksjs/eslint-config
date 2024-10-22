@@ -62,7 +62,7 @@ interface Options {
     cypress?: boolean; // controls cypress plugin
     playwright?: boolean // controls playwright plugin
     storybook?: boolean; // controls storybook plugin
-    tailwind?: boolean; // controls tailwindcss plugin
+    tailwind?: boolean | { callee?: string[] }; // controls tailwindcss plugin
     next?: boolean; // controls next plugin
     prettier?: boolean; // controls prettier plugin
     disableExpensiveRules?: boolean; // controls expensive rules

@@ -55,6 +55,10 @@ const defaultOptions = {
  */
 export function init(initOptions = {}, ...extend) {
   const options = merge(defaultOptions, initOptions);
+
+  if (options.tailwind === true) {
+    options.tailwind = {};
+  }
   if (options.typescript === true) {
     options.typescript = {};
   }

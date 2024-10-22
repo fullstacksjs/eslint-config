@@ -4,7 +4,7 @@ export interface Options extends Linter.Config {
   react?: boolean;
   sort?: boolean;
   next?: boolean;
-  tailwind?: boolean;
+  tailwind?: boolean | { callees: string[] };
   node?: boolean;
   strict?: boolean;
   import?: { internalRegExp?: string; lifetime?: number; projects?: string | string[] } | boolean;

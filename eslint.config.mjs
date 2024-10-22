@@ -3,7 +3,6 @@ import { init } from './src/index.mjs';
 export default init(
   {
     ignores: ['cjs/'],
-    fp: false,
     test: true,
     esm: true,
     node: true,

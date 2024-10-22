@@ -1,8 +1,16 @@
-/** @return { Promise<import('eslint').Linter.Config> } */
-async function tailwind() {
+/**
+ * @param { import('../option').Options } options
+ * @return { Promise<import('eslint').Linter.Config> }
+ */
+async function tailwind(options = {}) {
   const plugin = await import('eslint-plugin-tailwindcss');
   return {
     plugins: { tailwindcss: plugin.default ?? plugin },
+    settings: {
+      tailwindcss: {
+        callees: options.callees ?? ['cva', 'classnames', 'classNames', 'class', 'clsx', 'cn', 'cns', 'cx'],
+      },
+    },
     rules: {
       'tailwindcss/classnames-order': 'warn',
       'tailwindcss/enforces-negative-arbitrary-values': 'warn',
