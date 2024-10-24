@@ -133,7 +133,7 @@ This approach ensures a smoother development experience while still enforcing ri
 
 ## Migration Guide
 
-### To v10
+### To v11
 
 v10 drops support for ESLint v8 configuration and only ESLint v9 is supported, which means you should migrate to [ESlint Flat Config](https://eslint.org/docs/latest/extend/plugin-migration-flat-config):
 
