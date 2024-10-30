@@ -18,7 +18,7 @@ $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 
 ## Usage
 
-To use the configuration, all you need is exporting the generated config by `init` function. The configuration reads the metadata from your root `package.json` file and automatically adds the rules and plugins that are needed.
+To use the configuration, all you need is to export the generated config by the `init` function. The configuration reads the metadata from your root `package.json` file and automatically adds the rules and plugins that are needed.
 
 ### ESM
 
@@ -38,7 +38,7 @@ module.exports = init();
 
 ## Modules API
 
-You can fine tune module detection by overriding it, `init` function accepts options as its first argument to control enabled modules.
+You can fine-tune module detection by overriding it, the `init` function accepts options as its first argument to control enabled modules.
 
 ```typescript
 interface Options {
@@ -95,7 +95,7 @@ export default init(
 
 ## Speed Optimization!
 
-It's crucial to balance the benefits of linting rules against their performance impact. Below is a table highlighting the most resource-intensive linting rules encountered in a real-world React project:
+Balancing the benefits of linting rules against their performance impact is crucial. Below is a table highlighting the most resource-intensive linting rules encountered in a real-world React project:
 
 | Rule                                   | Time (ms) | Relative |
 | -------------------------------------- | --------- | -------- |
@@ -108,7 +108,7 @@ As illustrated, certain rules significantly increase linting time, potentially h
 
 To conditionally disable expensive linting rules, you can modify your configuration as follows:
 
-List of expensiveRules to be effected:
+List of `expensiveRules` to be affected:
 
 ```
 @typescript-eslint/no-floating-promises
@@ -129,8 +129,6 @@ export default init({
 });
 ```
 
-This approach ensures a smoother development experience while still enforcing rigorous code quality checks in environments where performance is less of a concern.
-
 ## Migration Guide
 
 ### To v11
@@ -141,7 +139,7 @@ v11 drops support for ESLint v8 configuration and only ESLint v9 is supported, w
 2. Use init API.
     ```diff
     -const { init } = require('@fullstacksjs/eslint-config/init');
-    +import { init } from '@fullstacksjs/eslint-config/init'
+    +import { init } from '@fullstacksjs/eslint-config';
 
     -module.exports = init({
     -  modules: {
