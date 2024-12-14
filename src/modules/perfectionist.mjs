@@ -45,7 +45,6 @@ function perfectionist() {
       'perfectionist/sort-object-types': 'off',
       'perfectionist/sort-objects': 'off',
       'perfectionist/sort-sets': 'warn',
-      'perfectionist/sort-svelte-attributes': 'warn',
       'perfectionist/sort-switch-case': 'off',
       'perfectionist/sort-union-types': [
         'warn',
@@ -67,7 +66,6 @@ function perfectionist() {
         },
       ],
       'perfectionist/sort-variable-declarations': 'warn',
-      'perfectionist/sort-vue-attributes': 'warn',
     },
   };
 }

@@ -1,3 +1,4 @@
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 import plugin from 'eslint-plugin-import-x';
 
 import { predicate } from '../utils/conditions.mjs';
@@ -31,7 +32,12 @@ function imports(options = {}) {
       'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
       'import-x/ignore': ['node_modules', '\\.(scss|css|svg|json)$'],
       ...predicate(options.typescript, {
-        'import-x/resolver': { typescript: true },
+        'import-x/resolver-next': [
+          createTypeScriptImportResolver({
+            alwaysTryTypes: true,
+            project: options.typescript.projects,
+          }),
+        ],
         'import-x/parsers': { '@typescript-eslint/parser': tsExtensions },
         'import-x/extensions': allExtensions,
       }),
