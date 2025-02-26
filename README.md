@@ -80,7 +80,7 @@ export default init(
   {
     typescript: true,
     // You can pass extends here
-    rules {
+    rules: {
       'no-console': 'error'
     }
   },
