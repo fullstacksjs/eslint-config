@@ -32,7 +32,7 @@ function tests(options = {}) {
 
       ...predicate(options.typescript, {
         '@typescript-eslint/method-signature-style': 'off',
-        '@typescript-eslint/no-namespace ': 'off',
+        '@typescript-eslint/no-namespace': 'off',
         '@typescript-eslint/unbound-method': 'off',
         '@typescript-eslint/no-empty-function': 'off',
         '@typescript-eslint/no-floating-promises': 'off',

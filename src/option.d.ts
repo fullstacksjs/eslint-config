@@ -7,7 +7,7 @@ export interface Options extends Linter.Config {
   tailwind?: boolean | { callees: string[] };
   node?: boolean;
   strict?: boolean;
-  import?: { internalRegExp?: string; lifetime?: number; projects?: string | string[] } | boolean;
+  import?: boolean | { internalRegExp?: string; lifetime?: number; projects?: string | string[] };
   esm?: boolean;
   test?: boolean;
   jest?: boolean;

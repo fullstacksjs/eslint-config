@@ -23,6 +23,7 @@ function playwright() {
       ],
       'playwright/missing-playwright-await': 'error',
       'playwright/no-page-pause': 'warn',
+      'playwright/no-slowed-test': 'warn',
     },
   };
 }

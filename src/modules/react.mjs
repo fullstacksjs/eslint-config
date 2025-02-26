@@ -69,6 +69,7 @@ function react() {
       '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks': 'warn',
       '@eslint-react/hooks-extra/ensure-use-memo-has-non-empty-deps': 'warn',
       '@eslint-react/hooks-extra/prefer-use-state-lazy-initialization': 'warn',
+      '@eslint-react/hooks-extra/no-useless-custom-hooks': 'warn',
 
       '@eslint-react/naming-convention/component-name': 'warn',
       '@eslint-react/naming-convention/filename': 'off',
