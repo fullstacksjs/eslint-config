@@ -13,6 +13,7 @@ import playwright from './modules/playwright.mjs';
 import prettier from './modules/prettier.mjs';
 import react from './modules/react.mjs';
 import storybook from './modules/storybook.mjs';
+import stylistic from './modules/stylistic.mjs';
 import tailwind from './modules/tailwind.mjs';
 import tests from './modules/tests.mjs';
 import typescript from './modules/typescript.mjs';
@@ -88,7 +89,7 @@ export function init(initOptions = {}, ...extend) {
     ...eslintOptions
   } = options;
 
-  const rules = [ignores(options), base(options)];
+  const rules = [ignores(options), base(options), stylistic(options)];
 
   if (enableSort) rules.push(perfectionist(options));
   if (enableImport) rules.push(imports(options));
