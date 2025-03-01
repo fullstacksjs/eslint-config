@@ -8,7 +8,7 @@ function stylistic() {
   return {
     plugins: { '@stylistic': stylisticPlugin },
     rules: {
-      '@stylistic/jsx/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'never', propElementValues: 'always' }],
+      '@stylistic/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'never', propElementValues: 'always' }],
     },
   };
 }
