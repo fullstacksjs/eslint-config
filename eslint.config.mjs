@@ -1,6 +1,6 @@
-import { init } from './src/index.mjs';
+import { defineConfig } from './src/index.mjs';
 
-export default init(
+export default defineConfig(
   {
     ignores: ['cjs/'],
     test: true,

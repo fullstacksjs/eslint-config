@@ -1,5 +1,5 @@
 import merge from 'deepmerge';
-import { defineConfig } from 'eslint/config';
+import { defineConfig as eslintConfig } from 'eslint/config';
 import { isPackageExists } from 'local-pkg';
 
 import base from './modules/base.mjs';
@@ -55,7 +55,7 @@ const defaultOptions = {
  * @param {...Config} extend
  * @returns {Config[]}
  */
-export function init(initOptions = {}, ...extend) {
+export function defineConfig(initOptions = {}, ...extend) {
   const options = merge(defaultOptions, initOptions);
 
   if (options.tailwind === true) {
@@ -110,5 +110,8 @@ export function init(initOptions = {}, ...extend) {
   if (Object.keys(eslintOptions).length > 0) rules.push(eslintOptions);
   if (extend) Array.prototype.push.apply(rules, extend);
 
-  return defineConfig(rules);
+  return eslintConfig(rules);
 }
+
+/** @deprecated Please use `defineConfig` from `@fullstacksjs/eslint-config` instead, this function will be removed in the next major release */
+export const init = defineConfig;

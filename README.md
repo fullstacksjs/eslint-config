@@ -18,27 +18,27 @@ $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 
 ## Usage
 
-To use the configuration, all you need is to export the generated config by the `init` function. The configuration reads the metadata from your root `package.json` file and automatically adds the rules and plugins that are needed.
+To use the configuration, all you need is to export the generated config by the `defineConfig` function. The configuration reads the metadata from your root `package.json` file and automatically adds the rules and plugins that are needed.
 
 ### ESM
 
 ```js
-import { init } from '@fullstacksjs/eslint-config';
+import { defineConfig } from '@fullstacksjs/eslint-config';
 
-export default init();
+export default defineConfig();
 ```
 
 ### CJS
 
 ```js
-const { init } = require('@fullstacksjs/eslint-config');
+const { defineConfig } = require('@fullstacksjs/eslint-config');
 
-module.exports = init();
+module.exports = defineConfig();
 ```
 
 ## Modules API
 
-You can fine-tune module detection by overriding it, the `init` function accepts options as its first argument to control enabled modules.
+You can fine-tune module detection by overriding it, the `defineConfig` function accepts options as its first argument to control enabled modules.
 
 ```typescript
 interface Options {
@@ -71,12 +71,12 @@ interface Options {
 
 ## Extra configuration
 
-You can pass any number of arbitrary custom config overrides to `init` function:
+You can pass any number of arbitrary custom config overrides to `defineConfig` function:
 
 ```js
-import { init } from '@fullstacksjs/eslint-config';
+import { defineConfig } from '@fullstacksjs/eslint-config';
 
-export default init(
+export default defineConfig(
   {
     typescript: true,
     // You can pass extends here
@@ -92,6 +92,12 @@ export default init(
     rules: {},
   })
 ```
+
+## Next.JS Warning
+
+**Question**: I'm getting "The Next.js plugin was not detected in your ESLint" warning.
+
+**Answer**: This plugin has built-in support for Next.js. The warning from Next.js is misleading—Next.js simply checks `package.json` to see if the plugin is listed. You can safely ignore the warning or update your lint script from `next lint` to `eslint`.
 
 ## Speed Optimization!
 
@@ -110,20 +116,20 @@ To conditionally disable expensive linting rules, you can modify your configurat
 
 List of `expensiveRules` to be affected:
 
-```
+```sh
 @typescript-eslint/no-floating-promises
 @typescript-eslint/no-misused-promises
-import/default
-import/export
-import/named
+import/default # (disabled in TS env)
+import/export # (disabled in TS env)
+import/named # (disabled in TS env)
+import/no-named-as-default-member # (disabled in TS env)
 import/namespace
 import/no-cycle
 import/no-deprecated
-import/no-named-as-default-member
 ```
 
 ```js
-export default init({
+export default defineConfig({
   disableExpensiveRules: !process.env.CI || !process.env.HUSKY // Or anywhere you want
   prettier: false // So you should run the formatter explicitly.
 });
@@ -131,49 +137,22 @@ export default init({
 
 ## Migration Guide
 
-### To v11
-
-v11 drops support for ESLint v8 configuration and only ESLint v9 is supported, which means you should migrate to [ESlint Flat Config](https://eslint.org/docs/latest/extend/plugin-migration-flat-config):
-
-1. Move your configs to `eslint.config.js` file.
-2. Use init API.
-    ```diff
-    -const { init } = require('@fullstacksjs/eslint-config/init');
-    +import { init } from '@fullstacksjs/eslint-config';
-
-    -module.exports = init({
-    -  modules: {
-    -    auto: true,
-    -    esm: true,
-    -    typescript: {
-    -      parserProject: ['./tsconfig.eslint.json'],
-    -      resolverProject: ['./tsconfig.json'],
-    -    },
-    -  },
-    -  // your configuration
-    -});
-    +export default init({
-    +    esm: true,
-    +    typescript: true,
-    +  },
-    +  // your configuration
-    +);
-    ```
+[See Migration Guide](./MIGRATION.md)
 
 ## What's included?
 
 * [@eslint-react/eslint-plugin](https://eslint-react.xyz/)
-* [@next/eslint-config-next](https://nextjs.org/docs/basic-features/eslint#eslint-plugin)
+* [@next/eslint-plugin-next](https://nextjs.org/docs/basic-features/eslint#eslint-plugin)
+* [@stylistic/eslint-plugin](https://eslint.style/packages/default)
 * [eslint-plugin-cypress](https://github.com/cypress-io/eslint-plugin-cypress)
 * [eslint-plugin-import-x](https://github.com/un-ts/eslint-plugin-import-x)
 * [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
 * [eslint-plugin-jest-formatting](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
 * [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
-* [eslint-plugin-perfectionist](https://perfectionist.dev/)
 * [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n)
+* [eslint-plugin-perfectionist](https://perfectionist.dev/)
 * [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
 * [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
-* [eslint-plugin-perfectionist](https://perfectionist.dev/)
 * [eslint-plugin-promise](https://github.com/eslint-community/eslint-plugin-promise)
 * [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
 * [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme)
