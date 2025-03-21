@@ -1,4 +1,5 @@
 import merge from 'deepmerge';
+import { defineConfig } from 'eslint/config';
 import { isPackageExists } from 'local-pkg';
 
 import base from './modules/base.mjs';
@@ -109,5 +110,5 @@ export function init(initOptions = {}, ...extend) {
   if (Object.keys(eslintOptions).length > 0) rules.push(eslintOptions);
   if (extend) Array.prototype.push.apply(rules, extend);
 
-  return rules;
+  return defineConfig(rules);
 }
