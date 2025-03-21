@@ -1,4 +1,3 @@
-import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 import plugin from 'eslint-plugin-import-x';
 
 import { predicate } from '../utils/conditions.mjs';
@@ -13,31 +12,27 @@ const allExtensions = [...jsExtensions, ...tsExtensions];
  */
 function imports(options = {}) {
   const isObject = typeof options.import === 'object';
-  const ignoreExtensions = {};
-  if (!options.esm) {
-    ignoreExtensions.js = 'never';
-    ignoreExtensions.jsx = 'never';
-
-    if (options.typescript) {
-      ignoreExtensions.ts = 'never';
-      ignoreExtensions.tsx = 'never';
-    }
-  }
+  const opt = options.esm ? 'always' : 'never';
+  const extensionOptions = {
+    ignorePackages: true,
+    js: opt,
+    jsx: opt,
+    mjs: opt,
+    cjs: opt,
+    ...(options.typescript && {
+      ts: opt,
+      tsx: opt,
+      mts: opt,
+      cts: opt,
+    }),
+  };
 
   const config = {
     plugins: { import: plugin },
-
     settings: {
       'import-x/extensions': jsExtensions,
-      'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
-      'import-x/ignore': ['node_modules', '\\.(scss|css|svg|json)$'],
+      'import-x/ignore': ['node_modules', '\\.(scss|css|svg|json|mdx)$'],
       ...predicate(options.typescript, {
-        'import-x/resolver-next': [
-          createTypeScriptImportResolver({
-            alwaysTryTypes: true,
-            project: options.typescript.projects,
-          }),
-        ],
         'import-x/parsers': { '@typescript-eslint/parser': tsExtensions },
         'import-x/extensions': allExtensions,
       }),
@@ -51,7 +46,7 @@ function imports(options = {}) {
 
     rules: {
       'import/consistent-type-specifier-style': ['warn', 'prefer-top-level'],
-      'import/extensions': ['error', 'ignorePackages', ignoreExtensions],
+      // 'import/extensions': ['error', 'ignorePackages', extensionOptions], FIXME: This rule is broken!
       'import/first': 'error',
       'import/newline-after-import': 'warn',
       'import/no-absolute-path': 'error',
@@ -98,6 +93,13 @@ function imports(options = {}) {
       'import/no-unused-modules': 'off',
       'import/prefer-default-export': 'off',
       'import/unambiguous': 'off',
+
+      ...predicate(options.typescript, {
+        'import/default': 'off',
+        'import/named': 'off',
+        'import/no-named-as-default-member': 'off',
+        'import/no-unresolved': 'off',
+      }),
     },
   };
 
