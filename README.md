@@ -16,9 +16,11 @@
 $ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 ```
 
+⚡️ That's it, you don't need to install any eslint-plugin!  If you already have some plugins installed, please remove them.
+
 ## Usage
 
-To use the configuration, all you need is to export the generated config by the `defineConfig` function. The configuration reads the metadata from your root `package.json` file and automatically adds the rules and plugins that are needed.
+To use the configuration, all you need is to export the generated config by the `defineConfig` function. It automatically enables required plugins with **Auto Module Detection**.
 
 ### ESM
 
@@ -36,7 +38,13 @@ const { defineConfig } = require('@fullstacksjs/eslint-config');
 module.exports = defineConfig();
 ```
 
-## Modules API
+## How Module Detection Works
+
+Automatic module detection enables ESLint plugins based on the dependencies listed in your `package.json`. It scans your project to identify which tools you're using, and then activates the corresponding ESLint plugins accordingly.
+
+For example, if your `package.json` includes `vitest` as a dependency, the configuration will automatically enable `eslint-plugin-vitest` for you. (You don't need to install the plugin itself)
+
+### Modules API
 
 You can fine-tune module detection by overriding it, the `defineConfig` function accepts options as its first argument to control enabled modules.
 
@@ -69,7 +77,7 @@ interface Options {
 }
 ```
 
-## Extra configuration
+## What if I want to add my one rules
 
 You can pass any number of arbitrary custom config overrides to `defineConfig` function:
 
@@ -93,11 +101,25 @@ export default defineConfig(
   })
 ```
 
-## Next.JS Warning
+## What If I Want to Use a Plugin That Isn't Supported?
 
-**Question**: I'm getting "The Next.js plugin was not detected in your ESLint" warning.
+You can still use any ESLint plugin, even if it's not supported by automatic detection. Simply install the plugin manually and add it to the `defineConfig`. There are no limitations.
 
-**Answer**: This plugin has built-in support for Next.js. The warning from Next.js is misleading—Next.js simply checks `package.json` to see if the plugin is listed. You can safely ignore the warning or update your lint script from `next lint` to `eslint`.
+```js
+import { defineConfig } from '@fullstacksjs/eslint-config';
+import pluginVue from 'eslint-plugin-vue';
+
+export default defineConfig(
+  { typescript: true },
+  ...pluginVue.configs['flat/recommended']
+)
+```
+
+## I'm Getting a Next.js Warning: Plugin Was Not Detected
+
+This configuration includes built-in support for [Next.js](https://nextjs.org). The warning you're seeing from Next.js is misleading—it simply checks whether the plugin is explicitly listed in your package.json.
+
+You can safely ignore this warning. Alternatively, you can update your lint script from next lint to eslint to avoid it entirely.
 
 ## Speed Optimization!
 
