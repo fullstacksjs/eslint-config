@@ -123,7 +123,6 @@ function typescript(options = {}) {
       '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: true }],
       '@typescript-eslint/no-useless-constructor': 'error',
       '@typescript-eslint/no-useless-empty-export': 'warn',
-      '@typescript-eslint/object-curly-spacing': 'warn',
       '@typescript-eslint/parameter-properties': 'off',
       '@typescript-eslint/prefer-as-const': 'warn',
       '@typescript-eslint/prefer-enum-initializers': 'off',
