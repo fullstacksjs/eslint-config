@@ -1,5 +1,12 @@
 import type { Linter } from 'eslint';
 
+interface ProjectService {
+  allowDefaultProject: string[];
+  defaultProject: string;
+  loadTypeScriptPlugins: boolean;
+  maximumDefaultProjectFileMatchCount_THIS_WILL_SLOW_DOWN_LINTING: number;
+}
+
 export interface Options extends Linter.Config {
   react?: boolean;
   sort?: boolean;
@@ -16,7 +23,7 @@ export interface Options extends Linter.Config {
   storybook?: boolean;
   prettier?: boolean;
   playwright?: boolean;
-  typescript?: { projects: boolean | string | string[]; tsconfigRootDir?: string };
+  typescript?: { projectService?: boolean | ProjectService; tsconfigRootDir: string; cacheLifetime?: number };
   disableExpensiveRules?: boolean;
   ignores?: string[];
 }

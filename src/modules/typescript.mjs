@@ -15,12 +15,7 @@ function typescript(options = {}) {
     languageOptions: {
       parser,
       parserOptions: {
-        ...predicate(options.typescript && options.typescript.projects, {
-          project: options.typescript.projects,
-        }),
-        ...predicate(options.typescript && options.typescript.tsconfigRootDir, {
-          tsconfigRootDir: options.typescript.tsconfigRootDir,
-        }),
+        ...options.typescript,
       },
     },
     rules: {

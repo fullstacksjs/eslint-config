@@ -45,7 +45,7 @@ const defaultOptions = {
   strict: false,
   tailwind: false, // ISSUE: https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/325,
   test: testPackages.some(p => isPackageExists(p)),
-  typescript: isPackageExists('typescript') ? { projects: true } : false,
+  typescript: isPackageExists('typescript') ? { projectService: true } : false,
   vitest: isPackageExists('vitest'),
 };
 
@@ -60,9 +60,6 @@ export function defineConfig(initOptions = {}, ...extend) {
 
   if (options.tailwind === true) {
     options.tailwind = {};
-  }
-  if (options.typescript === true) {
-    options.typescript = {};
   }
   if (options.import === true) {
     options.import = {};

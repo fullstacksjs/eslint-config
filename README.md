@@ -27,7 +27,11 @@ To use the configuration, all you need is to export the generated config by the 
 ```js
 import { defineConfig } from '@fullstacksjs/eslint-config';
 
-export default defineConfig();
+export default defineConfig({
+  typescript: {
+    tsconfigRootDir: import.meta.dirname, // If you are using TypeScript
+  }
+});
 ```
 
 ### CJS
@@ -35,7 +39,9 @@ export default defineConfig();
 ```js
 const { defineConfig } = require('@fullstacksjs/eslint-config');
 
-module.exports = defineConfig();
+module.exports = defineConfig({
+    tsconfigRootDir: import.meta.dirname, // If you are using TypeScript
+});
 ```
 
 ## How Module Detection Works
@@ -50,30 +56,26 @@ You can fine-tune module detection by overriding it, the `defineConfig` function
 
 ```typescript
 interface Options {
-    react?: boolean; // controls react, react-hooks, jsx/a11y plugins
-    typescript?: { // controls typescript plugin
-      project?: boolean | string[] | string; // https://typescript-eslint.io/packages/parser/#project
-      tsconfigRootDir?: string // https://typescript-eslint.io/packages/parser/#tsconfigrootdir
-    };
-    node?: boolean; // controls node plugin
-    sort?: boolean; // controls perfectionist plugin
-    strict?: boolean; // controls strict rules
-    import?: {
-      projects?: string[] | string // controls settings['import/resolver'].typescript.project
-      internalRegExp?: string;
-      lifetime?: number;
-    }; // controls import plugin
-    esm?: boolean; // controls esm plugin
-    test?: boolean; // controls test formatting plugin
-    jest?: boolean; // controls jest plugin
-    vitest?: boolean; // controls vitest plugin
-    cypress?: boolean; // controls cypress plugin
-    playwright?: boolean // controls playwright plugin
-    storybook?: boolean; // controls storybook plugin
-    tailwind?: boolean | { callee?: string[] }; // controls tailwindcss plugin
-    next?: boolean; // controls next plugin
-    prettier?: boolean; // controls prettier plugin
-    disableExpensiveRules?: boolean; // controls expensive rules
+  react?: boolean; // controls react, react-hooks, jsx/a11y plugins
+  typescript?: { // controls typescript plugin
+    projectService?: boolean | ProjectService; tsconfigRootDir: string; cacheLifetime?: number; // https://typescript-eslint.io/packages/parser#projectservice
+    tsconfigRootDir?: string // https://typescript-eslint.io/packages/parser#tsconfigrootdir
+  };
+  node?: boolean; // controls node plugin
+  sort?: boolean; // controls perfectionist plugin
+  strict?: boolean; // controls strict rules
+  import?: { internalRegExp?: string; lifetime?: number; }; // controls import plugin
+  esm?: boolean; // controls esm plugin
+  test?: boolean; // controls test formatting plugin
+  jest?: boolean; // controls jest plugin
+  vitest?: boolean; // controls vitest plugin
+  cypress?: boolean; // controls cypress plugin
+  playwright?: boolean // controls playwright plugin
+  storybook?: boolean; // controls storybook plugin
+  tailwind?: boolean | { callee?: string[] }; // controls tailwindcss plugin
+  next?: boolean; // controls next plugin
+  prettier?: boolean; // controls prettier plugin
+  disableExpensiveRules?: boolean; // controls expensive rules
 }
 ```
 
@@ -110,7 +112,7 @@ import { defineConfig } from '@fullstacksjs/eslint-config';
 import pluginVue from 'eslint-plugin-vue';
 
 export default defineConfig(
-  { typescript: true },
+  { /* Options */},
   ...pluginVue.configs['flat/recommended']
 )
 ```

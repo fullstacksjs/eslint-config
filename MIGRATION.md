@@ -1,4 +1,4 @@
-### Next
+### From v11 to v12
 
 Use `defineConfig` instead of `init`
 
@@ -7,7 +7,11 @@ Use `defineConfig` instead of `init`
 + import { defineConfig } from '@fullstacksjs/eslint-config';
 
 - export default init();
-+ export default defineConfig();
++ export default defineConfig({
+  typescript: {
+    tsconfigRootDir: import.meta.dirname,
+  }
+});
 ```
 
 ### From v10 to v11
