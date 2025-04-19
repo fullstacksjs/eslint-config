@@ -92,17 +92,17 @@ export function defineConfig(initOptions = {}, ...extend) {
   if (enableSort) rules.push(perfectionist(options));
   if (enableImport) rules.push(imports(options));
   if (enableTailwind) rules.push(tailwind(options));
-  if (enableTest) rules.push(tests(options));
   if (enableNode) rules.push(node(options));
-  if (enableJest) rules.push(jest(options));
-  if (enableVitest) rules.push(vitest(options));
-  if (enableCypress) rules.push(cypress(options));
   if (enableReact) rules.push(react(options));
   if (enableStorybook) rules.push(storybook(options));
   if (enableTypescript) rules.push(typescript(options));
-  if (enablePlaywright) rules.push(playwright(options));
-  if (enableNext && enableNext) rules.push(next(options));
+  if (enableNext) rules.push(next(options));
   if (enablePrettier) rules.push(prettier(options));
+  if (enableJest) rules.push(jest(options));
+  if (enableVitest) rules.push(vitest(options));
+  if (enableTest) rules.push(tests(options));
+  if (enableCypress) rules.push(cypress(options));
+  if (enablePlaywright) rules.push(playwright(options));
 
   if (Object.keys(eslintOptions).length > 0) rules.push(eslintOptions);
   if (extend) Array.prototype.push.apply(rules, extend);

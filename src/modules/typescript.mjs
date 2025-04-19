@@ -9,6 +9,8 @@ import { namingConvention } from '../utils/naming-convention.mjs';
  * @return { import('eslint').Linter.Config }
  */
 function typescript(options = {}) {
+  const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
+
   return {
     files: [globs.ts, globs.tsx],
     plugins: { '@typescript-eslint': plugin },
@@ -54,7 +56,7 @@ function typescript(options = {}) {
       '@typescript-eslint/naming-convention': [
         'warn',
         ...namingConvention,
-        ...(options.typescript && options.typescript.projects
+        ...(projectService
           ? [
               {
                 selector: 'variable',
@@ -142,7 +144,7 @@ function typescript(options = {}) {
       '@typescript-eslint/unified-signatures': 'error',
       '@typescript-eslint/key-spacing': 'off',
 
-      ...predicate(options.typescript && options.typescript.projects, {
+      ...predicate(projectService, {
         '@typescript-eslint/await-thenable': 'error',
         '@typescript-eslint/consistent-return': 'off',
         '@typescript-eslint/consistent-type-exports': 'warn',
