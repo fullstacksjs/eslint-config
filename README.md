@@ -57,10 +57,7 @@ You can fine-tune module detection by overriding it, the `defineConfig` function
 ```typescript
 interface Options {
   react?: boolean; // controls react, react-hooks, jsx/a11y plugins
-  typescript?: { // controls typescript plugin
-    projectService?: boolean | ProjectService; tsconfigRootDir: string; cacheLifetime?: number; // https://typescript-eslint.io/packages/parser#projectservice
-    tsconfigRootDir?: string // https://typescript-eslint.io/packages/parser#tsconfigrootdir
-  };
+  typescript?: ParserOptions // https://typescript-eslint.io/packages/parser#configuration
   node?: boolean; // controls node plugin
   sort?: boolean; // controls perfectionist plugin
   strict?: boolean; // controls strict rules

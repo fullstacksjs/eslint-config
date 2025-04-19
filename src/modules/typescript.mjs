@@ -218,6 +218,7 @@ function typescript(options = {}) {
       'react/jsx-no-useless-fragment': 'off', // Need useless-fragment for JSX return type
 
       // Conflicts with @typescript-eslint
+      'no-empty-function': 'off',
       'default-case': 'off',
       'import/named': 'off',
       'import/namespace': 'off',

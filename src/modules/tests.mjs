@@ -25,6 +25,7 @@ function tests(options = {}) {
 
       'max-lines-per-function': 'off',
       'no-sparse-arrays': 'off',
+      'no-empty-function': 'off',
 
       ...predicate(options.react, {
         'react/jsx-no-constructed-context-values': 'off',
@@ -36,6 +37,7 @@ function tests(options = {}) {
         '@typescript-eslint/unbound-method': 'off',
         '@typescript-eslint/no-empty-function': 'off',
         '@typescript-eslint/no-floating-promises': 'off',
+        '@typescript-eslint/prefer-promise-reject-errors': 'off',
       }),
     },
   };
