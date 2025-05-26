@@ -54,7 +54,7 @@
     "eslint-plugin-vitest": "0.5.4",
     "globals": "16.2.0",
     "local-pkg": "1.1.1",
-    "typescript-eslint": "8.29.1"
+    "typescript-eslint": "8.32.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.1",

@@ -168,7 +168,7 @@ function typescript(options = {}) {
         '@typescript-eslint/no-misused-spread': 'error',
         '@typescript-eslint/no-mixed-enums': 'error',
         '@typescript-eslint/no-redundant-type-constituents': 'warn',
-        // '@typescript-eslint/no-throw-literal': ['warn', { allowThrowingUnknown: false }],
+        '@typescript-eslint/no-unnecessary-type-conversion': 'error',
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
         '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
         '@typescript-eslint/no-unnecessary-condition': [
@@ -184,6 +184,7 @@ function typescript(options = {}) {
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
         '@typescript-eslint/no-unsafe-unary-minus': 'error',
         '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
+        '@typescript-eslint/only-throw-error': ['warn', { allowRethrowing: true }],
         '@typescript-eslint/prefer-includes': 'warn',
         '@typescript-eslint/prefer-optional-chain': 'warn',
         '@typescript-eslint/prefer-reduce-type-parameter': 'warn',
