@@ -32,6 +32,9 @@ function react() {
       '@eslint-react/dom/no-unsafe-iframe-sandbox': 'warn',
       '@eslint-react/dom/no-unsafe-target-blank': 'warn',
       '@eslint-react/ensure-forward-ref-using-ref': 'off',
+      '@eslint-react/jsx-key-before-spread': 'error',
+      '@eslint-react/jsx-no-undef': 'off',
+      '@eslint-react/jsx-uses-react': 'off',
       '@eslint-react/no-access-state-in-setstate': 'error',
       '@eslint-react/no-array-index-key': 'warn',
       '@eslint-react/no-children-count': 'warn',
@@ -51,7 +54,9 @@ function react() {
       '@eslint-react/no-implicit-key': 'error',
       '@eslint-react/no-missing-context-display-name': 'off',
       '@eslint-react/no-missing-key': 'error',
+      '@eslint-react/no-misused-capture-owner-stack': 'error',
       '@eslint-react/no-nested-component-definitions': 'warn',
+      '@eslint-react/no-nested-lazy-component-declarations': 'error',
       '@eslint-react/no-redundant-should-component-update': 'error',
       '@eslint-react/no-set-state-in-component-did-mount': 'warn',
       '@eslint-react/no-set-state-in-component-did-update': 'warn',
@@ -67,8 +72,12 @@ function react() {
       '@eslint-react/no-useless-forward-ref': 'warn',
       '@eslint-react/no-useless-fragment': 'warn',
       '@eslint-react/prefer-destructuring-assignment': 'warn',
+
       '@eslint-react/prefer-shorthand-boolean': 'warn',
+      '@eslint-react/avoid-shorthand-boolean': 'off',
+
       '@eslint-react/prefer-shorthand-fragment': 'warn',
+      '@eslint-react/avoid-shorthand-fragment': 'off',
 
       '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks': 'warn',
       '@eslint-react/hooks-extra/ensure-use-memo-has-non-empty-deps': 'warn',
