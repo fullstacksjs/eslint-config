@@ -16,6 +16,7 @@ function cypress() {
       'cypress/no-unnecessary-waiting': 'error',
       'cypress/require-data-selectors': 'off',
       'cypress/unsafe-to-chain-command': 'error',
+      'cypress/no-chained-get': 'error',
       '@typescript-eslint/no-namespace': 'off',
     },
   };
