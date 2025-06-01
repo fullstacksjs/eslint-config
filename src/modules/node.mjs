@@ -3,7 +3,7 @@ import plugin from 'eslint-plugin-n';
 import { strict } from '../utils/conditions.mjs';
 
 /**
- * @param { import('../option').Options } options
+ * @param { import('..').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function node(options = {}) {

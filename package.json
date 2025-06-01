@@ -31,7 +31,7 @@
     ".": {
       "import": "./src/index.mjs",
       "require": "./cjs/index.js",
-      "types": "./src/option.d.ts"
+      "types": "./src/index.d.ts"
     }
   },
   "dependencies": {

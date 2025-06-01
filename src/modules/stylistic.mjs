@@ -1,7 +1,7 @@
 import stylisticPlugin from '@stylistic/eslint-plugin';
 
 /**
- * @param { import('../option').Options } options
+ * @param { import('..').Options } options
  * @return { Promise<import('eslint').Linter.Config> }
  */
 function stylistic() {
