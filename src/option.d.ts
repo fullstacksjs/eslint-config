@@ -98,4 +98,9 @@ export interface Options extends Linter.Config {
   ignores?: string[];
 }
 
+export declare function defineConfig(
+  initOptions?: Options,
+  ...extend: Linter.Config[]
+): Linter.Config[];
+
 export declare const init: (opts: Options) => import('eslint').Linter.Config[];
