@@ -103,4 +103,4 @@ export declare function defineConfig(
   ...extend: Linter.Config[]
 ): Linter.Config[];
 
-export declare const init: (opts: Options) => import('eslint').Linter.Config[];
+export declare const init: typeof defineConfig;
