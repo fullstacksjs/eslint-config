@@ -30,7 +30,8 @@
   "exports": {
     ".": {
       "import": "./src/index.mjs",
-      "require": "./cjs/index.js"
+      "require": "./cjs/index.js",
+      "types": "./src/index.d.ts"
     }
   },
   "dependencies": {

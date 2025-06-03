@@ -1,5 +1,5 @@
 /**
- * @param { import('../option').Options } options
+ * @param { import('..').Options } options
  * @return { Promise<import('eslint').Linter.Config> }
  */
 async function tailwind(options = {}) {

@@ -24,7 +24,7 @@ const testPackages = ['jest', 'vitest', 'cypress', 'playwright'];
 
 /**
  * @typedef {import('eslint').Linter.Config} Config
- * @typedef {import('./option').Options} Options
+ * @typedef {import('.').Options} Options
  * /
 
 /** @type {Options} */
