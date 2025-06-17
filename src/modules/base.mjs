@@ -14,7 +14,7 @@ function base(options = {}) {
       globals: {
         ...globals.browser,
         ...globals.node,
-        ...globals.es2024,
+        ...globals.es2025,
       },
       parserOptions: {
         ecmaVersion: 'latest',
