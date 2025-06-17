@@ -71,6 +71,7 @@ export function defineConfig(initOptions = {}, ...extend) {
     disableExpensiveRules,
     esm: enableEsm,
     ignores: enableIgnores,
+    gitignorePath,
     import: enableImport,
     jest: enableJest,
     next: enableNext,

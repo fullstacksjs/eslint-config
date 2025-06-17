@@ -96,6 +96,11 @@ export interface Options extends Linter.Config {
    * List of globs to ignore.
    */
   ignores?: string[];
+  /**
+   * @default './.gitignore'
+   * @description .gitignore file path relative to ESLint configuration file.
+   */
+  gitignorePath?: string;
 }
 
 export declare function defineConfig(
