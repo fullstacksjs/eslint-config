@@ -7,6 +7,13 @@ interface ProjectService {
   maximumDefaultProjectFileMatchCount_THIS_WILL_SLOW_DOWN_LINTING: number;
 }
 
+type TailwindConfig = {
+  callees: string[];
+  variables?: string[];
+  attributes?: string[];
+  tags?: string[];
+} & ({ entryPoint: string; tailwindConfig?: string } | { entryPoint?: string; tailwindConfig: string });
+
 export interface Options extends Linter.Config {
   /**
    * @default true if you have `react` or `react-dom` in your dependencies
@@ -23,10 +30,11 @@ export interface Options extends Linter.Config {
    */
   next?: boolean;
   /**
-   * @default true if you have `tailwind` in your dependencies
-   * Controls tailwind plugin.
+   * Controls Tailwind plugin.
+   * @default false
+   * @see https://github.com/schoero/eslint-plugin-better-tailwindcss/blob/main/docs/settings/settings.md
    */
-  tailwind?: boolean | { callees: string[] };
+  tailwind?: false | TailwindConfig;
   /**
    * @default false
    * Controls [node plugin](https://www.npmjs.com/package/eslint-plugin-n).
@@ -98,9 +106,6 @@ export interface Options extends Linter.Config {
   ignores?: string[];
 }
 
-export declare function defineConfig(
-  initOptions?: Options,
-  ...extend: Linter.Config[]
-): Linter.Config[];
+export declare function defineConfig(initOptions?: Options, ...extend: Linter.Config[]): Linter.Config[];
 
 export declare const init: typeof defineConfig;

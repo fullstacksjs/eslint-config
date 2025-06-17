@@ -69,7 +69,7 @@ interface Options {
   cypress?: boolean; // controls cypress plugin
   playwright?: boolean // controls playwright plugin
   storybook?: boolean; // controls storybook plugin
-  tailwind?: boolean | { callee?: string[] }; // controls tailwindcss plugin
+  tailwind?: false | TailwindConfig; // controls tailwindcss plugin
   next?: boolean; // controls next plugin
   prettier?: boolean; // controls prettier plugin
   disableExpensiveRules?: boolean; // controls expensive rules
@@ -177,7 +177,7 @@ export default defineConfig({
 * [eslint-plugin-promise](https://github.com/eslint-community/eslint-plugin-promise)
 * [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
 * [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme)
-* [eslint-plugin-tailwindcss](https://github.com/francoismassart/eslint-plugin-tailwindcss)
+* [eslint-plugin-better-tailwindcss](https://github.com/schoero/eslint-plugin-better-tailwindcss)
 * [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
 * [typescript-eslint](https://typescript-eslint.io/)
 

@@ -43,7 +43,7 @@ const defaultOptions = {
   react: isPackageExists('react'),
   storybook: isPackageExists('storybook'),
   strict: false,
-  tailwind: false, // ISSUE: https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/325,
+  tailwind: false,
   test: testPackages.some(p => isPackageExists(p)),
   typescript: isPackageExists('typescript') ? { projectService: true } : false,
   vitest: isPackageExists('vitest'),
@@ -58,9 +58,6 @@ const defaultOptions = {
 export function defineConfig(initOptions = {}, ...extend) {
   const options = merge(defaultOptions, initOptions);
 
-  if (options.tailwind === true) {
-    options.tailwind = {};
-  }
   if (options.import === true) {
     options.import = {};
   }
