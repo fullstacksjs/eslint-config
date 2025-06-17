@@ -111,5 +111,5 @@ export function defineConfig(initOptions = {}, ...extend) {
   return eslintConfig(rules);
 }
 
-/** @deprecated Please use `defineConfig` from `@fullstacksjs/eslint-config` instead, this function will be removed in the next major release */
+/** @deprecated Please use `defineConfig` from `@fullstacksjs/eslint-config` instead, this function will be removed in the next major release. */
 export const init = defineConfig;
