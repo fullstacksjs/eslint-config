@@ -9,8 +9,8 @@ interface ProjectService {
 
 export interface Options extends Linter.Config {
   /**
-   * @default true if you have `react` or `react-dom` in your dependencies
-   * Controls react plugin.
+   * Controls React plugin.
+   * @default true - If you have `react` or `react-dom` in your dependencies.
    */
   react?: boolean;
   /**
@@ -18,89 +18,91 @@ export interface Options extends Linter.Config {
    */
   sort?: boolean;
   /**
-   * @default true if you have `next` in your dependencies
-   * Controls next plugin.
+   * Controls Next plugin.
+   * @default true - If you have `next` in your dependencies.
    */
   next?: boolean;
   /**
-   * @default true if you have `tailwind` in your dependencies
-   * Controls tailwind plugin.
+   * Controls Tailwind plugin.
+   * @default true - If you have `tailwind` in your dependencies.
    */
   tailwind?: boolean | { callees: string[] };
   /**
+   * Controls [Node plugin](https://www.npmjs.com/package/eslint-plugin-n).
    * @default false
-   * Controls [node plugin](https://www.npmjs.com/package/eslint-plugin-n).
    */
   node?: boolean;
   /**
-   * @default false
    * Enables all strict rules.
+   * @default false
    */
   strict?: boolean;
   /**
-   * @default true
    * Controls [import plugin](https://www.npmjs.com/package/eslint-plugin-import-x).
+   * @default true
    */
   import?: boolean | { internalRegExp?: string; lifetime?: number; projects?: string | string[] };
   /**
-   * @default true if you have `type: module` in your `package.json`.
+   * @default true - If you have `type: module` in your `package.json`.
    */
   esm?: boolean;
   /**
-   * @default true if you have one of `jest`, `vitest`, `cypress`, `playwright`, `storybook`, `prettier` in your dependencies.
    * Controls [test plugin](https://www.npmjs.com/package/eslint-plugin-jest-formatting).
+   * @default true - If you have one of `jest`, `vitest`, `cypress`, `playwright`, `storybook`, `prettier` in your dependencies.
    */
   test?: boolean;
   /**
-   * @default true if you have `jest` in your dependencies.
-   * Controls [jest plugin](https://www.npmjs.com/package/eslint-plugin-jest).
+   * Controls [Jest plugin](https://www.npmjs.com/package/eslint-plugin-jest).
+   * @default true - If you have `jest` in your dependencies.
    */
   jest?: boolean;
   /**
-   * @default true if you have `vitest` in your dependencies.
-   * Controls [vitest plugin](https://www.npmjs.com/package/eslint-plugin-vitest).
+   * Controls [Vitest plugin](https://www.npmjs.com/package/eslint-plugin-vitest).
+   * @default true - If you have `vitest` in your dependencies.
    */
   vitest?: boolean;
   /**
-   * @default true if you have `cypress` in your dependencies.
-   * Controls [cypress plugin](https://www.npmjs.com/package/eslint-plugin-cypress).
+   * Controls [Cypress plugin](https://www.npmjs.com/package/eslint-plugin-cypress).
+   * @default true - If you have `cypress` in your dependencies.
    */
   cypress?: boolean;
   /**
+   * Controls [Storybook plugin](https://www.npmjs.com/package/eslint-plugin-storybook).
    * @default true if you have `storybook` in your dependencies.
-   * Controls [storybook plugin](https://www.npmjs.com/package/eslint-plugin-storybook).
    */
   storybook?: boolean;
   /**
-   * @default true if you have `prettier` in your dependencies.
-   * Controls [prettier plugin](https://www.npmjs.com/package/eslint-plugin-prettier).
+   * Controls [Prettier plugin](https://www.npmjs.com/package/eslint-plugin-prettier).
+   * @default true - If you have `prettier` in your dependencies.
    */
   prettier?: boolean;
   /**
-   * @default true if you have `playwright` in your dependencies.
-   * Controls [playwright plugin](https://www.npmjs.com/package/eslint-plugin-playwright).
+   * Controls [Playwright plugin](https://www.npmjs.com/package/eslint-plugin-playwright).
+   * @default true - If you have `playwright` in your dependencies.
    */
   playwright?: boolean;
   /**
-   * @default true if you have `typescript` in your dependencies.
-   * Controls [typescript plugin](https://www.npmjs.com/package/typescript-eslint).
+   * Controls [TypeScript plugin](https://www.npmjs.com/package/typescript-eslint).
+   * @default true - If you have `typescript` in your dependencies.
    */
   typescript?: { projectService?: boolean | ProjectService; tsconfigRootDir: string; cacheLifetime?: number };
   /**
-   * @default false
    * Disables expensive rules.
+   * @default false
    */
   disableExpensiveRules?: boolean;
   /**
+   * List of globs to ignore
    * @default []
-   * List of globs to ignore.
    */
   ignores?: string[];
+  /**
+   * .gitignore file path relative to ESLint configuration file.
+   * @default './.gitignore'
+   */
+  gitignorePath?: string;
 }
 
-export declare function defineConfig(
-  initOptions?: Options,
-  ...extend: Linter.Config[]
-): Linter.Config[];
+export declare function defineConfig(initOptions?: Options, ...extend: Linter.Config[]): Linter.Config[];
 
 export declare const init: typeof defineConfig;

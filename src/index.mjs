@@ -33,6 +33,7 @@ const defaultOptions = {
   disableExpensiveRules: false,
   esm: false,
   ignores: [],
+  gitignorePath: './.gitignore',
   import: {},
   jest: isPackageExists('jest'),
   next: isPackageExists('next'),
@@ -71,6 +72,7 @@ export function defineConfig(initOptions = {}, ...extend) {
     disableExpensiveRules,
     esm: enableEsm,
     ignores: enableIgnores,
+    gitignorePath,
     import: enableImport,
     jest: enableJest,
     next: enableNext,
@@ -110,5 +112,5 @@ export function defineConfig(initOptions = {}, ...extend) {
   return eslintConfig(rules);
 }
 
-/** @deprecated Please use `defineConfig` from `@fullstacksjs/eslint-config` instead, this function will be removed in the next major release */
+/** @deprecated Please use `defineConfig` from `@fullstacksjs/eslint-config` instead, this function will be removed in the next major release. */
 export const init = defineConfig;
