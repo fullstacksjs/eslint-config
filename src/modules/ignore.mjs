@@ -9,7 +9,7 @@ import { ignoreGlobs } from '../utils/globs.mjs';
  * @return { import('eslint').Linter.Config }
  */
 function ignores(options = {}) {
-  const gitignorePath = path.resolve(process.cwd(), options.gitignorePath ?? './.gitignore');
+  const gitignorePath = path.resolve(process.cwd(), options.gitignorePath);
   const gitignore = includeIgnoreFile(gitignorePath);
   return globalIgnores([...gitignore.ignores, ...ignoreGlobs, ...(options.ignores ?? [])], 'ignores');
 }

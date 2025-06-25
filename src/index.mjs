@@ -33,6 +33,7 @@ const defaultOptions = {
   disableExpensiveRules: false,
   esm: false,
   ignores: [],
+  gitignorePath: './.gitignore',
   import: {},
   jest: isPackageExists('jest'),
   next: isPackageExists('next'),
