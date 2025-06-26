@@ -19,6 +19,9 @@ async function tailwind(options = {}) {
       'better-tailwindcss/no-unnecessary-whitespace': 'warn',
       'better-tailwindcss/enforce-consistent-variable-syntax': 'error',
       'better-tailwindcss/multiline': ['error', { printWidth: 140 }],
+
+      // Resolve the conflict with `better-tailwindcss/multiline` rule.
+      '@stylistic/jsx-curly-brace-presence': ['warn', { 'propElementValues': 'ignore' }],
     },
   };
 }
