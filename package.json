@@ -23,7 +23,7 @@
     "postbuild": "./postbuild",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "pre-commit": "npm run test && lint-staged"
+    "pre-commit": "npm run test && lint-staged && npm run spell"
   },
   "main": "./cjs/index.js",
   "module": "./src/index.mjs",

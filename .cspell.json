@@ -26,6 +26,8 @@
     "tailwindcss",
     "textnodes",
     "typecheck",
-    "unocss"
+    "unocss",
+    "mkdist",
+    "shopt"
   ]
 }
