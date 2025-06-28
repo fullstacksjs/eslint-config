@@ -13,6 +13,7 @@ import perfectionist from './modules/perfectionist.mjs';
 import playwright from './modules/playwright.mjs';
 import prettier from './modules/prettier.mjs';
 import react from './modules/react.mjs';
+import regex from './modules/regex.mjs';
 import storybook from './modules/storybook.mjs';
 import stylistic from './modules/stylistic.mjs';
 import tailwind from './modules/tailwind.mjs';
@@ -48,6 +49,7 @@ const defaultOptions = {
   test: testPackages.some(p => isPackageExists(p)),
   typescript: isPackageExists('typescript') ? { projectService: true } : false,
   vitest: isPackageExists('vitest'),
+  regex: true,
 };
 
 /**
@@ -64,6 +66,9 @@ export function defineConfig(initOptions = {}, ...extend) {
   }
   if (options.import === true) {
     options.import = {};
+  }
+  if (options.regex === true) {
+    options.regex = {};
   }
 
   const {
@@ -86,6 +91,7 @@ export function defineConfig(initOptions = {}, ...extend) {
     test: enableTest,
     typescript: enableTypescript,
     vitest: enableVitest,
+    regex: enableRegex,
     ...eslintOptions
   } = options;
 
@@ -105,6 +111,7 @@ export function defineConfig(initOptions = {}, ...extend) {
   if (enableTest) rules.push(tests(options));
   if (enableCypress) rules.push(cypress(options));
   if (enablePlaywright) rules.push(playwright(options));
+  if (enableRegex) rules.push(regex(options));
 
   if (Object.keys(eslintOptions).length > 0) rules.push(eslintOptions);
   if (extend) Array.prototype.push.apply(rules, extend);
