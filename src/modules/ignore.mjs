@@ -13,9 +13,9 @@ function ignores(options = {}) {
   const ignorePatterns = [...ignoreGlobs, ...(options.ignores ?? [])];
 
   const gitignoreFilePath = path.resolve(process.cwd(), options.gitignorePath);
-  const isGitignoreFileExists = fs.existsSync(gitignoreFilePath); // eslint-disable-line n/no-sync
+  const gitignoreFileExists = fs.existsSync(gitignoreFilePath); // eslint-disable-line n/no-sync
 
-  if (isGitignoreFileExists) {
+  if (gitignoreFileExists) {
     const gitignore = includeIgnoreFile(gitignoreFilePath);
     ignorePatterns.push(...gitignore.ignores);
   }
