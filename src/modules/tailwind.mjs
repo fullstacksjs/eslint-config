@@ -8,8 +8,8 @@ async function tailwind(options = {}) {
     plugins: { 'better-tailwindcss': plugin.default ?? plugin },
     settings: {
       'better-tailwindcss': {
-        entryPoint: options.entryPoint,
-        tailwindConfig: options.tailwindConfig,
+        entryPoint: options.tailwind.entryPoint,
+        tailwindConfig: options.tailwind.tailwindConfig,
       },
     },
     rules: {
