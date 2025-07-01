@@ -73,7 +73,7 @@ interface Options {
   next?: boolean; // controls next plugin
   prettier?: boolean; // controls prettier plugin
   disableExpensiveRules?: boolean; // controls expensive rules
-  gitignorePath?: string; // automatically ignore paths from .gitignore
+  gitignore?: false | string; // automatically ignore paths from .gitignore
 }
 ```
 
