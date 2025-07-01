@@ -1,4 +1,4 @@
-import plugin from 'eslint-plugin-cypress/flat';
+import plugin from 'eslint-plugin-cypress';
 
 import { globs } from '../utils/globs.mjs';
 

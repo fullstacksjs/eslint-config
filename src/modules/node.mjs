@@ -26,6 +26,7 @@ function node(options = {}) {
       'n/no-restricted-import': 'off',
       'n/no-restricted-require': 'off',
       'n/no-sync': strict(options, 'warn'),
+      'n/no-top-level-await': 'off',
       'n/no-unpublished-bin': 'warn',
       'n/no-unpublished-import': 'warn',
       'n/no-unpublished-require': 'warn',

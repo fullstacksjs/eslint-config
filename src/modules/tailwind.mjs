@@ -13,12 +13,12 @@ async function tailwind(options = {}) {
       },
     },
     rules: {
-      'better-tailwindcss/sort-classes': 'warn',
+      'better-tailwindcss/enforce-consistent-class-order': 'warn',
       'better-tailwindcss/no-duplicate-classes': 'error',
       'better-tailwindcss/no-conflicting-classes': 'error',
       'better-tailwindcss/no-unnecessary-whitespace': 'warn',
       'better-tailwindcss/enforce-consistent-variable-syntax': 'error',
-      'better-tailwindcss/multiline': 'off',
+      'better-tailwindcss/enforce-consistent-line-wrapping': 'off',
     },
   };
 }
