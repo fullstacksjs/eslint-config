@@ -18,7 +18,7 @@ async function tailwind(options = {}) {
       'better-tailwindcss/no-conflicting-classes': 'error',
       'better-tailwindcss/no-unnecessary-whitespace': 'warn',
       'better-tailwindcss/enforce-consistent-variable-syntax': 'error',
-      'better-tailwindcss/multiline': ['error', { printWidth: 140 }],
+      'better-tailwindcss/multiline': 'off',
     },
   };
 }
