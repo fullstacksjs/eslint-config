@@ -114,7 +114,6 @@ function base(options = {}) {
       'no-restricted-globals': ['error', { name: 'event', message: 'Use local parameter instead.' }],
       'no-restricted-syntax': ['error', 'WithStatement'],
       'no-return-assign': 'error',
-      'no-return-await': 'warn',
       'no-script-url': 'error',
       'no-self-assign': 'error',
       'no-self-compare': 'error',
