@@ -1,6 +1,6 @@
-### From v11 to v12
+### From v12 to v13
 
-Use `defineConfig` instead of `init`
+Use `defineConfig` instead of `init` and add your tailwind CSS path for tailwind v4 support.
 
 ```diff
 - import { init } from '@fullstacksjs/eslint-config';
@@ -8,10 +8,26 @@ Use `defineConfig` instead of `init`
 
 - export default init();
 + export default defineConfig({
-  typescript: {
-    tsconfigRootDir: import.meta.dirname,
-  }
-});
++   tailwind: {
++      entryPoint: 'PATH/TO/CSS'
++   }
++ });
+```
+
+
+### From v11 to v12
+
+Add `tsconfigRootDir` to enable projectService.
+
+```diff
+import { init } from '@fullstacksjs/eslint-config';
+
+- export default init();
++ export default init({
++   typescript: {
++     tsconfigRootDir: import.meta.dirname,
++   }
++ });
 ```
 
 ### From v10 to v11

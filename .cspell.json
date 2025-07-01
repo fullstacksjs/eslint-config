@@ -28,6 +28,7 @@
     "typecheck",
     "unocss",
     "mkdist",
-    "shopt"
+    "shopt",
+    "callees"
   ]
 }

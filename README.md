@@ -115,6 +115,34 @@ export default defineConfig(
 )
 ```
 
+## Tailwind
+
+To enable Tailwind CSS in your project, specify the path to your CSS file in the module configuration:
+
+Tailwind 4:
+```typescript
+export default defineConfig({
+  tailwind: { entryPoint: './src/global.css' },
+})
+```
+
+Tailwind 3:
+```typescript
+export default defineConfig({
+  tailwind: { tailwindConfig: './tailwind.config.js' },
+})
+```
+
+## GitIgnore
+
+By default, FullstacksJS checks for a `.gitignore` file at the root of the project. If the file exists, it will be used automatically. You can override this behavior by updating the configuration.
+
+```typescript
+export default defineConfig({
+  gitignore: './packages/acme/.gitignore', // use `false` to disable
+})
+```
+
 ## I'm Getting a Next.js Warning: Plugin Was Not Detected
 
 This configuration includes built-in support for [Next.js](https://nextjs.org). The warning you're seeing from Next.js is misleading—it simply checks whether the plugin is explicitly listed in your package.json.

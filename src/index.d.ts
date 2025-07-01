@@ -8,7 +8,7 @@ interface ProjectService {
 }
 
 type TailwindConfig = {
-  callees: string[];
+  callees?: string[];
   variables?: string[];
   attributes?: string[];
   tags?: string[];
