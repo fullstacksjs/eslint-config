@@ -1,8 +1,6 @@
-import { includeIgnoreFile } from '@eslint/compat';
 import { globalIgnores } from 'eslint/config';
-import fs from 'node:fs';
-import path from 'node:path';
 
+import { getGitignorePatterns } from '../utils/getGitignorePatterns.mjs';
 import { ignoreGlobs } from '../utils/globs.mjs';
 
 /**
@@ -12,15 +10,17 @@ import { ignoreGlobs } from '../utils/globs.mjs';
 function ignores(options = {}) {
   const ignorePatterns = [...ignoreGlobs, ...(options.ignores ?? [])];
 
-  const gitignoreFilePath = path.resolve(process.cwd(), options.gitignorePath);
-  const gitignoreFileExists = fs.existsSync(gitignoreFilePath); // eslint-disable-line n/no-sync
-
-  if (gitignoreFileExists) {
-    const gitignore = includeIgnoreFile(gitignoreFilePath);
-    ignorePatterns.push(...gitignore.ignores);
+  const shouldUseGitignore = options.gitignore && options.gitignore.length > 0;
+  if (shouldUseGitignore) {
+    const gitignorePatterns = getGitignorePatterns(options.gitignore);
+    if (gitignorePatterns.length > 0) {
+      ignorePatterns.push(...gitignorePatterns);
+    }
   }
 
-  return globalIgnores(ignorePatterns, 'ignores');
+  const uniqueIgnorePatterns = [...new Set(ignorePatterns)];
+
+  return globalIgnores(uniqueIgnorePatterns, 'ignores');
 }
 
 export default ignores;

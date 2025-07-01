@@ -97,10 +97,10 @@ export interface Options extends Linter.Config {
    */
   ignores?: string[];
   /**
-   * .gitignore file path relative to ESLint configuration file.
+   * .gitignore file path relative to ESLint configuration file. Set to `false` to disable.
    * @default './.gitignore'
    */
-  gitignorePath?: string;
+  gitignore?: string | false;
 }
 
 export declare function defineConfig(initOptions?: Options, ...extend: Linter.Config[]): Linter.Config[];
