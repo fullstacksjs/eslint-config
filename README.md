@@ -74,6 +74,7 @@ interface Options {
   prettier?: boolean; // controls prettier plugin
   disableExpensiveRules?: boolean; // controls expensive rules
   gitignore?: false | string; // automatically ignore paths from .gitignore
+  regex?: boolean | {allowedCharacterRanges?: string[]} // controls regexp plugin
 }
 ```
 
@@ -209,6 +210,7 @@ export default defineConfig({
 * [eslint-plugin-better-tailwindcss](https://github.com/schoero/eslint-plugin-better-tailwindcss)
 * [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
 * [typescript-eslint](https://typescript-eslint.io/)
+* [eslint-plugin-regexp](https://www.npmjs.com/package/eslint-plugin-regexp)
 
 That's all. Feel free to use 💛
 
