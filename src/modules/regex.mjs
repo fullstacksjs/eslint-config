@@ -9,7 +9,7 @@ function regex(options = {}) {
     plugins: { regexp: plugin },
     settings: {
       regexp: {
-        allowedCharacterRanges: options.regex.allowedCharacterRanges ?? ['all'],
+        allowedCharacterRanges: options.regex.allowedCharacterRanges,
       },
     },
     rules: {
