@@ -49,7 +49,7 @@ const defaultOptions = {
   test: testPackages.some(p => isPackageExists(p)),
   typescript: isPackageExists('typescript') ? { projectService: true } : false,
   vitest: isPackageExists('vitest'),
-  regex: true,
+  regex: { allowedCharacterRanges: ['all'] },
 };
 
 /**
@@ -63,6 +63,10 @@ export function defineConfig(initOptions = {}, ...extend) {
 
   if (options.import === true) {
     options.import = {};
+  }
+
+  if (options.regex === true) {
+    options.regex = { allowedCharacterRanges: ['all'] };
   }
 
   const {
