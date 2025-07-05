@@ -16,6 +16,7 @@ export default defineConfig(
     storybook: true,
     typescript: true,
     tailwind: false,
+    regex: true,
     rules: {
       'max-lines-per-function': 'off',
       'complexity': 'off',

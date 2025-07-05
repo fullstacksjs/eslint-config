@@ -96,6 +96,7 @@ function base(options = {}) {
       'no-lonely-if': 'error',
       'no-loop-func': 'error',
       'no-loss-of-precision': 'warn',
+      'no-misleading-character-class': ['error', { allowEscape: true }],
       'no-multi-assign': 'error',
       'no-multi-str': 'error',
       'no-new-func': 'error',

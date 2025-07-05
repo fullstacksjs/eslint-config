@@ -109,6 +109,11 @@ export interface Options extends Linter.Config {
    * @default './.gitignore'
    */
   gitignore?: string | false;
+  /**
+   * Controls regex plugin.
+   * @default true
+   */
+  regex?: boolean | { allowedCharacterRanges: string[] };
 }
 
 export declare function defineConfig(initOptions?: Options, ...extend: Linter.Config[]): Linter.Config[];
