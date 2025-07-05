@@ -18,7 +18,6 @@ function regex(options = {}) {
       'regexp/letter-case': 'warn',
       'regexp/match-any': 'error',
       'regexp/negation': 'error',
-
       'regexp/no-contradiction-with-assertion': 'error',
       'regexp/no-dupe-characters-character-class': 'error',
       'regexp/no-dupe-disjunctions': 'error',
@@ -59,10 +58,8 @@ function regex(options = {}) {
       'regexp/no-useless-string-literal': 'error',
       'regexp/no-useless-two-nums-quantifier': 'error',
       'regexp/no-zero-quantifier': 'error',
-
       'regexp/optimal-lookaround-quantifier': 'warn',
       'regexp/optimal-quantifier-concatenation': 'error',
-
       'regexp/prefer-character-class': 'error',
       'regexp/prefer-d': 'error',
       'regexp/prefer-plus-quantifier': 'error',
@@ -74,12 +71,15 @@ function regex(options = {}) {
       'regexp/prefer-unicode-codepoint-escapes': 'error',
       'regexp/prefer-w': 'error',
       'regexp/simplify-set-operations': 'error',
+      'regexp/sort-alternatives': 'warn',
+      'regexp/sort-character-class-elements': 'warn',
+      'regexp/sort-flags': 'warn',
       'regexp/strict': 'error',
       'regexp/use-ignore-case': 'error',
 
-      'regexp/sort-flags': 'warn',
-      'regexp/sort-alternatives': 'warn',
-      'regexp/sort-character-class-elements': 'warn',
+      'no-invalid-regexp': 'off',
+      'no-useless-backreference': 'off',
+      'no-empty-character-class': 'off',
     },
   };
 }
