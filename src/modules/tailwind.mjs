@@ -10,15 +10,17 @@ async function tailwind(options = {}) {
       'better-tailwindcss': {
         entryPoint: options.tailwind.entryPoint,
         tailwindConfig: options.tailwind.tailwindConfig,
+        callees: [
+          ['^class|classnames|classNames|cva|ctl|clsx|cn|cns|cx|cc|clb|cnb|dcnb|objstr|tv|twJoin|twMerge$', [{ match: 'strings' }]],
+        ],
       },
     },
     rules: {
-      'better-tailwindcss/enforce-consistent-class-order': 'warn',
       'better-tailwindcss/no-duplicate-classes': 'error',
       'better-tailwindcss/no-conflicting-classes': 'error',
       'better-tailwindcss/no-unnecessary-whitespace': 'warn',
+      'better-tailwindcss/enforce-consistent-class-order': 'warn',
       'better-tailwindcss/enforce-consistent-variable-syntax': 'error',
-      'better-tailwindcss/enforce-consistent-line-wrapping': 'off',
     },
   };
 }
