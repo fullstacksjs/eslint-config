@@ -13,7 +13,7 @@
 ## Installation
 
 ```sh
-$ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
+npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 ```
 
 ⚡️ That's it, you don't need to install any eslint-plugin!  If you already have some plugins installed, please remove them.
