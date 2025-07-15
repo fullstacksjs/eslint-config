@@ -1,4 +1,4 @@
-import plugin from 'eslint-plugin-regexp';
+import * as plugin from 'eslint-plugin-regexp';
 
 /**
  * @param { import('..').Options } options
