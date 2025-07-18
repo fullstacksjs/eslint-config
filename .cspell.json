@@ -1,34 +1,12 @@
 {
   "version": "0.2",
   "language": "en",
-  "ignorePaths": ["**/node_modules/**", "**/package.json"],
+  "ignorePaths": ["package.json" , "src/modules/*" , "build.config.js" , "postbuild"],
   "dictionaries": ["node"],
   "words": [
-    "activedescendant",
-    "astro",
-    "backreference",
-    "camelcase",
-    "chunkname",
-    "frontendmonster",
     "fullstacksjs",
-    "graphqlrc",
-    "linebreak",
-    "multilines",
-    "nextjs",
-    "nocheck",
-    "nofunc",
-    "nonconstructor",
-    "nonoctal",
-    "oneof",
-    "proptypes",
-    "readonlysemi",
-    "setstate",
-    "tailwindcss",
-    "textnodes",
-    "typecheck",
-    "unocss",
-    "mkdist",
-    "shopt",
-    "callees"
+    "callees",
+    "nuxt",
+    "evenodd"
   ]
 }
