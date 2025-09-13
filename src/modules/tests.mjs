@@ -1,4 +1,4 @@
-import plugin from 'eslint-plugin-jest-formatting';
+import plugin from '@vitest/eslint-plugin';
 import globals from 'globals';
 
 import { predicate } from '../utils/conditions.mjs';
@@ -10,18 +10,19 @@ import { globs } from '../utils/globs.mjs';
  */
 function tests(options = {}) {
   return {
-    plugins: { 'jest-formatting': plugin },
+    plugins: { vitest: plugin },
     files: [...globs.test, ...globs.e2e],
     languageOptions: {
       globals: { ...globals['shared-node-browser'], ...globals.jest },
     },
     rules: {
-      'jest-formatting/padding-around-after-all-blocks': 'warn',
-      'jest-formatting/padding-around-after-each-blocks': 'warn',
-      'jest-formatting/padding-around-before-all-blocks': 'warn',
-      'jest-formatting/padding-around-before-each-blocks': 'warn',
-      'jest-formatting/padding-around-describe-blocks': 'warn',
-      'jest-formatting/padding-around-test-blocks': 'warn',
+      'vitest/padding-around-after-all-blocks': 'warn',
+      'vitest/padding-around-after-each-blocks': 'warn',
+      'vitest/padding-around-before-all-blocks': 'warn',
+      'vitest/padding-around-before-each-blocks': 'warn',
+      'vitest/padding-around-describe-blocks': 'warn',
+      'vitest/padding-around-expect-groups': 'warn',
+      'vitest/padding-around-test-blocks': 'warn',
 
       'max-lines-per-function': 'off',
       'no-sparse-arrays': 'off',
