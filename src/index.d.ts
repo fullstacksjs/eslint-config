@@ -93,7 +93,7 @@ export interface Options extends Linter.Config {
    * Controls [TypeScript plugin](https://www.npmjs.com/package/typescript-eslint).
    * @default true - If you have `typescript` in your dependencies.
    */
-  typescript?: { projectService?: boolean | ProjectService; tsconfigRootDir: string; cacheLifetime?: number };
+  typescript?: { projectService?: boolean | ProjectService; tsconfigRootDir?: string; cacheLifetime?: number };
   /**
    * Disables expensive rules.
    * @default false
