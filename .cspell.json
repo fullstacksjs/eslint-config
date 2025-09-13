@@ -1,12 +1,7 @@
 {
   "version": "0.2",
   "language": "en",
-  "ignorePaths": ["package.json" , "src/modules/*" , "build.config.js" , "postbuild"],
+  "ignorePaths": ["package.json", "cjs/*", "src/modules/*", "build.config.js", "postbuild"],
   "dictionaries": ["node"],
-  "words": [
-    "fullstacksjs",
-    "callees",
-    "nuxt",
-    "evenodd"
-  ]
+  "words": ["fullstacksjs", "callees", "nuxt", "evenodd"]
 }
