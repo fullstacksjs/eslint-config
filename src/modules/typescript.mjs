@@ -1,6 +1,6 @@
 import { parser, plugin } from 'typescript-eslint';
 
-import { predicate, strict } from '../utils/conditions.mjs';
+import { predicate } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
 import { namingConvention } from '../utils/naming-convention.mjs';
 
@@ -74,7 +74,7 @@ function typescript(options = {}) {
       '@typescript-eslint/no-duplicate-enum-values': 'error',
       '@typescript-eslint/no-dynamic-delete': 'error',
       '@typescript-eslint/no-empty-function': 'error',
-      '@typescript-eslint/no-empty-object-type': 'warn',
+      '@typescript-eslint/no-empty-object-type': ['warn', { allowInterfaces: 'with-single-extends' }],
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-extra-non-null-assertion': 'error',
       '@typescript-eslint/no-extraneous-class': ['warn', { allowWithDecorator: true }],
@@ -122,7 +122,7 @@ function typescript(options = {}) {
       '@typescript-eslint/no-useless-empty-export': 'warn',
       '@typescript-eslint/parameter-properties': 'off',
       '@typescript-eslint/prefer-as-const': 'warn',
-      '@typescript-eslint/prefer-enum-initializers': strict(options, 'warn'),
+      '@typescript-eslint/prefer-enum-initializers': 'off',
       '@typescript-eslint/prefer-for-of': 'warn',
       '@typescript-eslint/prefer-function-type': 'warn',
       '@typescript-eslint/prefer-literal-enum-member': ['error', { allowBitwiseExpressions: true }],
