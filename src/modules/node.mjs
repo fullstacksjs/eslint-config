@@ -35,7 +35,6 @@ function node(options = {}) {
       'n/no-unsupported-features/node-builtins': 'off', // Nice but not a general rule
       'n/prefer-global/buffer': 'warn',
       'n/prefer-global/console': 'warn',
-      'n/prefer-global/process': 'warn',
       'n/prefer-global/text-decoder': 'warn',
       'n/prefer-global/text-encoder': 'warn',
       'n/prefer-global/url-search-params': 'warn',
@@ -46,6 +45,7 @@ function node(options = {}) {
       'n/process-exit-as-throw': 'error',
 
       // Disabled
+      'n/prefer-global/process': 'off',
       'n/file-extension-in-import': 'off',
       'n/no-extraneous-import': 'off',
       'n/no-extraneous-require': 'off',
