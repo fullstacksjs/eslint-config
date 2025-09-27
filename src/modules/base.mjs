@@ -157,6 +157,12 @@ function base(options = {}) {
       'one-var': ['error', { uninitialized: 'never', initialized: 'never' }],
       'prefer-arrow-callback': ['warn', { allowNamedFunctions: true, allowUnboundThis: true }],
       'prefer-const': 'warn',
+      'preserve-caught-error': strict(options, [
+        'warn',
+        {
+          requireCatchParameter: true,
+        },
+      ]),
       'prefer-exponentiation-operator': 'warn',
       'prefer-numeric-literals': 'error',
       'prefer-object-has-own': 'warn',
