@@ -74,7 +74,7 @@ function typescript(options = {}) {
       '@typescript-eslint/no-duplicate-enum-values': 'error',
       '@typescript-eslint/no-dynamic-delete': 'error',
       '@typescript-eslint/no-empty-function': 'error',
-      '@typescript-eslint/no-empty-interface': 'off', // Annoying with auto-fix on save.
+      '@typescript-eslint/no-empty-object-type': ['warn', { allowInterfaces: 'with-single-extends' }],
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-extra-non-null-assertion': 'error',
       '@typescript-eslint/no-extraneous-class': ['warn', { allowWithDecorator: true }],
