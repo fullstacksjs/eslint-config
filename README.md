@@ -50,7 +50,7 @@ You can fine-tune module detection by overriding it, the `defineConfig` function
 
 ```typescript
 interface Options {
-  react?: boolean; // controls react, react-hooks, jsx/a11y plugins
+  react?: boolean | { version?: string; additionalEffectHooks?: string }; // controls react, react-hooks, jsx/a11y plugins
   typescript?: ParserOptions // https://typescript-eslint.io/packages/parser#configuration
   node?: boolean; // controls node plugin
   sort?: boolean; // controls perfectionist plugin
