@@ -12,7 +12,9 @@ export default defineConfig(
     vitest: true,
     next: false,
     cypress: true,
-    react: true,
+    react: {
+      additionalEffectHooks: '(useMyEffect|useCustomEffect)',
+    },
     storybook: true,
     typescript: true,
     tailwind: false,
