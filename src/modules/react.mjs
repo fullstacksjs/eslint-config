@@ -3,7 +3,7 @@ import a11yPlugin from 'eslint-plugin-jsx-a11y';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 
 /** @return { import('eslint').Linter.Config } */
-function react() {
+function react(options = {}) {
   return {
     plugins: {
       ...reactPlugin.configs.all.plugins,
@@ -16,7 +16,7 @@ function react() {
         version: 'detect',
       },
       'react-hooks': {
-        additionalEffectHooks: '(useMyEffect|useCustomEffect)',
+        additionalEffectHooks: options.react.additionalEffectHooks,
       },
     },
     rules: {
