@@ -11,9 +11,12 @@ function react() {
       'jsx-a11y': a11yPlugin,
     },
     settings: {
-      react: {
+      'react': {
         pragma: 'React',
         version: 'detect',
+      },
+      'react-hooks': {
+        additionalEffectHooks: '(useMyEffect|useCustomEffect)',
       },
     },
     rules: {
