@@ -19,7 +19,7 @@ export interface Options extends Linter.Config {
    * Controls React plugin.
    * @default true - If you have `react` or `react-dom` in your dependencies.
    */
-  react?: boolean | { version?: string; additionalEffectHooks?: string };
+  react?: boolean | { additionalEffectHooks?: string };
   /**
    * @default true
    */
