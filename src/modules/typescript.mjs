@@ -175,7 +175,6 @@ function typescript(options = {}) {
           'warn',
           {
             allowConstantLoopConditions: false,
-            allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
           },
         ],
         '@typescript-eslint/no-unnecessary-qualifier': 'error',
@@ -194,7 +193,6 @@ function typescript(options = {}) {
             ignoreConditionalTests: false,
             ignoreTernaryTests: false,
             ignoreMixedLogicalExpressions: false,
-            allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
           },
         ],
         '@typescript-eslint/prefer-regexp-exec': 'warn',
