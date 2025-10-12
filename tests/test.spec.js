@@ -11,9 +11,13 @@ describe('title', () => {
 
   it('should', () => {
     console.log('Spec example');
+
+    expect(true).toBe(true);
   });
+
   it('should 2', () => {
     console.log('Spec example 2');
+
     expect(true).toBe(true);
     expect(true).toBe(true);
   });
