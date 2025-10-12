@@ -192,7 +192,7 @@ function typescript(options = {}) {
           {
             ignoreConditionalTests: false,
             ignoreTernaryTests: false,
-            ignoreMixedLogicalExpressions: false,
+            ignoreMixedLogicalExpressions: true,
           },
         ],
         '@typescript-eslint/prefer-regexp-exec': 'warn',
