@@ -68,7 +68,6 @@ function typescript(options = {}) {
           : []),
       ],
       '@typescript-eslint/no-array-constructor': 'error',
-      '@typescript-eslint/no-base-to-string': 'off', // false negative
       '@typescript-eslint/no-confusing-non-null-assertion': 'error',
       '@typescript-eslint/no-dupe-class-members': 'error',
       '@typescript-eslint/no-duplicate-enum-values': 'error',
@@ -156,6 +155,7 @@ function typescript(options = {}) {
             allowIndexSignaturePropertyAccess: true,
           },
         ],
+        '@typescript-eslint/no-base-to-string': 'error',
         '@typescript-eslint/no-confusing-void-expression': ['off', { ignoreArrowShorthand: true, ignoreVoidOperator: true }], // Annoying and conflict with @typescript-eslint/no-meaningless-void-operator
         '@typescript-eslint/no-duplicate-type-constituents': 'warn',
         '@typescript-eslint/no-for-in-array': 'error',
