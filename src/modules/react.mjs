@@ -2,8 +2,12 @@ import reactPlugin from '@eslint-react/eslint-plugin';
 import a11yPlugin from 'eslint-plugin-jsx-a11y';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 
+import { predicate } from '../utils/conditions.mjs';
+
 /** @return { import('eslint').Linter.Config } */
 function react(options = {}) {
+  const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
+
   return {
     plugins: {
       ...reactPlugin.configs.all.plugins,
@@ -82,7 +86,9 @@ function react(options = {}) {
       '@eslint-react/no-unstable-default-props': 'error',
       '@eslint-react/no-unused-class-component-members': 'warn',
       '@eslint-react/no-unused-state': 'warn',
-      '@eslint-react/no-unused-props': 'off',
+      ...predicate(projectService, {
+        '@eslint-react/no-unused-props': 'warn',
+      }),
       '@eslint-react/no-useless-forward-ref': 'off',
       '@eslint-react/no-useless-fragment': 'warn',
       '@eslint-react/no-use-context': 'warn',
