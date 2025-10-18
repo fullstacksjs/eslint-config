@@ -69,6 +69,10 @@ export function defineConfig(initOptions = {}, ...extend) {
     options.regex = { allowedCharacterRanges: ['all'] };
   }
 
+  if (options.typescript === true) {
+    options.typescript = { projectService: true };
+  }
+
   const {
     sort: enableSort,
     cypress: enableCypress,
