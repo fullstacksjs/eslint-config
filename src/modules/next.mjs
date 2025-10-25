@@ -14,7 +14,7 @@ function next() {
       'next/no-before-interactive-script-outside-document': 'warn',
       'next/no-css-tags': 'warn',
       'next/no-document-import-in-page': 'warn',
-      // 'next/no-duplicate-head': 'warn',
+      'next/no-duplicate-head': 'warn',
       'next/no-head-element': 'warn',
       'next/no-head-import-in-document': 'warn',
       'next/no-html-link-for-pages': 'warn',
