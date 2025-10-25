@@ -1,8 +1,10 @@
 import reactPlugin from '@eslint-react/eslint-plugin';
 import a11yPlugin from 'eslint-plugin-jsx-a11y';
 import hooksPlugin from 'eslint-plugin-react-hooks';
+import { parser } from 'typescript-eslint';
 
 import { predicate } from '../utils/conditions.mjs';
+import { globs } from '../utils/globs.mjs';
 
 /** @return { import('eslint').Linter.Config } */
 function react(options = {}) {
@@ -14,6 +16,13 @@ function react(options = {}) {
       'react-hooks': hooksPlugin,
       'jsx-a11y': a11yPlugin,
     },
+    ...predicate(projectService, {
+      languageOptions: {
+        parser,
+        parserOptions: { ...options.typescript },
+      },
+      ignores: [globs.js, globs.jsx],
+    }),
     settings: {
       'react': {
         pragma: 'React',
