@@ -96,5 +96,9 @@
     "jest": {
       "optional": true
     }
+  },
+  "volta": {
+    "node": "22.20.0",
+    "npm": "11.6.2"
   }
 }
