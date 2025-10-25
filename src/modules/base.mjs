@@ -45,7 +45,7 @@ function base(options = {}) {
       'max-lines-per-function': ['error', 150],
       'max-lines': ['error', { max: 2500, skipBlankLines: false, skipComments: false }],
       'max-nested-callbacks': ['error', 7],
-      'max-params': ['error', 7],
+      'max-params': ['error', 3],
       'max-statements': ['error', 40],
       'no-alert': 'error',
       'no-array-constructor': 'error',
