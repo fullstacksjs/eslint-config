@@ -1,6 +1,6 @@
 import { parser, plugin } from 'typescript-eslint';
 
-import { predicate } from '../utils/conditions.mjs';
+import { predicate, strict } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
 import { namingConvention } from '../utils/naming-convention.mjs';
 
@@ -37,7 +37,7 @@ function typescript(options = {}) {
       '@typescript-eslint/camelcase': 'off',
       '@typescript-eslint/class-literal-property-style': ['error', 'getters'],
       '@typescript-eslint/consistent-generic-constructors': ['warn', 'constructor'],
-      '@typescript-eslint/consistent-indexed-object-style': 'off',
+      '@typescript-eslint/consistent-indexed-object-style': 'warn',
       '@typescript-eslint/consistent-type-assertions': 'error',
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       '@typescript-eslint/consistent-type-imports': [
@@ -45,7 +45,7 @@ function typescript(options = {}) {
         { prefer: 'type-imports', disallowTypeAnnotations: false, fixStyle: 'separate-type-imports' },
       ],
       '@typescript-eslint/default-param-last': 'warn',
-      '@typescript-eslint/explicit-function-return-type': 'off',
+      '@typescript-eslint/explicit-function-return-type': strict(options, 'warn'),
       '@typescript-eslint/explicit-member-accessibility': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/generic-type-naming': 'off',
@@ -74,7 +74,7 @@ function typescript(options = {}) {
       '@typescript-eslint/no-dynamic-delete': 'error',
       '@typescript-eslint/no-empty-function': 'error',
       '@typescript-eslint/no-empty-object-type': ['warn', { allowInterfaces: 'with-single-extends' }],
-      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-explicit-any': strict(options, 'warn'),
       '@typescript-eslint/no-extra-non-null-assertion': 'error',
       '@typescript-eslint/no-extraneous-class': ['warn', { allowWithDecorator: true }],
       '@typescript-eslint/no-import-type-side-effects': 'warn',
@@ -96,12 +96,12 @@ function typescript(options = {}) {
       '@typescript-eslint/no-this-alias': 'error',
       '@typescript-eslint/no-type-alias': 'off',
       '@typescript-eslint/no-unnecessary-type-constraint': 'warn',
-      '@typescript-eslint/no-unsafe-argument': 'off',
-      '@typescript-eslint/no-unsafe-assignment': 'off',
-      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-argument': strict(options, 'warn'),
+      '@typescript-eslint/no-unsafe-assignment': strict(options, 'warn'),
+      '@typescript-eslint/no-unsafe-call': strict(options, 'warn'),
       '@typescript-eslint/no-unsafe-declaration-merging': 'warn',
-      '@typescript-eslint/no-unsafe-member-access': 'off',
-      '@typescript-eslint/no-unsafe-return': 'off',
+      '@typescript-eslint/no-unsafe-member-access': strict(options, ['warn', { allowOptionalChaining: true }]),
+      '@typescript-eslint/no-unsafe-return': strict(options, 'warn'),
       '@typescript-eslint/no-untyped-public-signature': 'off',
       '@typescript-eslint/no-unused-expressions': 'error',
       '@typescript-eslint/no-unused-vars': [
@@ -171,6 +171,7 @@ function typescript(options = {}) {
         '@typescript-eslint/no-unnecessary-type-conversion': 'error',
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
         '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
+        '@typescript-eslint/no-unsafe-function-type': 'warn',
         '@typescript-eslint/no-unnecessary-condition': [
           'warn',
           {
@@ -214,9 +215,6 @@ function typescript(options = {}) {
         'prefer-promise-reject-errors': 'off',
         'consistent-return': 'off',
       }),
-
-      // open issues
-      'react/jsx-no-useless-fragment': 'off', // Need useless-fragment for JSX return type
 
       // Conflicts with @typescript-eslint
       'no-empty-function': 'off',
