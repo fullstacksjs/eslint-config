@@ -27,7 +27,7 @@ function storybook() {
 
       // Conflicts
       '@typescript-eslint/no-confusing-void-expression': 'off',
-      'react/jsx-no-useless-fragment': 'off',
+      '@eslint-react/no-useless-fragment': 'off',
       'react-hooks/rules-of-hooks': 'off',
     },
   };
