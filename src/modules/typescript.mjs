@@ -45,7 +45,7 @@ function typescript(options = {}) {
         { prefer: 'type-imports', disallowTypeAnnotations: false, fixStyle: 'separate-type-imports' },
       ],
       '@typescript-eslint/default-param-last': 'warn',
-      '@typescript-eslint/explicit-function-return-type': strict(options, 'warn'),
+      '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-member-accessibility': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/generic-type-naming': 'off',
