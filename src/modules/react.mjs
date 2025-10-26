@@ -11,6 +11,7 @@ function react(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
 
   return {
+    files: [globs.js, globs.jsx, globs.ts, globs.tsx],
     plugins: {
       ...reactPlugin.configs.all.plugins,
       'react-hooks': hooksPlugin,
@@ -21,7 +22,6 @@ function react(options = {}) {
         parser,
         parserOptions: { ...options.typescript },
       },
-      ignores: [globs.js, globs.jsx],
     }),
     settings: {
       'react': {
