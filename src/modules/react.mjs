@@ -49,6 +49,7 @@ function react(options = {}) {
       '@eslint-react/dom/no-unsafe-iframe-sandbox': 'warn',
       '@eslint-react/dom/no-unsafe-target-blank': 'warn',
 
+      '@eslint-react/jsx-dollar': 'warn',
       '@eslint-react/jsx-key-before-spread': 'error',
       '@eslint-react/jsx-no-undef': 'off',
       '@eslint-react/jsx-no-iife': 'warn',
