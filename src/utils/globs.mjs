@@ -28,7 +28,7 @@ export const globs = {
   astro: '**/*.astro',
   graphql: '**/*.{gql,graphql}',
 
-  storybook: ['**/*.stories.{js,jsx,ts,tsx}'],
+  storybook: ['**/*.stories.{js,mjs,cjs,jsx,ts,tsx}'],
 
   test: [`**/__tests__/*.${srcExt}`, `**/*.spec.${srcExt}`, `**/*.test.${srcExt}`],
   e2e: [`**/e2e/*.${srcExt}`],
