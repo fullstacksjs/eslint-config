@@ -1,4 +1,5 @@
 import plugin from 'eslint-plugin-jest';
+import globals from 'globals';
 
 import { globs } from '../utils/globs.mjs';
 
@@ -9,6 +10,11 @@ function jest() {
   return {
     files: globs.test,
     plugins: { jest: plugin },
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+      },
+    },
     rules: {
       'jest/consistent-test-it': 'off',
       'jest/expect-expect': 'off',

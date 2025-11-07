@@ -8,19 +8,6 @@ function playwright() {
     plugins: { playwright: plugin },
     files: globs.e2e,
     rules: {
-      'jest/no-standalone-expect': [
-        'error',
-        {
-          additionalTestBlockFunctions: [
-            'test.jestPlaywrightDebug',
-            'it.jestPlaywrightDebug',
-            'test.jestPlaywrightSkip',
-            'it.jestPlaywrightSkip',
-            'test.jestPlaywrightConfig',
-            'it.jestPlaywrightConfig',
-          ],
-        },
-      ],
       'playwright/expect-expect': 'error',
       'playwright/missing-playwright-await': 'error',
       'playwright/max-nested-describe': ['warn', { max: 5 }],
@@ -40,6 +27,7 @@ function playwright() {
       'playwright/no-useless-await': 'error',
       'playwright/no-unsafe-references': 'warn',
       'playwright/no-useless-not': 'warn',
+      'playwright/no-unused-locators': 'warn',
       'playwright/no-wait-for-navigation': 'warn',
       'playwright/no-wait-for-selector': 'warn',
       'playwright/no-wait-for-timeout': 'warn',
