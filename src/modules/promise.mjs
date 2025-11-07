@@ -1,7 +1,9 @@
 import plugin from 'eslint-plugin-promise';
 
+import { strict } from '../utils/conditions.mjs';
+
 /** @return { import('eslint').Linter.Config } */
-function promise() {
+function promise(options = {}) {
   return {
     plugins: { promise: plugin },
     rules: {
@@ -18,8 +20,10 @@ function promise() {
       'promise/param-names': 'warn',
       'promise/prefer-await-to-callbacks': 'off',
       'promise/prefer-await-to-then': 'off',
+      'promise/prefer-catch': strict(options, 'warn'),
       'promise/valid-params': 'warn',
       'promise/no-multiple-resolved': 'warn',
+      'promise/spec-only': 'warn',
     },
   };
 }
