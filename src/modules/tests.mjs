@@ -1,3 +1,4 @@
+import plugin from '@vitest/eslint-plugin';
 import globals from 'globals';
 
 import { predicate } from '../utils/conditions.mjs';
@@ -11,6 +12,7 @@ import { globs } from '../utils/globs.mjs';
 function tests(options = {}) {
   return {
     files: [...globs.test, ...globs.e2e],
+    plugins: { vitest: plugin },
     languageOptions: {
       globals: { ...globals['shared-node-browser'] },
     },
@@ -18,6 +20,8 @@ function tests(options = {}) {
       'max-lines-per-function': 'off',
       'no-sparse-arrays': 'off',
       'no-empty-function': 'off',
+
+      'vitest/padding-around-all': 'warn',
 
       ...predicate(options.react, {
         '@eslint-react/no-unstable-context-value': 'off',

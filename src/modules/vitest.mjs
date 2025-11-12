@@ -59,14 +59,6 @@ function vitest() {
       'vitest/no-test-prefixes': 'warn',
       'vitest/no-test-return-statement': 'warn',
 
-      'vitest/padding-around-after-all-blocks': 'warn',
-      'vitest/padding-around-after-each-blocks': 'warn',
-      'vitest/padding-around-before-all-blocks': 'warn',
-      'vitest/padding-around-before-each-blocks': 'warn',
-      'vitest/padding-around-describe-blocks': 'warn',
-      'vitest/padding-around-expect-groups': 'warn',
-      'vitest/padding-around-test-blocks': 'warn',
-
       'vitest/prefer-called-once': 'warn',
       'vitest/prefer-called-times': 'off',
       'vitest/prefer-called-with': 'warn',
