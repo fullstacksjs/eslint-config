@@ -65,6 +65,7 @@ function jest() {
       'jest/valid-expect': 'error',
       'jest/valid-title': 'warn',
       'jest/no-deprecated-functions': 'error',
+      'jest/valid-mock-module-path': 'warn',
 
       // ...predicate(options.typescript, {
       //   '@typescript-eslint/unbound-method': 'off',
