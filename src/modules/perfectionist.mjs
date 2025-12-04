@@ -8,7 +8,7 @@ function perfectionist() {
     plugins: { perfectionist: plugin },
     rules: {
       'perfectionist/sort-array-includes': 'warn',
-      'perfectionist/sort-classes': 'warn',
+      'perfectionist/sort-classes': 'off',
       'perfectionist/sort-enums': 'off',
       'perfectionist/sort-exports': 'warn',
       'perfectionist/sort-imports': ['warn', {}],
