@@ -94,7 +94,6 @@ function typescript(options = {}) {
       '@typescript-eslint/no-restricted-imports': 'off',
       '@typescript-eslint/no-shadow': 'error',
       '@typescript-eslint/no-this-alias': 'error',
-      '@typescript-eslint/no-type-alias': 'off',
       '@typescript-eslint/no-unnecessary-type-constraint': 'warn',
       '@typescript-eslint/no-unsafe-argument': strict(options, 'warn'),
       '@typescript-eslint/no-unsafe-assignment': strict(options, 'warn'),
@@ -132,9 +131,8 @@ function typescript(options = {}) {
       ], // I'm not sure...
       '@typescript-eslint/prefer-readonly': 'off',
       '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with auto-fix on save.
-      '@typescript-eslint/prefer-ts-expect-error': 'off',
-      '@typescript-eslint/promise-function-async': 'off',
-      '@typescript-eslint/restrict-plus-operands': 'off',
+      '@typescript-eslint/promise-function-async': 'error',
+      '@typescript-eslint/restrict-plus-operands': 'warn',
       '@typescript-eslint/strict-boolean-expressions': 'off', // Annoying
       '@typescript-eslint/space-before-blocks': 'off',
 
@@ -158,6 +156,7 @@ function typescript(options = {}) {
         '@typescript-eslint/no-base-to-string': 'error',
         '@typescript-eslint/no-confusing-void-expression': ['off', { ignoreArrowShorthand: true, ignoreVoidOperator: true }], // Annoying and conflict with @typescript-eslint/no-meaningless-void-operator
         '@typescript-eslint/no-duplicate-type-constituents': 'warn',
+        '@typescript-eslint/no-deprecated': 'error',
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-implied-eval': 'error',
         '@typescript-eslint/no-meaningless-void-operator': ['warn', { checkNever: false }],
@@ -183,6 +182,7 @@ function typescript(options = {}) {
         '@typescript-eslint/no-unnecessary-type-arguments': 'error',
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
         '@typescript-eslint/no-unsafe-unary-minus': 'error',
+        '@typescript-eslint/no-unused-private-class-members': 'warn',
         '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
         '@typescript-eslint/only-throw-error': ['warn', { allowRethrowing: true }],
         '@typescript-eslint/prefer-includes': 'warn',
@@ -217,6 +217,7 @@ function typescript(options = {}) {
       }),
 
       // Conflicts with @typescript-eslint
+      'no-unused-private-class-members': 'off',
       'no-empty-function': 'off',
       'default-case': 'off',
       'import/named': 'off',
