@@ -131,7 +131,7 @@ function typescript(options = {}) {
       ], // I'm not sure...
       '@typescript-eslint/prefer-readonly': 'off',
       '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with auto-fix on save.
-      '@typescript-eslint/promise-function-async': 'error',
+      '@typescript-eslint/promise-function-async': 'off', // Breaks react component when return type is React.ReactNode
       '@typescript-eslint/restrict-plus-operands': 'warn',
       '@typescript-eslint/strict-boolean-expressions': 'off', // Annoying
       '@typescript-eslint/space-before-blocks': 'off',
@@ -243,6 +243,7 @@ function typescript(options = {}) {
       'no-throw-literal': 'off',
       'require-await': 'off',
       'no-undef': 'off',
+      'no-duplicate-imports': 'off',
     },
   };
 }
