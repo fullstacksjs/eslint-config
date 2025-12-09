@@ -9,7 +9,7 @@ function stylistic() {
     plugins: { '@stylistic': stylisticPlugin },
     rules: {
       '@stylistic/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'never', propElementValues: 'always' }],
-      'padding-line-between-statements': [
+      '@stylistic/padding-line-between-statements': [
         'warn',
         { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
         {
