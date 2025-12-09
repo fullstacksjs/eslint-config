@@ -21,7 +21,7 @@ import tests from './modules/tests.mjs';
 import typescript from './modules/typescript.mjs';
 import vitest from './modules/vitest.mjs';
 
-const testPackages = ['jest', 'vitest', 'cypress', 'playwright'];
+const testPackages = ['jest', 'vitest', 'cypress', '@playwright/test'];
 
 /**
  * @typedef {import('eslint').Linter.Config} Config
@@ -40,7 +40,7 @@ const defaultOptions = {
   next: isPackageExists('next'),
   node: false,
   sort: true,
-  playwright: isPackageExists('playwright'),
+  playwright: isPackageExists('@playwright/test'),
   prettier: isPackageExists('prettier'),
   react: isPackageExists('react'),
   storybook: isPackageExists('storybook'),

@@ -56,7 +56,7 @@ export interface Options extends Linter.Config {
   esm?: boolean;
   /**
    * Controls [test plugin](https://www.npmjs.com/package/eslint-plugin-jest-formatting).
-   * @default true - If you have one of `jest`, `vitest`, `cypress`, `playwright`, `storybook`, `prettier` in your dependencies.
+   * @default true - If you have one of `jest`, `vitest`, `cypress`, `@playwright/test` in your dependencies.
    */
   test?: boolean;
   /**
@@ -86,7 +86,7 @@ export interface Options extends Linter.Config {
   prettier?: boolean;
   /**
    * Controls [Playwright plugin](https://www.npmjs.com/package/eslint-plugin-playwright).
-   * @default true - If you have `playwright` in your dependencies.
+   * @default true - If you have `@playwright/test` in your dependencies.
    */
   playwright?: boolean;
   /**
