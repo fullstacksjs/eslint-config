@@ -9,6 +9,13 @@ function stylistic() {
     plugins: { '@stylistic': stylisticPlugin },
     rules: {
       '@stylistic/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'never', propElementValues: 'always' }],
+      '@stylistic/jsx-self-closing-comp': [
+        'warn',
+        {
+          component: true,
+          html: true,
+        },
+      ],
       '@stylistic/padding-line-between-statements': [
         'warn',
         { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
@@ -18,20 +25,42 @@ function stylistic() {
           next: ['const', 'let', 'var'],
         },
         { blankLine: 'always', prev: ['case', 'default'], next: '*' },
-        { blankLine: 'always', prev: '*', next: ['return', 'if', 'for', 'while'] },
-        { blankLine: 'always', prev: ['block-like', 'function', 'class', 'iife', 'try'], next: '*' },
-        { blankLine: 'always', prev: '*', next: ['block-like', 'function', 'class', 'iife', 'try'] },
+        {
+          blankLine: 'never',
+          prev: ['if', 'for', 'while', 'function', 'class', 'iife', 'try'],
+          next: ['if', 'for', 'while', 'function', 'class', 'iife', 'try'],
+        },
+        {
+          blankLine: 'always',
+          prev: '*',
+          next: 'multiline-block-like',
+        },
+        {
+          blankLine: 'always',
+          prev: 'multiline-block-like',
+          next: '*',
+        },
+        { blankLine: 'always', prev: ['type', 'interface'], next: '*' },
+        {
+          blankLine: 'any',
+          prev: ['type', 'interface'],
+          next: ['type', 'interface', 'const', 'let', 'var'],
+        },
+        { blankLine: 'always', prev: '*', next: ['return', 'throw'] },
         { blankLine: 'always', prev: 'directive', next: '*' },
         { blankLine: 'never', prev: 'directive', next: 'directive' },
         { blankLine: 'always', prev: 'import', next: '*' },
         { blankLine: 'any', prev: '*', next: 'import' },
         { blankLine: 'always', prev: 'directive', next: 'import' },
       ],
-      '@stylistic/jsx-self-closing-comp': [
+      '@stylistic/lines-between-class-members': [
         'warn',
         {
-          component: true,
-          html: true,
+          enforce: [
+            { blankLine: 'any', prev: 'field', next: 'field' },
+            { blankLine: 'always', prev: '*', next: 'method' },
+            { blankLine: 'always', prev: 'method', next: '*' },
+          ],
         },
       ],
     },
