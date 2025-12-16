@@ -16,6 +16,7 @@ function stylistic() {
           html: true,
         },
       ],
+      '@stylistic/no-mixed-operators': 'error',
       '@stylistic/padding-line-between-statements': [
         'warn',
         { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
@@ -57,7 +58,7 @@ function stylistic() {
         'warn',
         {
           enforce: [
-            { blankLine: 'any', prev: 'field', next: 'field' },
+            { blankLine: 'never', prev: 'field', next: 'field' },
             { blankLine: 'always', prev: '*', next: 'method' },
             { blankLine: 'always', prev: 'method', next: '*' },
           ],
