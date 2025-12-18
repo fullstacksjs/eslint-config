@@ -34,26 +34,7 @@ function perfectionist() {
           ],
         },
       ],
-      'perfectionist/sort-jsx-props': [
-        'warn',
-        {
-          groups: ['attr', 'shorthand', 'size', 'unknown', 'callback', 'multiline'],
-          customGroups: [
-            {
-              groupName: 'callback',
-              elementNamePattern: '^on.+',
-            },
-            {
-              groupName: 'size',
-              elementNamePattern: ['width', 'size', 'height'],
-            },
-            {
-              groupName: 'attr',
-              elementNamePattern: ['dir', 'lang'],
-            },
-          ],
-        },
-      ],
+      'perfectionist/sort-jsx-props': 'off',
       'perfectionist/sort-maps': 'off',
       'perfectionist/sort-named-exports': 'warn',
       'perfectionist/sort-named-imports': 'warn',
