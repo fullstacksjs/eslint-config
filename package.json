@@ -15,6 +15,7 @@
     "src",
     "cjs"
   ],
+  "packageManager": "npm@11.7.0",
   "scripts": {
     "lint": "eslint .",
     "spell": "cspell ./* --no-progress",
@@ -99,7 +100,6 @@
     }
   },
   "volta": {
-    "node": "22.20.0",
-    "npm": "11.6.2"
+    "node": "24.12.0"
   }
 }
