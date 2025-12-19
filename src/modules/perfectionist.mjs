@@ -11,7 +11,9 @@ function perfectionist() {
       'perfectionist/sort-classes': 'off',
       'perfectionist/sort-enums': 'off',
       'perfectionist/sort-exports': 'warn',
-      'perfectionist/sort-imports': ['warn', {}],
+      'perfectionist/sort-export-attributes': 'warn',
+      'perfectionist/sort-imports': 'warn',
+      'perfectionist/sort-import-attributes': 'warn',
       'perfectionist/sort-interfaces': 'off',
       'perfectionist/sort-intersection-types': [
         'warn',
@@ -36,7 +38,20 @@ function perfectionist() {
         'warn',
         {
           groups: ['attr', 'shorthand', 'size', 'unknown', 'callback', 'multiline'],
-          customGroups: { callback: 'on*', size: ['width', 'size', 'height'], attr: ['dir', 'lang'] },
+          customGroups: [
+            {
+              groupName: 'callback',
+              elementNamePattern: '^on.+',
+            },
+            {
+              groupName: 'size',
+              elementNamePattern: ['width', 'size', 'height'],
+            },
+            {
+              groupName: 'attr',
+              elementNamePattern: ['dir', 'lang'],
+            },
+          ],
         },
       ],
       'perfectionist/sort-maps': 'off',
