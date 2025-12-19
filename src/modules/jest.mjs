@@ -39,6 +39,7 @@ function jest() {
       'jest/no-test-callback': 'off',
       'jest/no-test-prefixes': 'error',
       'jest/no-test-return-statement': 'off',
+      'jest/no-unneeded-async-expect-function': 'warn',
       'jest/no-truthy-falsy': 'off',
       'jest/prefer-called-with': 'error',
       'jest/prefer-each': 'warn',
