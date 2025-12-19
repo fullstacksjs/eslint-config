@@ -165,7 +165,7 @@ function base(options = {}) {
           requireCatchParameter: true,
         },
       ]),
-      'prefer-destructuring': ['warn', { object: true, array: true }],
+      'prefer-destructuring': ['warn', { object: true, array: false }],
       'prefer-exponentiation-operator': 'warn',
       'prefer-numeric-literals': 'error',
       'prefer-object-has-own': 'warn',
