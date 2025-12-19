@@ -27,7 +27,10 @@ To use the configuration, all you need is to export the generated config by the 
 ```js
 import { defineConfig } from '@fullstacksjs/eslint-config';
 
-export default defineConfig();
+export default defineConfig({
+  typescript: {
+    tsconfigRootDir: import.meta.dirname, // Recommended when using TypeScript
+});
 ```
 
 ### CJS
@@ -35,7 +38,11 @@ export default defineConfig();
 ```js
 const { defineConfig } = require('@fullstacksjs/eslint-config');
 
-module.exports = defineConfig();
+module.exports = defineConfig({
+  typescript: {
+    tsconfigRootDir: __dirname, // Recommended when using TypeScript
+  }
+});
 ```
 
 ## How Module Detection Works
