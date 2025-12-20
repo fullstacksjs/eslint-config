@@ -16,7 +16,7 @@ function stylistic() {
           html: true,
         },
       ],
-      '@stylistic/no-mixed-operators': 'error',
+      '@stylistic/no-mixed-operators': ['error', { allowSamePrecedence: true }],
       '@stylistic/padding-line-between-statements': [
         'warn',
         { blankLine: 'always', prev: ['case', 'default'], next: '*' },
