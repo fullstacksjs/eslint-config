@@ -9,7 +9,8 @@
     "url": "git+https://github.com/fullstacksjs/eslint-config.git"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "access": "public",
+    "provenance": true
   },
   "files": [
     "src",
