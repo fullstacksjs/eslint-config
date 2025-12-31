@@ -30,6 +30,7 @@ import { defineConfig } from '@fullstacksjs/eslint-config';
 export default defineConfig({
   typescript: {
     tsconfigRootDir: import.meta.dirname, // Recommended when using TypeScript
+  }
 });
 ```
 
@@ -182,7 +183,7 @@ import/no-deprecated
 
 ```js
 export default defineConfig({
-  disableExpensiveRules: !process.env.CI || !process.env.HUSKY // Or anywhere you want
+  disableExpensiveRules: !process.env.CI || !process.env.HUSKY, // Or anywhere you want
   prettier: false // So you should run the formatter explicitly.
 });
 ```
