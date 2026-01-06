@@ -110,13 +110,20 @@ function react(options = {}) {
       '@eslint-react/prefer-use-state-lazy-initialization': 'warn',
       '@eslint-react/prefer-destructuring-assignment': 'warn',
 
-      '@eslint-react/hooks-extra/no-direct-set-state-in-use-effect': 'warn',
+      '@eslint-react/hooks-extra/no-direct-set-state-in-use-effect': 'off',
 
       '@eslint-react/naming-convention/component-name': 'warn',
       '@eslint-react/naming-convention/context-name': 'warn',
       '@eslint-react/naming-convention/filename-extension': ['error', { allow: 'always', extensions: ['.jsx', '.tsx'] }],
       '@eslint-react/naming-convention/filename': 'off',
-      '@eslint-react/naming-convention/use-state': 'off',
+      '@eslint-react/naming-convention/ref-name': 'warn',
+      '@eslint-react/naming-convention/use-state': [
+        'warn',
+        {
+          enforceAssignment: true,
+          enforceSetterName: false,
+        },
+      ],
 
       '@eslint-react/web-api/no-leaked-timeout': 'error',
       '@eslint-react/web-api/no-leaked-event-listener': 'error',
