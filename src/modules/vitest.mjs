@@ -58,6 +58,7 @@ function vitest() {
       'vitest/no-standalone-expect': 'warn',
       'vitest/no-test-prefixes': 'warn',
       'vitest/no-test-return-statement': 'warn',
+      'vitest/no-unneeded-async-expect-function': 'warn',
 
       'vitest/prefer-called-once': 'warn',
       'vitest/prefer-called-times': 'off',
@@ -73,6 +74,7 @@ function vitest() {
       'vitest/prefer-importing-vitest-globals': 'off',
       'vitest/prefer-lowercase-title': 'warn',
       'vitest/prefer-mock-promise-shorthand': 'warn',
+      'vitest/prefer-mock-return-shorthand': 'warn',
       'vitest/prefer-snapshot-hint': 'warn',
       'vitest/prefer-spy-on': 'warn',
       'vitest/prefer-strict-boolean-matchers': 'off',
