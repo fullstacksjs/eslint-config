@@ -1,12 +1,15 @@
 import plugin from 'eslint-plugin-jest';
 import globals from 'globals';
 
+import { predicate } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
 
 /**
  * @param { import('..').Options } options
  * @return { import('eslint').Linter.Config } */
-function jest() {
+function jest(options = {}) {
+  const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
+
   return {
     files: globs.test,
     plugins: { jest: plugin },
@@ -28,6 +31,10 @@ function jest() {
       'jest/no-done-callback': 'warn',
       'jest/no-expect-resolves': 'off',
       'jest/no-export': 'error',
+      ...predicate(projectService, {
+        'jest/no-error-equal': 'error',
+        'jest/no-unnecessary-assertion': 'warn',
+      }),
       'jest/no-hooks': 'off',
       'jest/no-interpolation-in-snapshots': 'error',
       'jest/no-jasmine-globals': 'off',
@@ -49,6 +56,7 @@ function jest() {
       'jest/prefer-inline-snapshots': 'off',
       'jest/prefer-lowercase-title': 'off',
       'jest/prefer-mock-promise-shorthand': 'warn',
+      'jest/prefer-mock-return-shorthand': 'warn',
       'jest/prefer-snapshot-hint': 'warn',
       'jest/prefer-spy-on': 'off',
       'jest/prefer-strict-equal': 'off',
