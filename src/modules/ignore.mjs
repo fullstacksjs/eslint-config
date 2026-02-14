@@ -11,8 +11,10 @@ function ignores(options = {}) {
   const ignorePatterns = [...ignoreGlobs, ...(options.ignores ?? [])];
 
   const shouldUseGitignore = options.gitignore && options.gitignore.length > 0;
+
   if (shouldUseGitignore) {
     const gitignorePatterns = getGitignorePatterns(options.gitignore);
+
     if (gitignorePatterns.length > 0) {
       ignorePatterns.push(...gitignorePatterns);
     }

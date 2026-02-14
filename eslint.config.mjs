@@ -14,7 +14,11 @@ export default defineConfig(
     cypress: true,
     react: true,
     storybook: true,
-    typescript: true,
+    typescript: {
+      projectService: {
+        allowDefaultProject: ['src/index.d.ts', 'tests/ts.ts'],
+      },
+    },
     tailwind: false,
     regex: true,
     rules: {
