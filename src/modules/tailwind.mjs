@@ -20,6 +20,7 @@ async function tailwind(options = {}) {
       'better-tailwindcss/no-deprecated-classes': 'warn',
       'better-tailwindcss/no-conflicting-classes': 'error',
       'better-tailwindcss/no-unnecessary-whitespace': 'warn',
+      'better-tailwindcss/enforce-canonical-classes': 'warn',
       'better-tailwindcss/enforce-consistent-class-order': 'warn',
       'better-tailwindcss/enforce-consistent-variable-syntax': 'error',
       'better-tailwindcss/enforce-shorthand-classes': 'warn',
