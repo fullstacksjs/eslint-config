@@ -81,10 +81,11 @@
   },
   "peerDependencies": {
     "cypress": ">=8",
-    "eslint": ">=9.22",
-    "prettier": "3",
-    "react": ">=16",
-    "typescript": ">=4.7"
+    "eslint": ">=9.38",
+    "prettier": ">=3",
+    "react": ">=18",
+    "typescript": ">=5",
+    "tailwindcss": ">=3.3.0"
   },
   "peerDependenciesMeta": {
     "typescript": {
