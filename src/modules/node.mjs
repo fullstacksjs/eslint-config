@@ -35,8 +35,10 @@ function node(options = {}) {
       'n/no-unsupported-features/node-builtins': 'off', // Nice but not a general rule
       'n/prefer-global/buffer': 'warn',
       'n/prefer-global/console': 'warn',
+      'n/prefer-global/crypto': 'warn',
       'n/prefer-global/text-decoder': 'warn',
       'n/prefer-global/text-encoder': 'warn',
+      'n/prefer-global/timers': 'warn',
       'n/prefer-global/url-search-params': 'warn',
       'n/prefer-global/url': 'warn',
       'n/prefer-node-protocol': 'warn',
