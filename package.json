@@ -97,6 +97,9 @@
     "cypress": {
       "optional": true
     },
+    "tailwindcss": {
+      "optional": true
+    },
     "jest": {
       "optional": true
     }
