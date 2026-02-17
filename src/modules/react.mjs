@@ -75,9 +75,7 @@ function react(options = {}) {
       '@eslint-react/no-create-ref': 'error',
       '@eslint-react/no-direct-mutation-state': 'error',
       '@eslint-react/no-duplicate-key': 'error',
-      '@eslint-react/no-default-props': 'warn',
       '@eslint-react/no-forward-ref': 'warn',
-      '@eslint-react/no-implicit-key': 'error',
       '@eslint-react/no-missing-context-display-name': 'warn',
       '@eslint-react/no-missing-key': 'error',
       '@eslint-react/no-misused-capture-owner-stack': 'error',
@@ -87,7 +85,6 @@ function react(options = {}) {
       '@eslint-react/no-set-state-in-component-did-mount': 'warn',
       '@eslint-react/no-set-state-in-component-did-update': 'warn',
       '@eslint-react/no-set-state-in-component-will-update': 'warn',
-      '@eslint-react/no-string-refs': 'error',
       '@eslint-react/dom/no-string-style-prop': 'error',
       '@eslint-react/no-unsafe-component-will-mount': 'warn',
       '@eslint-react/no-unsafe-component-will-receive-props': 'warn',
@@ -97,6 +94,7 @@ function react(options = {}) {
       '@eslint-react/no-unused-class-component-members': 'warn',
       '@eslint-react/no-unused-state': 'warn',
       ...predicate(projectService, {
+        '@eslint-react/no-implicit-key': 'error',
         '@eslint-react/no-unused-props': 'warn',
       }),
       '@eslint-react/no-useless-forward-ref': 'off',
@@ -114,8 +112,7 @@ function react(options = {}) {
 
       '@eslint-react/naming-convention/component-name': 'warn',
       '@eslint-react/naming-convention/context-name': 'warn',
-      '@eslint-react/naming-convention/filename-extension': ['error', { allow: 'always', extensions: ['.jsx', '.tsx'] }],
-      '@eslint-react/naming-convention/filename': 'off',
+      '@eslint-react/naming-convention/id-name': 'warn',
       '@eslint-react/naming-convention/ref-name': 'warn',
       '@eslint-react/naming-convention/use-state': [
         'warn',
@@ -129,6 +126,8 @@ function react(options = {}) {
       '@eslint-react/web-api/no-leaked-event-listener': 'error',
       '@eslint-react/web-api/no-leaked-interval': 'error',
       '@eslint-react/web-api/no-leaked-resize-observer': 'error',
+
+      '@eslint-react/rsc/function-definition': 'error',
 
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',

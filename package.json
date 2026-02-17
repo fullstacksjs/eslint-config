@@ -37,7 +37,7 @@
     }
   },
   "dependencies": {
-    "@eslint-react/eslint-plugin": "2.5.1",
+    "@eslint-react/eslint-plugin": "2.13.0",
     "@eslint/compat": "2.0.0",
     "@next/eslint-plugin-next": "16.1.1",
     "@stylistic/eslint-plugin": "5.6.1",
@@ -84,8 +84,8 @@
     "eslint": ">=9.38",
     "prettier": ">=3",
     "react": ">=18",
-    "typescript": ">=5",
-    "tailwindcss": ">=3.3.0"
+    "tailwindcss": ">=3.3.0",
+    "typescript": ">=5"
   },
   "peerDependenciesMeta": {
     "typescript": {
