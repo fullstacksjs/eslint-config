@@ -8,6 +8,7 @@ function playwright() {
     plugins: { playwright: plugin },
     files: globs.e2e,
     rules: {
+      'playwright/consistent-spacing-between-blocks': 'warn',
       'playwright/expect-expect': 'error',
       'playwright/missing-playwright-await': 'error',
       'playwright/max-nested-describe': ['warn', { max: 5 }],
