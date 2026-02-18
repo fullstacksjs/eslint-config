@@ -194,24 +194,24 @@ export default defineConfig({
 
 ## What's included?
 
-* [@eslint-react/eslint-plugin](https://eslint-react.xyz/)
+* [@eslint-react/eslint-plugin](https://eslint-react.xyz)
 * [@next/eslint-plugin-next](https://nextjs.org/docs/basic-features/eslint#eslint-plugin)
 * [@stylistic/eslint-plugin](https://eslint.style/packages/default)
+* [@vitest/eslint-plugin](https://github.com/vitest-dev/eslint-plugin-vitest)
 * [eslint-plugin-cypress](https://github.com/cypress-io/eslint-plugin-cypress)
 * [eslint-plugin-import-x](https://github.com/un-ts/eslint-plugin-import-x)
 * [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
 * [eslint-plugin-jest-formatting](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
 * [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
 * [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n)
-* [eslint-plugin-perfectionist](https://perfectionist.dev/)
+* [eslint-plugin-perfectionist](https://perfectionist.dev)
 * [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
 * [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
 * [eslint-plugin-promise](https://github.com/eslint-community/eslint-plugin-promise)
 * [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
 * [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme)
 * [eslint-plugin-better-tailwindcss](https://github.com/schoero/eslint-plugin-better-tailwindcss)
-* [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
-* [typescript-eslint](https://typescript-eslint.io/)
+* [typescript-eslint](https://typescript-eslint.io)
 * [eslint-plugin-regexp](https://www.npmjs.com/package/eslint-plugin-regexp)
 
 That's all. Feel free to use 💛
