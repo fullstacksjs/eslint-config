@@ -1,3 +1,5 @@
+import { strict } from '../utils/conditions.mjs';
+
 /**
  * @param { import('..').Options } options
  * @return { Promise<import('eslint').Linter.Config> }
@@ -16,17 +18,20 @@ async function tailwind(options = {}) {
       },
     },
     rules: {
-      'better-tailwindcss/no-duplicate-classes': 'error',
-      'better-tailwindcss/no-deprecated-classes': 'warn',
-      'better-tailwindcss/no-conflicting-classes': 'error',
-      'better-tailwindcss/no-unnecessary-whitespace': 'warn',
       'better-tailwindcss/enforce-canonical-classes': 'warn',
-      'better-tailwindcss/enforce-logical-properties': 'warn',
       'better-tailwindcss/enforce-consistent-class-order': 'warn',
-      'better-tailwindcss/enforce-consistent-variant-order': 'warn',
-      'better-tailwindcss/enforce-consistent-variable-syntax': 'error',
-      'better-tailwindcss/enforce-shorthand-classes': 'warn',
       'better-tailwindcss/enforce-consistent-important-position': 'warn',
+      'better-tailwindcss/enforce-consistent-line-wrapping': 'off',
+      'better-tailwindcss/enforce-consistent-variable-syntax': 'error',
+      'better-tailwindcss/enforce-consistent-variant-order': 'warn',
+      'better-tailwindcss/enforce-logical-properties': strict('warn'),
+      'better-tailwindcss/enforce-shorthand-classes': 'warn',
+      'better-tailwindcss/no-conflicting-classes': 'error',
+      'better-tailwindcss/no-deprecated-classes': 'warn',
+      'better-tailwindcss/no-duplicate-classes': 'error',
+      'better-tailwindcss/no-restricted-classes': 'warn',
+      'better-tailwindcss/no-unknown-classes': strict('warn'),
+      'better-tailwindcss/no-unnecessary-whitespace': 'warn',
     },
   };
 }
