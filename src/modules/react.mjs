@@ -3,7 +3,7 @@ import a11yPlugin from 'eslint-plugin-jsx-a11y';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 import { parser } from 'typescript-eslint';
 
-import { predicate } from '../utils/conditions.mjs';
+import { predicate, strict } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
 
 /** @return { import('eslint').Linter.Config } */
@@ -125,9 +125,9 @@ function react(options = {}) {
       'react-hooks/preserve-manual-memoization': 'error',
       'react-hooks/purity': 'error',
       'react-hooks/refs': 'error',
-      'react-hooks/set-state-in-effect': 'error',
+      'react-hooks/set-state-in-effect': strict('error'),
       'react-hooks/set-state-in-render': 'error',
-      'react-hooks/static-components': 'error',
+      'react-hooks/static-components': strict('error'),
       'react-hooks/unsupported-syntax': 'warn',
       'react-hooks/use-memo': 'error',
       'react-hooks/incompatible-library': 'warn',
