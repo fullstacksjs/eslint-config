@@ -25,6 +25,7 @@
     "postbuild": "./postbuild",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
+    "check:rules": "node scripts/check-missing-rules.mjs",
     "pre-commit": "npm run test && lint-staged && npm run spell"
   },
   "main": "./cjs/index.js",
