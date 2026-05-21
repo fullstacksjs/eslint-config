@@ -8,13 +8,17 @@ function perfectionist() {
     plugins: { perfectionist: plugin },
     rules: {
       'perfectionist/sort-array-includes': 'warn',
+      'perfectionist/sort-arrays': 'off',
       'perfectionist/sort-classes': 'off',
+      'perfectionist/sort-decorators': 'off',
       'perfectionist/sort-enums': 'off',
-      'perfectionist/sort-exports': 'warn',
       'perfectionist/sort-export-attributes': 'warn',
-      'perfectionist/sort-imports': 'warn',
+      'perfectionist/sort-exports': 'warn',
+      'perfectionist/sort-heritage-clauses': 'warn',
       'perfectionist/sort-import-attributes': 'warn',
+      'perfectionist/sort-imports': 'warn',
       'perfectionist/sort-interfaces': 'off',
+      'perfectionist/sort-modules': 'off',
       'perfectionist/sort-intersection-types': [
         'warn',
         {
