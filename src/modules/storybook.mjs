@@ -14,6 +14,7 @@ function storybook() {
       'storybook/hierarchy-separator': 'warn',
       'storybook/meta-satisfies-type': 'warn',
       'storybook/no-redundant-story-name': 'warn',
+      'storybook/no-renderer-packages': 'warn',
       'storybook/no-uninstalled-addons': 'error',
       'storybook/prefer-pascal-case': 'warn',
       'storybook/story-exports': 'error',
