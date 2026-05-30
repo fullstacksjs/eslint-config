@@ -5,6 +5,7 @@ import plugin from 'eslint-plugin-perfectionist';
  */
 function perfectionist() {
   return {
+    name: 'perfectionist',
     plugins: { perfectionist: plugin },
     rules: {
       'perfectionist/sort-array-includes': 'warn',

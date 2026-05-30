@@ -11,6 +11,7 @@ function react(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
 
   return {
+    name: 'react',
     files: [globs.js, globs.jsx, globs.ts, globs.tsx],
     plugins: {
       ...reactPlugin.configs.all.plugins,

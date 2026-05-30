@@ -3,6 +3,7 @@ import plugin from '@next/eslint-plugin-next';
 /** @type { import('eslint').Linter.Config } */
 function next() {
   return {
+    name: 'next',
     plugins: { next: plugin },
     rules: {
       'next/google-font-display': 'warn',

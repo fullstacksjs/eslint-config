@@ -8,6 +8,7 @@ import { strict } from '../utils/conditions.mjs';
  */
 function node(options = {}) {
   return {
+    name: 'node',
     plugins: { n: plugin },
     rules: {
       'n/callback-return': 'off',

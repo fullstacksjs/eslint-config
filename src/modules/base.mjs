@@ -8,6 +8,7 @@ import { strict } from '../utils/conditions.mjs';
  */
 function base(options = {}) {
   return {
+    name: 'base',
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',

@@ -7,6 +7,7 @@ import { strict } from '../utils/conditions.mjs';
 async function tailwind(options = {}) {
   const plugin = await import('eslint-plugin-better-tailwindcss');
   return {
+    name: 'tailwind',
     plugins: { 'better-tailwindcss': plugin.default ?? plugin },
     settings: {
       'better-tailwindcss': {

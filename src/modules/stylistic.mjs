@@ -6,6 +6,7 @@ import stylisticPlugin from '@stylistic/eslint-plugin';
  */
 function stylistic() {
   return {
+    name: 'stylistic',
     plugins: { '@stylistic': stylisticPlugin },
     rules: {
       '@stylistic/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'never', propElementValues: 'always' }],
