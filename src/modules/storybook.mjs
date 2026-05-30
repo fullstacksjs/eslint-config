@@ -5,6 +5,7 @@ import { globs } from '../utils/globs.mjs';
 /** @return { import('eslint').Linter.Config } */
 function storybook() {
   return {
+    name: 'storybook',
     files: globs.storybook,
     plugins: { storybook: plugin },
     rules: {

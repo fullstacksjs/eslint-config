@@ -3,6 +3,7 @@ import plugin from 'eslint-plugin-prettier';
 /** @return { import('eslint').Linter.Config } */
 function prettier() {
   return {
+    name: 'prettier',
     plugins: { prettier: plugin },
     rules: {
       'prettier/prettier': 'error',

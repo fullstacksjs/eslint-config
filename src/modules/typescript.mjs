@@ -12,6 +12,7 @@ function typescript(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
 
   return {
+    name: 'typescript',
     files: [globs.ts, globs.tsx],
     plugins: { '@typescript-eslint': plugin },
     languageOptions: {

@@ -5,6 +5,7 @@ import { strict } from '../utils/conditions.mjs';
 /** @return { import('eslint').Linter.Config } */
 function promise(options = {}) {
   return {
+    name: 'promise',
     plugins: { promise: plugin },
     rules: {
       'promise/always-return': 'off',

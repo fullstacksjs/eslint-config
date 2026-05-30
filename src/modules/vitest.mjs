@@ -7,6 +7,7 @@ import { globs } from '../utils/globs.mjs';
  */
 function vitest() {
   return {
+    name: 'vitest',
     files: globs.test,
     plugins: { vitest: plugin },
     languageOptions: {

@@ -14,6 +14,7 @@ function imports(options = {}) {
   const isObject = typeof options.import === 'object';
 
   const config = {
+    name: 'imports',
     plugins: { import: plugin },
     settings: {
       'import-x/extensions': jsExtensions,

@@ -5,6 +5,7 @@ import { globs } from '../utils/globs.mjs';
 /** @return { import('eslint').Linter.Config } */
 function playwright() {
   return {
+    name: 'playwright',
     plugins: { playwright: plugin },
     files: globs.e2e,
     rules: {

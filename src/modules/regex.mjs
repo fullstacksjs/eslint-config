@@ -6,6 +6,7 @@ import * as plugin from 'eslint-plugin-regexp';
  */
 function regex(options = {}) {
   return {
+    name: 'regex',
     plugins: { regexp: plugin },
     settings: {
       regexp: {

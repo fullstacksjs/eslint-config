@@ -5,6 +5,7 @@ import { globs } from '../utils/globs.mjs';
 /** @return { import('eslint').Linter.Config } */
 function cypress() {
   return {
+    name: 'cypress',
     files: globs.e2e,
     plugins: { cypress: plugin },
     rules: {

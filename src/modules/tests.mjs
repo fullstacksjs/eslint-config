@@ -11,6 +11,7 @@ import { globs } from '../utils/globs.mjs';
 
 function tests(options = {}) {
   return {
+    name: 'tests',
     files: [...globs.test, ...globs.e2e],
     plugins: { vitest: plugin },
     languageOptions: {

@@ -11,6 +11,7 @@ function jest(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
 
   return {
+    name: 'jest',
     files: globs.test,
     plugins: { jest: plugin },
     languageOptions: {
