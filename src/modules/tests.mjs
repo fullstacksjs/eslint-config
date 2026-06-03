@@ -1,16 +1,17 @@
 import plugin from '@vitest/eslint-plugin';
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import globals from 'globals';
 
 import { predicate } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
 
 /**
- * @param { import('..').Options } options
+ * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config }
  */
 
 function tests(options = {}) {
-  return {
+  const testsConfug = {
     name: 'tests',
     files: [...globs.test, ...globs.e2e],
     plugins: { vitest: plugin },
@@ -38,6 +39,8 @@ function tests(options = {}) {
       }),
     },
   };
+
+  return mergeConfigs(testsConfug, options.test.overrides ?? {});
 }
 
 export default tests;

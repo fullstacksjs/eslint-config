@@ -34,7 +34,7 @@
     ".": {
       "import": "./src/index.mjs",
       "require": "./cjs/index.js",
-      "types": "./src/index.d.ts"
+      "types": "./src/types/index.d.ts"
     }
   },
   "dependencies": {
@@ -44,6 +44,7 @@
     "@stylistic/eslint-plugin": "5.10.0",
     "@vitest/eslint-plugin": "1.6.17",
     "deepmerge": "4.3.1",
+    "eslint-flat-config-utils": "3.2.0",
     "eslint-plugin-better-tailwindcss": "4.5.0",
     "eslint-plugin-cypress": "6.4.1",
     "eslint-plugin-import-x": "4.16.2",

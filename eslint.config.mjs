@@ -3,6 +3,9 @@ import { defineConfig } from './src/index.mjs';
 export default defineConfig(
   {
     ignores: ['cjs/'],
+    base: true,
+    stylistic: true,
+    promise: true,
     test: true,
     esm: true,
     node: true,
@@ -16,7 +19,7 @@ export default defineConfig(
     storybook: true,
     typescript: {
       projectService: {
-        allowDefaultProject: ['src/index.d.ts', 'tests/ts.ts'],
+        allowDefaultProject: ['src/types/index.d.ts', 'src/types/modules/*.d.ts', 'tests/ts.ts'],
       },
     },
     tailwind: false,

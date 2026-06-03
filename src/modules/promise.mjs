@@ -1,10 +1,14 @@
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-promise';
 
 import { strict } from '../utils/conditions.mjs';
 
-/** @return { import('eslint').Linter.Config } */
+/**
+ * @param { import('../types').Options } options
+ * @return { Promise<import('eslint').Linter.Config> }
+ */
 function promise(options = {}) {
-  return {
+  const promiseConfig = {
     name: 'promise',
     plugins: { promise: plugin },
     rules: {
@@ -27,6 +31,8 @@ function promise(options = {}) {
       'promise/spec-only': 'warn',
     },
   };
+
+  return mergeConfigs(promiseConfig, options.promise.overrides ?? {});
 }
 
 export default promise;

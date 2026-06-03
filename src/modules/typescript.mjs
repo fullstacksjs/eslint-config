@@ -1,3 +1,4 @@
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import { parser, plugin } from 'typescript-eslint';
 
 import { predicate, strict } from '../utils/conditions.mjs';
@@ -5,13 +6,13 @@ import { globs } from '../utils/globs.mjs';
 import { namingConvention } from '../utils/naming-convention.mjs';
 
 /**
- * @param { import('..').Options } options
+ * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function typescript(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
 
-  return {
+  const typescriptConfig = {
     name: 'typescript',
     files: [globs.ts, globs.tsx],
     plugins: { '@typescript-eslint': plugin },
@@ -248,6 +249,8 @@ function typescript(options = {}) {
       'no-duplicate-imports': 'off',
     },
   };
+
+  return mergeConfigs(typescriptConfig, options.typescript.overrides ?? {});
 }
 
 export default typescript;

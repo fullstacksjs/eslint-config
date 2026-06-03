@@ -1,3 +1,4 @@
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-import-x';
 
 import { predicate } from '../utils/conditions.mjs';
@@ -7,13 +8,13 @@ const jsExtensions = ['.mjs', '.js', '.jsx', '.cjs'];
 const allExtensions = [...jsExtensions, ...tsExtensions];
 
 /**
- * @param { import('..').Options } options
+ * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function imports(options = {}) {
   const isObject = typeof options.import === 'object';
 
-  const config = {
+  const importsConfig = {
     name: 'imports',
     plugins: { import: plugin },
     settings: {
@@ -105,7 +106,7 @@ function imports(options = {}) {
     },
   };
 
-  return config;
+  return mergeConfigs(importsConfig, options.import.overrides ?? {});
 }
 
 export default imports;

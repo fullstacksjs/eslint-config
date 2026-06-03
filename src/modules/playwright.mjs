@@ -1,10 +1,14 @@
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-playwright';
 
 import { globs } from '../utils/globs.mjs';
 
-/** @return { import('eslint').Linter.Config } */
-function playwright() {
-  return {
+/**
+ * @param { import('../types').Options } options
+ * @return { Promise<import('eslint').Linter.Config> }
+ */
+function playwright(options = {}) {
+  const playwrightConfig = {
     name: 'playwright',
     plugins: { playwright: plugin },
     files: globs.e2e,
@@ -69,6 +73,8 @@ function playwright() {
       'playwright/valid-title': 'warn',
     },
   };
+
+  return mergeConfigs(playwrightConfig, options.playwright.overrides ?? {});
 }
 
 export default playwright;

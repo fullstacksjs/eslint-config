@@ -4,7 +4,7 @@ import { getGitignorePatterns } from '../utils/getGitignorePatterns.mjs';
 import { ignoreGlobs } from '../utils/globs.mjs';
 
 /**
- * @param { import('..').Options } options
+ * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function ignores(options = {}) {

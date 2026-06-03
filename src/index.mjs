@@ -12,6 +12,7 @@ import node from './modules/node.mjs';
 import perfectionist from './modules/perfectionist.mjs';
 import playwright from './modules/playwright.mjs';
 import prettier from './modules/prettier.mjs';
+import promise from './modules/promise.mjs';
 import react from './modules/react.mjs';
 import regex from './modules/regex.mjs';
 import storybook from './modules/storybook.mjs';
@@ -25,11 +26,14 @@ const testPackages = ['jest', 'vitest', 'cypress', '@playwright/test'];
 
 /**
  * @typedef {import('eslint').Linter.Config} Config
- * @typedef {import('.').Options} Options
+ * @typedef {import('./types').Options} Options
  * /
 
 /** @type {Options} */
 const defaultOptions = {
+  base: true,
+  promise: true,
+  stylistic: true,
   cypress: isPackageExists('cypress'),
   disableExpensiveRules: false,
   esm: false,
@@ -74,6 +78,9 @@ export function defineConfig(initOptions = {}, ...extend) {
   }
 
   const {
+    base: enableBase,
+    promise: enablePromise,
+    stylistic: enableStylistic,
     sort: enableSort,
     cypress: enableCypress,
     disableExpensiveRules,
@@ -97,8 +104,11 @@ export function defineConfig(initOptions = {}, ...extend) {
     ...eslintOptions
   } = options;
 
-  const rules = [ignores(options), base(options), stylistic(options)];
+  const rules = [ignores(options)];
 
+  if (enableBase) rules.push(base(options));
+  if (enablePromise) rules.push(promise(options));
+  if (enableStylistic) rules.push(stylistic(options));
   if (enableSort) rules.push(perfectionist(options));
   if (enableImport) rules.push(imports(options));
   if (enableTailwind) rules.push(tailwind(options));

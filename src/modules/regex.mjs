@@ -1,11 +1,12 @@
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import * as plugin from 'eslint-plugin-regexp';
 
 /**
- * @param { import('..').Options } options
+ * @param { import('../types').Options } options
  * @return { Promise<import('eslint').Linter.Config> }
  */
 function regex(options = {}) {
-  return {
+  const regexConfig = {
     name: 'regex',
     plugins: { regexp: plugin },
     settings: {
@@ -102,6 +103,8 @@ function regex(options = {}) {
       'no-empty-character-class': 'off',
     },
   };
+
+  return mergeConfigs(regexConfig, options.regex.overrides ?? {});
 }
 
 export default regex;

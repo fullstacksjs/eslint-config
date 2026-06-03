@@ -1,8 +1,12 @@
 import plugin from '@next/eslint-plugin-next';
+import { mergeConfigs } from 'eslint-flat-config-utils';
 
-/** @type { import('eslint').Linter.Config } */
-function next() {
-  return {
+/**
+ * @param { import('../types').Options } options
+ * @return { import('eslint').Linter.Config }
+ */
+function next(options = {}) {
+  const nextConfig = {
     name: 'next',
     plugins: { next: plugin },
     rules: {
@@ -29,6 +33,8 @@ function next() {
       'next/no-unwanted-polyfillio': 'warn',
     },
   };
+
+  return mergeConfigs(nextConfig, options.next.overrides ?? {});
 }
 
 export default next;
