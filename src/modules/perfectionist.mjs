@@ -1,10 +1,12 @@
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-perfectionist';
 
 /**
- * @return { import('eslint').Linter.Config }
+ * @param { import('../types').Options } options
+ * @return { Promise<import('eslint').Linter.Config> }
  */
-function perfectionist() {
-  return {
+function perfectionist(options = {}) {
+  const perfectionistConfig = {
     name: 'perfectionist',
     plugins: { perfectionist: plugin },
     rules: {
@@ -69,6 +71,8 @@ function perfectionist() {
       'perfectionist/sort-variable-declarations': 'warn',
     },
   };
+
+  return mergeConfigs(perfectionistConfig, options.sort.overrides ?? {});
 }
 
 export default perfectionist;

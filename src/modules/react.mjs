@@ -1,4 +1,5 @@
 import reactPlugin from '@eslint-react/eslint-plugin';
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import a11yPlugin from 'eslint-plugin-jsx-a11y';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 import { parser } from 'typescript-eslint';
@@ -6,11 +7,14 @@ import { parser } from 'typescript-eslint';
 import { predicate, strict } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
 
-/** @return { import('eslint').Linter.Config } */
+/**
+ * @param { import('../types').Options } options
+ * @return { Promise<import('eslint').Linter.Config> }
+ */
 function react(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
 
-  return {
+  const reactConfig = {
     name: 'react',
     files: [globs.js, globs.jsx, globs.ts, globs.tsx],
     plugins: {
@@ -171,6 +175,8 @@ function react(options = {}) {
       'jsx-a11y/prefer-tag-over-role': 'off',
     },
   };
+
+  return mergeConfigs(reactConfig, options.react.overrides ?? {});
 }
 
 export default react;

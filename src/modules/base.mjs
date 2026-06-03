@@ -1,13 +1,14 @@
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import globals from 'globals';
 
 import { strict } from '../utils/conditions.mjs';
 
 /**
- * @param { import('..').Options } options
+ * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function base(options = {}) {
-  return {
+  const baseConfig = {
     name: 'base',
     languageOptions: {
       ecmaVersion: 'latest',
@@ -195,6 +196,8 @@ function base(options = {}) {
       'no-console': strict(options, 'warn'),
     },
   };
+
+  return mergeConfigs(baseConfig, options.base.overrides ?? {});
 }
 
 export default base;

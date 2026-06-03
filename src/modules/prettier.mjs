@@ -1,8 +1,12 @@
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-prettier';
 
-/** @return { import('eslint').Linter.Config } */
-function prettier() {
-  return {
+/**
+ * @param { import('../types').Options } options
+ * @return { Promise<import('eslint').Linter.Config> }
+ */
+function prettier(options = {}) {
+  const prettierConfig = {
     name: 'prettier',
     plugins: { prettier: plugin },
     rules: {
@@ -88,6 +92,8 @@ function prettier() {
       'vue/template-curly-spacing': 'off',
     },
   };
+
+  return mergeConfigs(prettierConfig, options.prettier.overrides ?? {});
 }
 
 export default prettier;

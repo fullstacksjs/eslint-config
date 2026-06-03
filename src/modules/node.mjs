@@ -1,13 +1,14 @@
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-n';
 
 import { strict } from '../utils/conditions.mjs';
 
 /**
- * @param { import('..').Options } options
+ * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function node(options = {}) {
-  return {
+  const nodeConfig = {
     name: 'node',
     plugins: { n: plugin },
     rules: {
@@ -56,6 +57,8 @@ function node(options = {}) {
       'n/no-missing-require': 'off',
     },
   };
+
+  return mergeConfigs(nodeConfig, options.node.overrides ?? {});
 }
 
 export default node;

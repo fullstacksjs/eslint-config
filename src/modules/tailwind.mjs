@@ -1,12 +1,14 @@
+import { mergeConfigs } from 'eslint-flat-config-utils';
+
 import { strict } from '../utils/conditions.mjs';
 
 /**
- * @param { import('..').Options } options
+ * @param { import('../types').Options } options
  * @return { Promise<import('eslint').Linter.Config> }
  */
 async function tailwind(options = {}) {
   const plugin = await import('eslint-plugin-better-tailwindcss');
-  return {
+  const tailwindConfig = {
     name: 'tailwind',
     plugins: { 'better-tailwindcss': plugin.default ?? plugin },
     settings: {
@@ -35,6 +37,8 @@ async function tailwind(options = {}) {
       'better-tailwindcss/no-unnecessary-whitespace': 'warn',
     },
   };
+
+  return mergeConfigs(tailwindConfig, options.tailwind.overrides ?? {});
 }
 
 export default tailwind;

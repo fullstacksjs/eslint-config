@@ -1,3 +1,4 @@
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-jest';
 import globals from 'globals';
 
@@ -5,12 +6,12 @@ import { predicate } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
 
 /**
- * @param { import('..').Options } options
+ * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config } */
 function jest(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
 
-  return {
+  const jestConfig = {
     name: 'jest',
     files: globs.test,
     plugins: { jest: plugin },
@@ -84,6 +85,8 @@ function jest(options = {}) {
       // }),
     },
   };
+
+  return mergeConfigs(jestConfig, options.jest.overrides ?? {});
 }
 
 export default jest;

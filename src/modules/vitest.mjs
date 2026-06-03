@@ -1,12 +1,14 @@
 import plugin from '@vitest/eslint-plugin';
+import { mergeConfigs } from 'eslint-flat-config-utils';
 
 import { globs } from '../utils/globs.mjs';
 
 /**
+ * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config }
  */
-function vitest() {
-  return {
+function vitest(options = {}) {
+  const vitestConfig = {
     name: 'vitest',
     files: globs.test,
     plugins: { vitest: plugin },
@@ -100,6 +102,8 @@ function vitest() {
       'vitest/warn-todo': 'warn',
     },
   };
+
+  return mergeConfigs(vitestConfig, options.vitest.overrides ?? {});
 }
 
 export default vitest;

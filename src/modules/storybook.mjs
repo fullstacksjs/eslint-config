@@ -1,10 +1,14 @@
+import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-storybook';
 
 import { globs } from '../utils/globs.mjs';
 
-/** @return { import('eslint').Linter.Config } */
-function storybook() {
-  return {
+/**
+ * @param { import('../types').Options } options
+ * @return { Promise<import('eslint').Linter.Config> }
+ */
+function storybook(options = {}) {
+  const storybookConfig = {
     name: 'storybook',
     files: globs.storybook,
     plugins: { storybook: plugin },
@@ -33,6 +37,8 @@ function storybook() {
       'react-hooks/rules-of-hooks': 'off',
     },
   };
+
+  return mergeConfigs(storybookConfig, options.storybook.overrides ?? {});
 }
 
 export default storybook;

@@ -1,11 +1,12 @@
 import stylisticPlugin from '@stylistic/eslint-plugin';
+import { mergeConfigs } from 'eslint-flat-config-utils';
 
 /**
- * @param { import('..').Options } options
+ * @param { import('../types').Options } options
  * @return { Promise<import('eslint').Linter.Config> }
  */
-function stylistic() {
-  return {
+function stylistic(options = {}) {
+  const stylisticConfig = {
     name: 'stylistic',
     plugins: { '@stylistic': stylisticPlugin },
     rules: {
@@ -43,6 +44,7 @@ function stylistic() {
       ],
     },
   };
+  return mergeConfigs(stylisticConfig, options.stylistic.overrides ?? {});
 }
 
 export default stylistic;
