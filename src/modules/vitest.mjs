@@ -49,7 +49,6 @@ function vitest(options = {}) {
       'vitest/no-conditional-in-test': 'off',
       'vitest/no-conditional-tests': 'warn',
       'vitest/no-disabled-tests': 'warn',
-      'vitest/no-done-callback': 'off',
       'vitest/no-duplicate-hooks': 'error',
       'vitest/no-focused-tests': 'warn',
       'vitest/no-hooks': 'off',
