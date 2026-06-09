@@ -247,6 +247,7 @@ export default defineConfig({
 - [typescript-eslint](https://typescript-eslint.io)
 - [eslint-plugin-regexp](https://www.npmjs.com/package/eslint-plugin-regexp)
 - [eslint-flat-config-utils](https://www.npmjs.com/package/eslint-flat-config-utils)
+- [eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh)
 
 That's all. Feel free to use 💛
 

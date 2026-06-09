@@ -1,0 +1,17 @@
+export const nextAllowExportNames = [
+  'experimental_ppr',
+  'dynamic',
+  'dynamicParams',
+  'revalidate',
+  'fetchCache',
+  'runtime',
+  'preferredRegion',
+  'maxDuration',
+  'metadata',
+  'generateMetadata',
+  'viewport',
+  'generateViewport',
+  'generateImageMetadata',
+  'generateSitemaps',
+  'generateStaticParams',
+];
