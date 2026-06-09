@@ -1,17 +1,23 @@
 import { mergeConfigs } from 'eslint-flat-config-utils';
 import * as plugin from 'eslint-plugin-regexp';
 
+import { predicate } from '../utils/conditions.mjs';
+
 /**
  * @param { import('../types').Options } options
  * @return { Promise<import('eslint').Linter.Config> }
  */
 function regex(options = {}) {
+  const isObject = typeof options.regex === 'object';
+
   const regexConfig = {
     name: 'regex',
     plugins: { regexp: plugin },
     settings: {
       regexp: {
-        allowedCharacterRanges: options.regex.allowedCharacterRanges,
+        ...predicate(isObject && 'allowedCharacterRanges' in options.regex, {
+          allowedCharacterRanges: options.regex.allowedCharacterRanges,
+        }),
       },
     },
     rules: {
