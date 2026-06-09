@@ -1,10 +1,13 @@
 import reactPlugin from '@eslint-react/eslint-plugin';
 import { mergeConfigs } from 'eslint-flat-config-utils';
 import a11yPlugin from 'eslint-plugin-jsx-a11y';
+import { reactRefresh } from 'eslint-plugin-react-refresh';
+import { isPackageExists } from 'local-pkg';
 import { parser } from 'typescript-eslint';
 
 import { predicate, strict } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
+import { nextAllowExportNames } from '../utils/nextAllowExportNames.mjs';
 import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
@@ -22,6 +25,7 @@ function react(options = {}) {
     plugins: {
       ...reactPlugin.configs.all.plugins,
       'jsx-a11y': a11yPlugin,
+      'react-refresh': reactRefresh.plugin,
     },
     ...predicate(projectService, {
       languageOptions: {
@@ -181,6 +185,15 @@ function react(options = {}) {
       'jsx-a11y/tabindex-no-positive': 'warn',
       'jsx-a11y/anchor-ambiguous-text': 'off',
       'jsx-a11y/prefer-tag-over-role': 'off',
+
+      'react-refresh/only-export-components': [
+        'error',
+        {
+          allowExportNames: isPackageExists('next') ? nextAllowExportNames : [],
+
+          allowConstantExport: isPackageExists('vite'),
+        },
+      ],
     },
   };
 
