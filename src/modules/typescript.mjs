@@ -139,12 +139,9 @@ function typescript(options = {}) {
       '@typescript-eslint/promise-function-async': 'off', // Breaks react component when return type is React.ReactNode
       '@typescript-eslint/restrict-plus-operands': 'warn',
       '@typescript-eslint/strict-boolean-expressions': 'off', // Annoying
-      '@typescript-eslint/space-before-blocks': 'off',
 
       '@typescript-eslint/triple-slash-reference': 'error',
-      '@typescript-eslint/typedef': ['error', { parameter: false, arrowParameter: false, variableDeclaration: false }],
       '@typescript-eslint/unified-signatures': 'error',
-      '@typescript-eslint/key-spacing': 'off',
 
       ...predicate(projectService, {
         '@typescript-eslint/await-thenable': 'error',
@@ -229,7 +226,6 @@ function typescript(options = {}) {
       'import/namespace': 'off',
       'import/default': 'off',
       'import/no-named-as-default-member': 'off',
-      'key-spacing': 'off',
       'camelcase': 'off',
       'default-param-last': 'off',
       'init-declarations': 'off',
@@ -241,9 +237,6 @@ function typescript(options = {}) {
       'no-unused-vars': 'off',
       'no-use-before-define': 'off',
       'no-useless-constructor': 'off',
-      'object-curly-spacing': 'off',
-      'padding-line-between-statements': 'off',
-      'space-before-blocks': 'off',
       'dot-notation': 'off',
       'no-throw-literal': 'off',
       'require-await': 'off',
