@@ -58,11 +58,6 @@ const PLUGIN_CONFIGS = {
     accessor: plugin => plugin.default?.rules || plugin.rules,
     additionalPlugins: [
       {
-        packageName: 'eslint-plugin-react-hooks',
-        rulePrefix: 'react-hooks',
-        accessor: plugin => plugin.default?.rules || plugin.rules,
-      },
-      {
         packageName: 'eslint-plugin-jsx-a11y',
         rulePrefix: 'jsx-a11y',
         accessor: plugin => plugin.default?.rules || plugin.rules,
