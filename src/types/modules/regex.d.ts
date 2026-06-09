@@ -1,5 +1,5 @@
 import type { ConfigWithOverrides } from '..';
 
 interface RegexOptions extends ConfigWithOverrides {
-  allowedCharacterRanges: string[];
+  allowedCharacterRanges?: string[];
 }
