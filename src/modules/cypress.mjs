@@ -2,12 +2,15 @@ import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-cypress';
 
 import { globs } from '../utils/globs.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function cypress(options = {}) {
+  const overrides = objectOrEmpty(options.cypress.overrides);
+
   const cypressConfig = {
     name: 'cypress',
     files: globs.e2e,
@@ -26,7 +29,7 @@ function cypress(options = {}) {
     },
   };
 
-  return mergeConfigs(cypressConfig, options.cypress.overrides ?? {});
+  return mergeConfigs(cypressConfig, overrides);
 }
 
 export default cypress;

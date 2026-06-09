@@ -2,6 +2,7 @@ import { mergeConfigs } from 'eslint-flat-config-utils';
 import * as plugin from 'eslint-plugin-regexp';
 
 import { predicate } from '../utils/conditions.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
@@ -9,6 +10,7 @@ import { predicate } from '../utils/conditions.mjs';
  */
 function regex(options = {}) {
   const isObject = typeof options.regex === 'object';
+  const overrides = objectOrEmpty(options.regex.overrides);
 
   const regexConfig = {
     name: 'regex',
@@ -110,7 +112,7 @@ function regex(options = {}) {
     },
   };
 
-  return mergeConfigs(regexConfig, options.regex.overrides ?? {});
+  return mergeConfigs(regexConfig, overrides);
 }
 
 export default regex;

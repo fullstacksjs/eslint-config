@@ -4,6 +4,7 @@ import { parser, plugin } from 'typescript-eslint';
 import { predicate, strict } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
 import { namingConvention } from '../utils/naming-convention.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
@@ -11,6 +12,7 @@ import { namingConvention } from '../utils/naming-convention.mjs';
  */
 function typescript(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
+  const overrides = objectOrEmpty(options.typescript.overrides);
 
   const typescriptConfig = {
     name: 'typescript',
@@ -250,7 +252,7 @@ function typescript(options = {}) {
     },
   };
 
-  return mergeConfigs(typescriptConfig, options.typescript.overrides ?? {});
+  return mergeConfigs(typescriptConfig, overrides);
 }
 
 export default typescript;

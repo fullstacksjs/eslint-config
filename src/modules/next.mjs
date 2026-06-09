@@ -1,11 +1,15 @@
 import plugin from '@next/eslint-plugin-next';
 import { mergeConfigs } from 'eslint-flat-config-utils';
 
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
+
 /**
  * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function next(options = {}) {
+  const overrides = objectOrEmpty(options.next.overrides);
+
   const nextConfig = {
     name: 'next',
     plugins: { next: plugin },
@@ -34,7 +38,7 @@ function next(options = {}) {
     },
   };
 
-  return mergeConfigs(nextConfig, options.next.overrides ?? {});
+  return mergeConfigs(nextConfig, overrides);
 }
 
 export default next;

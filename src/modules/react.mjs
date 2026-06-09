@@ -5,6 +5,7 @@ import { parser } from 'typescript-eslint';
 
 import { predicate, strict } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
@@ -13,6 +14,7 @@ import { globs } from '../utils/globs.mjs';
 function react(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
   const isObject = typeof options.react === 'object';
+  const overrides = objectOrEmpty(options.react.overrides);
 
   const reactConfig = {
     name: 'react',
@@ -182,7 +184,7 @@ function react(options = {}) {
     },
   };
 
-  return mergeConfigs(reactConfig, options.react.overrides ?? {});
+  return mergeConfigs(reactConfig, overrides);
 }
 
 export default react;

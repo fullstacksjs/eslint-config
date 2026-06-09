@@ -2,12 +2,15 @@ import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-storybook';
 
 import { globs } from '../utils/globs.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
  * @return { Promise<import('eslint').Linter.Config> }
  */
 function storybook(options = {}) {
+  const overrides = objectOrEmpty(options.storybook.overrides);
+
   const storybookConfig = {
     name: 'storybook',
     files: globs.storybook,
@@ -38,7 +41,7 @@ function storybook(options = {}) {
     },
   };
 
-  return mergeConfigs(storybookConfig, options.storybook.overrides ?? {});
+  return mergeConfigs(storybookConfig, overrides);
 }
 
 export default storybook;

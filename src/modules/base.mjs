@@ -2,12 +2,15 @@ import { mergeConfigs } from 'eslint-flat-config-utils';
 import globals from 'globals';
 
 import { strict } from '../utils/conditions.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function base(options = {}) {
+  const overrides = objectOrEmpty(options.base.overrides);
+
   const baseConfig = {
     name: 'base',
     languageOptions: {
@@ -197,7 +200,7 @@ function base(options = {}) {
     },
   };
 
-  return mergeConfigs(baseConfig, options.base.overrides ?? {});
+  return mergeConfigs(baseConfig, overrides);
 }
 
 export default base;

@@ -1,11 +1,15 @@
 import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-prettier';
 
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
+
 /**
  * @param { import('../types').Options } options
  * @return { Promise<import('eslint').Linter.Config> }
  */
 function prettier(options = {}) {
+  const overrides = objectOrEmpty(options.prettier.overrides);
+
   const prettierConfig = {
     name: 'prettier',
     plugins: { prettier: plugin },
@@ -93,7 +97,7 @@ function prettier(options = {}) {
     },
   };
 
-  return mergeConfigs(prettierConfig, options.prettier.overrides ?? {});
+  return mergeConfigs(prettierConfig, overrides);
 }
 
 export default prettier;

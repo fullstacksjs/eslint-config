@@ -2,12 +2,15 @@ import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-playwright';
 
 import { globs } from '../utils/globs.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
  * @return { Promise<import('eslint').Linter.Config> }
  */
 function playwright(options = {}) {
+  const overrides = objectOrEmpty(options.playwright.overrides);
+
   const playwrightConfig = {
     name: 'playwright',
     plugins: { playwright: plugin },
@@ -74,7 +77,7 @@ function playwright(options = {}) {
     },
   };
 
-  return mergeConfigs(playwrightConfig, options.playwright.overrides ?? {});
+  return mergeConfigs(playwrightConfig, overrides);
 }
 
 export default playwright;

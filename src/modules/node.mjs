@@ -2,12 +2,15 @@ import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-n';
 
 import { strict } from '../utils/conditions.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config }
  */
 function node(options = {}) {
+  const overrides = objectOrEmpty(options.node.overrides);
+
   const nodeConfig = {
     name: 'node',
     plugins: { n: plugin },
@@ -58,7 +61,7 @@ function node(options = {}) {
     },
   };
 
-  return mergeConfigs(nodeConfig, options.node.overrides ?? {});
+  return mergeConfigs(nodeConfig, overrides);
 }
 
 export default node;
