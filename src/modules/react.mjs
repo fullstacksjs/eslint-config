@@ -1,7 +1,6 @@
 import reactPlugin from '@eslint-react/eslint-plugin';
 import { mergeConfigs } from 'eslint-flat-config-utils';
 import a11yPlugin from 'eslint-plugin-jsx-a11y';
-import hooksPlugin from 'eslint-plugin-react-hooks';
 import { parser } from 'typescript-eslint';
 
 import { predicate, strict } from '../utils/conditions.mjs';
@@ -13,13 +12,13 @@ import { globs } from '../utils/globs.mjs';
  */
 function react(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
+  const isObject = typeof options.react === 'object';
 
   const reactConfig = {
     name: 'react',
     files: [globs.js, globs.jsx, globs.ts, globs.tsx],
     plugins: {
       ...reactPlugin.configs.all.plugins,
-      'react-hooks': hooksPlugin,
       'jsx-a11y': a11yPlugin,
     },
     ...predicate(projectService, {
@@ -29,12 +28,25 @@ function react(options = {}) {
       },
     }),
     settings: {
-      'react': {
-        pragma: 'React',
-        version: 'detect',
-      },
-      'react-hooks': {
-        additionalEffectHooks: options.react.additionalEffectHooks,
+      'react-x': {
+        ...predicate(isObject && 'version' in options.react, {
+          version: options.react.version,
+        }),
+        ...predicate(isObject && 'importSource' in options.react, {
+          importSource: options.react.importSource,
+        }),
+        ...predicate(isObject && 'compilationMode' in options.react, {
+          compilationMode: options.react.compilationMode,
+        }),
+        ...predicate(isObject && 'polymorphicPropName' in options.react, {
+          polymorphicPropName: options.react.polymorphicPropName,
+        }),
+        ...predicate(isObject && 'additionalStateHooks' in options.react, {
+          additionalStateHooks: options.react.additionalStateHooks,
+        }),
+        ...predicate(isObject && 'additionalEffectHooks' in options.react, {
+          additionalEffectHooks: options.react.additionalEffectHooks,
+        }),
       },
     },
     rules: {
@@ -118,24 +130,18 @@ function react(options = {}) {
 
       '@eslint-react/rsc-function-definition': 'error',
 
-      'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn',
-
-      'react-hooks/config': 'error',
-      'react-hooks/error-boundaries': 'error',
-      'react-hooks/component-hook-factories': 'error',
-      'react-hooks/gating': 'error',
-      'react-hooks/globals': 'error',
-      'react-hooks/immutability': 'error',
-      'react-hooks/preserve-manual-memoization': 'error',
-      'react-hooks/purity': 'error',
-      'react-hooks/refs': 'error',
-      'react-hooks/set-state-in-effect': strict('error'),
-      'react-hooks/set-state-in-render': 'error',
-      'react-hooks/static-components': strict('error'),
-      'react-hooks/unsupported-syntax': 'warn',
-      'react-hooks/use-memo': 'error',
-      'react-hooks/incompatible-library': 'warn',
+      '@eslint-react/rules-of-hooks': 'error',
+      '@eslint-react/exhaustive-deps': 'error',
+      '@eslint-react/error-boundaries': 'error',
+      '@eslint-react/globals': 'error',
+      '@eslint-react/immutability': 'error',
+      '@eslint-react/purity': 'error',
+      '@eslint-react/refs': 'error',
+      '@eslint-react/set-state-in-effect': strict('error'),
+      '@eslint-react/set-state-in-render': 'error',
+      '@eslint-react/static-components': strict('error'),
+      '@eslint-react/unsupported-syntax': 'error',
+      '@eslint-react/use-memo': 'error',
 
       'jsx-a11y/alt-text': 'warn',
       'jsx-a11y/anchor-has-content': 'error',

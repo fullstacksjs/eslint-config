@@ -242,7 +242,6 @@ export default defineConfig({
 - [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
 - [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
 - [eslint-plugin-promise](https://github.com/eslint-community/eslint-plugin-promise)
-- [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
 - [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme)
 - [eslint-plugin-better-tailwindcss](https://github.com/schoero/eslint-plugin-better-tailwindcss)
 - [typescript-eslint](https://typescript-eslint.io)
