@@ -4,12 +4,14 @@ import globals from 'globals';
 
 import { predicate } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
  * @return { import('eslint').Linter.Config } */
 function jest(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
+  const overrides = objectOrEmpty(options.jest.overrides);
 
   const jestConfig = {
     name: 'jest',
@@ -86,7 +88,7 @@ function jest(options = {}) {
     },
   };
 
-  return mergeConfigs(jestConfig, options.jest.overrides ?? {});
+  return mergeConfigs(jestConfig, overrides);
 }
 
 export default jest;

@@ -2,12 +2,15 @@ import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-promise';
 
 import { strict } from '../utils/conditions.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
  * @return { Promise<import('eslint').Linter.Config> }
  */
 function promise(options = {}) {
+  const overrides = objectOrEmpty(options.promise.overrides);
+
   const promiseConfig = {
     name: 'promise',
     plugins: { promise: plugin },
@@ -32,7 +35,7 @@ function promise(options = {}) {
     },
   };
 
-  return mergeConfigs(promiseConfig, options.promise.overrides ?? {});
+  return mergeConfigs(promiseConfig, overrides);
 }
 
 export default promise;

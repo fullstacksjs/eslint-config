@@ -4,6 +4,7 @@ import globals from 'globals';
 
 import { predicate } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
@@ -11,6 +12,8 @@ import { globs } from '../utils/globs.mjs';
  */
 
 function tests(options = {}) {
+  const overrides = objectOrEmpty(options.test.overrides);
+
   const testsConfug = {
     name: 'tests',
     files: [...globs.test, ...globs.e2e],
@@ -40,7 +43,7 @@ function tests(options = {}) {
     },
   };
 
-  return mergeConfigs(testsConfug, options.test.overrides ?? {});
+  return mergeConfigs(testsConfug, overrides);
 }
 
 export default tests;

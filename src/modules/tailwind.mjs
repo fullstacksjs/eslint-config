@@ -1,6 +1,7 @@
 import { mergeConfigs } from 'eslint-flat-config-utils';
 
 import { predicate, strict } from '../utils/conditions.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
@@ -9,6 +10,7 @@ import { predicate, strict } from '../utils/conditions.mjs';
 async function tailwind(options = {}) {
   const plugin = await import('eslint-plugin-better-tailwindcss');
   const isObject = typeof options.tailwind === 'object';
+  const overrides = objectOrEmpty(options.tailwind.overrides);
 
   const tailwindConfig = {
     name: 'tailwind',
@@ -44,7 +46,7 @@ async function tailwind(options = {}) {
     },
   };
 
-  return mergeConfigs(tailwindConfig, options.tailwind.overrides ?? {});
+  return mergeConfigs(tailwindConfig, overrides);
 }
 
 export default tailwind;

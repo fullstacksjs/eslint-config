@@ -2,6 +2,7 @@ import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-import-x';
 
 import { predicate } from '../utils/conditions.mjs';
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 const tsExtensions = ['.ts', '.tsx', '.cts', '.mts', '.ctsx', '.mtsx'];
 const jsExtensions = ['.mjs', '.js', '.jsx', '.cjs'];
@@ -13,6 +14,7 @@ const allExtensions = [...jsExtensions, ...tsExtensions];
  */
 function imports(options = {}) {
   const isObject = typeof options.import === 'object';
+  const overrides = objectOrEmpty(options.import.overrides);
 
   const importsConfig = {
     name: 'imports',
@@ -106,7 +108,7 @@ function imports(options = {}) {
     },
   };
 
-  return mergeConfigs(importsConfig, options.import.overrides ?? {});
+  return mergeConfigs(importsConfig, overrides);
 }
 
 export default imports;

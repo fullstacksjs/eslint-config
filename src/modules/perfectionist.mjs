@@ -1,11 +1,15 @@
 import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-perfectionist';
 
+import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
+
 /**
  * @param { import('../types').Options } options
  * @return { Promise<import('eslint').Linter.Config> }
  */
 function perfectionist(options = {}) {
+  const overrides = objectOrEmpty(options.sort.overrides);
+
   const perfectionistConfig = {
     name: 'perfectionist',
     plugins: { perfectionist: plugin },
@@ -72,7 +76,7 @@ function perfectionist(options = {}) {
     },
   };
 
-  return mergeConfigs(perfectionistConfig, options.sort.overrides ?? {});
+  return mergeConfigs(perfectionistConfig, overrides);
 }
 
 export default perfectionist;
