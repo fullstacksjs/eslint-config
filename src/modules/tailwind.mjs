@@ -1,6 +1,6 @@
 import { mergeConfigs } from 'eslint-flat-config-utils';
 
-import { strict } from '../utils/conditions.mjs';
+import { predicate, strict } from '../utils/conditions.mjs';
 
 /**
  * @param { import('../types').Options } options
@@ -8,13 +8,19 @@ import { strict } from '../utils/conditions.mjs';
  */
 async function tailwind(options = {}) {
   const plugin = await import('eslint-plugin-better-tailwindcss');
+  const isObject = typeof options.tailwind === 'object';
+
   const tailwindConfig = {
     name: 'tailwind',
     plugins: { 'better-tailwindcss': plugin.default ?? plugin },
     settings: {
       'better-tailwindcss': {
-        entryPoint: options.tailwind.entryPoint,
-        tailwindConfig: options.tailwind.tailwindConfig,
+        ...predicate(isObject && 'entryPoint' in options.tailwind, {
+          entryPoint: options.tailwind.entryPoint,
+        }),
+        ...predicate(isObject && 'tailwindConfig' in options.tailwind, {
+          tailwindConfig: options.tailwind.tailwindConfig,
+        }),
         callees: [
           ['^class|classnames|classNames|cva|ctl|clsx|cn|cns|cx|cc|clb|cnb|dcnb|objstr|tv|twJoin|twMerge$', [{ match: 'strings' }]],
         ],
