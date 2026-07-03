@@ -1,0 +1,11 @@
+# GENERATED FILE, DO NOT MODIFY (source = project-factory)
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    versioning-strategy: increase
+    commit-message:
+      prefix: 'fix:'
+    open-pull-requests-limit: 0
