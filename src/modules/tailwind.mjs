@@ -37,6 +37,7 @@ async function tailwind(options = {}) {
       'better-tailwindcss/enforce-consistent-variant-order': 'warn',
       'better-tailwindcss/enforce-logical-properties': strict('warn'),
       'better-tailwindcss/enforce-shorthand-classes': 'warn',
+      'better-tailwindcss/no-concatenated-classes': 'error',
       'better-tailwindcss/no-conflicting-classes': 'error',
       'better-tailwindcss/no-deprecated-classes': 'warn',
       'better-tailwindcss/no-duplicate-classes': 'error',
