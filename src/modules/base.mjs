@@ -85,7 +85,7 @@ function base(options = {}) {
       'no-extend-native': 'error',
       'no-extra-bind': 'error',
       'no-extra-label': 'error',
-      'no-fallthrough': 'error',
+      'no-fallthrough': ["error", { "allowEmptyCase": true }],
       'no-func-assign': 'error',
       'no-global-assign': 'error',
       'no-implicit-globals': 'error',
