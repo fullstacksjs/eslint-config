@@ -17,6 +17,7 @@ export default defineConfig(
     cypress: true,
     react: true,
     storybook: true,
+    prettier: false,
     typescript: {
       projectService: {
         allowDefaultProject: ['src/types/index.d.ts', 'src/types/modules/*.d.ts', 'tests/ts.ts'],

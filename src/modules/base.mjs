@@ -85,7 +85,7 @@ function base(options = {}) {
       'no-extend-native': 'error',
       'no-extra-bind': 'error',
       'no-extra-label': 'error',
-      'no-fallthrough': ["error", { "allowEmptyCase": true }],
+      'no-fallthrough': ['error', { allowEmptyCase: true }],
       'no-func-assign': 'error',
       'no-global-assign': 'error',
       'no-implicit-globals': 'error',
@@ -145,7 +145,12 @@ function base(options = {}) {
       'no-unused-private-class-members': 'warn',
       'no-unused-vars': [
         'error',
-        { argsIgnorePattern: '^_', varsIgnorePattern: '^ignore(d)?', args: 'after-used', ignoreRestSiblings: true },
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^ignore(d)?',
+          args: 'after-used',
+          ignoreRestSiblings: true,
+        },
       ],
       'no-use-before-define': ['error', 'nofunc'],
       'no-useless-assignment': 'warn',

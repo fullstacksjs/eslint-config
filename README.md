@@ -136,12 +136,7 @@ You can still use any ESLint plugin, even if it's not supported by automatic det
 import { defineConfig } from '@fullstacksjs/eslint-config';
 import pluginVue from 'eslint-plugin-vue';
 
-export default defineConfig(
-  {
-    /* Options */
-  },
-  ...pluginVue.configs['flat/recommended'],
-);
+export default defineConfig({/* Options */}, ...pluginVue.configs['flat/recommended']);
 ```
 
 ## Tailwind

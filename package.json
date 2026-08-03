@@ -1,41 +1,35 @@
 {
   "name": "@fullstacksjs/eslint-config",
   "version": "11.3.1",
+  "description": "fullstacks eslint config",
   "license": "MIT",
   "author": "fullstacks <fullstacksjs@gmail.com>",
-  "description": "fullstacks eslint config",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fullstacksjs/eslint-config.git"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
   },
   "files": [
     "src",
     "cjs"
   ],
-  "packageManager": "npm@12.0.1",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
-    "lint": "eslint .",
     "spell": "cspell ./* --no-progress",
     "test": "echo 0",
-    "build": "unbuild",
-    "postbuild": "./postbuild",
+    "check": "vp check",
+    "lint": "eslint . --ext .js,.ts,.mjs,.cjs",
+    "build": "vp pack",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "check:rules": "node scripts/check-missing-rules.mjs",
-    "pre-commit": "npm run test && lint-staged && npm run spell"
-  },
-  "main": "./cjs/index.js",
-  "module": "./src/index.mjs",
-  "exports": {
-    ".": {
-      "import": "./src/index.mjs",
-      "require": "./cjs/index.js",
-      "types": "./src/types/index.d.ts"
-    }
+    "prepare": "vp config",
+    "check:rules": "node scripts/check-missing-rules.mjs"
   },
   "dependencies": {
     "@eslint-react/eslint-plugin": "5.17.2",
@@ -71,15 +65,14 @@
     "@types/eslint": "9.6.1",
     "cspell": "10.0.1",
     "eslint": "10.7.0",
-    "husky": "9.1.7",
     "jest": "30.4.2",
-    "lint-staged": "17.1.0",
     "pinst": "3.0.0",
     "prettier": "3.9.5",
     "semantic-release": "25.0.8",
     "storybook": "10.5.2",
     "typescript": "6.0.3",
-    "unbuild": "3.6.1"
+    "vite-plus": "0.2.6",
+    "vitest": "4.1.10"
   },
   "peerDependencies": {
     "cypress": ">=8",
@@ -106,7 +99,12 @@
       "optional": true
     }
   },
-  "volta": {
-    "node": "24.12.0"
-  }
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.18.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "npm@12.0.1"
 }
