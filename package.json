@@ -12,8 +12,13 @@
     "src",
     "cjs"
   ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "exports": {
-    ".": "./dist/index.mjs",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
