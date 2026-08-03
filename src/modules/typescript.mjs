@@ -46,7 +46,11 @@ function typescript(options = {}) {
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       '@typescript-eslint/consistent-type-imports': [
         'warn',
-        { prefer: 'type-imports', disallowTypeAnnotations: false, fixStyle: 'separate-type-imports' },
+        {
+          prefer: 'type-imports',
+          disallowTypeAnnotations: false,
+          fixStyle: 'separate-type-imports',
+        },
       ],
       '@typescript-eslint/default-param-last': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'off',
@@ -92,7 +96,9 @@ function typescript(options = {}) {
       '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'error',
       '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
       '@typescript-eslint/no-non-null-assertion': 'off',
-      ...predicate(options.strict, { '@typescript-eslint/no-non-null-assertion': 'warn' }),
+      ...predicate(options.strict, {
+        '@typescript-eslint/no-non-null-assertion': 'warn',
+      }),
       '@typescript-eslint/no-redeclare': ['off', { ignoreDeclarationMerge: true }], // useful in FP.
       '@typescript-eslint/no-require-imports': 'error',
       '@typescript-eslint/no-restricted-imports': 'off',
@@ -132,7 +138,11 @@ function typescript(options = {}) {
       '@typescript-eslint/prefer-namespace-keyword': 'error',
       '@typescript-eslint/prefer-readonly-parameter-types': [
         'off',
-        { checkParameterProperties: true, ignoreInferredTypes: false, treatMethodsAsReadonly: true },
+        {
+          checkParameterProperties: true,
+          ignoreInferredTypes: false,
+          treatMethodsAsReadonly: true,
+        },
       ], // I'm not sure...
       '@typescript-eslint/prefer-readonly': 'off',
       '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with auto-fix on save.
@@ -204,7 +214,14 @@ function typescript(options = {}) {
         '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
         '@typescript-eslint/restrict-template-expressions': [
           'warn',
-          { allowNumber: true, allowBoolean: false, allowAny: false, allowNullish: false, allowRegExp: false, allowNever: false },
+          {
+            allowNumber: true,
+            allowBoolean: false,
+            allowAny: false,
+            allowNullish: false,
+            allowRegExp: false,
+            allowNever: false,
+          },
         ],
         '@typescript-eslint/related-getter-setter-pairs': 'error',
         '@typescript-eslint/require-array-sort-compare': ['error', { ignoreStringArrays: true }],

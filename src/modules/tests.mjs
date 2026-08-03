@@ -19,7 +19,9 @@ function tests(options = {}) {
     files: [...globs.test, ...globs.e2e],
     plugins: { vitest: plugin },
     languageOptions: {
-      globals: { ...globals['shared-node-browser'] },
+      globals: {
+        ...globals['shared-node-browser'],
+      },
     },
     rules: {
       'max-lines-per-function': 'off',
