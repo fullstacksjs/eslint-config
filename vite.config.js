@@ -3,6 +3,7 @@ import { defineConfig } from 'vite-plus';
 export default defineConfig({
   pack: {
     entry: ['./src/index.mjs'],
+    format: ['esm', 'cjs'],
     exports: true,
   },
   fmt: {
@@ -22,7 +23,7 @@ export default defineConfig({
     tabWidth: 2,
     trailingComma: 'all',
     useTabs: false,
-    ignorePatterns: ['node_modules'],
+    ignorePatterns: ['node_modules', 'dist'],
   },
   staged: {
     '*': 'vp check --fix',
