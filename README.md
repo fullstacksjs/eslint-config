@@ -21,26 +21,12 @@ npm install --save-dev @fullstacksjs/eslint-config eslint prettier
 To use the configuration, all you need is to export the generated config by the `defineConfig` function. It automatically enables required
 plugins with **Auto Module Detection**.
 
-### ESM
-
 ```js
 import { defineConfig } from '@fullstacksjs/eslint-config';
 
 export default defineConfig({
   typescript: {
     tsconfigRootDir: import.meta.dirname, // Recommended when using TypeScript
-  },
-});
-```
-
-### CJS
-
-```js
-const { defineConfig } = require('@fullstacksjs/eslint-config');
-
-module.exports = defineConfig({
-  typescript: {
-    tsconfigRootDir: __dirname, // Recommended when using TypeScript
   },
 });
 ```
