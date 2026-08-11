@@ -14,6 +14,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 function tests(options = {}) {
   const overrides = objectOrEmpty(options.test.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const testsConfug = {
     name: 'tests',
     files: [...globs.test, ...globs.e2e],

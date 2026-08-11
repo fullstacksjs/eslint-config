@@ -11,6 +11,9 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 function base(options = {}) {
   const overrides = objectOrEmpty(options.base.overrides);
 
+  /**
+   * @type { import('eslint/config').ConfigObject }
+   */
   const baseConfig = {
     name: 'base',
     languageOptions: {

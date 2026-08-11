@@ -11,6 +11,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 function promise(options = {}) {
   const overrides = objectOrEmpty(options.promise.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const promiseConfig = {
     name: 'promise',
     plugins: { promise: plugin },

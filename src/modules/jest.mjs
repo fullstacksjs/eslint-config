@@ -13,6 +13,7 @@ function jest(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
   const overrides = objectOrEmpty(options.jest.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const jestConfig = {
     name: 'jest',
     files: globs.test,

@@ -11,6 +11,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 function node(options = {}) {
   const overrides = objectOrEmpty(options.node.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const nodeConfig = {
     name: 'node',
     plugins: { n: plugin },
@@ -46,7 +47,9 @@ function node(options = {}) {
       'n/prefer-global/timers': 'warn',
       'n/prefer-global/url-search-params': 'warn',
       'n/prefer-global/url': 'warn',
+      '/prefer-import/assert-strict': 'warn',
       'n/prefer-node-protocol': 'warn',
+      'n/prefer-process-get-builtin-module': 'warn',
       'n/prefer-promises/dns': 'warn',
       'n/prefer-promises/fs': 'warn',
       'n/process-exit-as-throw': 'error',

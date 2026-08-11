@@ -11,6 +11,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 function cypress(options = {}) {
   const overrides = objectOrEmpty(options.cypress.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const cypressConfig = {
     name: 'cypress',
     files: globs.e2e,

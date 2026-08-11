@@ -10,6 +10,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 function next(options = {}) {
   const overrides = objectOrEmpty(options.next.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const nextConfig = {
     name: 'next',
     plugins: { next: plugin },
