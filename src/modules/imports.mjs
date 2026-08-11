@@ -16,6 +16,7 @@ function imports(options = {}) {
   const isObject = typeof options.import === 'object';
   const overrides = objectOrEmpty(options.import.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const importsConfig = {
     name: 'imports',
     plugins: { import: plugin },

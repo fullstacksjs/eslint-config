@@ -11,6 +11,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 function playwright(options = {}) {
   const overrides = objectOrEmpty(options.playwright.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const playwrightConfig = {
     name: 'playwright',
     plugins: { playwright: plugin },

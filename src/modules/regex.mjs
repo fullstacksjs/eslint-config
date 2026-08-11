@@ -12,6 +12,7 @@ function regex(options = {}) {
   const isObject = typeof options.regex === 'object';
   const overrides = objectOrEmpty(options.regex.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const regexConfig = {
     name: 'regex',
     plugins: { regexp: plugin },

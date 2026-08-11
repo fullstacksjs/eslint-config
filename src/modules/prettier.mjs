@@ -10,6 +10,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 function prettier(options = {}) {
   const overrides = objectOrEmpty(options.prettier.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const prettierConfig = {
     name: 'prettier',
     plugins: { prettier: plugin },

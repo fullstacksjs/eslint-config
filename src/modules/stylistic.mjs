@@ -10,6 +10,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 function stylistic(options = {}) {
   const overrides = objectOrEmpty(options.stylistic.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const stylisticConfig = {
     name: 'stylistic',
     plugins: { '@stylistic': stylisticPlugin },

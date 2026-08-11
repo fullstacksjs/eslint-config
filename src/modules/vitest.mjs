@@ -11,6 +11,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 function vitest(options = {}) {
   const overrides = objectOrEmpty(options.vitest.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const vitestConfig = {
     name: 'vitest',
     files: globs.test,

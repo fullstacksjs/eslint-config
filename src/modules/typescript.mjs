@@ -14,6 +14,7 @@ function typescript(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
   const overrides = objectOrEmpty(options.typescript.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const typescriptConfig = {
     name: 'typescript',
     files: [globs.ts, globs.tsx],

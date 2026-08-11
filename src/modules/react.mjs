@@ -19,6 +19,7 @@ function react(options = {}) {
   const isObject = typeof options.react === 'object';
   const overrides = objectOrEmpty(options.react.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const reactConfig = {
     name: 'react',
     files: [globs.js, globs.jsx, globs.ts, globs.tsx],
@@ -76,6 +77,7 @@ function react(options = {}) {
       '@eslint-react/jsx-no-children-prop': 'warn',
       '@eslint-react/jsx-no-children-prop-with-children': 'warn',
       '@eslint-react/jsx-no-key-after-spread': 'error',
+      '@eslint-react/no-leaked-dollar': 'error',
       '@eslint-react/jsx-no-useless-fragment': 'warn',
       '@eslint-react/jsx-no-namespace': 'error',
 

@@ -11,6 +11,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 function storybook(options = {}) {
   const overrides = objectOrEmpty(options.storybook.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const storybookConfig = {
     name: 'storybook',
     files: globs.storybook,

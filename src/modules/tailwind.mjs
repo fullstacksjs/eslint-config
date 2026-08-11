@@ -12,6 +12,7 @@ async function tailwind(options = {}) {
   const isObject = typeof options.tailwind === 'object';
   const overrides = objectOrEmpty(options.tailwind.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const tailwindConfig = {
     name: 'tailwind',
     plugins: { 'better-tailwindcss': plugin.default ?? plugin },

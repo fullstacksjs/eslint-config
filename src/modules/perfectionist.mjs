@@ -10,6 +10,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 function perfectionist(options = {}) {
   const overrides = objectOrEmpty(options.sort.overrides);
 
+  /** @type { import('eslint/config').ConfigObject } */
   const perfectionistConfig = {
     name: 'perfectionist',
     plugins: { perfectionist: plugin },
