@@ -3,7 +3,7 @@ import { defineConfig } from 'vite-plus';
 export default defineConfig({
   pack: {
     entry: ['./src/index.mjs'],
-    format: ['esm', 'cjs'],
+    format: ['esm'],
     exports: true,
   },
   fmt: {
