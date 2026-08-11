@@ -75,10 +75,10 @@
     "vitest": "4.1.10"
   },
   "peerDependencies": {
-    "cypress": ">=8",
-    "eslint": ">=9.38",
+    "cypress": ">=15",
+    "eslint": ">=10.3.0",
     "prettier": ">=3",
-    "react": ">=18",
+    "react": ">=19",
     "tailwindcss": ">=3.3.0",
     "typescript": ">=5"
   },
