@@ -70,6 +70,7 @@ function react(options = {}) {
       '@eslint-react/dom-no-render': 'warn',
       '@eslint-react/dom-no-script-url': 'warn',
       '@eslint-react/dom-no-string-style-prop': 'error',
+      '@eslint-react/dom-no-unknown-property': 'off',
       '@eslint-react/dom-no-unsafe-iframe-sandbox': 'warn',
       '@eslint-react/dom-no-unsafe-target-blank': 'warn',
 
@@ -78,6 +79,7 @@ function react(options = {}) {
       '@eslint-react/jsx-no-children-prop-with-children': 'warn',
       '@eslint-react/jsx-no-key-after-spread': 'error',
       '@eslint-react/jsx-no-leaked-dollar': 'error',
+      '@eslint-react/jsx-no-leaked-semicolon': 'error',
       '@eslint-react/jsx-no-useless-fragment': 'warn',
       '@eslint-react/jsx-no-namespace': 'error',
 
@@ -88,6 +90,7 @@ function react(options = {}) {
       '@eslint-react/no-children-map': 'warn',
       '@eslint-react/no-children-only': 'warn',
       '@eslint-react/no-children-to-array': 'warn',
+      '@eslint-react/no-class-component': 'off',
       '@eslint-react/no-clone-element': 'warn',
       '@eslint-react/no-component-will-mount': 'error',
       '@eslint-react/no-component-will-receive-props': 'error',
@@ -98,6 +101,8 @@ function react(options = {}) {
       '@eslint-react/no-direct-mutation-state': 'error',
       '@eslint-react/no-duplicate-key': 'error',
       '@eslint-react/no-forward-ref': 'warn',
+      '@eslint-react/no-leaked-conditional-rendering': 'error',
+      '@eslint-react/no-missing-component-display-name': 'off',
       '@eslint-react/no-missing-context-display-name': 'warn',
       '@eslint-react/no-missing-key': 'error',
       '@eslint-react/no-misused-capture-owner-stack': 'error',
