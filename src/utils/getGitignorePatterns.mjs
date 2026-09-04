@@ -1,6 +1,6 @@
 /* eslint 'no-console': ['warn', { allow: ['warn'] }] */
 
-import { includeIgnoreFile } from '@eslint/compat';
+import { includeIgnoreFile } from '@eslint/config-helpers';
 import fs from 'node:fs';
 import path from 'node:path';
 
