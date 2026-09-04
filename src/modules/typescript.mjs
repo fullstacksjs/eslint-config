@@ -150,6 +150,7 @@ function typescript(options = {}) {
       '@typescript-eslint/promise-function-async': 'off', // Breaks react component when return type is React.ReactNode
       '@typescript-eslint/restrict-plus-operands': 'warn',
       '@typescript-eslint/strict-boolean-expressions': 'off', // Annoying
+      '@typescript-eslint/strict-void-return': 'error',
 
       '@typescript-eslint/triple-slash-reference': 'error',
       '@typescript-eslint/unified-signatures': 'error',
