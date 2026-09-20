@@ -47,7 +47,7 @@ function node(options = {}) {
       'n/prefer-global/timers': 'warn',
       'n/prefer-global/url-search-params': 'warn',
       'n/prefer-global/url': 'warn',
-      '/prefer-import/assert-strict': 'warn',
+      'n/prefer-import/assert-strict': 'warn',
       'n/prefer-node-protocol': 'warn',
       'n/prefer-process-get-builtin-module': 'warn',
       'n/prefer-promises/dns': 'warn',
