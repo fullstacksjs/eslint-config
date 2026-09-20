@@ -39,8 +39,8 @@ function typescript(options = {}) {
         },
       ],
       '@typescript-eslint/ban-tslint-comment': 'off',
-      '@typescript-eslint/camelcase': 'off',
       '@typescript-eslint/class-literal-property-style': ['error', 'getters'],
+      '@typescript-eslint/class-methods-use-this': 'off',
       '@typescript-eslint/consistent-generic-constructors': ['warn', 'constructor'],
       '@typescript-eslint/consistent-indexed-object-style': 'warn',
       '@typescript-eslint/consistent-type-assertions': 'error',
@@ -57,9 +57,8 @@ function typescript(options = {}) {
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-member-accessibility': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
-      '@typescript-eslint/generic-type-naming': 'off',
       '@typescript-eslint/init-declarations': 'off',
-      '@typescript-eslint/member-naming': 'off',
+      '@typescript-eslint/max-params': ['error', { max: 3 }],
       '@typescript-eslint/member-ordering': 'off',
       '@typescript-eslint/method-signature-style': ['warn', 'property'],
       '@typescript-eslint/naming-convention': [
@@ -90,7 +89,6 @@ function typescript(options = {}) {
       '@typescript-eslint/no-inferrable-types': 'off',
       '@typescript-eslint/no-invalid-this': ['error', { capIsConstructor: false }],
       '@typescript-eslint/no-invalid-void-type': 'error',
-      '@typescript-eslint/no-loop-func': 'error',
       '@typescript-eslint/no-magic-numbers': ['off', { ignoreEnums: true }], // Not good enough yet
       '@typescript-eslint/no-misused-new': 'error',
       '@typescript-eslint/no-namespace': 'error',
@@ -102,17 +100,17 @@ function typescript(options = {}) {
       }),
       '@typescript-eslint/no-redeclare': ['off', { ignoreDeclarationMerge: true }], // useful in FP.
       '@typescript-eslint/no-require-imports': 'error',
-      '@typescript-eslint/no-restricted-imports': 'off',
+      '@typescript-eslint/no-restricted-types': 'off',
       '@typescript-eslint/no-shadow': 'error',
       '@typescript-eslint/no-this-alias': 'error',
       '@typescript-eslint/no-unnecessary-type-constraint': 'warn',
+      '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'warn',
       '@typescript-eslint/no-unsafe-argument': strict(options, 'warn'),
       '@typescript-eslint/no-unsafe-assignment': strict(options, 'warn'),
       '@typescript-eslint/no-unsafe-call': strict(options, 'warn'),
       '@typescript-eslint/no-unsafe-declaration-merging': 'warn',
       '@typescript-eslint/no-unsafe-member-access': strict(options, ['warn', { allowOptionalChaining: true }]),
       '@typescript-eslint/no-unsafe-return': strict(options, 'warn'),
-      '@typescript-eslint/no-untyped-public-signature': 'off',
       '@typescript-eslint/no-unused-expressions': 'error',
       '@typescript-eslint/no-unused-vars': [
         'warn',
@@ -130,8 +128,10 @@ function typescript(options = {}) {
       '@typescript-eslint/no-useless-constructor': 'error',
       '@typescript-eslint/no-useless-default-assignment': 'warn',
       '@typescript-eslint/no-useless-empty-export': 'warn',
+      '@typescript-eslint/no-wrapper-object-types': 'error',
       '@typescript-eslint/parameter-properties': 'off',
       '@typescript-eslint/prefer-as-const': 'warn',
+      '@typescript-eslint/prefer-destructuring': ['warn', { object: true, array: false }],
       '@typescript-eslint/prefer-enum-initializers': 'off',
       '@typescript-eslint/prefer-for-of': 'warn',
       '@typescript-eslint/prefer-function-type': 'warn',
@@ -146,7 +146,6 @@ function typescript(options = {}) {
         },
       ], // I'm not sure...
       '@typescript-eslint/prefer-readonly': 'off',
-      '@typescript-eslint/prefer-readonlysemi': 'off', // Annoying with auto-fix on save.
       '@typescript-eslint/promise-function-async': 'off', // Breaks react component when return type is React.ReactNode
       '@typescript-eslint/restrict-plus-operands': 'warn',
       '@typescript-eslint/strict-boolean-expressions': 'off', // Annoying
@@ -157,6 +156,7 @@ function typescript(options = {}) {
 
       ...predicate(projectService, {
         '@typescript-eslint/await-thenable': 'error',
+        '@typescript-eslint/no-array-delete': 'error',
         '@typescript-eslint/consistent-return': 'off',
         '@typescript-eslint/consistent-type-exports': 'warn',
         '@typescript-eslint/dot-notation': [
@@ -172,6 +172,7 @@ function typescript(options = {}) {
         '@typescript-eslint/no-duplicate-type-constituents': 'warn',
         '@typescript-eslint/no-deprecated': 'error',
         '@typescript-eslint/no-for-in-array': 'error',
+        '@typescript-eslint/no-generated-empty-object-type': 'error',
         '@typescript-eslint/no-implied-eval': 'error',
         '@typescript-eslint/no-meaningless-void-operator': ['warn', { checkNever: false }],
         ...predicate(!options.disableExpensiveRules, {
@@ -195,11 +196,14 @@ function typescript(options = {}) {
         '@typescript-eslint/no-unnecessary-template-expression': 'warn',
         '@typescript-eslint/no-unnecessary-type-arguments': 'error',
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+        '@typescript-eslint/no-unnecessary-type-parameters': 'off', // Annoying
+        '@typescript-eslint/no-unsafe-type-assertion': 'off', // Annoying
         '@typescript-eslint/no-unsafe-unary-minus': 'error',
         '@typescript-eslint/no-unused-private-class-members': 'warn',
         '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
         '@typescript-eslint/only-throw-error': ['warn', { allowRethrowing: true }],
         '@typescript-eslint/prefer-includes': 'warn',
+        '@typescript-eslint/prefer-find': 'warn',
         '@typescript-eslint/prefer-optional-chain': 'warn',
         '@typescript-eslint/prefer-reduce-type-parameter': 'warn',
         '@typescript-eslint/prefer-nullish-coalescing': [
@@ -230,6 +234,7 @@ function typescript(options = {}) {
         '@typescript-eslint/require-await': 'error',
         '@typescript-eslint/return-await': 'error',
         '@typescript-eslint/switch-exhaustiveness-check': 'error',
+        '@typescript-eslint/use-unknown-in-catch-callback-variable': 'warn',
         '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
         // collisions
@@ -239,6 +244,7 @@ function typescript(options = {}) {
 
       // Conflicts with @typescript-eslint
       'no-unused-private-class-members': 'off',
+      'no-unused-expressions': 'off',
       'no-empty-function': 'off',
       'default-case': 'off',
       'import/named': 'off',
@@ -249,9 +255,9 @@ function typescript(options = {}) {
       'default-param-last': 'off',
       'init-declarations': 'off',
       'no-invalid-this': 'off',
-      'no-loop-func': 'off',
+      'max-params': 'off',
+      'prefer-destructuring': 'off',
       'no-redeclare': 'off',
-      'no-restricted-imports': 'off',
       'no-shadow': 'off',
       'no-unused-vars': 'off',
       'no-use-before-define': 'off',
