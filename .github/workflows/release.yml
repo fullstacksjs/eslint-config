@@ -32,6 +32,7 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - run: vp check
+      - run: vp run check:rules
       - run: vp pack
 
       - name: Release

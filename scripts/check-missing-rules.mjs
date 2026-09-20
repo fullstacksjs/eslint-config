@@ -3,6 +3,7 @@
 
 /**
  * Script to check for plugin rules that are not configured in module files
+ * Exits with code 1 when any module is out of sync
  * Usage: node scripts/check-missing-rules.mjs [module-name]
  */
 
@@ -264,6 +265,9 @@ async function checkPlugin(config, moduleContent) {
     console.log('✨ All rules are in sync!');
     return;
   }
+
+  // Fail hooks and CI when rules are out of sync
+  process.exitCode = 1;
 
   printRules(rulePrefix, { heading: '⚠️  Missing rules', rules: result.missing });
   printRules(rulePrefix, {
