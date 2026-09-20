@@ -19,7 +19,10 @@ function cypress(options = {}) {
     rules: {
       'cypress/assertion-before-screenshot': 'warn',
       'cypress/no-assigning-return-values': 'error',
+      'cypress/no-and': 'off',
       'cypress/no-async-tests': 'error',
+      'cypress/no-async-before': 'error',
+      'cypress/no-debug': 'warn',
       'cypress/no-force': 'warn',
       'cypress/no-pause': 'error',
       'cypress/no-unnecessary-waiting': 'error',
