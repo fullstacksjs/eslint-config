@@ -29,6 +29,7 @@ function next(options = {}) {
       'next/no-head-import-in-document': 'warn',
       'next/no-html-link-for-pages': 'warn',
       'next/no-img-element': 'warn',
+      'next/no-location-assign-relative-destination': 'error',
       'next/no-page-custom-font': 'warn',
       'next/no-script-component-in-head': 'warn',
       'next/no-styled-jsx-in-document': 'warn',
