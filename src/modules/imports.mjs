@@ -64,6 +64,7 @@ function imports(options = {}) {
       'import/no-named-as-default': 'error',
       'import/no-named-default': 'error',
       'import/no-relative-packages': 'error',
+      'import/no-rename-default': 'off',
       'import/no-self-import': 'error',
       'import/no-unresolved': ['error', { caseSensitiveStrict: true }],
       'import/no-useless-path-segments': 'warn',
@@ -98,6 +99,7 @@ function imports(options = {}) {
       'import/no-unassigned-import': 'off',
       'import/no-unused-modules': 'off',
       'import/prefer-default-export': 'off',
+      'import/prefer-namespace-import': 'off',
       'import/unambiguous': 'off',
 
       ...predicate(options.typescript, {
