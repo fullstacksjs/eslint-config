@@ -217,7 +217,7 @@ export default defineConfig({
 - [eslint-plugin-import-x](https://github.com/un-ts/eslint-plugin-import-x)
 - [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
 - [eslint-plugin-jest-formatting](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
-- [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
+- [eslint-plugin-jsx-a11y-x](https://github.com/es-tooling/eslint-plugin-jsx-a11y-x)
 - [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n)
 - [eslint-plugin-perfectionist](https://perfectionist.dev)
 - [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
