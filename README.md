@@ -49,7 +49,7 @@ interface Options {
   base?: boolean | ‌ConfigWithOverrides; // controls base
   promise?: boolean | ‌ConfigWithOverrides; // controls promise
   stylistic?: boolean | ‌ConfigWithOverrides; // controls stylistic
-  react?: boolean | ReactOptions; // controls react, react-hooks, jsx/a11y plugins
+  react?: boolean | ReactOptions; // controls react, react-hooks, jsx-a11y-x plugins
   typescript?: boolean | TypeScriptOptions; // https://typescript-eslint.io/packages/parser#configuration
   node?: boolean | ‌ConfigWithOverrides; // controls node plugin
   sort?: boolean | ‌ConfigWithOverrides; // controls perfectionist plugin

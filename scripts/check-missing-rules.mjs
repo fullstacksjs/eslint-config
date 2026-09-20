@@ -74,7 +74,7 @@ const PLUGIN_CONFIGS = {
     additionalPlugins: [
       {
         packageName: 'eslint-plugin-jsx-a11y-x',
-        rulePrefix: 'jsx-a11y',
+        rulePrefix: 'jsx-a11y-x',
         accessor: defaultAccessor,
       },
     ],
