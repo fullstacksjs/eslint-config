@@ -43,7 +43,7 @@
     "eslint-plugin-cypress": "7.0.2",
     "eslint-plugin-import-x": "4.17.1",
     "eslint-plugin-jest": "29.16.6",
-    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-jsx-a11y-x": "0.2.0",
     "eslint-plugin-n": "18.3.0",
     "eslint-plugin-perfectionist": "5.11.1",
     "eslint-plugin-playwright": "2.12.0",

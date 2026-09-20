@@ -72,7 +72,7 @@ const PLUGIN_CONFIGS = {
     normalizeRuleName: name => name.replace(/^x-/, ''),
     additionalPlugins: [
       {
-        packageName: 'eslint-plugin-jsx-a11y',
+        packageName: 'eslint-plugin-jsx-a11y-x',
         rulePrefix: 'jsx-a11y',
         accessor: defaultAccessor,
       },

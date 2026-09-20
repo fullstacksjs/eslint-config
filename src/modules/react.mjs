@@ -1,6 +1,6 @@
 import reactPlugin from '@eslint-react/eslint-plugin';
 import { mergeConfigs } from 'eslint-flat-config-utils';
-import a11yPlugin from 'eslint-plugin-jsx-a11y';
+import a11yPlugin from 'eslint-plugin-jsx-a11y-x';
 import { reactRefresh } from 'eslint-plugin-react-refresh';
 import { isPackageExists } from 'local-pkg';
 import { parser } from 'typescript-eslint';
