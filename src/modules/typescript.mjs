@@ -131,7 +131,7 @@ function typescript(options = {}) {
       '@typescript-eslint/no-wrapper-object-types': 'error',
       '@typescript-eslint/parameter-properties': 'off',
       '@typescript-eslint/prefer-as-const': 'warn',
-      '@typescript-eslint/prefer-destructuring': ['warn', { object: true, array: false }],
+      '@typescript-eslint/prefer-destructuring': 'off', // Annoying
       '@typescript-eslint/prefer-enum-initializers': 'off',
       '@typescript-eslint/prefer-for-of': 'warn',
       '@typescript-eslint/prefer-function-type': 'warn',

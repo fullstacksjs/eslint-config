@@ -141,7 +141,7 @@ function base(options = {}) {
       'no-octal': 'error',
       'no-promise-executor-return': 'error',
       'no-proto': 'error',
-      'no-prototype-builtins': 'error',
+      'no-prototype-builtins': 'off', // Annoying
       'no-redeclare': 'error',
       'no-regex-spaces': 'error',
       'no-restricted-exports': 'off',
@@ -215,7 +215,7 @@ function base(options = {}) {
           requireCatchParameter: true,
         },
       ]),
-      'prefer-destructuring': ['warn', { object: true, array: false }],
+      'prefer-destructuring': 'off', // Annoying
       'prefer-exponentiation-operator': 'warn',
       'prefer-numeric-literals': 'error',
       'prefer-object-has-own': 'warn',
