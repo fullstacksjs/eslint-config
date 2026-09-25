@@ -199,6 +199,8 @@ function react(options = {}) {
           allowExportNames: isPackageExists('next') ? nextAllowExportNames : [],
 
           allowConstantExport: isPackageExists('vite'),
+
+          allowCompoundComponents: isPackageExists('vite'),
         },
       ],
     },
