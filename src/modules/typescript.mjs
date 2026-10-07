@@ -175,6 +175,7 @@ function typescript(options = {}) {
         '@typescript-eslint/no-redundant-type-constituents': 'warn',
         '@typescript-eslint/no-unnecessary-type-conversion': 'error',
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
+        '@typescript-eslint/no-unsafe-enum-assignment': strict(options, 'warn'),
         '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
         '@typescript-eslint/no-unsafe-function-type': 'warn',
         '@typescript-eslint/no-unnecessary-condition': [
