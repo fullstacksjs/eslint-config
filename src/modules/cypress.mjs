@@ -16,6 +16,11 @@ function cypress(options = {}) {
     name: 'cypress',
     files: globs.e2e,
     plugins: { cypress: plugin },
+    languageOptions: {
+      globals: {
+        ...plugin.configs.globals.languageOptions.globals,
+      },
+    },
     rules: {
       'cypress/assertion-before-screenshot': 'warn',
       'cypress/no-assigning-return-values': 'error',
