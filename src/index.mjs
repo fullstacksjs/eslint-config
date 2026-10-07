@@ -1,4 +1,3 @@
-import merge from 'deepmerge';
 import { defineConfig as eslintConfig } from 'eslint/config';
 import { isPackageExists } from 'local-pkg';
 
@@ -21,6 +20,7 @@ import tailwind from './modules/tailwind.mjs';
 import tests from './modules/tests.mjs';
 import typescript from './modules/typescript.mjs';
 import vitest from './modules/vitest.mjs';
+import { mergeOptions } from './utils/mergeOptions.mjs';
 
 const testPackages = ['jest', 'vitest', 'cypress', '@playwright/test'];
 
@@ -63,7 +63,7 @@ const defaultOptions = {
  * @returns {Config[]}
  */
 export function defineConfig(initOptions = {}, ...extend) {
-  const options = merge(defaultOptions, initOptions);
+  const options = mergeOptions(defaultOptions, initOptions);
 
   if (options.import === true) {
     options.import = {};
