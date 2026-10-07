@@ -133,7 +133,8 @@ export interface Options extends Linter.Config {
    */
   ignores?: string[];
   /**
-   * .gitignore file path relative to ESLint configuration file. Set to `false` to disable.
+   * .gitignore file path, absolute or relative to the current working directory. Set to `false` to disable.
+   * Use an absolute path (e.g. `path.join(import.meta.dirname, '.gitignore')`) in monorepos or when ESLint may run from another folder.
    * @default './.gitignore'
    */
   gitignore?: string | false;

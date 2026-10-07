@@ -9,7 +9,7 @@ const fallbackMessage =
   'Falling back to default ignore patterns. You can suppress this warning by setting \u001B[48;5;234m`gitignore: false`\u001B[0m in the config.';
 
 /**
- * @param {string} gitignorePath relative path to the .gitignore file
+ * @param {string} gitignorePath absolute path, or path relative to the current working directory
  * @returns {string[]}
  */
 export function getGitignorePatterns(gitignorePath) {
