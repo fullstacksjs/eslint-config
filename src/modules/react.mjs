@@ -12,7 +12,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
- * @return { Promise<import('eslint').Linter.Config> }
+ * @return { import('eslint').Linter.Config[] }
  */
 function react(options = {}) {
   const isVite = isPackageListed('vite') || isPackageListed('vite-plus');
@@ -29,12 +29,6 @@ function react(options = {}) {
       'jsx-a11y-x': jsxA11yX,
       'react-refresh': reactRefresh.plugin,
     },
-    ...predicate(projectService, {
-      languageOptions: {
-        parser,
-        parserOptions: { ...options.typescript },
-      },
-    }),
     settings: {
       'react-x': {
         ...predicate(isObject && 'version' in options.react, {
@@ -149,14 +143,6 @@ function react(options = {}) {
       '@eslint-react/unsupported-syntax': 'error',
       '@eslint-react/use-memo': 'error',
 
-      ...predicate(projectService, {
-        '@eslint-react/no-implicit-children': 'warn',
-        '@eslint-react/no-implicit-key': 'warn',
-        '@eslint-react/no-implicit-ref': 'warn',
-        '@eslint-react/no-leaked-conditional-rendering': 'error',
-        '@eslint-react/no-unused-props': 'warn',
-      }),
-
       'jsx-a11y-x/alt-text': 'warn',
       'jsx-a11y-x/anchor-has-content': 'error',
       'jsx-a11y-x/anchor-is-valid': 'error',
@@ -207,7 +193,25 @@ function react(options = {}) {
     },
   };
 
-  return mergeConfigs(reactConfig, overrides);
+  /** @type { import('eslint/config').ConfigObject } */
+  const reactTypeAwareConfig = {
+    name: 'react/type-aware',
+    files: [globs.ts, globs.tsx],
+    languageOptions: {
+      parser,
+      parserOptions: { ...options.typescript },
+    },
+    rules: {
+      '@eslint-react/no-implicit-children': 'warn',
+      '@eslint-react/no-implicit-key': 'warn',
+      '@eslint-react/no-implicit-ref': 'warn',
+      '@eslint-react/no-leaked-conditional-rendering': 'error',
+      '@eslint-react/no-unused-props': 'warn',
+    },
+  };
+
+  // Listed first so that `options.react.overrides` still takes precedence over the type-aware rules.
+  return [...(projectService ? [reactTypeAwareConfig] : []), mergeConfigs(reactConfig, overrides)];
 }
 
 export default react;
