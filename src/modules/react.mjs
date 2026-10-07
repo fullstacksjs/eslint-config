@@ -2,7 +2,7 @@ import reactPlugin from '@eslint-react/eslint-plugin';
 import { mergeConfigs } from 'eslint-flat-config-utils';
 import jsxA11yX from 'eslint-plugin-jsx-a11y-x';
 import { reactRefresh } from 'eslint-plugin-react-refresh';
-import { isPackageExists } from 'local-pkg';
+import { isPackageListedSync as isPackageListed } from 'local-pkg';
 import { parser } from 'typescript-eslint';
 
 import { predicate, strict } from '../utils/conditions.mjs';
@@ -15,6 +15,7 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
  * @return { Promise<import('eslint').Linter.Config> }
  */
 function react(options = {}) {
+  const isVite = isPackageListed('vite') || isPackageListed('vite-plus');
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
   const isObject = typeof options.react === 'object';
   const overrides = objectOrEmpty(options.react.overrides);
@@ -196,11 +197,11 @@ function react(options = {}) {
       'react-refresh/only-export-components': [
         'error',
         {
-          allowExportNames: isPackageExists('next') ? nextAllowExportNames : [],
+          allowExportNames: isPackageListed('next') ? nextAllowExportNames : [],
 
-          allowConstantExport: isPackageExists('vite'),
+          allowConstantExport: isVite,
 
-          allowCompoundComponents: isPackageExists('vite'),
+          allowCompoundComponents: isVite,
         },
       ],
     },
