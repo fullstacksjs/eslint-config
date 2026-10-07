@@ -104,12 +104,7 @@ function typescript(options = {}) {
       '@typescript-eslint/no-this-alias': 'error',
       '@typescript-eslint/no-unnecessary-type-constraint': 'warn',
       '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'warn',
-      '@typescript-eslint/no-unsafe-argument': strict(options, 'warn'),
-      '@typescript-eslint/no-unsafe-assignment': strict(options, 'warn'),
-      '@typescript-eslint/no-unsafe-call': strict(options, 'warn'),
       '@typescript-eslint/no-unsafe-declaration-merging': 'warn',
-      '@typescript-eslint/no-unsafe-member-access': strict(options, ['warn', { allowOptionalChaining: true }]),
-      '@typescript-eslint/no-unsafe-return': strict(options, 'warn'),
       '@typescript-eslint/no-unused-expressions': 'error',
       '@typescript-eslint/no-unused-vars': [
         'warn',
@@ -125,7 +120,6 @@ function typescript(options = {}) {
       ],
       '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: true }],
       '@typescript-eslint/no-useless-constructor': 'error',
-      '@typescript-eslint/no-useless-default-assignment': 'warn',
       '@typescript-eslint/no-useless-empty-export': 'warn',
       '@typescript-eslint/no-wrapper-object-types': 'error',
       '@typescript-eslint/parameter-properties': 'off',
@@ -146,9 +140,7 @@ function typescript(options = {}) {
       ], // I'm not sure...
       '@typescript-eslint/prefer-readonly': 'off',
       '@typescript-eslint/promise-function-async': 'off', // Breaks react component when return type is React.ReactNode
-      '@typescript-eslint/restrict-plus-operands': 'warn',
       '@typescript-eslint/strict-boolean-expressions': 'off', // Annoying
-      '@typescript-eslint/strict-void-return': 'error',
 
       '@typescript-eslint/triple-slash-reference': 'error',
       '@typescript-eslint/unified-signatures': 'error',
@@ -197,7 +189,13 @@ function typescript(options = {}) {
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
         '@typescript-eslint/no-unnecessary-type-parameters': 'off', // Annoying
         '@typescript-eslint/no-unsafe-type-assertion': 'off', // Annoying
+        '@typescript-eslint/no-unsafe-argument': strict(options, 'warn'),
+        '@typescript-eslint/no-unsafe-assignment': strict(options, 'warn'),
+        '@typescript-eslint/no-unsafe-call': strict(options, 'warn'),
+        '@typescript-eslint/no-unsafe-member-access': strict(options, ['warn', { allowOptionalChaining: true }]),
+        '@typescript-eslint/no-unsafe-return': strict(options, 'warn'),
         '@typescript-eslint/no-unsafe-unary-minus': 'error',
+        '@typescript-eslint/no-useless-default-assignment': 'warn',
         '@typescript-eslint/no-unused-private-class-members': 'warn',
         '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
         '@typescript-eslint/only-throw-error': ['warn', { allowRethrowing: true }],
@@ -228,10 +226,12 @@ function typescript(options = {}) {
             allowNever: false,
           },
         ],
+        '@typescript-eslint/restrict-plus-operands': 'warn',
         '@typescript-eslint/related-getter-setter-pairs': 'error',
         '@typescript-eslint/require-array-sort-compare': ['error', { ignoreStringArrays: true }],
         '@typescript-eslint/require-await': 'error',
         '@typescript-eslint/return-await': 'error',
+        '@typescript-eslint/strict-void-return': strict(options, 'error'),
         '@typescript-eslint/switch-exhaustiveness-check': 'error',
         '@typescript-eslint/use-unknown-in-catch-callback-variable': 'warn',
         '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
