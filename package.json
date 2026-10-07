@@ -96,7 +96,7 @@
     "tailwindcss": {
       "optional": true
     },
-    "jest": {
+    "prettier": {
       "optional": true
     }
   },

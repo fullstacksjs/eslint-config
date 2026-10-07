@@ -1,5 +1,5 @@
 import { defineConfig as eslintConfig } from 'eslint/config';
-import { isPackageExists } from 'local-pkg';
+import { isPackageListedSync as isPackageListed } from 'local-pkg';
 
 import base from './modules/base.mjs';
 import cypress from './modules/cypress.mjs';
@@ -34,25 +34,25 @@ const defaultOptions = {
   base: true,
   promise: true,
   stylistic: true,
-  cypress: isPackageExists('cypress'),
+  cypress: isPackageListed('cypress'),
   disableExpensiveRules: false,
   esm: false,
   ignores: [],
   gitignore: './.gitignore',
   import: {},
-  jest: isPackageExists('jest'),
-  next: isPackageExists('next'),
+  jest: isPackageListed('jest'),
+  next: isPackageListed('next'),
   node: false,
   sort: true,
-  playwright: isPackageExists('@playwright/test'),
-  prettier: isPackageExists('prettier'),
-  react: isPackageExists('react'),
-  storybook: isPackageExists('storybook'),
+  playwright: isPackageListed('@playwright/test'),
+  prettier: isPackageListed('prettier'),
+  react: isPackageListed('react'),
+  storybook: isPackageListed('storybook'),
   strict: false,
   tailwind: false,
-  test: testPackages.some(p => isPackageExists(p)),
-  typescript: isPackageExists('typescript') ? { projectService: true } : false,
-  vitest: isPackageExists('vitest'),
+  test: testPackages.some(p => isPackageListed(p)),
+  typescript: isPackageListed('typescript') ? { projectService: true } : false,
+  vitest: isPackageListed('vitest'),
   regex: { allowedCharacterRanges: ['all'] },
 };
 
