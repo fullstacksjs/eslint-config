@@ -37,22 +37,7 @@ function imports(options = {}) {
 
     rules: {
       'import/consistent-type-specifier-style': ['warn', 'prefer-top-level'],
-      /*
-      * FIXME: This rule is broken!
-        const opt = options.esm ? 'always' : 'never';
-      'import/extensions': [
-        'error',
-        opt,
-        {
-          ignorePackages: true,
-          js: opt,
-          jsx: opt,
-          mjs: opt,
-          cjs: opt,
-          ...(options.typescript && { ts: opt, tsx: opt, mts: opt, cts: opt }),
-        },
-      ],
-      */
+      'import/extensions': ['error', options.import.extensions ?? 'never', { ignorePackages: true }],
       'import/first': 'error',
       'import/newline-after-import': 'warn',
       'import/no-absolute-path': 'error',

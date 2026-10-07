@@ -55,7 +55,7 @@ interface Options {
   sort?: boolean | ‌ConfigWithOverrides; // controls perfectionist plugin
   strict?: boolean; // controls strict rules
   import?: boolean | ImportOptions; // controls import plugin
-  esm?: boolean; // controls esm plugin
+  esm?: boolean; // deprecated, has no effect; use import.extensions instead. Will be removed in the next major version
   test?: boolean | ‌ConfigWithOverrides; // controls test formatting plugin
   jest?: boolean | ‌ConfigWithOverrides; // controls jest plugin
   vitest?: boolean | ‌ConfigWithOverrides; // controls vitest plugin
