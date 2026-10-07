@@ -2,16 +2,27 @@ import { mergeConfigs } from 'eslint-flat-config-utils';
 import plugin from 'eslint-plugin-jest';
 import globals from 'globals';
 
-import { predicate } from '../utils/conditions.mjs';
 import { globs } from '../utils/globs.mjs';
 import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
 /**
  * @param { import('../types').Options } options
- * @return { import('eslint').Linter.Config } */
+ * @return { import('eslint').Linter.Config[] } */
 function jest(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
   const overrides = objectOrEmpty(options.jest.overrides);
+
+  /** @type { import('eslint/config').ConfigObject } */
+  const jestTypeAwareConfig = {
+    name: 'jest/type-aware',
+    files: [globs.ts, globs.tsx],
+    plugins: { jest: plugin },
+    rules: {
+      'jest/no-error-equal': 'error',
+      'jest/no-unnecessary-assertion': 'warn',
+      'jest/valid-expect-with-promise': 'error',
+    },
+  };
 
   /** @type { import('eslint/config').ConfigObject } */
   const jestConfig = {
@@ -39,11 +50,6 @@ function jest(options = {}) {
       'jest/no-export': 'error',
       'jest/no-focused-tests': 'error',
       'jest/no-identical-title': 'error',
-      ...predicate(projectService, {
-        'jest/no-error-equal': 'error',
-        'jest/no-unnecessary-assertion': 'warn',
-        'jest/valid-expect-with-promise': 'error',
-      }),
       'jest/no-hooks': 'off',
       'jest/no-interpolation-in-snapshots': 'error',
       'jest/no-jasmine-globals': 'off',
@@ -104,7 +110,7 @@ function jest(options = {}) {
     },
   };
 
-  return mergeConfigs(jestConfig, overrides);
+  return [...(projectService ? [jestTypeAwareConfig] : []), mergeConfigs(jestConfig, overrides)];
 }
 
 export default jest;
