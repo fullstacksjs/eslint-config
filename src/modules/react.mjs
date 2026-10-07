@@ -143,9 +143,9 @@ function react(options = {}) {
       '@eslint-react/immutability': 'error',
       '@eslint-react/purity': 'error',
       '@eslint-react/refs': 'error',
-      '@eslint-react/set-state-in-effect': strict('error'),
+      '@eslint-react/set-state-in-effect': strict(options, 'error'),
       '@eslint-react/set-state-in-render': 'error',
-      '@eslint-react/static-components': strict('error'),
+      '@eslint-react/static-components': strict(options, 'error'),
       '@eslint-react/unsupported-syntax': 'error',
       '@eslint-react/use-memo': 'error',
 
