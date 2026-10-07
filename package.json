@@ -13,7 +13,10 @@
     "dist"
   ],
   "exports": {
-    ".": "./dist/index.mjs",
+    ".": {
+      "types": "./src/types/index.d.ts",
+      "default": "./dist/index.mjs"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {

@@ -4,7 +4,11 @@ export default defineConfig({
   pack: {
     entry: ['./src/index.mjs'],
     format: ['esm'],
-    exports: true,
+    exports: {
+      customExports: {
+        '.': { types: './src/types/index.d.ts', default: './dist/index.mjs' },
+      },
+    },
   },
   fmt: {
     singleQuote: true,
