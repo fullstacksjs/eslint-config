@@ -72,8 +72,8 @@
     "semantic-release": "25.0.9",
     "storybook": "10.6.0",
     "typescript": "6.0.3",
-    "vite-plus": "0.3.3",
-    "vitest": "5.0.1"
+    "vite-plus": "1.1.0",
+    "vitest": "5.0.3"
   },
   "peerDependencies": {
     "cypress": ">=15",
@@ -100,10 +100,13 @@
       "optional": true
     }
   },
+  "overrides": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@1.1.0"
+  },
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "24.18.0",
+      "version": "24.21.0",
       "onFail": "download"
     }
   },
