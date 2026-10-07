@@ -193,13 +193,15 @@ function react(options = {}) {
     },
   };
 
+  const { overrides: _typescriptOverrides, ...typescriptParserOptions } = objectOrEmpty(options.typescript);
+
   /** @type { import('eslint/config').ConfigObject } */
   const reactTypeAwareConfig = {
     name: 'react/type-aware',
     files: [globs.ts, globs.tsx],
     languageOptions: {
       parser,
-      parserOptions: { ...options.typescript },
+      parserOptions: typescriptParserOptions,
     },
     rules: {
       '@eslint-react/no-implicit-children': 'warn',

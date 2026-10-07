@@ -12,7 +12,8 @@ import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
  */
 function typescript(options = {}) {
   const projectService = options.typescript && options.typescript.tsconfigRootDir && options.typescript.projectService;
-  const overrides = objectOrEmpty(options.typescript.overrides);
+  const { overrides: typescriptOverrides, ...parserOptions } = options.typescript;
+  const overrides = objectOrEmpty(typescriptOverrides);
 
   /** @type { import('eslint/config').ConfigObject } */
   const typescriptConfig = {
@@ -21,9 +22,7 @@ function typescript(options = {}) {
     plugins: { '@typescript-eslint': plugin },
     languageOptions: {
       parser,
-      parserOptions: {
-        ...options.typescript,
-      },
+      parserOptions,
     },
     rules: {
       '@typescript-eslint/adjacent-overload-signatures': 'error',
