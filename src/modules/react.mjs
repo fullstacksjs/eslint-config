@@ -206,7 +206,7 @@ function react(options = {}) {
     rules: {
       '@eslint-react/no-implicit-children': 'warn',
       '@eslint-react/no-implicit-key': 'warn',
-      '@eslint-react/no-implicit-ref': 'warn',
+      '@eslint-react/no-implicit-ref': 'off',
       '@eslint-react/no-leaked-conditional-rendering': 'error',
       '@eslint-react/no-unused-props': 'warn',
     },
