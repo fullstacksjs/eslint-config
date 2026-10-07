@@ -147,12 +147,15 @@ export default defineConfig({
 
 ## GitIgnore
 
-By default, FullstacksJS checks for a `.gitignore` file at the root of the project. If the file exists, it will be used automatically. You
-can override this behavior by updating the configuration.
+By default, FullstacksJS checks for a `.gitignore` file in the current working directory. If the file exists, it will be used automatically.
+Relative paths are resolved from the current working directory, so use an absolute path in monorepos or when your editor may start ESLint
+from another folder.
 
 ```typescript
+import path from 'node:path';
+
 export default defineConfig({
-  gitignore: './packages/acme/.gitignore', // use `false` to disable
+  gitignore: path.join(import.meta.dirname, '.gitignore'), // use `false` to disable
 });
 ```
 
