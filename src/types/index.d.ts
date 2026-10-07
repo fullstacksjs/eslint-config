@@ -63,7 +63,8 @@ export interface Options extends Linter.Config {
    */
   import?: boolean | ImportOptions;
   /**
-   * @default true - If you have `type: module` in your `package.json`.
+   * Has no effect. Use `import.extensions` instead.
+   * @deprecated Will be removed in the next major version.
    */
   esm?: boolean;
   /**
@@ -139,5 +140,3 @@ export interface Options extends Linter.Config {
 }
 
 export declare function defineConfig(initOptions?: Options, ...extend: Linter.Config[]): Linter.Config[];
-
-export declare const init: typeof defineConfig;
