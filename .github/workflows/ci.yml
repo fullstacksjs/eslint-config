@@ -26,4 +26,5 @@ jobs:
           cache: true
 
       - run: vp check
+      - run: vp run spell
       - run: vp run check:rules
