@@ -25,6 +25,9 @@ export default defineConfig(
     },
     tailwind: false,
     regex: true,
+    settings: {
+      jest: { version: 30 },
+    },
     rules: {
       'max-lines-per-function': 'off',
       'complexity': 'off',
