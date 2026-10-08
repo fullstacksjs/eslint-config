@@ -10,6 +10,7 @@
   },
   "files": [
     "src",
+    "!src/**/tests",
     "dist"
   ],
   "exports": {
@@ -25,7 +26,7 @@
   },
   "scripts": {
     "spell": "cspell ./* --no-progress",
-    "test": "echo 0",
+    "test": "vp test run src",
     "check": "vp check",
     "lint": "eslint . --ext .js,.ts,.mjs,.cjs",
     "build": "vp pack",
