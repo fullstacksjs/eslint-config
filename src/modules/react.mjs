@@ -199,6 +199,7 @@ function react(options = {}) {
   const reactTypeAwareConfig = {
     name: 'react/type-aware',
     files: [globs.ts, globs.tsx],
+    plugins: reactPlugin.configs.all.plugins,
     languageOptions: {
       parser,
       parserOptions: typescriptParserOptions,
