@@ -27,4 +27,5 @@ jobs:
 
       - run: vp check
       - run: vp run spell
+      - run: vp test run src
       - run: vp run check:rules

@@ -1,2 +1,3 @@
 vp pack
 vp run check:rules
+vp test run src
