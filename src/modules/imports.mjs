@@ -4,9 +4,10 @@ import plugin from 'eslint-plugin-import-x';
 import { predicate } from '../utils/conditions.mjs';
 import { objectOrEmpty } from '../utils/objectOrEmpty.mjs';
 
-const tsExtensions = ['.ts', '.tsx', '.cts', '.mts', '.ctsx', '.mtsx'];
+const tsExtensions = ['.ts', '.tsx', '.cts', '.mts'];
 const jsExtensions = ['.mjs', '.js', '.jsx', '.cjs'];
 const allExtensions = [...jsExtensions, ...tsExtensions];
+const allExtensionNames = allExtensions.map(ext => ext.slice(1));
 
 /**
  * @param { import('../types').Options } options
@@ -15,6 +16,7 @@ const allExtensions = [...jsExtensions, ...tsExtensions];
 function imports(options = {}) {
   const isObject = typeof options.import === 'object';
   const overrides = objectOrEmpty(options.import.overrides);
+  const extensionsMode = options.import.extensions ?? 'never';
 
   /** @type { import('eslint/config').ConfigObject } */
   const importsConfig = {
@@ -37,7 +39,20 @@ function imports(options = {}) {
 
     rules: {
       'import/consistent-type-specifier-style': ['warn', 'prefer-top-level'],
-      'import/extensions': ['error', options.import.extensions ?? 'never', { ignorePackages: true }],
+      'import/extensions': [
+        'error',
+        {
+          ignorePackages: true,
+          pattern: Object.fromEntries(allExtensionNames.map(ext => [ext, extensionsMode])),
+          pathGroupOverrides: [
+            {
+              pattern: `*.!(${allExtensionNames.join('|')})`,
+              patternOptions: { dot: true, matchBase: true, nocomment: true },
+              action: 'ignore',
+            },
+          ],
+        },
+      ],
       'import/first': 'error',
       'import/newline-after-import': 'warn',
       'import/no-absolute-path': 'error',
