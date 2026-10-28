@@ -18,6 +18,7 @@ function perfectionist(options = {}) {
       'perfectionist/sort-array-includes': 'warn',
       'perfectionist/sort-arrays': 'off',
       'perfectionist/sort-classes': 'off',
+      'perfectionist/sort-constructor-parameters': 'off',
       'perfectionist/sort-decorators': 'off',
       'perfectionist/sort-enums': 'off',
       'perfectionist/sort-export-attributes': 'warn',

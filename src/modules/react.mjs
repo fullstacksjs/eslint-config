@@ -84,6 +84,7 @@ function react(options = {}) {
       '@eslint-react/no-class-component': 'off',
       '@eslint-react/no-clone-element': 'warn',
       '@eslint-react/no-context-provider': 'warn',
+      '@eslint-react/no-create-ref': 'warn',
 
       '@eslint-react/no-direct-mutation-state': 'error',
       '@eslint-react/no-duplicate-key': 'error',
