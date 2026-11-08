@@ -81,6 +81,10 @@ function imports(options = {}) {
         'import/no-named-as-default-member': 'error',
       }),
 
+      'import/avoid-barrel-files': 'off',
+      'import/avoid-importing-barrel-files': 'off',
+      'import/avoid-namespace-import': 'off',
+      'import/avoid-re-export-all': 'off',
       'import/dynamic-import-chunkname': 'off',
       'import/exports-last': 'off',
       'import/group-exports': 'off',
